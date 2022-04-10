@@ -14,5 +14,6 @@
     "submit": "Submit",
     "areYouSureYouWantToLogout": "Are you sure you want to logout?",
     "yes": "YES",
-    "no": "NO"
+    "no": "NO",
+    "": ""
 }

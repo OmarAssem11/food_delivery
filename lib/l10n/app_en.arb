@@ -1,0 +1,18 @@
+{
+    "login": "LOGIN",
+    "register": "REGISTER",
+    "userName": "User Name",
+    "name": "Name",
+    "emailAddress": "Email Address",
+    "password": "Password",
+    "canNotBeEmpty": "can't be empty",
+    "emailCanNotBeEmpty": "Email can't be empty",
+    "invalidEmailFormat": "Invalid email format",
+    "passwordCanNotBeLessThanSixCharacters":  "Password can't be less than 6 characters",
+    "doNotHaveAnAccount": "Don't have an account?",
+    "alreadyHaveAnAccount": "Already have an account?",
+    "submit": "Submit",
+    "areYouSureYouWantToLogout": "Are you sure you want to logout?",
+    "yes": "YES",
+    "no": "NO"
+}

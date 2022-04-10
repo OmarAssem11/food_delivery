@@ -1,0 +1,18 @@
+{
+    "login": "تسجيل دخول",
+    "register": "إنشاء حساب",
+    "userName": "أسم المستخدم",
+    "name": "ألاسم",
+    "emailAddress": "البريد الإلكتروني",
+    "password": "كلمة السر",
+    "canNotBeEmpty": "لا يمكن ان يكون فارغ",
+    "emailCanNotBeEmpty": "البريد الإلكتروني لا يمكن ان يكون فارغ",
+    "invalidEmailFormat": "صيغة بريد إلكتروني غير صالحة",  
+    "passwordCanNotBeLessThanSixCharacters":  "كلمة السر لا يمكن ان تكون اقل من ٦ حروف",
+    "doNotHaveAnAccount": "ليس لديك حساب؟",
+    "alreadyHaveAnAccount": "لديك حساب بالفعل؟",
+    "submit": "تأكيد",
+    "areYouSureYouWantToLogout": "هل انت متأكد انك تريد تسجيل خروج؟",
+    "yes": "نعم",
+    "no": "لا"
+}

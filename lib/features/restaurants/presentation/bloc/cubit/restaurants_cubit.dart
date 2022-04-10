@@ -5,10 +5,11 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:food_delivery/features/restaurants/domain/entities/restaurant_details_entity.dart';
 import 'package:food_delivery/features/restaurants/domain/usecases/restaurants_list_usecases.dart';
+import 'package:injectable/injectable.dart';
 
 part 'restaurants_cubit.freezed.dart';
 part 'restaurants_state.dart';
-
+@injectable
 class RestaurantsCubit extends Cubit<RestaurantsState> {
   RestaurantsListUseCase restaurantsListUseCase;
   RestaurantsCubit(

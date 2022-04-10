@@ -7,6 +7,8 @@ import 'package:food_delivery/features/auth/presentation/screens/register_screen
 import 'package:food_delivery/features/products/presentation/screens/product_details_screen.dart';
 import 'package:food_delivery/features/products/presentation/screens/products_list_screen.dart';
 import 'package:food_delivery/features/products/presentation/bloc/products_cubit.dart';
+import 'package:food_delivery/features/restaurants/presentation/bloc/cubit/restaurants_cubit.dart';
+import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_list_screen.dart';
 
 Route<MaterialPageRoute>? onGenerateRoute(
   RouteSettings routeSettings,
@@ -40,6 +42,14 @@ Route<MaterialPageRoute>? onGenerateRoute(
           child: const RegisterScreen(),
         ),
       );
+      case RestaurantsListScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) => BlocProvider(
+          create: (context) => getIt<RestaurantsCubit>(),
+          child: const RestaurantsListScreen(),
+        ),
+      );
+
     default:
       return null;
   }

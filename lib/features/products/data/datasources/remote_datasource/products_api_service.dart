@@ -16,6 +16,7 @@ abstract class ProductsApiService {
   @POST(getAllProductsEndpoint)
   Future<ResponseModel<List<ProductModel>>> getAllProducts({
     @Header(authorization) required String token,
+
   });
 
   @POST(getProductDetailsEndpoint)

@@ -6,8 +6,6 @@ const logoutEndpoint = 'logout';
 const getAllProductsEndpoint = '';
 const getProductDetailsEndpoint = '';
 const authorization = 'Authorization';
-
-
 const tokenType = 'Bearer';
 const idPath = 'id';
 const emailFormat =

@@ -9,7 +9,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       backgroundColor: Colors.white,
       title: Icon(Icons.menu),
-      centerTitle: true,      
+      centerTitle: true,  
+      actions: [
+      IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart)),  
+      ],    
     );
   }
 

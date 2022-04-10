@@ -18,7 +18,7 @@ abstract class RestaurantsApiService {
     @Header(authorization) required String token,
   });
   @GET(getAllRestaurantsEndpoint + "{restaurantId}")
-  Future<ResponseModel< RestaurantDetailsModel>> getRestaurantDetails({
+  Future<ResponseModel<RestaurantDetailsModel>> getRestaurantDetails({
     @Header(langaugeHeader) String langauge,
     @Header(authorization) required String token,
     @Path("restaurantId") required int restaurantId,

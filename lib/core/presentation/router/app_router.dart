@@ -1,0 +1,29 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_delivery/di/injectable.dart';
+import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
+import 'package:food_delivery/features/auth/presentation/screens/login_screen.dart';
+import 'package:food_delivery/features/auth/presentation/screens/register_screen.dart';
+
+Route<MaterialPageRoute>? onGenerateRoute(
+  RouteSettings routeSettings,
+) {
+  switch (routeSettings.name) {
+    case LoginScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) => BlocProvider(
+          create: (context) => getIt<AuthCubit>(),
+          child: const LoginScreen(),
+        ),
+      );
+    case RegisterScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) => BlocProvider(
+          create: (context) => getIt<AuthCubit>(),
+          child: const RegisterScreen(),
+        ),
+      );
+    default:
+      return null;
+  }
+}

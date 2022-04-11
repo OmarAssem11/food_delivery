@@ -17,16 +17,19 @@ abstract class AuthApiService {
 
   @POST(registerEndpoint)
   Future<ResponseModel<TokenModel>> register({
+    @Header(languageHeader) required String language,
     @Body() required RegisterModel registerModel,
   });
 
   @POST(loginEndpoint)
   Future<ResponseModel<TokenModel>> login({
+    @Header(languageHeader) required String language,
     @Body() required LoginModel loginModel,
   });
 
   @POST(logoutEndpoint)
   Future<ResponseModel> logout({
     @Header(authorization) required String token,
+    @Header(languageHeader) required String language,
   });
 }

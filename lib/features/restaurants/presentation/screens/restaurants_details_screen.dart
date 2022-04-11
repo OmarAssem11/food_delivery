@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart ';
+import 'package:flutter/material.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_app_bar.dart';
 
-class RestaurantsListScreen extends StatelessWidget {
-  const RestaurantsListScreen();
+class RestaurantDetailsScreen extends StatelessWidget {
+  const RestaurantDetailsScreen();
 
-  static const routeName = 'restaurants_list';
+  static const routeName = 'restaurant_details';
 
   @override
   Widget build(BuildContext context) {

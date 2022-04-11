@@ -1,21 +1,17 @@
-import 'package:food_delivery/features/auth/domain/entities/register_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'register_model.g.dart';
 
 @JsonSerializable()
-class RegisterModel extends RegisterEntity {
-  const RegisterModel({
-    required String email,
-    required String password,
-    required String name,
-  }) : super(
-          email: email,
-          password: password,
-          name: name,
-        );
+class RegisterModel {
+  final String name;
+  final String email;
+  final String password;
 
-  factory RegisterModel.fromJson(Map<String, dynamic> json) =>
-      _$RegisterModelFromJson(json);
+  const RegisterModel({
+    required this.name,
+    required this.email,
+    required this.password,
+  });
 
   Map<String, dynamic> toJson() => _$RegisterModelToJson(this);
 }

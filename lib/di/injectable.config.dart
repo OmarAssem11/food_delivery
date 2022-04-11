@@ -37,11 +37,9 @@ import '../features/products/domain/datasources/remote_datasource/products_remot
     as _i6;
 import '../features/products/domain/repositories/products_repository.dart'
     as _i21;
-import '../features/products/domain/usecases/get_all_products_use_case.dart'
-    as _i27;
 import '../features/products/domain/usecases/get_product_details_use_case.dart'
-    as _i28;
-import '../features/products/presentation/bloc/products_cubit.dart' as _i29;
+    as _i27;
+import '../features/products/presentation/bloc/products_cubit.dart' as _i30;
 import '../features/restaurants/data/datasources/remote_datasource/restaurants_api_service.dart'
     as _i8;
 import '../features/restaurants/data/datasources/remote_datasource/restaurants_remote_datasource_impl.dart'
@@ -52,13 +50,11 @@ import '../features/restaurants/domain/datasources/remote_datasource/restaurants
     as _i9;
 import '../features/restaurants/domain/repositories/restaurants_repository.dart'
     as _i24;
-import '../features/restaurants/domain/usecases/restaurant_details_usecase.dart'
-    as _i30;
-import '../features/restaurants/domain/usecases/restaurants_list_usecases.dart'
-    as _i31;
-import '../features/restaurants/presentation/bloc/cubit/restaurants_cubit.dart'
-    as _i32;
-import 'app_module.dart' as _i33; // ignore_for_file: unnecessary_lambdas
+import '../features/restaurants/domain/usecases/get_restaurant_details_usecase.dart'
+    as _i28;
+import '../features/restaurants/domain/usecases/get_restaurants_list_usecases.dart'
+    as _i29;
+import 'app_module.dart' as _i31; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -75,8 +71,7 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i8.RestaurantsApiService>(
       () => _i8.RestaurantsApiService(get<_i3.Dio>()));
   gh.lazySingleton<_i9.RestaurantsRemoteDataSource>(() =>
-      _i10.RestaurantsRemoteDataSourceImpl(
-          restaurantsApiService: get<_i8.RestaurantsApiService>()));
+      _i10.RestaurantsRemoteDataSourceImpl(get<_i8.RestaurantsApiService>()));
   await gh.factoryAsync<_i11.SharedPreferences>(
       () => appModule.getSharedPreferences,
       preResolve: true);
@@ -97,24 +92,19 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i23.RegisterUseCase>(
       () => _i23.RegisterUseCase(get<_i17.AuthRepository>()));
   gh.lazySingleton<_i24.RestaurantsRepository>(() =>
-      _i25.RestaurantsRepositoryImpl(
-          remoteDataSource: get<_i9.RestaurantsRemoteDataSource>(),
-          localDataSource: get<_i13.AuthLocalDataSource>()));
+      _i25.RestaurantsRepositoryImpl(get<_i9.RestaurantsRemoteDataSource>(),
+          get<_i13.AuthLocalDataSource>()));
   gh.factory<_i26.AuthCubit>(() => _i26.AuthCubit(get<_i23.RegisterUseCase>(),
       get<_i19.LoginUseCase>(), get<_i20.LogoutUseCase>()));
-  gh.lazySingleton<_i27.GetAllProductsUseCase>(
-      () => _i27.GetAllProductsUseCase(get<_i21.ProductsRepository>()));
-  gh.lazySingleton<_i28.GetProductDetailsUseCase>(
-      () => _i28.GetProductDetailsUseCase(get<_i21.ProductsRepository>()));
-  gh.factory<_i29.ProductsCubit>(() => _i29.ProductsCubit(
-      get<_i27.GetAllProductsUseCase>(), get<_i28.GetProductDetailsUseCase>()));
-  gh.factory<_i30.RestaurantDetailsUseCase>(() => _i30.RestaurantDetailsUseCase(
-      restaurantsRepository: get<_i24.RestaurantsRepository>()));
-  gh.factory<_i31.RestaurantsListUseCase>(() => _i31.RestaurantsListUseCase(
-      restaurantsRepository: get<_i24.RestaurantsRepository>()));
-  gh.factory<_i32.RestaurantsCubit>(
-      () => _i32.RestaurantsCubit(get<_i31.RestaurantsListUseCase>()));
+  gh.lazySingleton<_i27.GetProductDetailsUseCase>(
+      () => _i27.GetProductDetailsUseCase(get<_i21.ProductsRepository>()));
+  gh.lazySingleton<_i28.GetRestaurantDetailsUseCase>(() =>
+      _i28.GetRestaurantDetailsUseCase(get<_i24.RestaurantsRepository>()));
+  gh.lazySingleton<_i29.GetRestaurantsListUseCase>(
+      () => _i29.GetRestaurantsListUseCase(get<_i24.RestaurantsRepository>()));
+  gh.factory<_i30.ProductsCubit>(
+      () => _i30.ProductsCubit(get<_i27.GetProductDetailsUseCase>()));
   return get;
 }
 
-class _$AppModule extends _i33.AppModule {}
+class _$AppModule extends _i31.AppModule {}

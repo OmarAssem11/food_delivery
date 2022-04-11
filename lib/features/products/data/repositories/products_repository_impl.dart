@@ -1,5 +1,5 @@
-import 'package:food_delivery/core/data/constants/constants.dart';
 import 'package:food_delivery/features/auth/domain/datasources/local_datasource/auth_local_datasource.dart';
+import 'package:food_delivery/features/products/data/mappers/product_mapper.dart';
 import 'package:food_delivery/features/products/domain/datasources/remote_datasource/products_remote_datasource.dart';
 import 'package:food_delivery/features/products/domain/entities/product_entity.dart';
 import 'package:food_delivery/core/domain/error/failure.dart';
@@ -18,30 +18,19 @@ class ProductsRepositoryImpl implements ProductsRepository {
   );
 
   @override
-  Future<Either<Failure, List<ProductEntity>>> getAllProducts() async {
-    try {
-      final token = _localDataSource.getToken()!;
-      final productsResponse = await _productsRemoteDataSource.getAllProducts(
-        token: '$tokenType $token',
-      );
-      return right(productsResponse.data);
-    } catch (error) {
-      return left(const Failure('Error while getting products'));
-    }
-  }
-
-  @override
   Future<Either<Failure, ProductEntity>> getProductDetails({
     required int productId,
   }) async {
     try {
       final token = _localDataSource.getToken()!;
+      final language = _localDataSource.getLanguage()!;
       final productsResponse =
           await _productsRemoteDataSource.getProductDetails(
         token: token,
+        language: language,
         productId: productId,
       );
-      return right(productsResponse.data);
+      return right(productsResponse.data.fromModel);
     } catch (error) {
       return left(const Failure('Error while getting product details'));
     }

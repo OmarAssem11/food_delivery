@@ -22,22 +22,6 @@ class _$ProductsStateTearOff {
     return const ProductsInitial();
   }
 
-  GetAllProductsLoading getAllProductsLoading() {
-    return const GetAllProductsLoading();
-  }
-
-  GetAllProductsSuccess getAllProductsSuccess(List<ProductEntity> products) {
-    return GetAllProductsSuccess(
-      products,
-    );
-  }
-
-  GetAllProductsErrorDetails getAllProductsError(String error) {
-    return GetAllProductsErrorDetails(
-      error,
-    );
-  }
-
   GetProductDetailsLoading getProductDetailsLoading() {
     return const GetProductDetailsLoading();
   }
@@ -63,10 +47,6 @@ mixin _$ProductsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() productsInitial,
-    required TResult Function() getAllProductsLoading,
-    required TResult Function(List<ProductEntity> products)
-        getAllProductsSuccess,
-    required TResult Function(String error) getAllProductsError,
     required TResult Function() getProductDetailsLoading,
     required TResult Function(ProductEntity product) getProductDetailsSuccess,
     required TResult Function(String error) getProductDetailsError,
@@ -75,9 +55,6 @@ mixin _$ProductsState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? productsInitial,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductEntity> products)? getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
     TResult Function()? getProductDetailsLoading,
     TResult Function(ProductEntity product)? getProductDetailsSuccess,
     TResult Function(String error)? getProductDetailsError,
@@ -86,9 +63,6 @@ mixin _$ProductsState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? productsInitial,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductEntity> products)? getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
     TResult Function()? getProductDetailsLoading,
     TResult Function(ProductEntity product)? getProductDetailsSuccess,
     TResult Function(String error)? getProductDetailsError,
@@ -98,12 +72,6 @@ mixin _$ProductsState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ProductsInitial value) productsInitial,
-    required TResult Function(GetAllProductsLoading value)
-        getAllProductsLoading,
-    required TResult Function(GetAllProductsSuccess value)
-        getAllProductsSuccess,
-    required TResult Function(GetAllProductsErrorDetails value)
-        getAllProductsError,
     required TResult Function(GetProductDetailsLoading value)
         getProductDetailsLoading,
     required TResult Function(GetProductDetailsSuccess value)
@@ -115,9 +83,6 @@ mixin _$ProductsState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(ProductsInitial value)? productsInitial,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsErrorDetails value)? getAllProductsError,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
     TResult Function(GetProductDetailsErrorDetails value)?
@@ -127,9 +92,6 @@ mixin _$ProductsState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProductsInitial value)? productsInitial,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsErrorDetails value)? getAllProductsError,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
     TResult Function(GetProductDetailsErrorDetails value)?
@@ -198,10 +160,6 @@ class _$ProductsInitial implements ProductsInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() productsInitial,
-    required TResult Function() getAllProductsLoading,
-    required TResult Function(List<ProductEntity> products)
-        getAllProductsSuccess,
-    required TResult Function(String error) getAllProductsError,
     required TResult Function() getProductDetailsLoading,
     required TResult Function(ProductEntity product) getProductDetailsSuccess,
     required TResult Function(String error) getProductDetailsError,
@@ -213,9 +171,6 @@ class _$ProductsInitial implements ProductsInitial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? productsInitial,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductEntity> products)? getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
     TResult Function()? getProductDetailsLoading,
     TResult Function(ProductEntity product)? getProductDetailsSuccess,
     TResult Function(String error)? getProductDetailsError,
@@ -227,9 +182,6 @@ class _$ProductsInitial implements ProductsInitial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? productsInitial,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductEntity> products)? getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
     TResult Function()? getProductDetailsLoading,
     TResult Function(ProductEntity product)? getProductDetailsSuccess,
     TResult Function(String error)? getProductDetailsError,
@@ -245,12 +197,6 @@ class _$ProductsInitial implements ProductsInitial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ProductsInitial value) productsInitial,
-    required TResult Function(GetAllProductsLoading value)
-        getAllProductsLoading,
-    required TResult Function(GetAllProductsSuccess value)
-        getAllProductsSuccess,
-    required TResult Function(GetAllProductsErrorDetails value)
-        getAllProductsError,
     required TResult Function(GetProductDetailsLoading value)
         getProductDetailsLoading,
     required TResult Function(GetProductDetailsSuccess value)
@@ -265,9 +211,6 @@ class _$ProductsInitial implements ProductsInitial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(ProductsInitial value)? productsInitial,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsErrorDetails value)? getAllProductsError,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
     TResult Function(GetProductDetailsErrorDetails value)?
@@ -280,9 +223,6 @@ class _$ProductsInitial implements ProductsInitial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProductsInitial value)? productsInitial,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsErrorDetails value)? getAllProductsError,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
     TResult Function(GetProductDetailsErrorDetails value)?
@@ -298,502 +238,6 @@ class _$ProductsInitial implements ProductsInitial {
 
 abstract class ProductsInitial implements ProductsState {
   const factory ProductsInitial() = _$ProductsInitial;
-}
-
-/// @nodoc
-abstract class $GetAllProductsLoadingCopyWith<$Res> {
-  factory $GetAllProductsLoadingCopyWith(GetAllProductsLoading value,
-          $Res Function(GetAllProductsLoading) then) =
-      _$GetAllProductsLoadingCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$GetAllProductsLoadingCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res>
-    implements $GetAllProductsLoadingCopyWith<$Res> {
-  _$GetAllProductsLoadingCopyWithImpl(
-      GetAllProductsLoading _value, $Res Function(GetAllProductsLoading) _then)
-      : super(_value, (v) => _then(v as GetAllProductsLoading));
-
-  @override
-  GetAllProductsLoading get _value => super._value as GetAllProductsLoading;
-}
-
-/// @nodoc
-
-class _$GetAllProductsLoading implements GetAllProductsLoading {
-  const _$GetAllProductsLoading();
-
-  @override
-  String toString() {
-    return 'ProductsState.getAllProductsLoading()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is GetAllProductsLoading);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() productsInitial,
-    required TResult Function() getAllProductsLoading,
-    required TResult Function(List<ProductEntity> products)
-        getAllProductsSuccess,
-    required TResult Function(String error) getAllProductsError,
-    required TResult Function() getProductDetailsLoading,
-    required TResult Function(ProductEntity product) getProductDetailsSuccess,
-    required TResult Function(String error) getProductDetailsError,
-  }) {
-    return getAllProductsLoading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? productsInitial,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductEntity> products)? getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
-    TResult Function()? getProductDetailsLoading,
-    TResult Function(ProductEntity product)? getProductDetailsSuccess,
-    TResult Function(String error)? getProductDetailsError,
-  }) {
-    return getAllProductsLoading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? productsInitial,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductEntity> products)? getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
-    TResult Function()? getProductDetailsLoading,
-    TResult Function(ProductEntity product)? getProductDetailsSuccess,
-    TResult Function(String error)? getProductDetailsError,
-    required TResult orElse(),
-  }) {
-    if (getAllProductsLoading != null) {
-      return getAllProductsLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ProductsInitial value) productsInitial,
-    required TResult Function(GetAllProductsLoading value)
-        getAllProductsLoading,
-    required TResult Function(GetAllProductsSuccess value)
-        getAllProductsSuccess,
-    required TResult Function(GetAllProductsErrorDetails value)
-        getAllProductsError,
-    required TResult Function(GetProductDetailsLoading value)
-        getProductDetailsLoading,
-    required TResult Function(GetProductDetailsSuccess value)
-        getProductDetailsSuccess,
-    required TResult Function(GetProductDetailsErrorDetails value)
-        getProductDetailsError,
-  }) {
-    return getAllProductsLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ProductsInitial value)? productsInitial,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsErrorDetails value)? getAllProductsError,
-    TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
-    TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
-    TResult Function(GetProductDetailsErrorDetails value)?
-        getProductDetailsError,
-  }) {
-    return getAllProductsLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ProductsInitial value)? productsInitial,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsErrorDetails value)? getAllProductsError,
-    TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
-    TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
-    TResult Function(GetProductDetailsErrorDetails value)?
-        getProductDetailsError,
-    required TResult orElse(),
-  }) {
-    if (getAllProductsLoading != null) {
-      return getAllProductsLoading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetAllProductsLoading implements ProductsState {
-  const factory GetAllProductsLoading() = _$GetAllProductsLoading;
-}
-
-/// @nodoc
-abstract class $GetAllProductsSuccessCopyWith<$Res> {
-  factory $GetAllProductsSuccessCopyWith(GetAllProductsSuccess value,
-          $Res Function(GetAllProductsSuccess) then) =
-      _$GetAllProductsSuccessCopyWithImpl<$Res>;
-  $Res call({List<ProductEntity> products});
-}
-
-/// @nodoc
-class _$GetAllProductsSuccessCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res>
-    implements $GetAllProductsSuccessCopyWith<$Res> {
-  _$GetAllProductsSuccessCopyWithImpl(
-      GetAllProductsSuccess _value, $Res Function(GetAllProductsSuccess) _then)
-      : super(_value, (v) => _then(v as GetAllProductsSuccess));
-
-  @override
-  GetAllProductsSuccess get _value => super._value as GetAllProductsSuccess;
-
-  @override
-  $Res call({
-    Object? products = freezed,
-  }) {
-    return _then(GetAllProductsSuccess(
-      products == freezed
-          ? _value.products
-          : products // ignore: cast_nullable_to_non_nullable
-              as List<ProductEntity>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GetAllProductsSuccess implements GetAllProductsSuccess {
-  const _$GetAllProductsSuccess(this.products);
-
-  @override
-  final List<ProductEntity> products;
-
-  @override
-  String toString() {
-    return 'ProductsState.getAllProductsSuccess(products: $products)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is GetAllProductsSuccess &&
-            const DeepCollectionEquality().equals(other.products, products));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(products));
-
-  @JsonKey(ignore: true)
-  @override
-  $GetAllProductsSuccessCopyWith<GetAllProductsSuccess> get copyWith =>
-      _$GetAllProductsSuccessCopyWithImpl<GetAllProductsSuccess>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() productsInitial,
-    required TResult Function() getAllProductsLoading,
-    required TResult Function(List<ProductEntity> products)
-        getAllProductsSuccess,
-    required TResult Function(String error) getAllProductsError,
-    required TResult Function() getProductDetailsLoading,
-    required TResult Function(ProductEntity product) getProductDetailsSuccess,
-    required TResult Function(String error) getProductDetailsError,
-  }) {
-    return getAllProductsSuccess(products);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? productsInitial,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductEntity> products)? getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
-    TResult Function()? getProductDetailsLoading,
-    TResult Function(ProductEntity product)? getProductDetailsSuccess,
-    TResult Function(String error)? getProductDetailsError,
-  }) {
-    return getAllProductsSuccess?.call(products);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? productsInitial,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductEntity> products)? getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
-    TResult Function()? getProductDetailsLoading,
-    TResult Function(ProductEntity product)? getProductDetailsSuccess,
-    TResult Function(String error)? getProductDetailsError,
-    required TResult orElse(),
-  }) {
-    if (getAllProductsSuccess != null) {
-      return getAllProductsSuccess(products);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ProductsInitial value) productsInitial,
-    required TResult Function(GetAllProductsLoading value)
-        getAllProductsLoading,
-    required TResult Function(GetAllProductsSuccess value)
-        getAllProductsSuccess,
-    required TResult Function(GetAllProductsErrorDetails value)
-        getAllProductsError,
-    required TResult Function(GetProductDetailsLoading value)
-        getProductDetailsLoading,
-    required TResult Function(GetProductDetailsSuccess value)
-        getProductDetailsSuccess,
-    required TResult Function(GetProductDetailsErrorDetails value)
-        getProductDetailsError,
-  }) {
-    return getAllProductsSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ProductsInitial value)? productsInitial,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsErrorDetails value)? getAllProductsError,
-    TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
-    TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
-    TResult Function(GetProductDetailsErrorDetails value)?
-        getProductDetailsError,
-  }) {
-    return getAllProductsSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ProductsInitial value)? productsInitial,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsErrorDetails value)? getAllProductsError,
-    TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
-    TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
-    TResult Function(GetProductDetailsErrorDetails value)?
-        getProductDetailsError,
-    required TResult orElse(),
-  }) {
-    if (getAllProductsSuccess != null) {
-      return getAllProductsSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetAllProductsSuccess implements ProductsState {
-  const factory GetAllProductsSuccess(List<ProductEntity> products) =
-      _$GetAllProductsSuccess;
-
-  List<ProductEntity> get products;
-  @JsonKey(ignore: true)
-  $GetAllProductsSuccessCopyWith<GetAllProductsSuccess> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GetAllProductsErrorDetailsCopyWith<$Res> {
-  factory $GetAllProductsErrorDetailsCopyWith(GetAllProductsErrorDetails value,
-          $Res Function(GetAllProductsErrorDetails) then) =
-      _$GetAllProductsErrorDetailsCopyWithImpl<$Res>;
-  $Res call({String error});
-}
-
-/// @nodoc
-class _$GetAllProductsErrorDetailsCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res>
-    implements $GetAllProductsErrorDetailsCopyWith<$Res> {
-  _$GetAllProductsErrorDetailsCopyWithImpl(GetAllProductsErrorDetails _value,
-      $Res Function(GetAllProductsErrorDetails) _then)
-      : super(_value, (v) => _then(v as GetAllProductsErrorDetails));
-
-  @override
-  GetAllProductsErrorDetails get _value =>
-      super._value as GetAllProductsErrorDetails;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(GetAllProductsErrorDetails(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GetAllProductsErrorDetails implements GetAllProductsErrorDetails {
-  const _$GetAllProductsErrorDetails(this.error);
-
-  @override
-  final String error;
-
-  @override
-  String toString() {
-    return 'ProductsState.getAllProductsError(error: $error)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is GetAllProductsErrorDetails &&
-            const DeepCollectionEquality().equals(other.error, error));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $GetAllProductsErrorDetailsCopyWith<GetAllProductsErrorDetails>
-      get copyWith =>
-          _$GetAllProductsErrorDetailsCopyWithImpl<GetAllProductsErrorDetails>(
-              this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() productsInitial,
-    required TResult Function() getAllProductsLoading,
-    required TResult Function(List<ProductEntity> products)
-        getAllProductsSuccess,
-    required TResult Function(String error) getAllProductsError,
-    required TResult Function() getProductDetailsLoading,
-    required TResult Function(ProductEntity product) getProductDetailsSuccess,
-    required TResult Function(String error) getProductDetailsError,
-  }) {
-    return getAllProductsError(error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? productsInitial,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductEntity> products)? getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
-    TResult Function()? getProductDetailsLoading,
-    TResult Function(ProductEntity product)? getProductDetailsSuccess,
-    TResult Function(String error)? getProductDetailsError,
-  }) {
-    return getAllProductsError?.call(error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? productsInitial,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductEntity> products)? getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
-    TResult Function()? getProductDetailsLoading,
-    TResult Function(ProductEntity product)? getProductDetailsSuccess,
-    TResult Function(String error)? getProductDetailsError,
-    required TResult orElse(),
-  }) {
-    if (getAllProductsError != null) {
-      return getAllProductsError(error);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ProductsInitial value) productsInitial,
-    required TResult Function(GetAllProductsLoading value)
-        getAllProductsLoading,
-    required TResult Function(GetAllProductsSuccess value)
-        getAllProductsSuccess,
-    required TResult Function(GetAllProductsErrorDetails value)
-        getAllProductsError,
-    required TResult Function(GetProductDetailsLoading value)
-        getProductDetailsLoading,
-    required TResult Function(GetProductDetailsSuccess value)
-        getProductDetailsSuccess,
-    required TResult Function(GetProductDetailsErrorDetails value)
-        getProductDetailsError,
-  }) {
-    return getAllProductsError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ProductsInitial value)? productsInitial,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsErrorDetails value)? getAllProductsError,
-    TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
-    TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
-    TResult Function(GetProductDetailsErrorDetails value)?
-        getProductDetailsError,
-  }) {
-    return getAllProductsError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ProductsInitial value)? productsInitial,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsErrorDetails value)? getAllProductsError,
-    TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
-    TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
-    TResult Function(GetProductDetailsErrorDetails value)?
-        getProductDetailsError,
-    required TResult orElse(),
-  }) {
-    if (getAllProductsError != null) {
-      return getAllProductsError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetAllProductsErrorDetails implements ProductsState {
-  const factory GetAllProductsErrorDetails(String error) =
-      _$GetAllProductsErrorDetails;
-
-  String get error;
-  @JsonKey(ignore: true)
-  $GetAllProductsErrorDetailsCopyWith<GetAllProductsErrorDetails>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -839,10 +283,6 @@ class _$GetProductDetailsLoading implements GetProductDetailsLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() productsInitial,
-    required TResult Function() getAllProductsLoading,
-    required TResult Function(List<ProductEntity> products)
-        getAllProductsSuccess,
-    required TResult Function(String error) getAllProductsError,
     required TResult Function() getProductDetailsLoading,
     required TResult Function(ProductEntity product) getProductDetailsSuccess,
     required TResult Function(String error) getProductDetailsError,
@@ -854,9 +294,6 @@ class _$GetProductDetailsLoading implements GetProductDetailsLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? productsInitial,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductEntity> products)? getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
     TResult Function()? getProductDetailsLoading,
     TResult Function(ProductEntity product)? getProductDetailsSuccess,
     TResult Function(String error)? getProductDetailsError,
@@ -868,9 +305,6 @@ class _$GetProductDetailsLoading implements GetProductDetailsLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? productsInitial,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductEntity> products)? getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
     TResult Function()? getProductDetailsLoading,
     TResult Function(ProductEntity product)? getProductDetailsSuccess,
     TResult Function(String error)? getProductDetailsError,
@@ -886,12 +320,6 @@ class _$GetProductDetailsLoading implements GetProductDetailsLoading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ProductsInitial value) productsInitial,
-    required TResult Function(GetAllProductsLoading value)
-        getAllProductsLoading,
-    required TResult Function(GetAllProductsSuccess value)
-        getAllProductsSuccess,
-    required TResult Function(GetAllProductsErrorDetails value)
-        getAllProductsError,
     required TResult Function(GetProductDetailsLoading value)
         getProductDetailsLoading,
     required TResult Function(GetProductDetailsSuccess value)
@@ -906,9 +334,6 @@ class _$GetProductDetailsLoading implements GetProductDetailsLoading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(ProductsInitial value)? productsInitial,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsErrorDetails value)? getAllProductsError,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
     TResult Function(GetProductDetailsErrorDetails value)?
@@ -921,9 +346,6 @@ class _$GetProductDetailsLoading implements GetProductDetailsLoading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProductsInitial value)? productsInitial,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsErrorDetails value)? getAllProductsError,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
     TResult Function(GetProductDetailsErrorDetails value)?
@@ -1009,10 +431,6 @@ class _$GetProductDetailsSuccess implements GetProductDetailsSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() productsInitial,
-    required TResult Function() getAllProductsLoading,
-    required TResult Function(List<ProductEntity> products)
-        getAllProductsSuccess,
-    required TResult Function(String error) getAllProductsError,
     required TResult Function() getProductDetailsLoading,
     required TResult Function(ProductEntity product) getProductDetailsSuccess,
     required TResult Function(String error) getProductDetailsError,
@@ -1024,9 +442,6 @@ class _$GetProductDetailsSuccess implements GetProductDetailsSuccess {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? productsInitial,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductEntity> products)? getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
     TResult Function()? getProductDetailsLoading,
     TResult Function(ProductEntity product)? getProductDetailsSuccess,
     TResult Function(String error)? getProductDetailsError,
@@ -1038,9 +453,6 @@ class _$GetProductDetailsSuccess implements GetProductDetailsSuccess {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? productsInitial,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductEntity> products)? getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
     TResult Function()? getProductDetailsLoading,
     TResult Function(ProductEntity product)? getProductDetailsSuccess,
     TResult Function(String error)? getProductDetailsError,
@@ -1056,12 +468,6 @@ class _$GetProductDetailsSuccess implements GetProductDetailsSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ProductsInitial value) productsInitial,
-    required TResult Function(GetAllProductsLoading value)
-        getAllProductsLoading,
-    required TResult Function(GetAllProductsSuccess value)
-        getAllProductsSuccess,
-    required TResult Function(GetAllProductsErrorDetails value)
-        getAllProductsError,
     required TResult Function(GetProductDetailsLoading value)
         getProductDetailsLoading,
     required TResult Function(GetProductDetailsSuccess value)
@@ -1076,9 +482,6 @@ class _$GetProductDetailsSuccess implements GetProductDetailsSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(ProductsInitial value)? productsInitial,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsErrorDetails value)? getAllProductsError,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
     TResult Function(GetProductDetailsErrorDetails value)?
@@ -1091,9 +494,6 @@ class _$GetProductDetailsSuccess implements GetProductDetailsSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProductsInitial value)? productsInitial,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsErrorDetails value)? getAllProductsError,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
     TResult Function(GetProductDetailsErrorDetails value)?
@@ -1187,10 +587,6 @@ class _$GetProductDetailsErrorDetails implements GetProductDetailsErrorDetails {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() productsInitial,
-    required TResult Function() getAllProductsLoading,
-    required TResult Function(List<ProductEntity> products)
-        getAllProductsSuccess,
-    required TResult Function(String error) getAllProductsError,
     required TResult Function() getProductDetailsLoading,
     required TResult Function(ProductEntity product) getProductDetailsSuccess,
     required TResult Function(String error) getProductDetailsError,
@@ -1202,9 +598,6 @@ class _$GetProductDetailsErrorDetails implements GetProductDetailsErrorDetails {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? productsInitial,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductEntity> products)? getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
     TResult Function()? getProductDetailsLoading,
     TResult Function(ProductEntity product)? getProductDetailsSuccess,
     TResult Function(String error)? getProductDetailsError,
@@ -1216,9 +609,6 @@ class _$GetProductDetailsErrorDetails implements GetProductDetailsErrorDetails {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? productsInitial,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductEntity> products)? getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
     TResult Function()? getProductDetailsLoading,
     TResult Function(ProductEntity product)? getProductDetailsSuccess,
     TResult Function(String error)? getProductDetailsError,
@@ -1234,12 +624,6 @@ class _$GetProductDetailsErrorDetails implements GetProductDetailsErrorDetails {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ProductsInitial value) productsInitial,
-    required TResult Function(GetAllProductsLoading value)
-        getAllProductsLoading,
-    required TResult Function(GetAllProductsSuccess value)
-        getAllProductsSuccess,
-    required TResult Function(GetAllProductsErrorDetails value)
-        getAllProductsError,
     required TResult Function(GetProductDetailsLoading value)
         getProductDetailsLoading,
     required TResult Function(GetProductDetailsSuccess value)
@@ -1254,9 +638,6 @@ class _$GetProductDetailsErrorDetails implements GetProductDetailsErrorDetails {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(ProductsInitial value)? productsInitial,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsErrorDetails value)? getAllProductsError,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
     TResult Function(GetProductDetailsErrorDetails value)?
@@ -1269,9 +650,6 @@ class _$GetProductDetailsErrorDetails implements GetProductDetailsErrorDetails {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProductsInitial value)? productsInitial,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsErrorDetails value)? getAllProductsError,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
     TResult Function(GetProductDetailsErrorDetails value)?

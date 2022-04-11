@@ -13,10 +13,10 @@ import 'package:injectable/injectable.dart';
 @LazySingleton(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource _authRemoteDataSource;
-  final AuthLocalDataSource _localDataSource;
+  final AuthLocalDataSource _authLocalDataSource;
   const AuthRepositoryImpl(
     this._authRemoteDataSource,
-    this._localDataSource,
+    this._authLocalDataSource,
   );
 
   @override
@@ -24,10 +24,12 @@ class AuthRepositoryImpl implements AuthRepository {
     required RegisterEntity registerEntity,
   }) async {
     try {
+      final language = _authLocalDataSource.getLanguage()!;
       final token = await _authRemoteDataSource.register(
+        language: language,
         registerModel: registerEntity.toModel,
       );
-      await _localDataSource.saveToken(token.data.token);
+      await _authLocalDataSource.saveToken(token.data.token);
       return right(unit);
     } catch (error) {
       return left(const Failure('Error while register'));
@@ -39,10 +41,12 @@ class AuthRepositoryImpl implements AuthRepository {
     required LoginEntity loginEntity,
   }) async {
     try {
+      final language = _authLocalDataSource.getLanguage()!;
       final token = await _authRemoteDataSource.login(
+        language: language,
         loginModel: loginEntity.toModel,
       );
-      await _localDataSource.saveToken(token.data.token);
+      await _authLocalDataSource.saveToken(token.data.token);
       return right(unit);
     } catch (error) {
       return left(const Failure('Error while login'));
@@ -52,9 +56,13 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<Either<Failure, Unit>> logout() async {
     try {
-      final token = _localDataSource.getToken()!;
-      await _localDataSource.deleteToken();
-      await _authRemoteDataSource.logout(token: '$tokenType $token');
+      final language = _authLocalDataSource.getLanguage()!;
+      final token = _authLocalDataSource.getToken()!;
+      await _authLocalDataSource.deleteToken();
+      await _authRemoteDataSource.logout(
+        language: language,
+        token: '$tokenType $token',
+      );
       return right(unit);
     } catch (error) {
       return left(const Failure('Error while logout'));

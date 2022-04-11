@@ -10,6 +10,7 @@ import 'package:food_delivery/features/auth/domain/entities/register_entity.dart
 import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:food_delivery/features/auth/presentation/bloc/auth_state.dart';
 import 'package:food_delivery/features/auth/presentation/screens/login_screen.dart';
+import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_list_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen();
@@ -92,8 +93,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         Navigator.of(context)
                             .popUntil((route) => route.isFirst);
                         Navigator.of(context).pushReplacementNamed(
-                          //TODO: Add navigation route
-                          '',
+                          RestaurantsListScreen.routeName,
                         );
                       },
                     ),

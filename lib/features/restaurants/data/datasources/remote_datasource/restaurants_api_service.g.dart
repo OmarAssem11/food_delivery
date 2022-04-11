@@ -16,52 +16,52 @@ class _RestaurantsApiService implements RestaurantsApiService {
   String? baseUrl;
 
   @override
-  Future<ResponseModel<List<RestaurantDetailsModel>>> getAllRestaurants(
-      {required langauge, required token}) async {
+  Future<ResponseModel<List<RestaurantModel>>> getAllRestaurants(
+      {required language, required token}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{
-      r'langauge': langauge,
+      r'lang': language,
       r'Authorization': token
     };
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ResponseModel<List<RestaurantDetailsModel>>>(
+        _setStreamType<ResponseModel<List<RestaurantModel>>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'All/Restaurants',
+                .compose(_dio.options, '',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = ResponseModel<List<RestaurantDetailsModel>>.fromJson(
+    final value = ResponseModel<List<RestaurantModel>>.fromJson(
       _result.data!,
       (json) => (json as List<dynamic>)
-          .map<RestaurantDetailsModel>(
-              (i) => RestaurantDetailsModel.fromJson(i as Map<String, dynamic>))
+          .map<RestaurantModel>(
+              (i) => RestaurantModel.fromJson(i as Map<String, dynamic>))
           .toList(),
     );
     return value;
   }
 
   @override
-  Future<ResponseModel<RestaurantDetailsModel>> getRestaurantDetails(
-      {required langauge, required token, required restaurantId}) async {
+  Future<ResponseModel<RestaurantModel>> getRestaurantDetails(
+      {required language, required token, required restaurantId}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{
-      r'langauge': langauge,
+      r'lang': language,
       r'Authorization': token
     };
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ResponseModel<RestaurantDetailsModel>>(
+        _setStreamType<ResponseModel<RestaurantModel>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'All/Restaurants${restaurantId}',
+                .compose(_dio.options, '',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = ResponseModel<RestaurantDetailsModel>.fromJson(
+    final value = ResponseModel<RestaurantModel>.fromJson(
       _result.data!,
-      (json) => RestaurantDetailsModel.fromJson(json as Map<String, dynamic>),
+      (json) => RestaurantModel.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }

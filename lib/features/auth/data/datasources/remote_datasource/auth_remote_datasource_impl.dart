@@ -13,15 +13,29 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
   @override
   Future<ResponseModel<TokenModel>> register({
+    required String language,
     required RegisterModel registerModel,
   }) =>
-      _authApiService.register(registerModel: registerModel);
+      _authApiService.register(
+        language: language,
+        registerModel: registerModel,
+      );
 
   @override
-  Future<ResponseModel<TokenModel>> login({required LoginModel loginModel}) =>
-      _authApiService.login(loginModel: loginModel);
+  Future<ResponseModel<TokenModel>> login({
+    required String language,
+    required LoginModel loginModel,
+  }) =>
+      _authApiService.login(
+        language: language,
+        loginModel: loginModel,
+      );
 
   @override
-  Future<ResponseModel<void>> logout({required String token}) =>
-      _authApiService.logout(token: token);
+  Future<ResponseModel<void>> logout(
+          {required String token, required String language}) =>
+      _authApiService.logout(
+        token: token,
+        language: language,
+      );
 }

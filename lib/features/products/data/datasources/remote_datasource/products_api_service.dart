@@ -13,15 +13,10 @@ abstract class ProductsApiService {
   @factoryMethod
   factory ProductsApiService(Dio dio) = _ProductsApiService;
 
-  @POST(getAllProductsEndpoint)
-  Future<ResponseModel<List<ProductModel>>> getAllProducts({
-    @Header(authorization) required String token,
-
-  });
-
   @POST(getProductDetailsEndpoint)
   Future<ResponseModel<ProductModel>> getProductDetails({
     @Header(authorization) required String token,
-    @Path(idPath) required int productId,
+    @Header(languageHeader) required String language,
+    @Path(productIdPath) required int productId,
   });
 }

@@ -9,6 +9,7 @@ import 'package:food_delivery/core/presentation/widgets/password_text_form_field
 import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:food_delivery/features/auth/presentation/bloc/auth_state.dart';
 import 'package:food_delivery/features/auth/presentation/screens/register_screen.dart';
+import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_list_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen();
@@ -75,8 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     success: () =>
                         WidgetsBinding.instance!.addPostFrameCallback(
                       (_) => Navigator.of(context).pushReplacementNamed(
-                        //TODO: Add navigation route
-                        '',
+                        RestaurantsListScreen.routeName,
                       ),
                     ),
                     orElse: () {},

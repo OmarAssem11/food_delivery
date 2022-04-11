@@ -1,27 +1,34 @@
 import 'package:food_delivery/core/data/models/response_model/response_model.dart';
+import 'package:food_delivery/features/restaurants/data/models/restaurant_model.dart';
 import 'package:injectable/injectable.dart';
-
 import 'package:food_delivery/features/restaurants/data/datasources/remote_datasource/restaurants_api_service.dart';
 import 'package:food_delivery/features/restaurants/domain/datasources/remote_datasource/restaurants_remote_datasource.dart';
-import 'package:food_delivery/features/restaurants/domain/entities/restaurant_details_entity.dart';
 
 @LazySingleton(as: RestaurantsRemoteDataSource)
 class RestaurantsRemoteDataSourceImpl implements RestaurantsRemoteDataSource {
-  RestaurantsApiService restaurantsApiService; 
-  RestaurantsRemoteDataSourceImpl({
-    required this.restaurantsApiService,
-  });
-  @override
-  Future<ResponseModel<List<RestaurantDetailsEntity>>>getAllRestaurants(
-      {required String userToken, required String language}) {
-    return restaurantsApiService.getAllRestaurants(token: userToken , langauge: language);
-  }
+  final RestaurantsApiService _restaurantsApiService;
+
+  const RestaurantsRemoteDataSourceImpl(this._restaurantsApiService);
 
   @override
-  Future<ResponseModel<RestaurantDetailsEntity>> getRestaurantDetails(
-      {required int restaurantId,
-      required String userToken,
-      required String language}) {
-    return restaurantsApiService.getRestaurantDetails(token: userToken, restaurantId: restaurantId , langauge:  language);
-  }
+  Future<ResponseModel<List<RestaurantModel>>> getAllRestaurants({
+    required String token,
+    required String language,
+  }) =>
+      _restaurantsApiService.getAllRestaurants(
+        token: token,
+        language: language,
+      );
+
+  @override
+  Future<ResponseModel<RestaurantModel>> getRestaurantDetails({
+    required String token,
+    required String language,
+    required int restaurantId,
+  }) =>
+      _restaurantsApiService.getRestaurantDetails(
+        language: language,
+        token: token,
+        restaurantId: restaurantId,
+      );
 }

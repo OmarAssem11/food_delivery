@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({ Key? key }) : super(key: key);
+  const CustomAppBar();
 
   @override
   Widget build(BuildContext context) {
@@ -9,13 +9,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       backgroundColor: Colors.white,
       title: Icon(Icons.menu),
-      centerTitle: true,  
+      centerTitle: true,
       actions: [
-      IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart)),  
-      ],    
+        IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.shopping_cart),
+        ),
+      ],
     );
   }
 
   @override
-  Size get preferredSize =>  Size.fromHeight(60);
+  Size get preferredSize => Size.fromHeight(60);
 }

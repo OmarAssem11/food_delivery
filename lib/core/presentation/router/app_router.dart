@@ -5,9 +5,9 @@ import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:food_delivery/features/auth/presentation/screens/login_screen.dart';
 import 'package:food_delivery/features/auth/presentation/screens/register_screen.dart';
 import 'package:food_delivery/features/products/presentation/screens/product_details_screen.dart';
-import 'package:food_delivery/features/products/presentation/screens/products_list_screen.dart';
 import 'package:food_delivery/features/products/presentation/bloc/products_cubit.dart';
-import 'package:food_delivery/features/restaurants/presentation/bloc/cubit/restaurants_cubit.dart';
+import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_cubit.dart';
+import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_details_screen.dart';
 import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_list_screen.dart';
 
 Route<MaterialPageRoute>? onGenerateRoute(
@@ -28,21 +28,28 @@ Route<MaterialPageRoute>? onGenerateRoute(
           child: const RegisterScreen(),
         ),
       );
-    case ProductsListScreen.routeName:
+    case RestaurantsListScreen.routeName:
       return MaterialPageRoute(
         builder: (context) => BlocProvider(
-          create: (context) => getIt<ProductsCubit>(),
-          child: const RegisterScreen(),
+          create: (context) => getIt<RestaurantsCubit>(),
+          child: const RestaurantsListScreen(),
+        ),
+      );
+    case RestaurantDetailsScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) => BlocProvider(
+          create: (context) => getIt<RestaurantsCubit>(),
+          child: const RestaurantDetailsScreen(),
         ),
       );
     case ProductDetailsScreen.routeName:
       return MaterialPageRoute(
         builder: (context) => BlocProvider(
           create: (context) => getIt<ProductsCubit>(),
-          child: const RegisterScreen(),
+          child: const ProductDetailsScreen(),
         ),
       );
-      case RestaurantsListScreen.routeName:
+    case RestaurantsListScreen.routeName:
       return MaterialPageRoute(
         builder: (context) => BlocProvider(
           create: (context) => getIt<RestaurantsCubit>(),

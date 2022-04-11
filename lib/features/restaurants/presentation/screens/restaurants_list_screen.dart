@@ -24,25 +24,28 @@ class _RestaurantsListScreenState extends State<RestaurantsListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: const CustomAppBar(),
       body: BlocBuilder<RestaurantsCubit, RestaurantsState>(
         builder: (context, state) {
           return state.maybeWhen(
             getAllRestaurantLoading: () {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             },
             getAllRestaurantSuccess: (restaurants) {
               return ListView.separated(
-                  separatorBuilder: (BuildContext context, int index) =>
-                      const Divider(thickness: 1, color: Colors.black),
-                  itemCount: 8,
-                  itemBuilder: (BuildContext context, int index) {
-                    return RestaurantItem(
-                      restaurantEntity: restaurants[index],
-                    );
-                  });
+                separatorBuilder: (context, index) => const Divider(
+                  thickness: 1,
+                  color: Colors.grey,
+                ),
+                itemCount: 8,
+                itemBuilder: (context, index) {
+                  return RestaurantItem(
+                    restaurantEntity: restaurants[index],
+                  );
+                },
+              );
             },
             orElse: () {
               return Container();

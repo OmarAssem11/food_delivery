@@ -14,6 +14,7 @@ class RestaurantDetailsScreen extends StatefulWidget {
 }
 
 class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen> {
+  late TextTheme textTheme;
   late ColorScheme colorScheme;
 
   @override
@@ -22,12 +23,13 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen> {
     // BlocProvider.of<RestaurantsCubit>(context)
     //     .getRestaurantDetails(restaurantId: restaurantId);
     super.didChangeDependencies();
+    textTheme = Theme.of(context).textTheme;
     colorScheme = Theme.of(context).colorScheme;
   }
 
   final fakeRestaurant = const RestaurantEntity(
     id: 1,
-    name: 'Buffalo burger',
+    name: 'Buffalo Burger',
     description: 'Burgers, Sandwiches',
     imageUrl:
         'https://s3-eu-west-1.amazonaws.com/elmenusv5-stg/Normal/dbe58f34-fa34-43e4-8d7a-11dfd5d133af.jpg',
@@ -122,25 +124,38 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 16),
-                  Text(fakeRestaurant.name),
+                  Text(
+                    fakeRestaurant.name,
+                    style: textTheme.headline4,
+                  ),
                   const SizedBox(height: 10),
-                  Text(fakeRestaurant.description),
-                  const SizedBox(height: 10),
+                  Text(
+                    fakeRestaurant.description,
+                    style: textTheme.subtitle1!.copyWith(
+                      color: const Color.fromARGB(255, 117, 117, 117),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: colorScheme.surface,
                       borderRadius: const BorderRadius.all(Radius.circular(16)),
                     ),
-                    child: const Text('Delivered by us, with live tracking'),
+                    child: Text(
+                      'Delivered by us, with live tracking',
+                      style: textTheme.subtitle1!
+                          .copyWith(fontWeight: FontWeight.w400),
+                    ),
                   ),
                   Expanded(
                     child: ListView.separated(
                       itemBuilder: (context, index) =>
                           ProductItem(fakeRestaurant.products[index]),
                       itemCount: fakeRestaurant.products.length,
-                      separatorBuilder: (context, index) => Divider(
-                        color: colorScheme.surface,
+                      separatorBuilder: (context, index) => const Divider(
+                        color: Colors.grey,
+                        height: 32,
                       ),
                     ),
                   ),

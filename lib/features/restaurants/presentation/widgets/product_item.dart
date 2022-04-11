@@ -14,12 +14,22 @@ class ProductItem extends StatelessWidget {
         Expanded(
           flex: 2,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(product.name),
+              Text(
+                product.name,
+                style: textTheme.subtitle1,
+              ),
               const SizedBox(height: 8),
-              Text(product.description),
+              Text(
+                product.description,
+                style: textTheme.caption,
+              ),
               const SizedBox(height: 8),
-              Text('EGP ${product.price}'),
+              Text(
+                'EGP ${product.price}',
+                style: textTheme.caption,
+              ),
             ],
           ),
         ),

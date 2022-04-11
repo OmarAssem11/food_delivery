@@ -1,5 +1,5 @@
-import 'package:food_delivery/core/domain/error/failure.dart';
 import 'package:dartz/dartz.dart';
+import 'package:food_delivery/core/domain/error/failure.dart';
 import 'package:food_delivery/core/domain/usecases/usecase.dart';
 import 'package:food_delivery/features/restaurants/domain/entities/restaurant_entity.dart';
 import 'package:food_delivery/features/restaurants/domain/repositories/restaurants_repository.dart';

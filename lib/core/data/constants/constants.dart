@@ -1,5 +1,5 @@
 //BaseUrl
-const baseUrl = '';
+const baseUrl = '/';
 //Endpoints
 const registerEndpoint = 'register';
 const loginEndpoint = 'login';

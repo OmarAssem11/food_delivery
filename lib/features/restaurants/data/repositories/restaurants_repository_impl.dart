@@ -1,9 +1,9 @@
+import 'package:dartz/dartz.dart';
+import 'package:food_delivery/core/domain/error/failure.dart';
 import 'package:food_delivery/features/auth/domain/datasources/local_datasource/auth_local_datasource.dart';
 import 'package:food_delivery/features/restaurants/data/mappers/restaurant_mapper.dart';
 import 'package:food_delivery/features/restaurants/domain/datasources/remote_datasource/restaurants_remote_datasource.dart';
 import 'package:food_delivery/features/restaurants/domain/entities/restaurant_entity.dart';
-import 'package:food_delivery/core/domain/error/failure.dart';
-import 'package:dartz/dartz.dart';
 import 'package:food_delivery/features/restaurants/domain/repositories/restaurants_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -20,8 +20,8 @@ class RestaurantsRepositoryImpl implements RestaurantsRepository {
   @override
   Future<Either<Failure, List<RestaurantEntity>>> getAllRestaurants() async {
     try {
-      final token = await _localDataSource.getToken()!;
-      final language = await _localDataSource.getLanguage()!;
+      final token = _localDataSource.getToken()!;
+      final language = _localDataSource.getLanguage()!;
       final restaurantListResponse =
           await _restaurantRemoteDataSource.getAllRestaurants(
         token: token,
@@ -41,8 +41,8 @@ class RestaurantsRepositoryImpl implements RestaurantsRepository {
     required int restaurantId,
   }) async {
     try {
-      final token = await _localDataSource.getToken()!;
-      final language = await _localDataSource.getLanguage()!;
+      final token = _localDataSource.getToken()!;
+      final language = _localDataSource.getLanguage()!;
       final restaurantDetailsResponse =
           await _restaurantRemoteDataSource.getRestaurantDetails(
         token: token,

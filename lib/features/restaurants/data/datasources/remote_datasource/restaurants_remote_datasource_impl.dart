@@ -1,8 +1,8 @@
 import 'package:food_delivery/core/data/models/response_model/response_model.dart';
-import 'package:food_delivery/features/restaurants/data/models/restaurant_model.dart';
-import 'package:injectable/injectable.dart';
 import 'package:food_delivery/features/restaurants/data/datasources/remote_datasource/restaurants_api_service.dart';
+import 'package:food_delivery/features/restaurants/data/models/restaurant_model.dart';
 import 'package:food_delivery/features/restaurants/domain/datasources/remote_datasource/restaurants_remote_datasource.dart';
+import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: RestaurantsRemoteDataSource)
 class RestaurantsRemoteDataSourceImpl implements RestaurantsRemoteDataSource {

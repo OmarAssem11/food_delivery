@@ -12,12 +12,14 @@ class RestaurantsListScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(),
       body: ListView.separated(
-            separatorBuilder: (BuildContext context, int index) =>
-                const Divider(thickness: 1, color: Colors.black),
-            itemCount: 8, 
-            itemBuilder: (BuildContext context, int index) {
-              return RestaurantItem(restaurantEntity: null,);
-            }),
+          separatorBuilder: (BuildContext context, int index) =>
+              const Divider(thickness: 1, color: Colors.black),
+          itemCount: 8,
+          itemBuilder: (BuildContext context, int index) {
+            return RestaurantItem(
+              restaurantEntity: null,
+            );
+          }),
     );
   }
 }

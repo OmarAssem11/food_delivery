@@ -8,7 +8,8 @@ class ProductsState with _$ProductsState {
   const factory ProductsState.getProductDetailsLoading() =
       GetProductDetailsLoading;
   const factory ProductsState.getProductDetailsSuccess(
-      final ProductEntity product) = GetProductDetailsSuccess;
+    final ProductEntity product,
+  ) = GetProductDetailsSuccess;
   const factory ProductsState.getProductDetailsError(final String error) =
       GetProductDetailsErrorDetails;
 }

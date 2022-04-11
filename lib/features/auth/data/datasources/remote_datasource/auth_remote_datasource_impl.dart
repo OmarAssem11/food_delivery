@@ -32,8 +32,10 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       );
 
   @override
-  Future<ResponseModel<void>> logout(
-          {required String token, required String language}) =>
+  Future<ResponseModel<void>> logout({
+    required String token,
+    required String language,
+  }) =>
       _authApiService.logout(
         token: token,
         language: language,

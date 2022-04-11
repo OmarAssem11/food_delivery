@@ -41,4 +41,4 @@ flutter:
   fonts:
    - family: Ramillas
      fonts:
-     - asset: assets/Fontspring-DEMO-tt_ramillas_extrabold.otf
+     - asset: assets/fonts/Fontspring-DEMO-tt_ramillas_extrabold.otf

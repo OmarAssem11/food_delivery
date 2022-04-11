@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:injectable/injectable.dart';
 import 'package:food_delivery/core/domain/error/failure.dart';
 import 'package:food_delivery/core/domain/usecases/usecase.dart';
 import 'package:food_delivery/features/restaurants/domain/entities/restaurant_entity.dart';
 import 'package:food_delivery/features/restaurants/domain/repositories/restaurants_repository.dart';
+import 'package:injectable/injectable.dart';
 
 @lazySingleton
 class GetRestaurantDetailsUseCase
@@ -14,7 +14,8 @@ class GetRestaurantDetailsUseCase
 
   @override
   Future<Either<Failure, RestaurantEntity>> call(
-          RestaurantDetailsParams restaurantDetailsParams) =>
+    RestaurantDetailsParams restaurantDetailsParams,
+  ) =>
       _restaurantsRepository.getRestaurantDetails(
         restaurantId: restaurantDetailsParams.restaurantId,
       );

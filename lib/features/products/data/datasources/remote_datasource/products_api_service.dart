@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:food_delivery/core/data/constants/constants.dart';
+import 'package:food_delivery/core/data/models/response_model/response_model.dart';
 import 'package:food_delivery/features/products/data/models/product_model.dart';
 import 'package:injectable/injectable.dart';
-import 'package:food_delivery/core/data/models/response_model/response_model.dart';
 import 'package:retrofit/http.dart';
 
 part 'products_api_service.g.dart';

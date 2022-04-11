@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_delivery/core/domain/usecases/usecase.dart';
 import 'package:food_delivery/features/restaurants/domain/usecases/get_restaurant_details_usecase.dart';
 import 'package:food_delivery/features/restaurants/domain/usecases/get_restaurants_list_usecases.dart';
@@ -27,7 +27,8 @@ class RestaurantsCubit extends Cubit<RestaurantsState> {
   }) async {
     emit(const GetRestaurantDetailsLoading());
     final result = await _getRestaurantDetailsUseCase(
-        RestaurantDetailsParams(restaurantId: restaurantId));
+      RestaurantDetailsParams(restaurantId: restaurantId),
+    );
     result.fold(
       (error) => emit(GetRestaurantDetailsErrorDetails(error.toString())),
       (restaurant) => emit(GetRestaurantDetailsSuccess(restaurant)),

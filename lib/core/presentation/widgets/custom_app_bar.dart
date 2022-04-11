@@ -8,17 +8,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       elevation: 0,
       backgroundColor: Colors.white,
-      title: Icon(Icons.menu),
+      title: const Icon(Icons.menu),
       centerTitle: true,
       actions: [
         IconButton(
           onPressed: () {},
-          icon: Icon(Icons.shopping_cart),
+          icon: const Icon(Icons.shopping_cart),
         ),
       ],
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(60);
+  Size get preferredSize => const Size.fromHeight(60);
 }

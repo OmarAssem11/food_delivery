@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:food_delivery/core/presentation/bloc/bloc_observer/bloc_observer.dart';
 import 'package:food_delivery/core/presentation/bloc/localization_cubit/localization_cubit.dart';
 import 'package:food_delivery/core/presentation/bloc/localization_cubit/localization_state.dart';
 import 'package:food_delivery/core/presentation/router/app_router.dart';
 import 'package:food_delivery/core/presentation/theme/my_theme.dart';
 import 'package:food_delivery/di/injectable.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_details_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,6 +35,7 @@ class FoodDeliveryApp extends StatelessWidget {
                 : const Locale('en'),
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
+            home: const RestaurantDetailsScreen(),
           );
         },
       ),

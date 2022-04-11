@@ -1,19 +1,15 @@
-import 'package:food_delivery/features/auth/domain/entities/login_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'login_model.g.dart';
 
 @JsonSerializable()
-class LoginModel extends LoginEntity {
-  const LoginModel({
-    required String email,
-    required String password,
-  }) : super(
-          email: email,
-          password: password,
-        );
+class LoginModel {
+  final String email;
+  final String password;
 
-  factory LoginModel.fromJson(Map<String, dynamic> json) =>
-      _$LoginModelFromJson(json);
+  const LoginModel({
+    required this.email,
+    required this.password,
+  });
 
   Map<String, dynamic> toJson() => _$LoginModelToJson(this);
 }

@@ -16,35 +16,14 @@ class _ProductsApiService implements ProductsApiService {
   String? baseUrl;
 
   @override
-  Future<ResponseModel<List<ProductModel>>> getAllProducts(
-      {required token}) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ResponseModel<List<ProductModel>>>(
-            Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, '',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = ResponseModel<List<ProductModel>>.fromJson(
-      _result.data!,
-      (json) => (json as List<dynamic>)
-          .map<ProductModel>(
-              (i) => ProductModel.fromJson(i as Map<String, dynamic>))
-          .toList(),
-    );
-    return value;
-  }
-
-  @override
   Future<ResponseModel<ProductModel>> getProductDetails(
-      {required token, required productId}) async {
+      {required token, required language, required productId}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
+    final _headers = <String, dynamic>{
+      r'Authorization': token,
+      r'lang': language
+    };
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(

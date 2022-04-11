@@ -5,8 +5,15 @@ import 'package:food_delivery/features/auth/data/models/token_model/token_model.
 
 abstract class AuthRemoteDataSource {
   Future<ResponseModel<TokenModel>> register({
+    required String language,
     required RegisterModel registerModel,
   });
-  Future<ResponseModel<TokenModel>> login({required LoginModel loginModel});
-  Future<ResponseModel> logout({required String token});
+  Future<ResponseModel<TokenModel>> login({
+    required String language,
+    required LoginModel loginModel,
+  });
+  Future<ResponseModel> logout({
+    required String token,
+    required String language,
+  });
 }

@@ -16,10 +16,12 @@ class _AuthApiService implements AuthApiService {
   String? baseUrl;
 
   @override
-  Future<ResponseModel<TokenModel>> register({required registerModel}) async {
+  Future<ResponseModel<TokenModel>> register(
+      {required language, required registerModel}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'lang': language};
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     _data.addAll(registerModel.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -36,10 +38,12 @@ class _AuthApiService implements AuthApiService {
   }
 
   @override
-  Future<ResponseModel<TokenModel>> login({required loginModel}) async {
+  Future<ResponseModel<TokenModel>> login(
+      {required language, required loginModel}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'lang': language};
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     _data.addAll(loginModel.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -56,10 +60,14 @@ class _AuthApiService implements AuthApiService {
   }
 
   @override
-  Future<ResponseModel<dynamic>> logout({required token}) async {
+  Future<ResponseModel<dynamic>> logout(
+      {required token, required language}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
+    final _headers = <String, dynamic>{
+      r'Authorization': token,
+      r'lang': language
+    };
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(

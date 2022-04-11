@@ -11,17 +11,13 @@ class ProductsRemoteDataSourceImpl implements ProductsRemoteDataSource {
   const ProductsRemoteDataSourceImpl(this._productsApiService);
 
   @override
-  Future<ResponseModel<List<ProductModel>>> getAllProducts({
-    required String token,
-  }) =>
-      _productsApiService.getAllProducts(token: token);
-
-  @override
   Future<ResponseModel<ProductModel>> getProductDetails({
     required String token,
+    required String language,
     required int productId,
   }) =>
       _productsApiService.getProductDetails(
+        language: language,
         token: token,
         productId: productId,
       );

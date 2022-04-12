@@ -7,6 +7,8 @@ const logoutEndpoint = 'logout';
 const getAllRestaurantsEndpoint = 'get_restaurants.json';
 const getRestaurantDetailsEndpoint = 'get_restaurant_details.json';
 const getProductDetailsEndpoint = 'get_product_details.json';
+const addToCartEndpoint = '';
+const getCartEndpoint = '';
 //Headers
 const authorization = 'Authorization';
 const tokenType = 'Bearer';

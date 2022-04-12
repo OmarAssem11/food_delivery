@@ -56,7 +56,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             children: [
               Text(
                 appLocalizations.register,
-                style: textTheme.headline1,
+                style: textTheme.headline4,
               ),
               CustomTextFormField(
                 controller: nameController,

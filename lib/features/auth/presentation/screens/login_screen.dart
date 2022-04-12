@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               Text(
                 appLocalizations.login,
-                style: textTheme.headline1,
+                style: textTheme.headline4,
               ),
               CustomTextFormField(
                 controller: emailController,

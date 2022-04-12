@@ -6,9 +6,9 @@ extension ProductMapper on ProductModel {
         id: id,
         name: name,
         description: description,
+        imageUrl: imageUrl,
         category: category,
         price: price,
-        imageUrl: imageUrl,
         restaurantId: restaurantId,
         restaurantName: restaurantName,
       );

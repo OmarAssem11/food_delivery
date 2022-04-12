@@ -1,43 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/features/restaurants/domain/entities/restaurant_entity.dart';
+import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_details_screen.dart';
 
 class RestaurantItem extends StatelessWidget {
-  final RestaurantEntity? restaurantEntity;
-  const RestaurantItem({Key? key, required this.restaurantEntity})
-      : super(key: key);
-
+  final RestaurantEntity restaurantEntity;
+  const RestaurantItem({required this.restaurantEntity});
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding:
-              const EdgeInsets.only(left: 18.0, right: 18, top: 10, bottom: 10),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(20.0),
-            child: Image.network(
-              restaurantEntity!.imageUrl,
-              width: MediaQuery.of(context).size.width,
-              fit: BoxFit.fill,
+        InkWell(
+          onTap: () => Navigator.of(context).pushNamed(
+            RestaurantDetailsScreen.routeName,
+            arguments: restaurantEntity.id,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(
+              left: 18,
+              right: 18,
+              top: 10,
+              bottom: 10,
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.network(
+                restaurantEntity.imageUrl,
+                height: MediaQuery.of(context).size.height * .2,
+                width: double.infinity,
+                fit: BoxFit.fill,
+              ),
             ),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 18.0),
+          padding: const EdgeInsets.only(left: 18),
           child: Text(
-            restaurantEntity!.name,
-            style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-                fontFamily: "Ramillas"),
+            restaurantEntity.name,
+            style: textTheme.headline4,
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 18.0),
+          padding: const EdgeInsets.only(left: 18),
           child: Text(
-            restaurantEntity!.description,
-            style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+            restaurantEntity.description,
+            style: textTheme.subtitle1,
           ),
         ),
       ],

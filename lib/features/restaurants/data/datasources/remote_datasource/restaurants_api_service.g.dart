@@ -29,7 +29,7 @@ class _RestaurantsApiService implements RestaurantsApiService {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<ResponseModel<List<RestaurantModel>>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '',
+                .compose(_dio.options, 'get_restaurants.json',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = ResponseModel<List<RestaurantModel>>.fromJson(
@@ -43,7 +43,7 @@ class _RestaurantsApiService implements RestaurantsApiService {
   }
 
   @override
-  Future<ResponseModel<RestaurantModel>> getRestaurantDetails(
+  Future<ResponseModel<RestaurantDetailsModel>> getRestaurantDetails(
       {required language, required token, required restaurantId}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -54,14 +54,14 @@ class _RestaurantsApiService implements RestaurantsApiService {
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ResponseModel<RestaurantModel>>(
+        _setStreamType<ResponseModel<RestaurantDetailsModel>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '',
+                .compose(_dio.options, 'get_restaurant_details.json',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = ResponseModel<RestaurantModel>.fromJson(
+    final value = ResponseModel<RestaurantDetailsModel>.fromJson(
       _result.data!,
-      (json) => RestaurantModel.fromJson(json as Map<String, dynamic>),
+      (json) => RestaurantDetailsModel.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }

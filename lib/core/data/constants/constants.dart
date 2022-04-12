@@ -1,10 +1,11 @@
 //BaseUrl
-const baseUrl = '/';
+const baseUrl = 'http://192.168.1.10:5500/apis/';
 //Endpoints
 const registerEndpoint = 'register';
 const loginEndpoint = 'login';
 const logoutEndpoint = 'logout';
-const getAllRestaurantsEndpoint = '';
+const getAllRestaurantsEndpoint = 'get_restaurants.json';
+const getRestaurantDetailsEndpoint = 'get_restaurant_details.json';
 const getProductDetailsEndpoint = '';
 //Headers
 const authorization = 'Authorization';

@@ -7,7 +7,7 @@ import 'package:food_delivery/core/presentation/bloc/localization_cubit/localiza
 import 'package:food_delivery/core/presentation/router/app_router.dart';
 import 'package:food_delivery/core/presentation/theme/my_theme.dart';
 import 'package:food_delivery/di/injectable.dart';
-import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_details_screen.dart';
+import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_list_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,7 +35,7 @@ class FoodDeliveryApp extends StatelessWidget {
                 : const Locale('en'),
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            home: const RestaurantDetailsScreen(),
+            initialRoute: RestaurantsListScreen.routeName,
           );
         },
       ),

@@ -44,7 +44,7 @@ class _$RestaurantsStateTearOff {
   }
 
   GetRestaurantDetailsSuccess getRestaurantDetailsSuccess(
-      RestaurantEntity restaurant) {
+      RestaurantDetailsEntity restaurant) {
     return GetRestaurantDetailsSuccess(
       restaurant,
     );
@@ -70,7 +70,7 @@ mixin _$RestaurantsState {
         getAllRestaurantSuccess,
     required TResult Function(String error) getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
-    required TResult Function(RestaurantEntity restaurant)
+    required TResult Function(RestaurantDetailsEntity restaurant)
         getRestaurantDetailsSuccess,
     required TResult Function(String error) getRestaurantDetailsError,
   }) =>
@@ -83,7 +83,8 @@ mixin _$RestaurantsState {
         getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantEntity restaurant)? getRestaurantDetailsSuccess,
+    TResult Function(RestaurantDetailsEntity restaurant)?
+        getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
   }) =>
       throw _privateConstructorUsedError;
@@ -95,7 +96,8 @@ mixin _$RestaurantsState {
         getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantEntity restaurant)? getRestaurantDetailsSuccess,
+    TResult Function(RestaurantDetailsEntity restaurant)?
+        getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
     required TResult orElse(),
   }) =>
@@ -212,7 +214,7 @@ class _$RestaurantsInitial implements RestaurantsInitial {
         getAllRestaurantSuccess,
     required TResult Function(String error) getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
-    required TResult Function(RestaurantEntity restaurant)
+    required TResult Function(RestaurantDetailsEntity restaurant)
         getRestaurantDetailsSuccess,
     required TResult Function(String error) getRestaurantDetailsError,
   }) {
@@ -228,7 +230,8 @@ class _$RestaurantsInitial implements RestaurantsInitial {
         getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantEntity restaurant)? getRestaurantDetailsSuccess,
+    TResult Function(RestaurantDetailsEntity restaurant)?
+        getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
   }) {
     return initial?.call();
@@ -243,7 +246,8 @@ class _$RestaurantsInitial implements RestaurantsInitial {
         getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantEntity restaurant)? getRestaurantDetailsSuccess,
+    TResult Function(RestaurantDetailsEntity restaurant)?
+        getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -363,7 +367,7 @@ class _$GetAllRestaurantLoading implements GetAllRestaurantLoading {
         getAllRestaurantSuccess,
     required TResult Function(String error) getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
-    required TResult Function(RestaurantEntity restaurant)
+    required TResult Function(RestaurantDetailsEntity restaurant)
         getRestaurantDetailsSuccess,
     required TResult Function(String error) getRestaurantDetailsError,
   }) {
@@ -379,7 +383,8 @@ class _$GetAllRestaurantLoading implements GetAllRestaurantLoading {
         getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantEntity restaurant)? getRestaurantDetailsSuccess,
+    TResult Function(RestaurantDetailsEntity restaurant)?
+        getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
   }) {
     return getAllRestaurantLoading?.call();
@@ -394,7 +399,8 @@ class _$GetAllRestaurantLoading implements GetAllRestaurantLoading {
         getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantEntity restaurant)? getRestaurantDetailsSuccess,
+    TResult Function(RestaurantDetailsEntity restaurant)?
+        getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -540,7 +546,7 @@ class _$GetAllRestaurantSuccess implements GetAllRestaurantSuccess {
         getAllRestaurantSuccess,
     required TResult Function(String error) getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
-    required TResult Function(RestaurantEntity restaurant)
+    required TResult Function(RestaurantDetailsEntity restaurant)
         getRestaurantDetailsSuccess,
     required TResult Function(String error) getRestaurantDetailsError,
   }) {
@@ -556,7 +562,8 @@ class _$GetAllRestaurantSuccess implements GetAllRestaurantSuccess {
         getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantEntity restaurant)? getRestaurantDetailsSuccess,
+    TResult Function(RestaurantDetailsEntity restaurant)?
+        getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
   }) {
     return getAllRestaurantSuccess?.call(restaurantsList);
@@ -571,7 +578,8 @@ class _$GetAllRestaurantSuccess implements GetAllRestaurantSuccess {
         getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantEntity restaurant)? getRestaurantDetailsSuccess,
+    TResult Function(RestaurantDetailsEntity restaurant)?
+        getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -725,7 +733,7 @@ class _$GetAllRestaurantErrorDetails implements GetAllRestaurantErrorDetails {
         getAllRestaurantSuccess,
     required TResult Function(String error) getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
-    required TResult Function(RestaurantEntity restaurant)
+    required TResult Function(RestaurantDetailsEntity restaurant)
         getRestaurantDetailsSuccess,
     required TResult Function(String error) getRestaurantDetailsError,
   }) {
@@ -741,7 +749,8 @@ class _$GetAllRestaurantErrorDetails implements GetAllRestaurantErrorDetails {
         getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantEntity restaurant)? getRestaurantDetailsSuccess,
+    TResult Function(RestaurantDetailsEntity restaurant)?
+        getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
   }) {
     return getAllRestaurantError?.call(error);
@@ -756,7 +765,8 @@ class _$GetAllRestaurantErrorDetails implements GetAllRestaurantErrorDetails {
         getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantEntity restaurant)? getRestaurantDetailsSuccess,
+    TResult Function(RestaurantDetailsEntity restaurant)?
+        getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -885,7 +895,7 @@ class _$GetRestaurantDetailsLoading implements GetRestaurantDetailsLoading {
         getAllRestaurantSuccess,
     required TResult Function(String error) getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
-    required TResult Function(RestaurantEntity restaurant)
+    required TResult Function(RestaurantDetailsEntity restaurant)
         getRestaurantDetailsSuccess,
     required TResult Function(String error) getRestaurantDetailsError,
   }) {
@@ -901,7 +911,8 @@ class _$GetRestaurantDetailsLoading implements GetRestaurantDetailsLoading {
         getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantEntity restaurant)? getRestaurantDetailsSuccess,
+    TResult Function(RestaurantDetailsEntity restaurant)?
+        getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
   }) {
     return getRestaurantDetailsLoading?.call();
@@ -916,7 +927,8 @@ class _$GetRestaurantDetailsLoading implements GetRestaurantDetailsLoading {
         getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantEntity restaurant)? getRestaurantDetailsSuccess,
+    TResult Function(RestaurantDetailsEntity restaurant)?
+        getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -995,7 +1007,7 @@ abstract class $GetRestaurantDetailsSuccessCopyWith<$Res> {
           GetRestaurantDetailsSuccess value,
           $Res Function(GetRestaurantDetailsSuccess) then) =
       _$GetRestaurantDetailsSuccessCopyWithImpl<$Res>;
-  $Res call({RestaurantEntity restaurant});
+  $Res call({RestaurantDetailsEntity restaurant});
 }
 
 /// @nodoc
@@ -1018,7 +1030,7 @@ class _$GetRestaurantDetailsSuccessCopyWithImpl<$Res>
       restaurant == freezed
           ? _value.restaurant
           : restaurant // ignore: cast_nullable_to_non_nullable
-              as RestaurantEntity,
+              as RestaurantDetailsEntity,
     ));
   }
 }
@@ -1029,7 +1041,7 @@ class _$GetRestaurantDetailsSuccess implements GetRestaurantDetailsSuccess {
   const _$GetRestaurantDetailsSuccess(this.restaurant);
 
   @override
-  final RestaurantEntity restaurant;
+  final RestaurantDetailsEntity restaurant;
 
   @override
   String toString() {
@@ -1064,7 +1076,7 @@ class _$GetRestaurantDetailsSuccess implements GetRestaurantDetailsSuccess {
         getAllRestaurantSuccess,
     required TResult Function(String error) getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
-    required TResult Function(RestaurantEntity restaurant)
+    required TResult Function(RestaurantDetailsEntity restaurant)
         getRestaurantDetailsSuccess,
     required TResult Function(String error) getRestaurantDetailsError,
   }) {
@@ -1080,7 +1092,8 @@ class _$GetRestaurantDetailsSuccess implements GetRestaurantDetailsSuccess {
         getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantEntity restaurant)? getRestaurantDetailsSuccess,
+    TResult Function(RestaurantDetailsEntity restaurant)?
+        getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
   }) {
     return getRestaurantDetailsSuccess?.call(restaurant);
@@ -1095,7 +1108,8 @@ class _$GetRestaurantDetailsSuccess implements GetRestaurantDetailsSuccess {
         getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantEntity restaurant)? getRestaurantDetailsSuccess,
+    TResult Function(RestaurantDetailsEntity restaurant)?
+        getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -1165,10 +1179,10 @@ class _$GetRestaurantDetailsSuccess implements GetRestaurantDetailsSuccess {
 }
 
 abstract class GetRestaurantDetailsSuccess implements RestaurantsState {
-  const factory GetRestaurantDetailsSuccess(RestaurantEntity restaurant) =
-      _$GetRestaurantDetailsSuccess;
+  const factory GetRestaurantDetailsSuccess(
+      RestaurantDetailsEntity restaurant) = _$GetRestaurantDetailsSuccess;
 
-  RestaurantEntity get restaurant;
+  RestaurantDetailsEntity get restaurant;
   @JsonKey(ignore: true)
   $GetRestaurantDetailsSuccessCopyWith<GetRestaurantDetailsSuccess>
       get copyWith => throw _privateConstructorUsedError;
@@ -1250,7 +1264,7 @@ class _$GetRestaurantDetailsErrorDetails
         getAllRestaurantSuccess,
     required TResult Function(String error) getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
-    required TResult Function(RestaurantEntity restaurant)
+    required TResult Function(RestaurantDetailsEntity restaurant)
         getRestaurantDetailsSuccess,
     required TResult Function(String error) getRestaurantDetailsError,
   }) {
@@ -1266,7 +1280,8 @@ class _$GetRestaurantDetailsErrorDetails
         getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantEntity restaurant)? getRestaurantDetailsSuccess,
+    TResult Function(RestaurantDetailsEntity restaurant)?
+        getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
   }) {
     return getRestaurantDetailsError?.call(error);
@@ -1281,7 +1296,8 @@ class _$GetRestaurantDetailsErrorDetails
         getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantEntity restaurant)? getRestaurantDetailsSuccess,
+    TResult Function(RestaurantDetailsEntity restaurant)?
+        getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
     required TResult orElse(),
   }) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/features/restaurants/domain/entities/restaurant_entity.dart';
+import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_details_screen.dart';
 
 class RestaurantItem extends StatelessWidget {
   final RestaurantEntity restaurantEntity;
@@ -10,19 +11,26 @@ class RestaurantItem extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 18,
-            right: 18,
-            top: 10,
-            bottom: 10,
+        InkWell(
+          onTap: () => Navigator.of(context).pushNamed(
+            RestaurantDetailsScreen.routeName,
+            arguments: restaurantEntity.id,
           ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Image.network(
-              restaurantEntity.imageUrl,
-              width: MediaQuery.of(context).size.width,
-              fit: BoxFit.fill,
+          child: Padding(
+            padding: const EdgeInsets.only(
+              left: 18,
+              right: 18,
+              top: 10,
+              bottom: 10,
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.network(
+                restaurantEntity.imageUrl,
+                height: MediaQuery.of(context).size.height * .2,
+                width: double.infinity,
+                fit: BoxFit.fill,
+              ),
             ),
           ),
         ),

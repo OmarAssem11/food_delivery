@@ -39,7 +39,7 @@ class _RestaurantsListScreenState extends State<RestaurantsListScreen> {
                   thickness: 1,
                   color: Colors.grey,
                 ),
-                itemCount: 8,
+                itemCount: restaurants.length,
                 itemBuilder: (context, index) {
                   return RestaurantItem(
                     restaurantEntity: restaurants[index],

@@ -1,0 +1,25 @@
+{
+    "status": 200,
+    "message": "all restaurants",
+    "errors": null,
+    "data": [
+      {
+        "id": 1,
+        "name": "McDonald's",
+        "description": "McDonald's description",
+        "imageUrl": "https://scontent.fcai19-8.fna.fbcdn.net/v/t1.6435-9/54515022_10161745120695077_1115051798705471488_n.jpg?_nc_cat=1&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=FewcrYE1T1sAX9Hkr9R&_nc_ht=scontent.fcai19-8.fna&oh=00_AT_mISwczeVVq1cP8o19u0W9EzNa1m2mJxq6iFnY9jmScw&oe=627A3A44"
+      },
+      {
+        "id": 2,
+        "name": "Buffalo Burger",
+        "description": "Buffalo Burger description",
+        "imageUrl": "https://scontent.fcai19-8.fna.fbcdn.net/v/t1.6435-9/68927217_10156995355914681_9003806943541723136_n.jpg?stp=cp0_dst-jpg_e15_q65_s403x403&_nc_cat=101&ccb=1-5&_nc_sid=110474&_nc_ohc=f1rQ_BfKRskAX-nIQCH&_nc_ht=scontent.fcai19-8.fna&oh=00_AT87HdVuXfwM-a_iISlID0wk1e0qeWAG9fepP5jAYfRx5A&oe=6279DD0E"
+      },
+      {
+        "id": 3,
+        "name": "Pizza Hut",
+        "description": "Pizza Hut description",
+        "imageUrl": "https://yt3.ggpht.com/ytc/AKedOLSTP4cPU2cs1Zg-hxYggqMMUEJfT82A6atYmuKNzw=s900-c-k-c0x00ffffff-no-rj"
+      }
+    ]
+  }

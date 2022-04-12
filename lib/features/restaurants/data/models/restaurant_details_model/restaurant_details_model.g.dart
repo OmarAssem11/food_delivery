@@ -1,13 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'restaurant_model.dart';
+part of 'restaurant_details_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-RestaurantModel _$RestaurantModelFromJson(Map<String, dynamic> json) =>
-    RestaurantModel(
+RestaurantDetailsModel _$RestaurantDetailsModelFromJson(
+        Map<String, dynamic> json) =>
+    RestaurantDetailsModel(
       id: json['id'] as int,
       name: json['name'] as String,
       description: json['description'] as String,
@@ -19,7 +20,8 @@ RestaurantModel _$RestaurantModelFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$RestaurantModelToJson(RestaurantModel instance) =>
+Map<String, dynamic> _$RestaurantDetailsModelToJson(
+        RestaurantDetailsModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

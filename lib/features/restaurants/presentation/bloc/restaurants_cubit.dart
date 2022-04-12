@@ -3,7 +3,9 @@ import 'package:food_delivery/core/domain/usecases/usecase.dart';
 import 'package:food_delivery/features/restaurants/domain/usecases/get_restaurant_details_usecase.dart';
 import 'package:food_delivery/features/restaurants/domain/usecases/get_restaurants_list_usecases.dart';
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_state.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class RestaurantsCubit extends Cubit<RestaurantsState> {
   final GetRestaurantsListUseCase _getRestaurantsListUseCase;
   final GetRestaurantDetailsUseCase _getRestaurantDetailsUseCase;

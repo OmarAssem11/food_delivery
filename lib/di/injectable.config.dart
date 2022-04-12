@@ -54,7 +54,9 @@ import '../features/restaurants/domain/usecases/get_restaurant_details_usecase.d
     as _i28;
 import '../features/restaurants/domain/usecases/get_restaurants_list_usecases.dart'
     as _i29;
-import 'app_module.dart' as _i31; // ignore_for_file: unnecessary_lambdas
+import '../features/restaurants/presentation/bloc/restaurants_cubit.dart'
+    as _i31;
+import 'app_module.dart' as _i32; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -104,7 +106,10 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => _i29.GetRestaurantsListUseCase(get<_i24.RestaurantsRepository>()));
   gh.factory<_i30.ProductsCubit>(
       () => _i30.ProductsCubit(get<_i27.GetProductDetailsUseCase>()));
+  gh.factory<_i31.RestaurantsCubit>(() => _i31.RestaurantsCubit(
+      get<_i29.GetRestaurantsListUseCase>(),
+      get<_i28.GetRestaurantDetailsUseCase>()));
   return get;
 }
 
-class _$AppModule extends _i31.AppModule {}
+class _$AppModule extends _i32.AppModule {}

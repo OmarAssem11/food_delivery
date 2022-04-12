@@ -1,6 +1,7 @@
 import 'package:food_delivery/core/data/models/response_model/response_model.dart';
 import 'package:food_delivery/features/restaurants/data/datasources/remote_datasource/restaurants_api_service.dart';
-import 'package:food_delivery/features/restaurants/data/models/restaurant_model.dart';
+import 'package:food_delivery/features/restaurants/data/models/restaurant_details_model/restaurant_details_model.dart';
+import 'package:food_delivery/features/restaurants/data/models/restaurant_model/restaurant_model.dart';
 import 'package:food_delivery/features/restaurants/domain/datasources/remote_datasource/restaurants_remote_datasource.dart';
 import 'package:injectable/injectable.dart';
 
@@ -21,7 +22,7 @@ class RestaurantsRemoteDataSourceImpl implements RestaurantsRemoteDataSource {
       );
 
   @override
-  Future<ResponseModel<RestaurantModel>> getRestaurantDetails({
+  Future<ResponseModel<RestaurantDetailsModel>> getRestaurantDetails({
     required String token,
     required String language,
     required int restaurantId,

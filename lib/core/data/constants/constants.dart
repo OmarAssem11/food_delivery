@@ -1,6 +1,5 @@
 //BaseUrl
-//const baseUrl = 'http://192.168.1.10:5500/apis/';
-const baseUrl = 'http://7c66-41-38-218-114.ngrok.io/';
+const baseUrl = 'http://192.168.1.10:5500/apis/';
 //Endpoints
 const registerEndpoint = 'register';
 const loginEndpoint = 'login';

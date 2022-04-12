@@ -10,11 +10,11 @@ import 'package:injectable/injectable.dart';
 @LazySingleton(as: ProductsRepository)
 class ProductsRepositoryImpl implements ProductsRepository {
   final ProductsRemoteDataSource _productsRemoteDataSource;
-  final AuthLocalDataSource _localDataSource;
+  final AuthLocalDataSource _authLocalDataSource;
 
   const ProductsRepositoryImpl(
     this._productsRemoteDataSource,
-    this._localDataSource,
+    this._authLocalDataSource,
   );
 
   @override
@@ -22,8 +22,8 @@ class ProductsRepositoryImpl implements ProductsRepository {
     required int productId,
   }) async {
     try {
-      final token = _localDataSource.getToken() ?? '';
-      final language = _localDataSource.getLanguage() ?? '';
+      final token = _authLocalDataSource.getToken() ?? '';
+      final language = _authLocalDataSource.getLanguage() ?? '';
       final productsResponse =
           await _productsRemoteDataSource.getProductDetails(
         token: token,
@@ -32,7 +32,6 @@ class ProductsRepositoryImpl implements ProductsRepository {
       );
       return right(productsResponse.data.fromModel);
     } catch (error) {
-      print(error);
       return left(const Failure('Error while getting product details'));
     }
   }

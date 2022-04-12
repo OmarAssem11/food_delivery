@@ -7,19 +7,19 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class RestaurantsCubit extends Cubit<RestaurantsState> {
-  final GetRestaurantsListUseCase _getRestaurantsListUseCase;
-  final GetRestaurantDetailsUseCase _getRestaurantDetailsUseCase;
-
   RestaurantsCubit(
     this._getRestaurantsListUseCase,
     this._getRestaurantDetailsUseCase,
   ) : super(const RestaurantsState.initial());
 
+  final GetRestaurantsListUseCase _getRestaurantsListUseCase;
+  final GetRestaurantDetailsUseCase _getRestaurantDetailsUseCase;
+
   Future<void> getRestaurantsList() async {
     emit(const GetAllRestaurantLoading());
     final result = await _getRestaurantsListUseCase(const NoParams());
     result.fold(
-      (error) => emit(GetAllRestaurantErrorDetails(error.toString())),
+      (failure) => emit(GetAllRestaurantErrorDetails(failure.error)),
       (restaurantsList) => emit(GetAllRestaurantSuccess(restaurantsList)),
     );
   }
@@ -32,7 +32,7 @@ class RestaurantsCubit extends Cubit<RestaurantsState> {
       RestaurantDetailsParams(restaurantId: restaurantId),
     );
     result.fold(
-      (error) => emit(GetRestaurantDetailsErrorDetails(error.toString())),
+      (failure) => emit(GetRestaurantDetailsErrorDetails(failure.error)),
       (restaurant) => emit(GetRestaurantDetailsSuccess(restaurant)),
     );
   }

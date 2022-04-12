@@ -12,18 +12,18 @@ import 'package:injectable/injectable.dart';
 @LazySingleton(as: RestaurantsRepository)
 class RestaurantsRepositoryImpl implements RestaurantsRepository {
   final RestaurantsRemoteDataSource _restaurantRemoteDataSource;
-  final AuthLocalDataSource _localDataSource;
+  final AuthLocalDataSource _authLocalDataSource;
 
   const RestaurantsRepositoryImpl(
     this._restaurantRemoteDataSource,
-    this._localDataSource,
+    this._authLocalDataSource,
   );
 
   @override
   Future<Either<Failure, List<RestaurantEntity>>> getAllRestaurants() async {
     try {
-      final token = _localDataSource.getToken() ?? '';
-      final language = _localDataSource.getLanguage() ?? 'en';
+      final token = _authLocalDataSource.getToken() ?? '';
+      final language = _authLocalDataSource.getLanguage() ?? 'en';
       final restaurantListResponse =
           await _restaurantRemoteDataSource.getAllRestaurants(
         token: token,
@@ -43,8 +43,8 @@ class RestaurantsRepositoryImpl implements RestaurantsRepository {
     required int restaurantId,
   }) async {
     try {
-      final token = _localDataSource.getToken() ?? '';
-      final language = _localDataSource.getLanguage() ?? 'en';
+      final token = _authLocalDataSource.getToken() ?? '';
+      final language = _authLocalDataSource.getLanguage() ?? 'en';
       final restaurantDetailsResponse =
           await _restaurantRemoteDataSource.getRestaurantDetails(
         token: token,

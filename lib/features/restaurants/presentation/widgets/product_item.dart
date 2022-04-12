@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_delivery/di/injectable.dart';
 import 'package:food_delivery/features/products/domain/entities/product_entity.dart';
+import 'package:food_delivery/features/products/presentation/bloc/products_cubit.dart';
 import 'package:food_delivery/features/products/presentation/widgets/product_details_bottom_sheet.dart';
 
 class ProductItem extends StatelessWidget {
@@ -56,6 +59,17 @@ class ProductItem extends StatelessWidget {
   }) =>
       showModalBottomSheet(
         context: context,
-        builder: (context) => ProductDetailsBottomSheet(product: product),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25),
+        ),
+        builder: (context) => BlocProvider(
+          create: (context) =>
+              getIt<ProductsCubit>()..getProductDetails(productId: product.id),
+          child: const FractionallySizedBox(
+            heightFactor: 0.7,
+            child: ProductDetailsBottomSheet(),
+          ),
+        ),
+        isScrollControlled: true,
       );
 }

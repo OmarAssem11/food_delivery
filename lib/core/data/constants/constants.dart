@@ -1,11 +1,12 @@
 //BaseUrl
-const baseUrl = 'http://192.168.1.10:5500/apis/';
+//const baseUrl = 'http://192.168.1.10:5500/apis/';
+const baseUrl = 'http://7c66-41-38-218-114.ngrok.io/';
 //Endpoints
 const registerEndpoint = 'register';
 const loginEndpoint = 'login';
 const logoutEndpoint = 'logout';
-const getAllRestaurantsEndpoint = 'get_restaurants.json';
-const getRestaurantDetailsEndpoint = 'get_restaurant_details.json';
+const getAllRestaurantsEndpoint = 'restaurants';
+const getRestaurantDetailsEndpoint = 'get_restaurant_details';
 const getProductDetailsEndpoint = '';
 //Headers
 const authorization = 'Authorization';

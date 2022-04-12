@@ -16,7 +16,7 @@ class _ProductsApiService implements ProductsApiService {
   String? baseUrl;
 
   @override
-  Future<ResponseModel<ProductModel>> getProductDetails(
+  Future<ResponseModel<ProductDetailsModel>> getProductDetails(
       {required token, required language, required productId}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -27,14 +27,14 @@ class _ProductsApiService implements ProductsApiService {
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ResponseModel<ProductModel>>(
-            Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, '',
+        _setStreamType<ResponseModel<ProductDetailsModel>>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, 'get_product_details.json',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = ResponseModel<ProductModel>.fromJson(
+    final value = ResponseModel<ProductDetailsModel>.fromJson(
       _result.data!,
-      (json) => ProductModel.fromJson(json as Map<String, dynamic>),
+      (json) => ProductDetailsModel.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }

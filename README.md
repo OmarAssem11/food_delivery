@@ -1,16 +1,28 @@
-# food_delivery
+# Food Delivery app using Clean Architecture(TDD)
 
-A new Flutter project.
+## Features:
 
-## Getting Started
+* Register
+* Login
+* Logout
+* View all restaurants
+* View restaurant details and products
+* View product details
+* Add product to cart
+* View your cart and proceed to checkout
 
-This project is a starting point for a Flutter application.
+## Packages:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* dio
+* dartz
+* retrofit
+* equatable
+* flutter_bloc
+* freezed
+* get_it
+* injectable
+* shared_preferences
+* cached_network_image
+* json_serializable
+* fluttertoast
+* intl

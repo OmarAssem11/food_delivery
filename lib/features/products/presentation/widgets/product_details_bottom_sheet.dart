@@ -84,9 +84,7 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                         ),
                         CustomCounter(
                           totalPrice: product.price,
-                          onValueChanged: (value) {
-                            print("valuee $value");
-                          },
+                          onValueChanged: (value) {},
                         ),
                       ],
                     ),

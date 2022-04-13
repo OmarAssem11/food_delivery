@@ -18,8 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CheckoutStateTearOff {
   const _$CheckoutStateTearOff();
 
-  _Initial initial() {
-    return const _Initial();
+  CheckoutInitial initial() {
+    return const CheckoutInitial();
   }
 
   CheckoutLoading loading() {
@@ -69,7 +69,7 @@ mixin _$CheckoutState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(CheckoutInitial value) initial,
     required TResult Function(CheckoutLoading value) loading,
     required TResult Function(CheckoutSuccess value) success,
     required TResult Function(CheckoutErrorDetails value) error,
@@ -77,7 +77,7 @@ mixin _$CheckoutState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
     TResult Function(CheckoutErrorDetails value)? error,
@@ -85,7 +85,7 @@ mixin _$CheckoutState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
     TResult Function(CheckoutErrorDetails value)? error,
@@ -112,25 +112,28 @@ class _$CheckoutStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class $CheckoutInitialCopyWith<$Res> {
+  factory $CheckoutInitialCopyWith(
+          CheckoutInitial value, $Res Function(CheckoutInitial) then) =
+      _$CheckoutInitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$CheckoutStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class _$CheckoutInitialCopyWithImpl<$Res>
+    extends _$CheckoutStateCopyWithImpl<$Res>
+    implements $CheckoutInitialCopyWith<$Res> {
+  _$CheckoutInitialCopyWithImpl(
+      CheckoutInitial _value, $Res Function(CheckoutInitial) _then)
+      : super(_value, (v) => _then(v as CheckoutInitial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  CheckoutInitial get _value => super._value as CheckoutInitial;
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$CheckoutInitial implements CheckoutInitial {
+  const _$CheckoutInitial();
 
   @override
   String toString() {
@@ -140,7 +143,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is CheckoutInitial);
   }
 
   @override
@@ -186,7 +189,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(CheckoutInitial value) initial,
     required TResult Function(CheckoutLoading value) loading,
     required TResult Function(CheckoutSuccess value) success,
     required TResult Function(CheckoutErrorDetails value) error,
@@ -197,7 +200,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
     TResult Function(CheckoutErrorDetails value)? error,
@@ -208,7 +211,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
     TResult Function(CheckoutErrorDetails value)? error,
@@ -221,8 +224,8 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements CheckoutState {
-  const factory _Initial() = _$_Initial;
+abstract class CheckoutInitial implements CheckoutState {
+  const factory CheckoutInitial() = _$CheckoutInitial;
 }
 
 /// @nodoc
@@ -303,7 +306,7 @@ class _$CheckoutLoading implements CheckoutLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(CheckoutInitial value) initial,
     required TResult Function(CheckoutLoading value) loading,
     required TResult Function(CheckoutSuccess value) success,
     required TResult Function(CheckoutErrorDetails value) error,
@@ -314,7 +317,7 @@ class _$CheckoutLoading implements CheckoutLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
     TResult Function(CheckoutErrorDetails value)? error,
@@ -325,7 +328,7 @@ class _$CheckoutLoading implements CheckoutLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
     TResult Function(CheckoutErrorDetails value)? error,
@@ -420,7 +423,7 @@ class _$CheckoutSuccess implements CheckoutSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(CheckoutInitial value) initial,
     required TResult Function(CheckoutLoading value) loading,
     required TResult Function(CheckoutSuccess value) success,
     required TResult Function(CheckoutErrorDetails value) error,
@@ -431,7 +434,7 @@ class _$CheckoutSuccess implements CheckoutSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
     TResult Function(CheckoutErrorDetails value)? error,
@@ -442,7 +445,7 @@ class _$CheckoutSuccess implements CheckoutSuccess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
     TResult Function(CheckoutErrorDetails value)? error,
@@ -562,7 +565,7 @@ class _$CheckoutErrorDetails implements CheckoutErrorDetails {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(CheckoutInitial value) initial,
     required TResult Function(CheckoutLoading value) loading,
     required TResult Function(CheckoutSuccess value) success,
     required TResult Function(CheckoutErrorDetails value) error,
@@ -573,7 +576,7 @@ class _$CheckoutErrorDetails implements CheckoutErrorDetails {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
     TResult Function(CheckoutErrorDetails value)? error,
@@ -584,7 +587,7 @@ class _$CheckoutErrorDetails implements CheckoutErrorDetails {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
     TResult Function(CheckoutErrorDetails value)? error,

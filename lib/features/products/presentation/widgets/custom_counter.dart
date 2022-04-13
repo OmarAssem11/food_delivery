@@ -31,7 +31,10 @@ class _CustomCounterState extends State<CustomCounter> {
               size: 15,
             ),
             onPressed: () {
-              decreament();
+              setState(() {
+                counter = counter - 1;
+                setValue(counter);
+              });
             },
           ),
           Text("$counter"),
@@ -41,7 +44,10 @@ class _CustomCounterState extends State<CustomCounter> {
               size: 15,
             ),
             onPressed: () {
-              increament();
+              setState(() {
+                counter = counter + 1;
+                setValue(counter);
+              });
             },
           ),
         ],
@@ -49,22 +55,8 @@ class _CustomCounterState extends State<CustomCounter> {
     );
   }
 
-  void increament() {
-    setState(() {
-      counter = counter + 1;
-      setValue(counter);
-    });
-  }
-
-  void decreament() {
-    setState(() {
-      counter = counter - 1;
-      setValue(counter);
-    });
-  }
-
-  double totalPrice(int quintity, double price) {
-    return quintity * price;
+  double totalPrice(int quantity, double price) {
+    return quantity * price;
   }
 
   void setValue(int counter) {

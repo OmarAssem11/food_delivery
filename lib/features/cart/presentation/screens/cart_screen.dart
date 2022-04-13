@@ -120,7 +120,6 @@ class _CartScreenState extends State<CartScreen> {
                             'Subtotal',
                             style: textTheme.bodyText1,
                           ),
-                          //Text('EGP ${cart.}')
                         ],
                       ),
                     ],

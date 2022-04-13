@@ -1,6 +1,9 @@
-import 'package:equatable/equatable.dart';
+import 'package:json_annotation/json_annotation.dart';
 
-class ProductDetailsEntity extends Equatable {
+part 'product_model.g.dart';
+
+@JsonSerializable()
+class ProductModel {
   final int id;
   final String name;
   final String description;
@@ -10,7 +13,7 @@ class ProductDetailsEntity extends Equatable {
   final int restaurantId;
   final String restaurantName;
 
-  const ProductDetailsEntity({
+  const ProductModel({
     required this.id,
     required this.name,
     required this.description,
@@ -21,6 +24,6 @@ class ProductDetailsEntity extends Equatable {
     required this.restaurantName,
   });
 
-  @override
-  List<Object?> get props => [id];
+  factory ProductModel.fromJson(Map<String, dynamic> json) =>
+      _$ProductModelFromJson(json);
 }

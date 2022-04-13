@@ -59,15 +59,16 @@ class ProductItem extends StatelessWidget {
   }) =>
       showModalBottomSheet(
         context: context,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(25),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20), topRight: Radius.circular(20),),
         ),
         builder: (context) => BlocProvider(
           create: (context) =>
               getIt<ProductsCubit>()..getProductDetails(productId: product.id),
           child: const FractionallySizedBox(
             heightFactor: 0.7,
-            child: ProductDetailsBottomSheet(),
+            //child: ProductDetailsBottomSheet(product:,),
           ),
         ),
         isScrollControlled: true,

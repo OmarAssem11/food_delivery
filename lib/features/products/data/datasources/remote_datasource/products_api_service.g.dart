@@ -29,7 +29,7 @@ class _ProductsApiService implements ProductsApiService {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<ResponseModel<ProductModel>>(
             Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, '',
+                .compose(_dio.options, 'get_product_details.json',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = ResponseModel<ProductModel>.fromJson(

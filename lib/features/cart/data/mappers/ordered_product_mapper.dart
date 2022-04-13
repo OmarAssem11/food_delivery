@@ -4,6 +4,7 @@ import 'package:food_delivery/features/cart/domain/entities/ordered_product_enti
 extension OrderedProductMapper on OrderedProductModel {
   OrderedProductEntity get fromModel => OrderedProductEntity(
         name: name,
+        imageUrl: imageUrl,
         price: price,
         quantity: quantity,
       );

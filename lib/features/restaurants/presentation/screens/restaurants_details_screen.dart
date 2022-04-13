@@ -20,10 +20,15 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen> {
   late ColorScheme colorScheme;
 
   @override
-  void didChangeDependencies() {
+  void initState() {
+    super.initState();
     final restaurantId = ModalRoute.of(context)!.settings.arguments! as int;
     BlocProvider.of<RestaurantsCubit>(context)
         .getRestaurantDetails(restaurantId: restaurantId);
+  }
+
+  @override
+  void didChangeDependencies() {
     super.didChangeDependencies();
     textTheme = Theme.of(context).textTheme;
     colorScheme = Theme.of(context).colorScheme;

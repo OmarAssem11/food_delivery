@@ -4,6 +4,8 @@ import 'package:food_delivery/di/injectable.dart';
 import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:food_delivery/features/auth/presentation/screens/login_screen.dart';
 import 'package:food_delivery/features/auth/presentation/screens/register_screen.dart';
+import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
+import 'package:food_delivery/features/cart/presentation/screens/cart_screen.dart';
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_cubit.dart';
 import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_details_screen.dart';
 import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_list_screen.dart';
@@ -40,6 +42,13 @@ Route<MaterialPageRoute>? onGenerateRoute(
           child: const RestaurantDetailsScreen(),
         ),
         settings: routeSettings,
+      );
+    case CartScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) => BlocProvider(
+          create: (context) => getIt<CartCubit>(),
+          child: const CartScreen(),
+        ),
       );
     default:
       return null;

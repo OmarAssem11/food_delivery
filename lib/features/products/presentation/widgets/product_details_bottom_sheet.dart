@@ -1,4 +1,3 @@
-import 'package:counter/counter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
@@ -86,12 +85,6 @@ class ProductDetailsBottomSheet extends StatelessWidget {
                           "EGP ${product.price}",
                           style: textTheme.bodyLarge,
                         ),
-                        // Counter(
-                        //   min: 1,
-                        //   max: 100,
-                        //   bound: 1,
-                        //   onValueChanged: (value) {},
-                        // ),
                         const CustomCounter(),
                       ],
                     ),

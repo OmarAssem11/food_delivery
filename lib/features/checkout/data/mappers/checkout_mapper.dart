@@ -3,8 +3,8 @@ import 'package:food_delivery/features/checkout/domain/entities/checkout_entity.
 
 extension CheckoutMapper on CheckoutEntity {
   CheckoutModel get toModel => CheckoutModel(
-        address : address,
+        address: address,
         phone: phone,
-        price: price
+        price: price,
       );
 }

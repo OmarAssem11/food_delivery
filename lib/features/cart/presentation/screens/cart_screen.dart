@@ -20,6 +20,12 @@ class _CartScreenState extends State<CartScreen> {
   late TextTheme textTheme;
 
   @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<CartCubit>(context).getCart();
+  }
+
+  @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     textTheme = Theme.of(context).textTheme;

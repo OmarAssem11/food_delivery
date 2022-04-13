@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+const Color _primaryColor = Color.fromARGB(255, 221, 161, 32);
+
 ThemeData myTheme = ThemeData(
   colorScheme: const ColorScheme(
     brightness: Brightness.light,
-    primary: Color.fromARGB(255, 231, 140, 3),
+    primary: _primaryColor,
     onPrimary: Color.fromARGB(255, 224, 115, 115),
     secondary: Color(0xff0b113c),
     onSecondary: Color.fromARGB(255, 175, 211, 228),
@@ -33,7 +35,7 @@ ThemeData myTheme = ThemeData(
           fontWeight: FontWeight.bold,
         ),
       ),
-      backgroundColor: MaterialStateProperty.all(const Color(0xff0b113c)),
+      backgroundColor: MaterialStateProperty.all(_primaryColor),
       foregroundColor: MaterialStateProperty.all(Colors.white),
     ),
   ),
@@ -46,7 +48,7 @@ ThemeData myTheme = ThemeData(
           fontWeight: FontWeight.bold,
         ),
       ),
-      foregroundColor: MaterialStateProperty.all(const Color(0xff0b113c)),
+      foregroundColor: MaterialStateProperty.all(_primaryColor),
     ),
   ),
   textTheme: const TextTheme(

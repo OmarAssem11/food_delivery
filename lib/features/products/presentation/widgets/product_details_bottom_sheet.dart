@@ -4,7 +4,6 @@ import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/features/products/domain/entities/product_entity.dart';
 import 'package:food_delivery/features/products/presentation/bloc/products_cubit.dart';
 import 'package:food_delivery/features/products/presentation/bloc/products_state.dart';
-import 'package:food_delivery/features/products/presentation/widgets/custom_counter.dart';
 
 class ProductDetailsBottomSheet extends StatelessWidget {
   const ProductDetailsBottomSheet({required this.product});
@@ -85,7 +84,6 @@ class ProductDetailsBottomSheet extends StatelessWidget {
                           "EGP ${product.price}",
                           style: textTheme.bodyLarge,
                         ),
-                        const CustomCounter(),
                       ],
                     ),
                   ],

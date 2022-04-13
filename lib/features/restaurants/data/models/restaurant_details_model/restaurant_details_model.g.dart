@@ -15,7 +15,9 @@ RestaurantDetailsModel _$RestaurantDetailsModelFromJson(
       imageUrl: json['imageUrl'] as String,
       address: json['address'] as String,
       phone: json['phone'] as String,
-      products: json['products'] as List<dynamic>,
+      products: (json['products'] as List<dynamic>)
+          .map((e) => ProductModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$RestaurantDetailsModelToJson(

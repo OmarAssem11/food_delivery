@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'products_api_service.dart';
+part of 'checkout_api_servoce.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,16 +8,16 @@ part of 'products_api_service.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps
 
-class _ProductsApiService implements ProductsApiService {
-  _ProductsApiService(this._dio, {this.baseUrl});
+class _CheckoutApiService implements CheckoutApiService {
+  _CheckoutApiService(this._dio, {this.baseUrl});
 
   final Dio _dio;
 
   String? baseUrl;
 
   @override
-  Future<ResponseModel<ProductDetailsModel>> getProductDetails(
-      {required token, required language, required productId}) async {
+  Future<ResponseModel<dynamic>> checkout(
+      {required token, required language, required checkoutModel}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{
@@ -26,15 +26,16 @@ class _ProductsApiService implements ProductsApiService {
     };
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
+    _data.addAll(checkoutModel.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ResponseModel<ProductDetailsModel>>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'product_details',
+        _setStreamType<ResponseModel<dynamic>>(
+            Options(method: 'POST', headers: _headers, extra: _extra)
+                .compose(_dio.options, 'checkout',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = ResponseModel<ProductDetailsModel>.fromJson(
+    final value = ResponseModel<dynamic>.fromJson(
       _result.data!,
-      (json) => ProductDetailsModel.fromJson(json as Map<String, dynamic>),
+      (json) => json as dynamic,
     );
     return value;
   }

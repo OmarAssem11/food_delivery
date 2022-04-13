@@ -42,12 +42,17 @@ class _CartScreenState extends State<CartScreen> {
     return BlocBuilder<CartCubit, CartState>(
       builder: (context, state) {
         return state.maybeWhen(
-          getCartLoading: () => const Center(
-            child: CircularProgressIndicator(),
+          getCartLoading: () => Scaffold(
+            appBar: AppBar(),
+            body: const Center(
+              child: CircularProgressIndicator(),
+            ),
           ),
           getCartError: (error) {
             showErrorToast(errorMessage: error);
-            return Container();
+            return Scaffold(
+              appBar: AppBar(),
+            );
           },
           getCartSuccess: (cart) => Scaffold(
             appBar: AppBar(
@@ -62,51 +67,71 @@ class _CartScreenState extends State<CartScreen> {
               ),
               centerTitle: true,
             ),
-            body: Column(
-              children: [
-                Expanded(
-                  child: ListView.builder(
-                    itemBuilder: (context, index) =>
-                        OrderedProductItem(cart.orderedProducts[index]),
-                    itemCount: cart.orderedProducts.length,
-                    physics: const NeverScrollableScrollPhysics(),
+            body: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: ListView.builder(
+                      itemBuilder: (context, index) =>
+                          OrderedProductItem(cart.orderedProducts[index]),
+                      itemCount: cart.orderedProducts.length,
+                      physics: const NeverScrollableScrollPhysics(),
+                    ),
                   ),
-                ),
-                const Divider(
-                  color: Colors.grey,
-                  height: 4,
-                ),
-                Text(
-                  'Special request',
-                  style: textTheme.headline4,
-                ),
-                Row(
-                  children: const [
-                    Icon(Icons.message_outlined),
-                    Text('Add a note'),
-                  ],
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    hintText: 'Anything else we need to know?',
+                  Text(
+                    'Special request',
+                    style: textTheme.headline5,
                   ),
-                  controller: noteController,
-                ),
-                const Divider(
-                  color: Colors.grey,
-                  height: 4,
-                ),
-                Text(
-                  'Payment summery',
-                  style: textTheme.headline4,
-                ),
-                const Spacer(),
-                CustomElevatedButton(
-                  label: 'checkout',
-                  onPressed: () {},
-                  isLoading: false,
-                ),
-              ],
+                  const SizedBox(height: 8),
+                  Row(
+                    children: [
+                      const Icon(Icons.message_outlined),
+                      const SizedBox(width: 8),
+                      Text(
+                        'Add a note',
+                        style: textTheme.bodyText1,
+                      ),
+                    ],
+                  ),
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      hintText: 'Anything else we need to know?',
+                      hintStyle: TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    controller: noteController,
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Payment summery',
+                    style: textTheme.headline5,
+                  ),
+                  const SizedBox(height: 8),
+                  Table(
+                    children: [
+                      TableRow(
+                        children: [
+                          Text(
+                            'Subtotal',
+                            style: textTheme.bodyText1,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const Spacer(),
+                  CustomElevatedButton(
+                    label: 'checkout',
+                    onPressed: () {},
+                    isLoading: false,
+                  ),
+                ],
+              ),
             ),
           ),
           orElse: () => Container(),

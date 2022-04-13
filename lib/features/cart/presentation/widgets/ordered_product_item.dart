@@ -8,18 +8,28 @@ class OrderedProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Column(
-          children: [
-            Text(product.name),
-          ],
-        ),
-        ClipRRect(
-          borderRadius: const BorderRadius.all(Radius.circular(8)),
-          child: Image.network(product.imageUrl),
-        ),
-      ],
+    return Container(
+      height: 70,
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            children: [
+              Text(
+                product.name,
+                style: Theme.of(context).textTheme.bodyText1,
+              ),
+            ],
+          ),
+          ClipRRect(
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
+            child: Image.network(
+              product.imageUrl,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

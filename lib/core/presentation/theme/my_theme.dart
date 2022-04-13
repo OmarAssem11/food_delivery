@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const Color _primaryColor = Color.fromARGB(255, 221, 161, 32);
+const Color _primaryColor = Color.fromARGB(255, 255, 115, 15);
 
 ThemeData myTheme = ThemeData(
   colorScheme: const ColorScheme(
@@ -57,6 +57,11 @@ ThemeData myTheme = ThemeData(
       color: Colors.black,
       fontWeight: FontWeight.bold,
     ),
+    headline5: TextStyle(
+      fontSize: 24,
+      color: Colors.black,
+      fontWeight: FontWeight.bold,
+    ),
     subtitle1: TextStyle(
       fontSize: 16,
       color: Colors.black,
@@ -70,6 +75,11 @@ ThemeData myTheme = ThemeData(
     caption: TextStyle(
       fontSize: 16,
       color: Color.fromARGB(255, 117, 117, 117),
+      fontWeight: FontWeight.w500,
+    ),
+    bodyText1: TextStyle(
+      fontSize: 16,
+      color: Colors.black,
       fontWeight: FontWeight.w500,
     ),
   ),

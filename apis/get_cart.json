@@ -1,0 +1,30 @@
+{
+    "status": 200,
+    "message": "cart",
+    "errors": null,
+    "data": 
+      {
+        "restaurantName": "Buffalo Burger",
+        "restaurantAddress": "Buffalo Burger address",
+        "orderedProducts": [
+            {
+                "name": "King Mo",
+                "imageUrl": "https://images.deliveryhero.io/image/talabat/Menuitems/%D8%B3_%D8%A8%D8%B1%D8%AC%D8%B1_%D9%85%D8%B4%D8%B1%D9%88%D9%85_637519360541662038.jpg",
+                "price": 110.00,
+                "quantity": 1
+            },
+            {
+                "name": "King Mo",
+                "imageUrl": "https://images.deliveryhero.io/image/talabat/Menuitems/%D8%B3_%D8%A8%D8%B1%D8%AC%D8%B1_%D9%85%D8%B4%D8%B1%D9%88%D9%85_637519360541662038.jpg",
+                "price": 220.00,
+                "quantity": 2
+            },
+            {
+                "name": "King Mo",
+                "imageUrl": "https://images.deliveryhero.io/image/talabat/Menuitems/%D8%B3_%D8%A8%D8%B1%D8%AC%D8%B1_%D9%85%D8%B4%D8%B1%D9%88%D9%85_637519360541662038.jpg",
+                "price": 330.00,
+                "quantity": 3
+            }
+        ]
+      }
+  }

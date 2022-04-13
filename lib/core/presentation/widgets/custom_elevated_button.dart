@@ -11,15 +11,13 @@ class CustomElevatedButton extends StatelessWidget {
   final bool isLoading;
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context);
-    final screenHeight = mediaQuery.size.height;
-    final screenWidth = mediaQuery.size.width;
+    final screenSize = MediaQuery.of(context).size;
     return ElevatedButton(
       style: ButtonStyle(
         fixedSize: MaterialStateProperty.all(
           Size(
-            screenWidth,
-            .07 * screenHeight,
+            screenSize.width,
+            .07 * screenSize.height,
           ),
         ),
         shape: MaterialStateProperty.all(

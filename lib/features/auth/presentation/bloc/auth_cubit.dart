@@ -28,7 +28,7 @@ class AuthCubit extends Cubit<AuthState> {
     );
     emit(
       result.fold(
-        (error) => AuthErrorDetails(error.toString()),
+        (failure) => AuthErrorDetails(failure.error),
         (_) => const AuthSuccess(),
       ),
     );
@@ -49,7 +49,7 @@ class AuthCubit extends Cubit<AuthState> {
     );
     emit(
       result.fold(
-        (error) => AuthErrorDetails(error.toString()),
+        (failure) => AuthErrorDetails(failure.error),
         (_) => const AuthSuccess(),
       ),
     );
@@ -60,7 +60,7 @@ class AuthCubit extends Cubit<AuthState> {
     final result = await _logout(const NoParams());
     emit(
       result.fold(
-        (error) => AuthErrorDetails(error.toString()),
+        (failure) => AuthErrorDetails(failure.error),
         (_) => const AuthSuccess(),
       ),
     );

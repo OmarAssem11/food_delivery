@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart ';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_delivery/core/presentation/widgets/custom_app_bar.dart';
+import 'package:food_delivery/features/cart/presentation/screens/cart_screen.dart';
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_cubit.dart';
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_state.dart';
 import 'package:food_delivery/features/restaurants/presentation/widgets/restaurant_item.dart';
@@ -24,7 +24,15 @@ class _RestaurantsListScreenState extends State<RestaurantsListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () =>
+                Navigator.of(context).pushNamed(CartScreen.routeName),
+            icon: const Icon(Icons.shopping_cart),
+          ),
+        ],
+      ),
       body: BlocBuilder<RestaurantsCubit, RestaurantsState>(
         builder: (context, state) {
           return state.maybeWhen(

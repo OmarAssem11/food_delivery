@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'checkout_api_servoce.dart';
+part of 'checkout_api_service.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -16,7 +16,7 @@ class _CheckoutApiService implements CheckoutApiService {
   String? baseUrl;
 
   @override
-  Future<ResponseModel<dynamic>> checkout(
+  Future<ResponseModel<CheckoutModel>> checkout(
       {required token, required language, required checkoutModel}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -28,14 +28,14 @@ class _CheckoutApiService implements CheckoutApiService {
     final _data = <String, dynamic>{};
     _data.addAll(checkoutModel.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ResponseModel<dynamic>>(
+        _setStreamType<ResponseModel<CheckoutModel>>(
             Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'checkout',
+                .compose(_dio.options, '',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = ResponseModel<dynamic>.fromJson(
+    final value = ResponseModel<CheckoutModel>.fromJson(
       _result.data!,
-      (json) => json as dynamic,
+      (json) => CheckoutModel.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }

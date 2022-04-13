@@ -38,7 +38,7 @@ import '../features/cart/domain/repositories/cart_repository.dart' as _i22;
 import '../features/cart/domain/usecases/add_to_cart_use_case.dart' as _i38;
 import '../features/cart/domain/usecases/get_cart_use_case.dart' as _i30;
 import '../features/cart/presentation/bloc/cart_cubit.dart' as _i40;
-import '../features/checkout/data/datasources/remote_datasource/checkout_api_servoce.dart'
+import '../features/checkout/data/datasources/remote_datasource/checkout_api_service.dart'
     as _i24;
 import '../features/checkout/data/datasources/remote_datasource/checkout_remote_datasource_impl.dart'
     as _i26;
@@ -49,6 +49,7 @@ import '../features/checkout/domain/datasources/remote_datasource/checkout_remot
 import '../features/checkout/domain/repositories/checkout_repository.dart'
     as _i27;
 import '../features/checkout/domain/usecases/checkout_use_case.dart' as _i29;
+import '../features/checkout/presentation/bloc/checkout_cubit.dart' as _i41;
 import '../features/products/data/datasources/remote_datasource/products_api_service.dart'
     as _i5;
 import '../features/products/data/datasources/remote_datasource/products_remote_datasource_impl.dart'
@@ -60,8 +61,8 @@ import '../features/products/domain/datasources/remote_datasource/products_remot
 import '../features/products/domain/repositories/products_repository.dart'
     as _i33;
 import '../features/products/domain/usecases/get_product_details_use_case.dart'
-    as _i41;
-import '../features/products/presentation/bloc/products_cubit.dart' as _i44;
+    as _i42;
+import '../features/products/presentation/bloc/products_cubit.dart' as _i45;
 import '../features/restaurants/data/datasources/remote_datasource/restaurants_api_service.dart'
     as _i8;
 import '../features/restaurants/data/datasources/remote_datasource/restaurants_remote_datasource_impl.dart'
@@ -73,12 +74,12 @@ import '../features/restaurants/domain/datasources/remote_datasource/restaurants
 import '../features/restaurants/domain/repositories/restaurants_repository.dart'
     as _i36;
 import '../features/restaurants/domain/usecases/get_restaurant_details_usecase.dart'
-    as _i42;
-import '../features/restaurants/domain/usecases/get_restaurants_list_usecases.dart'
     as _i43;
+import '../features/restaurants/domain/usecases/get_restaurants_list_usecases.dart'
+    as _i44;
 import '../features/restaurants/presentation/bloc/restaurants_cubit.dart'
-    as _i45;
-import 'app_module.dart' as _i46; // ignore_for_file: unnecessary_lambdas
+    as _i46;
+import 'app_module.dart' as _i47; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -140,18 +141,20 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       get<_i31.LoginUseCase>(), get<_i32.LogoutUseCase>()));
   gh.factory<_i40.CartCubit>(() =>
       _i40.CartCubit(get<_i38.AddToCartUseCase>(), get<_i30.GetCartUseCase>()));
-  gh.lazySingleton<_i41.GetProductDetailsUseCase>(
-      () => _i41.GetProductDetailsUseCase(get<_i33.ProductsRepository>()));
-  gh.lazySingleton<_i42.GetRestaurantDetailsUseCase>(() =>
-      _i42.GetRestaurantDetailsUseCase(get<_i36.RestaurantsRepository>()));
-  gh.lazySingleton<_i43.GetRestaurantsListUseCase>(
-      () => _i43.GetRestaurantsListUseCase(get<_i36.RestaurantsRepository>()));
-  gh.factory<_i44.ProductsCubit>(
-      () => _i44.ProductsCubit(get<_i41.GetProductDetailsUseCase>()));
-  gh.factory<_i45.RestaurantsCubit>(() => _i45.RestaurantsCubit(
-      get<_i43.GetRestaurantsListUseCase>(),
-      get<_i42.GetRestaurantDetailsUseCase>()));
+  gh.factory<_i41.CheckoutCubit>(
+      () => _i41.CheckoutCubit(get<_i29.CheckoutUseCase>()));
+  gh.lazySingleton<_i42.GetProductDetailsUseCase>(
+      () => _i42.GetProductDetailsUseCase(get<_i33.ProductsRepository>()));
+  gh.lazySingleton<_i43.GetRestaurantDetailsUseCase>(() =>
+      _i43.GetRestaurantDetailsUseCase(get<_i36.RestaurantsRepository>()));
+  gh.lazySingleton<_i44.GetRestaurantsListUseCase>(
+      () => _i44.GetRestaurantsListUseCase(get<_i36.RestaurantsRepository>()));
+  gh.factory<_i45.ProductsCubit>(
+      () => _i45.ProductsCubit(get<_i42.GetProductDetailsUseCase>()));
+  gh.factory<_i46.RestaurantsCubit>(() => _i46.RestaurantsCubit(
+      get<_i44.GetRestaurantsListUseCase>(),
+      get<_i43.GetRestaurantDetailsUseCase>()));
   return get;
 }
 
-class _$AppModule extends _i46.AppModule {}
+class _$AppModule extends _i47.AppModule {}

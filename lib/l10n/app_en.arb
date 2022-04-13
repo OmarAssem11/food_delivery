@@ -14,5 +14,13 @@
     "submit": "Submit",
     "areYouSureYouWantToLogout": "Are you sure you want to logout?",
     "yes": "YES",
-    "no": "NO"
+    "no": "NO",
+    "basket": "Basket",
+    "specialRequest": "Special request",
+    "addANote": "Add a note",
+    "anythingElseWeNeedToKnow": "Anything else we need to know?",
+    "paymentSummery": "Payment summery",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout",
+    "addToBasket": "Add to basket"
 }

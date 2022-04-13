@@ -18,9 +18,11 @@ class RestaurantsCubit extends Cubit<RestaurantsState> {
   Future<void> getRestaurantsList() async {
     emit(const GetAllRestaurantLoading());
     final result = await _getRestaurantsListUseCase(const NoParams());
-    result.fold(
-      (failure) => emit(GetAllRestaurantErrorDetails(failure.error)),
-      (restaurantsList) => emit(GetAllRestaurantSuccess(restaurantsList)),
+    emit(
+      result.fold(
+        (failure) => GetAllRestaurantErrorDetails(failure.error),
+        (restaurantsList) => GetAllRestaurantSuccess(restaurantsList),
+      ),
     );
   }
 
@@ -31,9 +33,11 @@ class RestaurantsCubit extends Cubit<RestaurantsState> {
     final result = await _getRestaurantDetailsUseCase(
       RestaurantDetailsParams(restaurantId: restaurantId),
     );
-    result.fold(
-      (failure) => emit(GetRestaurantDetailsErrorDetails(failure.error)),
-      (restaurant) => emit(GetRestaurantDetailsSuccess(restaurant)),
+    emit(
+      result.fold(
+        (failure) => GetRestaurantDetailsErrorDetails(failure.error),
+        (restaurant) => GetRestaurantDetailsSuccess(restaurant),
+      ),
     );
   }
 }

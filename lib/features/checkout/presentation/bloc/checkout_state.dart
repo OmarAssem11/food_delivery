@@ -1,4 +1,5 @@
-part of 'checkout_cubit.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+part 'checkout_state.freezed.dart';
 
 @freezed
 class CheckoutState with _$CheckoutState {

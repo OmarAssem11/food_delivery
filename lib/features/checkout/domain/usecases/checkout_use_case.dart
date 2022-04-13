@@ -9,7 +9,9 @@ import 'package:injectable/injectable.dart';
 @lazySingleton
 class CheckoutUseCase implements UseCase<Unit, CheckoutData> {
   final CheckoutRepository _checkoutRepository;
+
   const CheckoutUseCase(this._checkoutRepository);
+
   @override
   Future<Either<Failure, Unit>> call(CheckoutData checkoutData) =>
       _checkoutRepository.checkout(checkoutEntity: checkoutData.checkoutEntity);

@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 class CustomCounter extends StatefulWidget {
   final double totalPrice;
 
-  final ValueChanged<num>? onValueChanged;
+  final ValueChanged<num> onValueChanged;
 
   const CustomCounter({
-    Key? key,
     required this.totalPrice,
-    this.onValueChanged,
-  }) : super(key: key);
+    required this.onValueChanged,
+  });
 
   @override
   State<CustomCounter> createState() => _CustomCounterState();
@@ -32,12 +31,12 @@ class _CustomCounterState extends State<CustomCounter> {
             ),
             onPressed: () {
               setState(() {
-                counter = counter - 1;
+                counter--;
                 setValue(counter);
               });
             },
           ),
-          Text("$counter"),
+          Text('$counter'),
           IconButton(
             icon: const Icon(
               Icons.add,
@@ -45,7 +44,7 @@ class _CustomCounterState extends State<CustomCounter> {
             ),
             onPressed: () {
               setState(() {
-                counter = counter + 1;
+                counter++;
                 setValue(counter);
               });
             },
@@ -61,6 +60,6 @@ class _CustomCounterState extends State<CustomCounter> {
 
   void setValue(int counter) {
     final int value = counter;
-    widget.onValueChanged?.call(value);
+    widget.onValueChanged.call(value);
   }
 }

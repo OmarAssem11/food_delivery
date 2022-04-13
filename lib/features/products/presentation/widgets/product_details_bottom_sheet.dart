@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/features/products/presentation/bloc/products_cubit.dart';
 import 'package:food_delivery/features/products/presentation/bloc/products_state.dart';
@@ -14,9 +15,16 @@ class ProductDetailsBottomSheet extends StatefulWidget {
 }
 
 class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
+  late TextTheme textTheme;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    textTheme = Theme.of(context).textTheme;
+  }
+
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
     return BlocBuilder<ProductsCubit, ProductsState>(
       builder: (context, state) {
         return state.maybeWhen(
@@ -68,18 +76,14 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                       product.name,
                       style: textTheme.headline4!.copyWith(fontSize: 20),
                     ),
-                    const SizedBox(
-                      height: 15,
-                    ),
+                    const SizedBox(height: 15),
                     Text(product.description, style: textTheme.bodySmall),
-                    const SizedBox(
-                      height: 15,
-                    ),
+                    const SizedBox(height: 15),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "EGP ${product.price}",
+                          'EGP ${product.price}',
                           style: textTheme.headline4!.copyWith(fontSize: 20),
                         ),
                         CustomCounter(
@@ -107,8 +111,8 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text("Add to basket"),
-                      Text("EGP${product.price}")
+                      Text(AppLocalizations.of(context)!.addToBasket),
+                      Text('EGP ${product.price}')
                     ],
                   ),
                 ),

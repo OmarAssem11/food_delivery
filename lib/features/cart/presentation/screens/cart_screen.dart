@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
@@ -18,6 +19,7 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
   final noteController = TextEditingController();
   late TextTheme textTheme;
+  late AppLocalizations appLocalizations;
 
   @override
   void initState() {
@@ -29,6 +31,7 @@ class _CartScreenState extends State<CartScreen> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     textTheme = Theme.of(context).textTheme;
+    appLocalizations = AppLocalizations.of(context)!;
   }
 
   @override
@@ -58,7 +61,7 @@ class _CartScreenState extends State<CartScreen> {
             appBar: AppBar(
               title: Column(
                 children: [
-                  const Text('Basket'),
+                  Text(appLocalizations.basket),
                   Text(
                     '${cart.restaurantName} - ${cart.restaurantAddress}',
                     style: textTheme.caption,
@@ -81,7 +84,7 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                   ),
                   Text(
-                    'Special request',
+                    appLocalizations.specialRequest,
                     style: textTheme.headline5,
                   ),
                   const SizedBox(height: 8),
@@ -90,15 +93,15 @@ class _CartScreenState extends State<CartScreen> {
                       const Icon(Icons.message_outlined),
                       const SizedBox(width: 8),
                       Text(
-                        'Add a note',
+                        appLocalizations.addANote,
                         style: textTheme.bodyText1,
                       ),
                     ],
                   ),
                   TextFormField(
-                    decoration: const InputDecoration(
-                      hintText: 'Anything else we need to know?',
-                      hintStyle: TextStyle(
+                    decoration: InputDecoration(
+                      hintText: appLocalizations.anythingElseWeNeedToKnow,
+                      hintStyle: const TextStyle(
                         fontSize: 14,
                         color: Colors.grey,
                         fontWeight: FontWeight.w600,
@@ -108,7 +111,7 @@ class _CartScreenState extends State<CartScreen> {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Payment summery',
+                    appLocalizations.paymentSummery,
                     style: textTheme.headline5,
                   ),
                   const SizedBox(height: 8),
@@ -117,7 +120,7 @@ class _CartScreenState extends State<CartScreen> {
                       TableRow(
                         children: [
                           Text(
-                            'Subtotal',
+                            appLocalizations.subtotal,
                             style: textTheme.bodyText1,
                           ),
                         ],
@@ -126,7 +129,7 @@ class _CartScreenState extends State<CartScreen> {
                   ),
                   const Spacer(),
                   CustomElevatedButton(
-                    label: 'checkout',
+                    label: appLocalizations.checkout,
                     onPressed: () {},
                     isLoading: false,
                   ),

@@ -30,9 +30,7 @@ class FoodDeliveryApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: myTheme,
             onGenerateRoute: onGenerateRoute,
-            locale: state is LocalizationChanged
-                ? Locale(state.local)
-                : const Locale('en'),
+            locale: Locale(state is LocalizationChanged ? state.local : 'en'),
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
             initialRoute: RestaurantsListScreen.routeName,

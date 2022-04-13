@@ -14,5 +14,13 @@
     "submit": "تأكيد",
     "areYouSureYouWantToLogout": "هل انت متأكد انك تريد تسجيل خروج؟",
     "yes": "نعم",
-    "no": "لا"
+    "no": "لا",
+    "basket": "السلة",
+    "specialRequest": "طلب خاص",
+    "addANote": "إضافة ملاحظة",
+    "anythingElseWeNeedToKnow": "اي شئ آخر يجب ان نعرفه؟",
+    "paymentSummery": "ملخص الدفع",
+    "subtotal": "الإجمالي",
+    "checkout": "متابعة إلي الشراء",
+    "addToBasket": "إضافة الي السلة"
 }

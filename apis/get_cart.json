@@ -6,6 +6,9 @@
       {
         "restaurantName": "Buffalo Burger",
         "restaurantAddress": "Buffalo Burger address",
+        "subTotal": 660.0, 
+        "deliveryFee":20.0,
+        "totalAmount":680.0, 
         "orderedProducts": [
             {
                 "name": "King Mo",

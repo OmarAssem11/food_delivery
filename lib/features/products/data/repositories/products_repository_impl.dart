@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:food_delivery/core/domain/error/failure.dart';
 import 'package:food_delivery/features/auth/domain/datasources/local_datasource/auth_local_datasource.dart';
-import 'package:food_delivery/features/products/data/mappers/product_details_mapper.dart';
+import 'package:food_delivery/features/products/data/mappers/product_mapper.dart';
 import 'package:food_delivery/features/products/domain/datasources/remote_datasource/products_remote_datasource.dart';
-import 'package:food_delivery/features/products/domain/entities/product_details_entity.dart';
+import 'package:food_delivery/features/products/domain/entities/product_entity.dart';
 import 'package:food_delivery/features/products/domain/repositories/products_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -18,12 +18,12 @@ class ProductsRepositoryImpl implements ProductsRepository {
   );
 
   @override
-  Future<Either<Failure, ProductDetailsEntity>> getProductDetails({
+  Future<Either<Failure, ProductEntity>> getProductDetails({
     required int productId,
   }) async {
     try {
-      final token = _localDataSource.getToken() ?? '';
-      final language = _localDataSource.getLanguage() ?? '';
+      final token = _localDataSource.getToken()!;
+      final language = _localDataSource.getLanguage()!;
       final productsResponse =
           await _productsRemoteDataSource.getProductDetails(
         token: token,
@@ -32,7 +32,6 @@ class ProductsRepositoryImpl implements ProductsRepository {
       );
       return right(productsResponse.data.fromModel);
     } catch (error) {
-      print(error);
       return left(const Failure('Error while getting product details'));
     }
   }

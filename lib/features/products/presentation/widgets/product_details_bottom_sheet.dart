@@ -2,12 +2,15 @@ import 'package:counter/counter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
+import 'package:food_delivery/features/products/domain/entities/product_entity.dart';
 import 'package:food_delivery/features/products/presentation/bloc/products_cubit.dart';
 import 'package:food_delivery/features/products/presentation/bloc/products_state.dart';
 import 'package:food_delivery/features/products/presentation/widgets/custom_counter.dart';
 
 class ProductDetailsBottomSheet extends StatelessWidget {
-  const ProductDetailsBottomSheet();
+  const ProductDetailsBottomSheet({required this.product});
+
+  final ProductEntity product;
 
   @override
   Widget build(BuildContext context) {

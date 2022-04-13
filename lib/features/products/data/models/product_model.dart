@@ -9,6 +9,8 @@ class ProductModel {
   final String imageUrl;
   final String category;
   final double price;
+  final int restaurantId;
+  final String restaurantName;
 
   const ProductModel({
     required this.id,
@@ -17,6 +19,8 @@ class ProductModel {
     required this.imageUrl,
     required this.category,
     required this.price,
+    required this.restaurantId,
+    required this.restaurantName,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) =>

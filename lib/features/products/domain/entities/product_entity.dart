@@ -8,6 +8,9 @@ class ProductEntity extends Equatable {
   final String category;
   final double price;
 
+  final int restaurantId;
+  final String restaurantName;
+
   const ProductEntity({
     required this.id,
     required this.name,
@@ -15,6 +18,8 @@ class ProductEntity extends Equatable {
     required this.imageUrl,
     required this.category,
     required this.price,
+    required this.restaurantId,
+    required this.restaurantName,
   });
 
   @override

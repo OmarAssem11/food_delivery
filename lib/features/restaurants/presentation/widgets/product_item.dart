@@ -68,7 +68,7 @@ class ProductItem extends StatelessWidget {
               getIt<ProductsCubit>()..getProductDetails(productId: product.id),
           child: const FractionallySizedBox(
             heightFactor: 0.7,
-            child: ProductDetailsBottomSheet(),
+            //child: ProductDetailsBottomSheet(product:,),
           ),
         ),
         isScrollControlled: true,

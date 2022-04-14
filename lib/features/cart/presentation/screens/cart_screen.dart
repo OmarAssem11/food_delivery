@@ -6,6 +6,8 @@ import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.d
 import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_state.dart';
 import 'package:food_delivery/features/cart/presentation/widgets/ordered_product_item.dart';
+import 'package:food_delivery/features/cart/presentation/widgets/payment_summery.dart';
+import 'package:food_delivery/features/checkout/presentation/screens/checkout_screen.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen();
@@ -110,27 +112,12 @@ class _CartScreenState extends State<CartScreen> {
                     controller: noteController,
                   ),
                   const SizedBox(height: 16),
-                  Text(
-                    appLocalizations.paymentSummery,
-                    style: textTheme.headline5,
-                  ),
-                  const SizedBox(height: 8),
-                  Table(
-                    children: [
-                      TableRow(
-                        children: [
-                          Text(
-                            appLocalizations.subtotal,
-                            style: textTheme.bodyText1,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                  const PaymentSummery(),
                   const Spacer(),
                   CustomElevatedButton(
                     label: appLocalizations.checkout,
-                    onPressed: () {},
+                    onPressed: () => Navigator.of(context)
+                        .pushNamed(CheckoutScreen.routeName),
                     isLoading: false,
                   ),
                 ],

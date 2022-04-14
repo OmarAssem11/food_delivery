@@ -29,7 +29,11 @@ class _RestaurantsListScreenState extends State<RestaurantsListScreen> {
           IconButton(
             onPressed: () =>
                 Navigator.of(context).pushNamed(CartScreen.routeName),
-            icon: const Icon(Icons.shopping_cart),
+            icon: Icon(
+              Icons.shopping_basket_rounded,
+              color: Theme.of(context).colorScheme.primary,
+              size: 28,
+            ),
           ),
         ],
       ),
@@ -43,16 +47,16 @@ class _RestaurantsListScreenState extends State<RestaurantsListScreen> {
             },
             getAllRestaurantSuccess: (restaurants) {
               return ListView.separated(
-                separatorBuilder: (context, index) => const Divider(
-                  thickness: 1,
-                  color: Colors.grey,
-                ),
-                itemCount: restaurants.length,
                 itemBuilder: (context, index) {
                   return RestaurantItem(
                     restaurantEntity: restaurants[index],
                   );
                 },
+                itemCount: restaurants.length,
+                separatorBuilder: (context, index) => const Divider(
+                  thickness: 1,
+                  color: Colors.grey,
+                ),
               );
             },
             orElse: () {

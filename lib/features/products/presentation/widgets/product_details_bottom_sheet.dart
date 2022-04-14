@@ -16,11 +16,13 @@ class ProductDetailsBottomSheet extends StatefulWidget {
 
 class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
   late TextTheme textTheme;
+  late AppLocalizations appLocalizations;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     textTheme = Theme.of(context).textTheme;
+    appLocalizations = AppLocalizations.of(context)!;
   }
 
   @override
@@ -54,10 +56,13 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: const Icon(
-                      Icons.close,
-                      color: Colors.black,
-                      size: 20,
+                    child: IconButton(
+                      onPressed: Navigator.of(context).pop,
+                      icon: const Icon(
+                        Icons.close,
+                        color: Colors.black,
+                        size: 20,
+                      ),
                     ),
                   ),
                 ],
@@ -83,7 +88,7 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'EGP ${product.price}',
+                          '${appLocalizations.egp} ${product.price}',
                           style: textTheme.headline4!.copyWith(fontSize: 20),
                         ),
                         CustomCounter(
@@ -111,7 +116,7 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(AppLocalizations.of(context)!.addToBasket),
+                      Text(appLocalizations.addToBasket),
                       Text('EGP ${product.price}')
                     ],
                   ),

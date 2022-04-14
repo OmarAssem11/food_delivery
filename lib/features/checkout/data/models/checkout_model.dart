@@ -6,7 +6,7 @@ part 'checkout_model.g.dart';
 class CheckoutModel {
   final String address;
   final String phone;
-  final double price; 
+  final double price;
 
   const CheckoutModel({
     required this.address,
@@ -14,5 +14,6 @@ class CheckoutModel {
     required this.price,
   });
 
-  Map<String, dynamic> toJson() => _$CheckoutModelToJson(this);
+  factory CheckoutModel.fromJson(Map<String, dynamic> json) =>
+      _$CheckoutModelFromJson(json);
 }

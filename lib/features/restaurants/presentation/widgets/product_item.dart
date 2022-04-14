@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:food_delivery/di/injectable.dart';
 import 'package:food_delivery/features/products/domain/entities/product_entity.dart';
 import 'package:food_delivery/features/products/presentation/bloc/products_cubit.dart';
@@ -38,7 +39,7 @@ class ProductItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'EGP ${product.price}',
+                  '${AppLocalizations.of(context)!.egp} ${product.price}',
                   style: textTheme.caption,
                 ),
               ],

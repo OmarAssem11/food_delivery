@@ -15,6 +15,7 @@
     "areYouSureYouWantToLogout": "هل انت متأكد انك تريد تسجيل خروج؟",
     "yes": "نعم",
     "no": "لا",
+    "egp": "جم",
     "basket": "السلة",
     "specialRequest": "طلب خاص",
     "addANote": "إضافة ملاحظة",
@@ -22,5 +23,10 @@
     "paymentSummery": "ملخص الدفع",
     "subtotal": "الإجمالي",
     "checkout": "متابعة إلي الشراء",
-    "addToBasket": "إضافة الي السلة"
+    "addToBasket": "إضافة الي السلة",
+    "address": "العنوان",
+    "phone": "رقم الهاتف",
+    "payWith": "وسيلة الدفع",
+    "cashOnDelivery": "الدفع عند الإستلام",
+    "placeOrder": "تأكيد الطلب"
 }

@@ -14,7 +14,7 @@ abstract class CheckoutApiService {
   factory CheckoutApiService(Dio dio) = _CheckoutApiService;
 
   @POST(checkoutEndpoint)
-  Future<ResponseModel<CheckoutModel>> checkout({
+  Future<ResponseModel> checkout({
     @Header(authorization) required String token,
     @Header(languageHeader) required String language,
     @Body() required CheckoutModel checkoutModel,

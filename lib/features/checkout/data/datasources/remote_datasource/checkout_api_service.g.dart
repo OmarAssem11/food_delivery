@@ -16,7 +16,7 @@ class _CheckoutApiService implements CheckoutApiService {
   String? baseUrl;
 
   @override
-  Future<ResponseModel<CheckoutModel>> checkout(
+  Future<ResponseModel<dynamic>> checkout(
       {required token, required language, required checkoutModel}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -25,17 +25,16 @@ class _CheckoutApiService implements CheckoutApiService {
       r'lang': language
     };
     _headers.removeWhere((k, v) => v == null);
-    final _data = <String, dynamic>{};
-    _data.addAll(checkoutModel.toJson());
+    final _data = checkoutModel;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ResponseModel<CheckoutModel>>(
+        _setStreamType<ResponseModel<dynamic>>(
             Options(method: 'POST', headers: _headers, extra: _extra)
                 .compose(_dio.options, '',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = ResponseModel<CheckoutModel>.fromJson(
+    final value = ResponseModel<dynamic>.fromJson(
       _result.data!,
-      (json) => CheckoutModel.fromJson(json as Map<String, dynamic>),
+      (json) => json as dynamic,
     );
     return value;
   }

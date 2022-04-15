@@ -15,6 +15,7 @@
     "areYouSureYouWantToLogout": "Are you sure you want to logout?",
     "yes": "YES",
     "no": "NO",
+    "egp": "EGP",
     "basket": "Basket",
     "specialRequest": "Special request",
     "addANote": "Add a note",
@@ -22,5 +23,10 @@
     "paymentSummery": "Payment summery",
     "subtotal": "Subtotal",
     "checkout": "Checkout",
-    "addToBasket": "Add to basket"
+    "addToBasket": "Add to basket",
+    "address": "Address",
+    "phone": "Phone",
+    "payWith": "Pay with",
+    "cashOnDelivery": "Cash on delivery",
+    "placeOrder": "place order"
 }

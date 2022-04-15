@@ -10,6 +10,9 @@ extension CartMapper on CartModel {
     return CartEntity(
       restaurantName: restaurantName,
       restaurantAddress: restaurantAddress,
+      subTotal: subTotal,
+      deliveryFee: deliveryFee,
+      totalAmount: totalAmount,
       orderedProducts: orderedProductsEntities,
     );
   }

@@ -5,6 +5,5 @@ extension CheckoutMapper on CheckoutEntity {
   CheckoutModel get toModel => CheckoutModel(
         address: address,
         phone: phone,
-        price: price,
       );
 }

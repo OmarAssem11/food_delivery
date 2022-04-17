@@ -15,6 +15,7 @@ class AuthCubit extends Cubit<AuthState> {
     this._loginUseCase,
     this._logout,
   ) : super(const AuthInitial());
+
   final RegisterUseCase _registerUserCase;
   final LoginUseCase _loginUseCase;
   final LogoutUseCase _logout;
@@ -22,7 +23,7 @@ class AuthCubit extends Cubit<AuthState> {
   Future<void> register({required RegisterEntity registerEntity}) async {
     emit(const AuthLoading());
     final result = await _registerUserCase(
-      RegisterData(
+      RegisterParams(
         registerEntity: registerEntity,
       ),
     );
@@ -40,7 +41,7 @@ class AuthCubit extends Cubit<AuthState> {
   }) async {
     emit(const AuthLoading());
     final result = await _loginUseCase(
-      LoginData(
+      LoginParams(
         loginEntity: LoginEntity(
           email: email,
           password: password,

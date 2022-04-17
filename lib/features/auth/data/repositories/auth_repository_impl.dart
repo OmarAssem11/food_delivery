@@ -29,11 +29,11 @@ class AuthRepositoryImpl implements AuthRepository {
   }) async {
     try {
       final language = _localizationLocalDataSource.getLanguage()!;
-      final token = await _authRemoteDataSource.register(
+      final tokenResponse = await _authRemoteDataSource.register(
         language: language,
         registerModel: registerEntity.toModel,
       );
-      await _authLocalDataSource.saveToken(token.data.token);
+      await _authLocalDataSource.saveToken(tokenResponse.data.token);
       return right(unit);
     } catch (error) {
       return left(const Failure('Error while register'));

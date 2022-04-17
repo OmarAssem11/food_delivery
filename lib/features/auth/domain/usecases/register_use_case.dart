@@ -7,21 +7,21 @@ import 'package:food_delivery/features/auth/domain/repositories/auth_repository.
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
-class RegisterUseCase implements UseCase<Unit, RegisterData> {
+class RegisterUseCase implements UseCase<Unit, RegisterParams> {
   final AuthRepository _authRepository;
   const RegisterUseCase(this._authRepository);
 
   @override
-  Future<Either<Failure, Unit>> call(RegisterData registerData) =>
+  Future<Either<Failure, Unit>> call(RegisterParams registerData) =>
       _authRepository.register(
         registerEntity: registerData.registerEntity,
       );
 }
 
-class RegisterData extends Equatable {
+class RegisterParams extends Equatable {
   final RegisterEntity registerEntity;
 
-  const RegisterData({
+  const RegisterParams({
     required this.registerEntity,
   });
 

@@ -7,20 +7,22 @@ import 'package:food_delivery/features/auth/domain/repositories/auth_repository.
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
-class LoginUseCase implements UseCase<Unit, LoginData> {
+class LoginUseCase implements UseCase<Unit, LoginParams> {
   final AuthRepository _authRepository;
+
   const LoginUseCase(this._authRepository);
+
   @override
-  Future<Either<Failure, Unit>> call(LoginData loginData) =>
+  Future<Either<Failure, Unit>> call(LoginParams loginData) =>
       _authRepository.login(
         loginEntity: loginData.loginEntity,
       );
 }
 
-class LoginData extends Equatable {
+class LoginParams extends Equatable {
   final LoginEntity loginEntity;
 
-  const LoginData({
+  const LoginParams({
     required this.loginEntity,
   });
 

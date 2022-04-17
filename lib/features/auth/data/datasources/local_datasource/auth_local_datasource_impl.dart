@@ -17,11 +17,4 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
 
   @override
   Future<void> deleteToken() => _sharedPreferences.remove('token');
-
-  @override
-  Future<bool> saveLanguage(String lang) =>
-      _sharedPreferences.setString('lang', lang);
-
-  @override
-  String? getLanguage() => _sharedPreferences.getString('lang');
 }

@@ -8,15 +8,19 @@ import 'package:food_delivery/features/auth/domain/datasources/remote_datasource
 import 'package:food_delivery/features/auth/domain/entities/login_entity.dart';
 import 'package:food_delivery/features/auth/domain/entities/register_entity.dart';
 import 'package:food_delivery/features/auth/domain/repositories/auth_repository.dart';
+import 'package:food_delivery/features/localization/domain/datasources/local_datasources/localization_local_datasource.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource _authRemoteDataSource;
   final AuthLocalDataSource _authLocalDataSource;
+  final LocalizationLocalDataSource _localizationLocalDataSource;
+
   const AuthRepositoryImpl(
     this._authRemoteDataSource,
     this._authLocalDataSource,
+    this._localizationLocalDataSource,
   );
 
   @override
@@ -24,7 +28,7 @@ class AuthRepositoryImpl implements AuthRepository {
     required RegisterEntity registerEntity,
   }) async {
     try {
-      final language = _authLocalDataSource.getLanguage()!;
+      final language = _localizationLocalDataSource.getLanguage()!;
       final token = await _authRemoteDataSource.register(
         language: language,
         registerModel: registerEntity.toModel,
@@ -41,7 +45,7 @@ class AuthRepositoryImpl implements AuthRepository {
     required LoginEntity loginEntity,
   }) async {
     try {
-      final language = _authLocalDataSource.getLanguage()!;
+      final language = _localizationLocalDataSource.getLanguage()!;
       final token = await _authRemoteDataSource.login(
         language: language,
         loginModel: loginEntity.toModel,
@@ -56,7 +60,7 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<Either<Failure, Unit>> logout() async {
     try {
-      final language = _authLocalDataSource.getLanguage()!;
+      final language = _localizationLocalDataSource.getLanguage()!;
       final token = _authLocalDataSource.getToken()!;
       await _authLocalDataSource.deleteToken();
       await _authRemoteDataSource.logout(

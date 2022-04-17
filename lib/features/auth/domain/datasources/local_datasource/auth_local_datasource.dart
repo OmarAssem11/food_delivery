@@ -4,8 +4,4 @@ abstract class AuthLocalDataSource {
   String? getToken();
 
   Future<void> deleteToken();
-
-  Future<bool> saveLanguage(String lang);
-
-  String? getLanguage();
 }

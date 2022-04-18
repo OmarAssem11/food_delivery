@@ -74,6 +74,20 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
+  Future<Either<Failure, Unit>> forgotPassword({required String email}) async {
+    try {
+      final language = _localizationLocalDataSource.getLanguage()!;
+      _authRemoteDataSource.forgotPassword(
+        language: language,
+        email: email,
+      );
+      return right(unit);
+    } catch (error) {
+      return left(const Failure('Error while resetting password'));
+    }
+  }
+
+  @override
   Future<Either<Failure, bool>> isLoggedIn() async {
     try {
       final token = _authLocalDataSource.getToken();

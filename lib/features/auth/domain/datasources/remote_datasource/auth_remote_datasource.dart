@@ -8,12 +8,19 @@ abstract class AuthRemoteDataSource {
     required String language,
     required RegisterModel registerModel,
   });
+
   Future<ResponseModel<TokenModel>> login({
     required String language,
     required LoginModel loginModel,
   });
+
   Future<ResponseModel> logout({
     required String token,
     required String language,
+  });
+
+  Future<ResponseModel> forgotPassword({
+    required String language,
+    required String email,
   });
 }

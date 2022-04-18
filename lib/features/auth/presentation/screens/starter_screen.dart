@@ -23,12 +23,11 @@ class _StarterScreenState extends State<StarterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AuthCubit, AuthState>(
-      listener: (context, state) => state.mapOrNull(
-        loggedIn: (_) => Navigator.of(context)
-            .pushReplacementNamed(RestaurantsListScreen.routeName),
-        notLoggedIn: (_) =>
-            Navigator.of(context).pushReplacementNamed(LoginScreen.routeName),
+    return BlocBuilder<AuthCubit, AuthState>(
+      builder: (context, state) => state.maybeWhen(
+        loggedIn: () => const RestaurantsListScreen(),
+        notLoggedIn: () => const LoginScreen(),
+        orElse: () => const Scaffold(),
       ),
     );
   }

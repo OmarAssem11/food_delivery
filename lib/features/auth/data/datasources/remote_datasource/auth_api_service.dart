@@ -32,4 +32,10 @@ abstract class AuthApiService {
     @Header(authorization) required String token,
     @Header(languageHeader) required String language,
   });
+
+  @POST(forgotPasswordEndpoint)
+  Future<ResponseModel> forgotPPassword({
+    @Header(languageHeader) required String language,
+    @Body() required String email,
+  });
 }

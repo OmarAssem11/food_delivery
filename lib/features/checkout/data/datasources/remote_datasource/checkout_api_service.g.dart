@@ -25,7 +25,8 @@ class _CheckoutApiService implements CheckoutApiService {
       r'lang': language
     };
     _headers.removeWhere((k, v) => v == null);
-    final _data = checkoutModel;
+    final _data = <String, dynamic>{};
+    _data.addAll(checkoutModel.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<ResponseModel<dynamic>>(
             Options(method: 'POST', headers: _headers, extra: _extra)

@@ -12,6 +12,5 @@ class CheckoutModel {
     required this.phone,
   });
 
-  factory CheckoutModel.fromJson(Map<String, dynamic> json) =>
-      _$CheckoutModelFromJson(json);
+  Map<String, dynamic> toJson() => _$CheckoutModelToJson(this);
 }

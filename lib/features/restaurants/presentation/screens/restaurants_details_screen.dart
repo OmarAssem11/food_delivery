@@ -73,6 +73,7 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen> {
                             itemBuilder: (context, index) =>
                                 ProductItem(restaurant.products[index]),
                             itemCount: restaurant.products.length,
+                            physics: const BouncingScrollPhysics(),
                             separatorBuilder: (context, index) => const Divider(
                               color: Colors.grey,
                               height: 32,

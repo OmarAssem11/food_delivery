@@ -40,4 +40,14 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         token: token,
         language: language,
       );
+
+  @override
+  Future<ResponseModel<void>> forgotPassword({
+    required String language,
+    required String email,
+  }) =>
+      _authApiService.forgotPPassword(
+        language: language,
+        email: email,
+      );
 }

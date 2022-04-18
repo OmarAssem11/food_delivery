@@ -5,6 +5,7 @@ import 'package:food_delivery/core/presentation/bloc/bloc_observer.dart';
 import 'package:food_delivery/core/presentation/router/app_router.dart';
 import 'package:food_delivery/core/presentation/theme/my_theme.dart';
 import 'package:food_delivery/di/injectable.dart';
+import 'package:food_delivery/features/auth/presentation/screens/register_screen.dart';
 import 'package:food_delivery/features/localization/presentation/bloc/localization_cubit.dart';
 import 'package:food_delivery/features/localization/presentation/bloc/localization_state.dart';
 import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_list_screen.dart';
@@ -33,7 +34,7 @@ class FoodDeliveryApp extends StatelessWidget {
             locale: Locale(state is ChangeLangSuccess ? state.local : 'en'),
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            initialRoute: RestaurantsListScreen.routeName,
+            // initialRoute: RegisterScreen.routeName,
           );
         },
       ),

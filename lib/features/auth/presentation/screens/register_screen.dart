@@ -14,7 +14,9 @@ import 'package:food_delivery/features/restaurants/presentation/screens/restaura
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen();
+
   static const routeName = 'register';
+
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
 }

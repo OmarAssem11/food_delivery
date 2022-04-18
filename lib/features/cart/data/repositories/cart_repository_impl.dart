@@ -41,6 +41,24 @@ class CartRepositoryImpl implements CartRepository {
   }
 
   @override
+  Future<Either<Failure, Unit>> editCart({
+    required OrderEntity orderEntity,
+  }) async {
+    try {
+      final token = _authLocalDataSource.getToken() ?? '';
+      final language = _localizationLocalDataSource.getLanguage() ?? '';
+      await _cartRemoteDataSource.addToCart(
+        token: token,
+        language: language,
+        orderModel: orderEntity.toModel,
+      );
+      return right(unit);
+    } catch (error) {
+      return left(const Failure('Error while editing cart'));
+    }
+  }
+
+  @override
   Future<Either<Failure, CartEntity>> getCart() async {
     try {
       final token = _authLocalDataSource.getToken() ?? '';

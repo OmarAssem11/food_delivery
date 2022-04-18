@@ -9,6 +9,10 @@ class CartState with _$CartState {
   const factory CartState.addToCartSuccess() = AddToCartSuccess;
   const factory CartState.addToCartError(final String error) =
       AddToCartErrorDetails;
+  const factory CartState.editCartLoading() = EditCartLoading;
+  const factory CartState.editCartSuccess() = EditCartSuccess;
+  const factory CartState.editCartError(final String error) =
+      EditCartErrorDetails;
   const factory CartState.getCartLoading() = GetCartLoading;
   const factory CartState.getCartSuccess(final CartEntity cartEntity) =
       GetCartSuccess;

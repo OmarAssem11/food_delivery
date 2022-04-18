@@ -21,6 +21,13 @@ abstract class CartApiService {
     @Body() required OrderModel orderModel,
   });
 
+  @POST(editCartEndpoint)
+  Future<ResponseModel> editCart({
+    @Header(authorization) required String token,
+    @Header(languageHeader) required String language,
+    @Body() required OrderModel orderModel,
+  });
+
   @GET(getCartEndpoint)
   Future<ResponseModel<CartModel>> getCart({
     @Header(authorization) required String token,

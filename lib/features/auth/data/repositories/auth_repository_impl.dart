@@ -72,4 +72,18 @@ class AuthRepositoryImpl implements AuthRepository {
       return left(const Failure('Error while logout'));
     }
   }
+
+  @override
+  Future<Either<Failure, bool>> isLoggedIn() async {
+    try {
+      final token = _authLocalDataSource.getToken();
+      if (token == null) {
+        return right(false);
+      } else {
+        return right(true);
+      }
+    } catch (error) {
+      return left(const Failure('Error while checking on login status'));
+    }
+  }
 }

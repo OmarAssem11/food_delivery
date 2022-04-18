@@ -9,6 +9,12 @@ abstract class CartRemoteDataSource {
     required OrderModel orderModel,
   });
 
+  Future<ResponseModel> editCart({
+    required String token,
+    required String language,
+    required OrderModel orderModel,
+  });
+
   Future<ResponseModel<CartModel>> getCart({
     required String token,
     required String language,

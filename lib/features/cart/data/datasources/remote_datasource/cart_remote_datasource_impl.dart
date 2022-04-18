@@ -24,6 +24,18 @@ class CartRemoteDataSourceImpl implements CartRemoteDataSource {
       );
 
   @override
+  Future<ResponseModel> editCart({
+    required String token,
+    required String language,
+    required OrderModel orderModel,
+  }) =>
+      _cartApiService.editCart(
+        token: token,
+        language: language,
+        orderModel: orderModel,
+      );
+
+  @override
   Future<ResponseModel<CartModel>> getCart({
     required String token,
     required String language,

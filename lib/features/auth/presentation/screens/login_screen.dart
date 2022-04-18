@@ -13,7 +13,9 @@ import 'package:food_delivery/features/restaurants/presentation/screens/restaura
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen();
-  static const routeName = '/';
+
+  static const routeName = 'login';
+
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }

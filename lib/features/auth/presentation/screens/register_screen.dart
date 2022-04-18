@@ -10,6 +10,7 @@ import 'package:food_delivery/features/auth/domain/entities/register_entity.dart
 import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:food_delivery/features/auth/presentation/bloc/auth_state.dart';
 import 'package:food_delivery/features/auth/presentation/screens/login_screen.dart';
+import 'package:food_delivery/features/auth/presentation/widgets/curved_widget.dart';
 import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_list_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -48,92 +49,117 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Form(
-        key: _formKey,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                appLocalizations.register,
-                style: textTheme.headline4,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            CurvedWidget(
+              child: Container(
+                width: double.infinity,
+                height: 250,
+                decoration: const BoxDecoration(
+                    color: Colors.deepOrange,
+                    image: DecorationImage(
+                        image: AssetImage(
+                          'assets/images/food.jpg',
+                        ),
+                        fit: BoxFit.cover,),),
               ),
-              CustomTextFormField(
-                controller: nameController,
-                hintText: appLocalizations.userName,
-                prefixIcon: Icons.person_outline,
-                keyboardType: TextInputType.name,
-                validator: (name) => generalValidator(
-                  context: context,
-                  value: name,
-                  fieldName: appLocalizations.name,
-                ),
-              ),
-              CustomTextFormField(
-                controller: emailController,
-                hintText: appLocalizations.emailAddress,
-                prefixIcon: Icons.email_outlined,
-                keyboardType: TextInputType.emailAddress,
-                validator: (email) => emailValidator(
-                  context: context,
-                  email: email,
-                ),
-              ),
-              PasswordTextFormField(controller: passwordController),
-              const SizedBox(height: 16),
-              BlocBuilder<AuthCubit, AuthState>(
-                builder: (context, state) {
-                  bool isLoading = false;
-                  state.maybeWhen(
-                    loading: () => isLoading = true,
-                    error: (error) => showErrorToast(errorMessage: error),
-                    success: () =>
-                        WidgetsBinding.instance!.addPostFrameCallback(
-                      (_) {
-                        Navigator.of(context)
-                            .popUntil((route) => route.isFirst);
-                        Navigator.of(context).pushReplacementNamed(
-                          RestaurantsListScreen.routeName,
+            ),
+            Form(
+              key: _formKey,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      appLocalizations.register,
+                      style: textTheme.headline4,
+                    ),
+                    CustomTextFormField(
+                      controller: nameController,
+                      hintText: appLocalizations.userName,
+                      prefixIcon: Icons.person_outline,
+                      keyboardType: TextInputType.name,
+                      validator: (name) => generalValidator(
+                        context: context,
+                        value: name,
+                        fieldName: appLocalizations.name,
+                      ),
+                    ),
+                    CustomTextFormField(
+                      controller: emailController,
+                      hintText: appLocalizations.emailAddress,
+                      prefixIcon: Icons.email_outlined,
+                      keyboardType: TextInputType.emailAddress,
+                      validator: (email) => emailValidator(
+                        context: context,
+                        email: email,
+                      ),
+                    ),
+                    PasswordTextFormField(controller: passwordController),
+                    const SizedBox(height: 16),
+                    BlocBuilder<AuthCubit, AuthState>(
+                      builder: (context, state) {
+                        bool isLoading = false;
+                        state.maybeWhen(
+                          loading: () => isLoading = true,
+                          error: (error) => showErrorToast(errorMessage: error),
+                          success: () =>
+                              WidgetsBinding.instance!.addPostFrameCallback(
+                            (_) {
+                              Navigator.of(context)
+                                  .popUntil((route) => route.isFirst);
+                              Navigator.of(context).pushReplacementNamed(
+                                RestaurantsListScreen.routeName,
+                              );
+                            },
+                          ),
+                          orElse: () {},
+                        );
+                        return CustomElevatedButton(
+                          label: appLocalizations.register,
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              BlocProvider.of<AuthCubit>(context).register(
+                                registerEntity: RegisterEntity(
+                                  name: nameController.text,
+                                  email: emailController.text,
+                                  password: passwordController.text,
+                                ),
+                              );
+                            }
+                          },
+                          isLoading: isLoading,
                         );
                       },
                     ),
-                    orElse: () {},
-                  );
-                  return CustomElevatedButton(
-                    label: appLocalizations.register,
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        BlocProvider.of<AuthCubit>(context).register(
-                          registerEntity: RegisterEntity(
-                            name: nameController.text,
-                            email: emailController.text,
-                            password: passwordController.text,
-                          ),
-                        );
-                      }
-                    },
-                    isLoading: isLoading,
-                  );
-                },
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          appLocalizations.alreadyHaveAnAccount,
+                          style: textTheme.headline6,
+                        ),
+                        TextButton(
+                          onPressed: () => Navigator.of(context)
+                              .pushReplacementNamed(LoginScreen.routeName),
+                          child: Text(appLocalizations.login),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    appLocalizations.alreadyHaveAnAccount,
-                    style: textTheme.headline6,
-                  ),
-                  TextButton(
-                    onPressed: () => Navigator.of(context)
-                        .pushReplacementNamed(LoginScreen.routeName),
-                    child: Text(appLocalizations.login),
-                  ),
-                ],
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -12,60 +12,78 @@ import 'package:food_delivery/features/checkout/presentation/screens/checkout_sc
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_cubit.dart';
 import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_details_screen.dart';
 import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_list_screen.dart';
+import 'package:page_transition/page_transition.dart';
 
-Route<MaterialPageRoute>? onGenerateRoute(
+
+Route<PageTransition>? onGenerateRoute(
   RouteSettings routeSettings,
 ) {
   switch (routeSettings.name) {
     case StarterScreen.routeName:
-      return MaterialPageRoute(
-        builder: (context) => BlocProvider(
-          create: (context) => getIt<AuthCubit>(),
-          child: const StarterScreen(),
+      return
+        PageTransition(
+
+          child: BlocProvider(
+            create: (context) => getIt<AuthCubit>(),
+            child: const StarterScreen(),
         ),
+          type: PageTransitionType.leftToRightWithFade,
       );
     case LoginScreen.routeName:
-      return MaterialPageRoute(
-        builder: (context) => BlocProvider(
-          create: (context) => getIt<AuthCubit>(),
-          child: const LoginScreen(),
-        ),
+      return
+        PageTransition(
+          child: BlocProvider(
+            create: (context) => getIt<AuthCubit>(),
+            child: const LoginScreen(),
+        ), type: PageTransitionType.leftToRightWithFade,
       );
     case RegisterScreen.routeName:
-      return MaterialPageRoute(
-        builder: (context) => BlocProvider(
-          create: (context) => getIt<AuthCubit>(),
-          child: const RegisterScreen(),
+      return
+        PageTransition(
+          child: BlocProvider(
+            create: (context) => getIt<AuthCubit>(),child: const RegisterScreen(),
         ),
+          type: PageTransitionType.leftToRightWithFade,
       );
     case RestaurantsListScreen.routeName:
-      return MaterialPageRoute(
-        builder: (context) => BlocProvider(
-          create: (context) => getIt<RestaurantsCubit>(),
-          child: const RestaurantsListScreen(),
+      return
+        PageTransition(
+
+          child: BlocProvider(
+            create: (context) => getIt<RestaurantsCubit>(),
+            child: const RestaurantsListScreen(),
         ),
+          type: PageTransitionType.leftToRightWithFade,
       );
     case RestaurantDetailsScreen.routeName:
-      return MaterialPageRoute(
-        builder: (context) => BlocProvider(
-          create: (context) => getIt<RestaurantsCubit>(),
-          child: const RestaurantDetailsScreen(),
+      return
+        PageTransition(
+
+          child:BlocProvider(
+            create: (context) => getIt<RestaurantsCubit>(),
+            child: const RestaurantDetailsScreen(),
         ),
         settings: routeSettings,
+          type: PageTransitionType.leftToRightWithFade,
       );
     case CartScreen.routeName:
-      return MaterialPageRoute(
-        builder: (context) => BlocProvider(
-          create: (context) => getIt<CartCubit>(),
-          child: const CartScreen(),
+      return
+        PageTransition(
+          child: BlocProvider(
+            create: (context) => getIt<CartCubit>(),
+            child: const CartScreen(),
         ),
+          type: PageTransitionType.leftToRightWithFade,
       );
     case CheckoutScreen.routeName:
-      return MaterialPageRoute(
-        builder: (context) => BlocProvider(
-          create: (context) => getIt<CheckoutCubit>(),
-          child: const CheckoutScreen(),
+      return
+        PageTransition(
+
+          child:BlocProvider(
+            create: (context) => getIt<CheckoutCubit>(),
+            child: const CheckoutScreen(),
         ),
+          type: PageTransitionType.leftToRightWithFade,
       );
     default:
       return null;

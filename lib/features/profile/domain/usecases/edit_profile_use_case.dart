@@ -17,7 +17,9 @@ class EditProfileUseCase implements UseCase<Unit, EditProfileData> {
   Future<Either<Failure, Unit>> call(
     EditProfileData editProfileData,
   ) =>
-      _profileRepository.editProfile(editProfileData);
+      _profileRepository.editProfile(
+        editProfileData: editProfileData,
+      );
 }
 
 class EditProfileData extends Equatable {

@@ -21,7 +21,7 @@ abstract class ProfileApiService {
   @POST(editProfileEndpoint)
   Future<ProfileModel> editProfile({
     @Header(authorization) required String token,
-    @Body() required ProfileModel userModel,
+    @Body() required ProfileModel profileModel,
   });
 
   @POST(imageApiBaseUrl)

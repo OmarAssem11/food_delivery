@@ -6,5 +6,7 @@ import 'package:food_delivery/features/profile/domain/usecases/edit_profile_use_
 abstract class ProfileRepository {
   Future<Either<Failure, ProfileEntity>> viewProfile();
 
-  Future<Either<Failure, Unit>> editProfile(EditProfileData editProfileData);
+  Future<Either<Failure, Unit>> editProfile({
+    required EditProfileData editProfileData,
+  });
 }

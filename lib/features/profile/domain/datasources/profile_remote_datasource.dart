@@ -10,7 +10,7 @@ abstract class ProfileRemoteDataSource {
 
   Future<ProfileModel> editProfile({
     required String token,
-    required ProfileModel userModel,
+    required ProfileModel profileModel,
   });
 
   Future<ImageModel> uploadImage({

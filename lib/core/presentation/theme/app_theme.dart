@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-const Color _primaryColor = Color.fromARGB(255, 255, 115, 15);
+const Color _primaryColor = Colors.deepOrange;
 
-ThemeData myTheme = ThemeData(
+ThemeData appTheme = ThemeData(
   colorScheme: const ColorScheme(
     brightness: Brightness.light,
     primary: _primaryColor,

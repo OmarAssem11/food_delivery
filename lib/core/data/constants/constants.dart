@@ -1,5 +1,6 @@
-//BaseUrl
-const baseUrl = 'http://192.168.46.84:5500/apis/';
+//BaseUrls
+const baseUrl = 'http://192.168.1.8:5500/apis/';
+const imageApiBaseUrl = 'https://api.imgbb.com/1/upload';
 //Endpoints
 const registerEndpoint = 'register';
 const loginEndpoint = 'login';
@@ -12,6 +13,11 @@ const addToCartEndpoint = '';
 const editCartEndpoint = '';
 const getCartEndpoint = 'get_cart.json';
 const checkoutEndpoint = '';
+const getOrderDetailsEndpoint = '';
+const viewProfileEndpoint = 'user';
+const editProfileEndpoint = 'edit_user';
+//ApiKeys
+const imageApiKey = 'ad54db45a510342fbfef1568797bf4fd';
 //Headers
 const authorization = 'Authorization';
 const tokenType = 'Bearer';

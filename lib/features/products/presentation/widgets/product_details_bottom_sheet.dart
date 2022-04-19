@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
+import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:food_delivery/features/products/presentation/bloc/products_cubit.dart';
 import 'package:food_delivery/features/products/presentation/bloc/products_state.dart';
-import 'package:food_delivery/features/products/presentation/widgets/custom_counter.dart';
+import 'package:food_delivery/features/products/presentation/widgets/quantity_price_counter.dart';
 
 class ProductDetailsBottomSheet extends StatefulWidget {
   const ProductDetailsBottomSheet();
@@ -17,6 +18,7 @@ class ProductDetailsBottomSheet extends StatefulWidget {
 class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
   late TextTheme textTheme;
   late AppLocalizations appLocalizations;
+  int quantity = 1;
 
   @override
   void didChangeDependencies() {
@@ -40,6 +42,7 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
           getProductDetailsSuccess: (product) => Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 12),
               Stack(
                 children: [
                   Image.network(
@@ -84,44 +87,22 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                     const SizedBox(height: 15),
                     Text(product.description, style: textTheme.bodySmall),
                     const SizedBox(height: 15),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '${appLocalizations.egp} ${product.price}',
-                          style: textTheme.headline4!.copyWith(fontSize: 20),
-                        ),
-                        CustomCounter(
-                          totalPrice: product.price,
-                          onValueChanged: (value) {},
-                        ),
-                      ],
+                    QuantityPriceCounter(
+                      price: product.price,
+                      onValueChanged: (value) =>
+                          setState(() => quantity = value),
                     ),
                   ],
                 ),
               ),
-              Divider(
-                color: Colors.grey[300],
-                thickness: 4,
-              ),
               Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15),
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                      Theme.of(context).colorScheme.primary,
-                    ),
-                  ),
+                padding: const EdgeInsets.all(15),
+                child: CustomElevatedButton(
+                  label: appLocalizations.addToBasket,
                   onPressed: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(appLocalizations.addToBasket),
-                      Text('EGP ${product.price}')
-                    ],
-                  ),
+                  isLoading: false,
                 ),
-              )
+              ),
             ],
           ),
           orElse: () => Container(),

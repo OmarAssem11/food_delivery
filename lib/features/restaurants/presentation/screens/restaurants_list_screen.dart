@@ -40,28 +40,20 @@ class _RestaurantsListScreenState extends State<RestaurantsListScreen> {
       body: BlocBuilder<RestaurantsCubit, RestaurantsState>(
         builder: (context, state) {
           return state.maybeWhen(
-            getAllRestaurantLoading: () {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            },
-            getAllRestaurantSuccess: (restaurants) {
-              return ListView.separated(
-                itemBuilder: (context, index) {
-                  return RestaurantItem(
-                    restaurantEntity: restaurants[index],
-                  );
-                },
-                itemCount: restaurants.length,
-                separatorBuilder: (context, index) => const Divider(
-                  thickness: 1,
-                  color: Colors.grey,
-                ),
-              );
-            },
-            orElse: () {
-              return Container();
-            },
+            getAllRestaurantLoading: () => const Center(
+              child: CircularProgressIndicator(),
+            ),
+            getAllRestaurantSuccess: (restaurants) => ListView.separated(
+              itemBuilder: (context, index) => RestaurantItem(
+                restaurantEntity: restaurants[index],
+              ),
+              itemCount: restaurants.length,
+              separatorBuilder: (context, index) => const Divider(
+                thickness: 1,
+                color: Colors.grey,
+              ),
+            ),
+            orElse: () => Container(),
           );
         },
       ),

@@ -14,11 +14,11 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
   @override
   Future<ProfileModel> editProfile({
     required String token,
-    required ProfileModel userModel,
+    required ProfileModel profileModel,
   }) =>
       _profileApiService.editProfile(
         token: token,
-        userModel: userModel,
+        profileModel: profileModel,
       );
 
   @override

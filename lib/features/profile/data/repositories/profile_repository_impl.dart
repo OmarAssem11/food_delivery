@@ -24,19 +24,19 @@ class ProfileRepositoryImpl implements ProfileRepository {
   Future<Either<Failure, ProfileEntity>> viewProfile() async {
     try {
       final token = _authLocalDataSource.getToken()!;
-      final user = await _profileRemoteDataSource.viewProfile(
+      final profile = await _profileRemoteDataSource.viewProfile(
         token: '$tokenType $token',
       );
-      return right(user.fromModel);
+      return right(profile.fromModel);
     } catch (error) {
       return left(const Failure('Error while viewing profile'));
     }
   }
 
   @override
-  Future<Either<Failure, Unit>> editProfile(
-    EditProfileData editProfileData,
-  ) async {
+  Future<Either<Failure, Unit>> editProfile({
+    required EditProfileData editProfileData,
+  }) async {
     try {
       final token = _authLocalDataSource.getToken()!;
       if (editProfileData.imageFile != null) {
@@ -45,7 +45,7 @@ class ProfileRepositoryImpl implements ProfileRepository {
         );
         await _profileRemoteDataSource.editProfile(
           token: '$tokenType $token',
-          userModel: ProfileModel(
+          profileModel: ProfileModel(
             name: editProfileData.profile.name,
             email: editProfileData.profile.email,
             password: editProfileData.profile.password,
@@ -57,7 +57,7 @@ class ProfileRepositoryImpl implements ProfileRepository {
       } else {
         await _profileRemoteDataSource.editProfile(
           token: '$tokenType $token',
-          userModel: editProfileData.profile.toModel,
+          profileModel: editProfileData.profile.toModel,
         );
       }
       return right(unit);

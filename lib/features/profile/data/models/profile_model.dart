@@ -1,3 +1,8 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'profile_model.g.dart';
+
+@JsonSerializable()
 class ProfileModel {
   final String name;
   final String email;
@@ -15,25 +20,8 @@ class ProfileModel {
     required this.imageUrl,
   });
 
-  factory ProfileModel.fromJson(Map<String, dynamic> json) {
-    final userData = json['data'] as Map<String, dynamic>;
-    return ProfileModel(
-      name: userData['name'] as String,
-      email: userData['email'] as String,
-      password: '',
-      phone: userData['phone'] as String,
-      imageUrl: userData['image'] as String,
-      address: userData['address'] as String,
-    );
-  }
+  factory ProfileModel.fromJson(Map<String, dynamic> json) =>
+      _$ProfileModelFromJson(json);
 
-  Map<String, dynamic> toJson() => {
-        'name': name,
-        'email': email,
-        'password': password,
-        'password_confirmation': password,
-        'phone': phone,
-        'image': imageUrl,
-        'address': address,
-      };
+  Map<String, dynamic> toJson() => _$ProfileModelToJson(this);
 }

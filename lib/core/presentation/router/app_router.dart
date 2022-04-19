@@ -20,76 +20,66 @@ import 'package:food_delivery/features/restaurants/presentation/screens/restaura
 import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_list_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
-
 Route<PageTransition>? onGenerateRoute(
   RouteSettings routeSettings,
 ) {
   switch (routeSettings.name) {
     case StarterScreen.routeName:
-      return
-        PageTransition(
-
-          child: BlocProvider(
-            create: (context) => getIt<AuthCubit>(),
-            child: const StarterScreen(),
+      return PageTransition(
+        child: BlocProvider(
+          create: (context) => getIt<AuthCubit>(),
+          child: const StarterScreen(),
         ),
-          type: PageTransitionType.leftToRightWithFade,
+        type: PageTransitionType.leftToRightWithFade,
       );
     case LoginScreen.routeName:
-      return
-        PageTransition(
-          child: BlocProvider(
-            create: (context) => getIt<AuthCubit>(),
-            child: const LoginScreen(),
-        ), type: PageTransitionType.leftToRightWithFade,
+      return PageTransition(
+        child: BlocProvider(
+          create: (context) => getIt<AuthCubit>(),
+          child: const LoginScreen(),
+        ),
+        type: PageTransitionType.leftToRightWithFade,
       );
     case RegisterScreen.routeName:
-      return
-        PageTransition(
-          child: BlocProvider(
-            create: (context) => getIt<AuthCubit>(),child: const RegisterScreen(),
+      return PageTransition(
+        child: BlocProvider(
+          create: (context) => getIt<AuthCubit>(),
+          child: const RegisterScreen(),
         ),
-          type: PageTransitionType.leftToRightWithFade,
+        type: PageTransitionType.leftToRightWithFade,
       );
     case RestaurantsListScreen.routeName:
-      return
-        PageTransition(
-
-          child: BlocProvider(
-            create: (context) => getIt<RestaurantsCubit>(),
-            child: const RestaurantsListScreen(),
+      return PageTransition(
+        child: BlocProvider(
+          create: (context) => getIt<RestaurantsCubit>(),
+          child: const RestaurantsListScreen(),
         ),
-          type: PageTransitionType.leftToRightWithFade,
+        type: PageTransitionType.leftToRightWithFade,
       );
     case RestaurantDetailsScreen.routeName:
-      return
-        PageTransition(
-
-          child:BlocProvider(
-            create: (context) => getIt<RestaurantsCubit>(),
-            child: const RestaurantDetailsScreen(),
+      return PageTransition(
+        child: BlocProvider(
+          create: (context) => getIt<RestaurantsCubit>(),
+          child: const RestaurantDetailsScreen(),
         ),
         settings: routeSettings,
-          type: PageTransitionType.leftToRightWithFade,
+        type: PageTransitionType.leftToRightWithFade,
       );
     case CartScreen.routeName:
-      return
-        PageTransition(
-          child: BlocProvider(
-            create: (context) => getIt<CartCubit>(),
-            child: const CartScreen(),
+      return PageTransition(
+        child: BlocProvider(
+          create: (context) => getIt<CartCubit>(),
+          child: const CartScreen(),
         ),
-          type: PageTransitionType.leftToRightWithFade,
+        type: PageTransitionType.leftToRightWithFade,
       );
     case CheckoutScreen.routeName:
-      return
-        PageTransition(
-
-          child:BlocProvider(
-            create: (context) => getIt<CheckoutCubit>(),
-            child: const CheckoutScreen(),
+      return PageTransition(
+        child: BlocProvider(
+          create: (context) => getIt<CheckoutCubit>(),
+          child: const CheckoutScreen(),
         ),
-          type: PageTransitionType.leftToRightWithFade,
+        type: PageTransitionType.leftToRightWithFade,
       );
     case OrdersScreen.routeName:
       return MaterialPageRoute(

@@ -57,12 +57,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 width: double.infinity,
                 height: 250,
                 decoration: const BoxDecoration(
-                    color: Colors.deepOrange,
-                    image: DecorationImage(
-                        image: AssetImage(
-                          'assets/images/food.jpg',
-                        ),
-                        fit: BoxFit.cover,),),
+                  color: Colors.deepOrange,
+                  image: DecorationImage(
+                    image: AssetImage(
+                      'assets/images/food.jpg',
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
             Form(

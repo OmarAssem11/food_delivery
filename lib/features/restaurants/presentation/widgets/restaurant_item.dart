@@ -4,7 +4,9 @@ import 'package:food_delivery/features/restaurants/presentation/screens/restaura
 
 class RestaurantItem extends StatelessWidget {
   final RestaurantEntity restaurantEntity;
+
   const RestaurantItem({required this.restaurantEntity});
+
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/features/cart/domain/entities/ordered_product_entity.dart';
+import 'package:food_delivery/features/products/presentation/widgets/quantity_price_counter.dart';
 
 class OrderedProductItem extends StatelessWidget {
   const OrderedProductItem(this.product);
@@ -14,13 +15,21 @@ class OrderedProductItem extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
-            children: [
-              Text(
-                product.name,
-                style: Theme.of(context).textTheme.bodyText1,
-              ),
-            ],
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  product.name,
+                  style: Theme.of(context).textTheme.bodyText1,
+                ),
+                const SizedBox(height: 8),
+                QuantityPriceCounter(
+                  price: product.price,
+                  onValueChanged: (value) {},
+                ),
+              ],
+            ),
           ),
           ClipRRect(
             borderRadius: const BorderRadius.all(Radius.circular(8)),

@@ -85,11 +85,12 @@ class _CartScreenState extends State<CartScreen> {
                       physics: const NeverScrollableScrollPhysics(),
                     ),
                   ),
+                  const SizedBox(height: 8),
                   Text(
                     appLocalizations.specialRequest,
                     style: textTheme.headline5,
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 12),
                   Row(
                     children: [
                       const Icon(Icons.message_outlined),

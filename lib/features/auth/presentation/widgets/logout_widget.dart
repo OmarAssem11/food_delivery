@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
+import 'package:food_delivery/features/auth/presentation/screens/login_screen.dart';
 
 class LogoutWidget extends StatelessWidget {
-  const LogoutWidget({required this.onPressed});
-  final VoidCallback onPressed;
+  const LogoutWidget();
+
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -27,7 +30,12 @@ class LogoutWidget extends StatelessWidget {
                 ),
               ),
               TextButton(
-                onPressed: onPressed,
+                onPressed: () {
+                  BlocProvider.of<AuthCubit>(context).logout();
+                  Navigator.popUntil(context, (route) => route.isFirst);
+                  Navigator.of(context)
+                      .pushReplacementNamed(LoginScreen.routeName);
+                },
                 child: Text(
                   appLocalizations.yes,
                   style: headline2,

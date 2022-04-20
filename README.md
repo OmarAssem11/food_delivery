@@ -18,10 +18,13 @@
 * retrofit
 * equatable
 * flutter_bloc
+* flutter_localizations
 * freezed
 * get_it
 * injectable
 * shared_preferences
 * cached_network_image
 * json_serializable
+* page_transition
 * fluttertoast
+* google_fonts

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart ';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:food_delivery/features/cart/presentation/screens/cart_screen.dart';
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_cubit.dart';
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_state.dart';
@@ -27,10 +26,10 @@ class _RestaurantsListScreenState extends State<RestaurantsListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: ZoomDrawer.of(context)!.toggle,
-          icon: const Icon(Icons.menu),
-        ),
+        // leading: IconButton(
+        //   onPressed: ZoomDrawer.of(context)!.toggle,
+        //   icon: const Icon(Icons.menu),
+        // ),
         actions: [
           IconButton(
             onPressed: () =>

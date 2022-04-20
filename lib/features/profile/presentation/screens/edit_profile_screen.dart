@@ -102,14 +102,20 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       controller: passwordController,
                       hintText: 'Change password',
                       keyboardType: TextInputType.visiblePassword,
-                      validator: (value) => editPasswordValidator(value),
+                      validator: (password) => editPasswordValidator(
+                        context: context,
+                        password: password,
+                      ),
                       prefixIcon: Icons.lock_outline,
                     ),
                     CustomTextFormField(
                       controller: phoneController,
                       hintText: 'Change phone number',
                       keyboardType: TextInputType.phone,
-                      validator: (value) => phoneValidator(value),
+                      validator: (phone) => phoneValidator(
+                        context: context,
+                        phone: phone,
+                      ),
                       prefixIcon: Icons.phone_outlined,
                     ),
                     CustomTextFormField(

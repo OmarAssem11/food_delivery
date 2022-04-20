@@ -19,26 +19,35 @@ String? passwordValidator({
   required BuildContext context,
   required String? password,
 }) {
-  if (password == null || password.length < 6) {
-    return AppLocalizations.of(context)!.passwordCanNotBeLessThanSixCharacters;
+  if (password == null || password.length < 8) {
+    return AppLocalizations.of(context)!
+        .passwordCanNotBeLessThanEightCharacters;
   }
   return null;
 }
 
-String? editPasswordValidator(String? password) {
+String? editPasswordValidator({
+  required BuildContext context,
+  required String? password,
+}) {
   if (password == null) {
     return null;
-  } else if (password.isNotEmpty && password.length < 6) {
-    return "Password can't be less than 6 characters";
+  } else if (password.isNotEmpty && password.length < 8) {
+    return AppLocalizations.of(context)!
+        .passwordCanNotBeLessThanEightCharacters;
   }
   return null;
 }
 
-String? phoneValidator(String? phone) {
+String? phoneValidator({
+  required BuildContext context,
+  required String? phone,
+}) {
+  final appLocalizations = AppLocalizations.of(context)!;
   if (phone == null || phone.isEmpty) {
-    return "Phone can't be less than 6 characters";
+    return appLocalizations.phoneCanNotBeEmpty;
   } else if (phone.substring(0, 2) != '01' || phone.length != 11) {
-    return 'Invalid phone number';
+    return appLocalizations.invalidPhoneNumber;
   }
   return null;
 }

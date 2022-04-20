@@ -7,8 +7,8 @@ class ProductModel {
   final int id;
   final String name;
   final String description;
+  @JsonKey(name: 'image')
   final String imageUrl;
-  final String category;
   final double price;
 
   const ProductModel({
@@ -16,7 +16,6 @@ class ProductModel {
     required this.name,
     required this.description,
     required this.imageUrl,
-    required this.category,
     required this.price,
   });
 

@@ -3,8 +3,9 @@ import 'package:food_delivery/features/auth/domain/entities/register_entity.dart
 
 extension RegisterMapper on RegisterEntity {
   RegisterModel get toModel => RegisterModel(
+        name: name,
         email: email,
         password: password,
-        name: name,
+        passwordConfirmation: password,
       );
 }

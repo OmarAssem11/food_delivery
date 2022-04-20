@@ -1,21 +1,21 @@
 //BaseUrls
-const baseUrl = 'http://192.168.1.8:5500/apis/';
+const baseUrl = 'http://0ad2-41-38-218-114.ngrok.io/api/';
 const imageApiBaseUrl = 'https://api.imgbb.com/1/upload';
 //Endpoints
 const registerEndpoint = 'register';
 const loginEndpoint = 'login';
 const logoutEndpoint = 'logout';
-const forgotPasswordEndpoint = '';
-const getAllRestaurantsEndpoint = 'get_restaurants.json';
-const getRestaurantDetailsEndpoint = 'get_restaurant_details.json';
-const getProductDetailsEndpoint = 'get_product_details.json';
-const addToCartEndpoint = '';
-const editCartEndpoint = '';
-const getCartEndpoint = 'get_cart.json';
-const checkoutEndpoint = '';
-const getOrderDetailsEndpoint = '';
-const viewProfileEndpoint = 'user';
-const editProfileEndpoint = 'edit_user';
+const forgotPasswordEndpoint = 'forgetpassword';
+const getAllRestaurantsEndpoint = 'restarunt/list';
+const getRestaurantDetailsEndpoint = 'restarunt/details/{restaurant_id}';
+const getProductDetailsEndpoint = 'product/details/{product_id}';
+const addToCartEndpoint = 'cart/add';
+const editCartEndpoint = 'cart/update';
+const getCartEndpoint = 'cart/usercart';
+const checkoutEndpoint = 'order/checkout';
+const getOrderDetailsEndpoint = 'order/details';
+const viewProfileEndpoint = 'profile';
+const editProfileEndpoint = 'edit_profile';
 //ApiKeys
 const imageApiKey = 'ad54db45a510342fbfef1568797bf4fd';
 //Headers
@@ -23,8 +23,8 @@ const authorization = 'Authorization';
 const tokenType = 'Bearer';
 const languageHeader = 'lang';
 //Paths
-const restaurantIdPath = '';
-const productIdPath = '';
+const restaurantIdPath = '{restaurant_id}';
+const productIdPath = '{product_id}';
 //Languages
 const localizationLangs = ['en', 'ar'];
 //Regex

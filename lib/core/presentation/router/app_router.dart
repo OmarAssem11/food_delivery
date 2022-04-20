@@ -25,6 +25,21 @@ Route<PageTransition>? onGenerateRoute(
   RouteSettings routeSettings,
 ) {
   switch (routeSettings.name) {
+    case StarterScreen.routeName:
+      return PageTransition(
+        child: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => getIt<AuthCubit>(),
+            ),
+            BlocProvider(
+              create: (context) => getIt<RestaurantsCubit>(),
+            ),
+          ],
+          child: const StarterScreen(),
+        ),
+        type: PageTransitionType.leftToRightWithFade,
+      );
     case HomeScreen.routeName:
       return PageTransition(
         child: BlocProvider(
@@ -33,14 +48,7 @@ Route<PageTransition>? onGenerateRoute(
         ),
         type: PageTransitionType.leftToRightWithFade,
       );
-    case StarterScreen.routeName:
-      return PageTransition(
-        child: BlocProvider(
-          create: (context) => getIt<AuthCubit>(),
-          child: const StarterScreen(),
-        ),
-        type: PageTransitionType.leftToRightWithFade,
-      );
+
     case LoginScreen.routeName:
       return PageTransition(
         child: BlocProvider(

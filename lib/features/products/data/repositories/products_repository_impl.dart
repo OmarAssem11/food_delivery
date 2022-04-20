@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:food_delivery/core/data/constants/constants.dart';
 import 'package:food_delivery/core/domain/error/failure.dart';
 import 'package:food_delivery/features/auth/domain/datasources/local_datasource/auth_local_datasource.dart';
 import 'package:food_delivery/features/localization/domain/datasources/local_datasources/localization_local_datasource.dart';
@@ -26,10 +27,10 @@ class ProductsRepositoryImpl implements ProductsRepository {
   }) async {
     try {
       final token = _authLocalDataSource.getToken() ?? '';
-      final language = _localizationLocalDataSource.getLanguage() ?? '';
+      final language = _localizationLocalDataSource.getLanguage() ?? 'en';
       final productsResponse =
           await _productsRemoteDataSource.getProductDetails(
-        token: token,
+        token: '$tokenType $token',
         language: language,
         productId: productId,
       );

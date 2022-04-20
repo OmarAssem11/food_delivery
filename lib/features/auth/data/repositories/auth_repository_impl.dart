@@ -28,7 +28,7 @@ class AuthRepositoryImpl implements AuthRepository {
     required RegisterEntity registerEntity,
   }) async {
     try {
-      final language = _localizationLocalDataSource.getLanguage()!;
+      final language = _localizationLocalDataSource.getLanguage() ?? 'en';
       final tokenResponse = await _authRemoteDataSource.register(
         language: language,
         registerModel: registerEntity.toModel,
@@ -45,7 +45,7 @@ class AuthRepositoryImpl implements AuthRepository {
     required LoginEntity loginEntity,
   }) async {
     try {
-      final language = _localizationLocalDataSource.getLanguage()!;
+      final language = _localizationLocalDataSource.getLanguage() ?? 'en';
       final token = await _authRemoteDataSource.login(
         language: language,
         loginModel: loginEntity.toModel,
@@ -60,7 +60,7 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<Either<Failure, Unit>> logout() async {
     try {
-      final language = _localizationLocalDataSource.getLanguage()!;
+      final language = _localizationLocalDataSource.getLanguage() ?? 'en';
       final token = _authLocalDataSource.getToken()!;
       await _authLocalDataSource.deleteToken();
       await _authRemoteDataSource.logout(
@@ -76,7 +76,7 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<Either<Failure, Unit>> forgotPassword({required String email}) async {
     try {
-      final language = _localizationLocalDataSource.getLanguage()!;
+      final language = _localizationLocalDataSource.getLanguage() ?? 'en';
       _authRemoteDataSource.forgotPassword(
         language: language,
         email: email,

@@ -14,5 +14,8 @@ abstract class OrdersApiService {
   factory OrdersApiService(Dio dio) = _OrdersApiService;
 
   @GET(getOrderDetailsEndpoint)
-  Future<ResponseModel<OrderDetailsModel>> getOrderDetails();
+  Future<ResponseModel<OrderDetailsModel>> getOrderDetails({
+    @Header(authorization) required String token,
+    @Header(languageHeader) required String language,
+  });
 }

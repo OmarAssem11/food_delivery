@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
   late AppLocalizations appLocalizations;
   final _formKey = GlobalKey<FormState>();
   final emailController = TextEditingController(text: 'omar@gmail.com');
-  final passwordController = TextEditingController(text: '123456');
+  final passwordController = TextEditingController(text: '12345678');
 
   @override
   void didChangeDependencies() {

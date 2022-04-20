@@ -11,6 +11,12 @@ class OrdersRemoteDataSourceImpl implements OrdersRemoteDataSource {
   const OrdersRemoteDataSourceImpl(this._ordersApiService);
 
   @override
-  Future<ResponseModel<OrderDetailsModel>> getOrderDetails() =>
-      _ordersApiService.getOrderDetails();
+  Future<ResponseModel<OrderDetailsModel>> getOrderDetails({
+    required String token,
+    required String language,
+  }) =>
+      _ordersApiService.getOrderDetails(
+        token: token,
+        language: language,
+      );
 }

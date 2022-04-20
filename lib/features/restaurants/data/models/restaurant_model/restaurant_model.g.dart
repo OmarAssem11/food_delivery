@@ -11,7 +11,7 @@ RestaurantModel _$RestaurantModelFromJson(Map<String, dynamic> json) =>
       id: json['id'] as int,
       name: json['name'] as String,
       description: json['description'] as String,
-      imageUrl: json['imageUrl'] as String,
+      imageUrl: json['image'] as String,
     );
 
 Map<String, dynamic> _$RestaurantModelToJson(RestaurantModel instance) =>
@@ -19,5 +19,5 @@ Map<String, dynamic> _$RestaurantModelToJson(RestaurantModel instance) =>
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
-      'imageUrl': instance.imageUrl,
+      'image': instance.imageUrl,
     };

@@ -25,7 +25,7 @@ class _ProfileApiService implements ProfileApiService {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<ProfileModel>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'user',
+                .compose(_dio.options, 'profile',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = ProfileModel.fromJson(_result.data!);
@@ -44,7 +44,7 @@ class _ProfileApiService implements ProfileApiService {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<ProfileModel>(
             Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'edit_user',
+                .compose(_dio.options, 'edit_profile',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = ProfileModel.fromJson(_result.data!);

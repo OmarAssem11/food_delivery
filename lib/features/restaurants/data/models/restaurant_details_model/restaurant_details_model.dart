@@ -7,6 +7,7 @@ class RestaurantDetailsModel {
   final int id;
   final String name;
   final String description;
+  @JsonKey(name: 'image')
   final String imageUrl;
   final String address;
   final String phone;

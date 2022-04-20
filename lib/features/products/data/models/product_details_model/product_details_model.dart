@@ -7,9 +7,11 @@ class ProductDetailsModel {
   final int id;
   final String name;
   final String description;
+  @JsonKey(name: 'image')
   final String imageUrl;
-  final String category;
   final double price;
+  final int categoryId;
+  final String categoryName;
   final int restaurantId;
   final String restaurantName;
 
@@ -18,8 +20,9 @@ class ProductDetailsModel {
     required this.name,
     required this.description,
     required this.imageUrl,
-    required this.category,
     required this.price,
+    required this.categoryId,
+    required this.categoryName,
     required this.restaurantId,
     required this.restaurantName,
   });

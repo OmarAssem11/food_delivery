@@ -7,6 +7,7 @@ class RestaurantModel {
   final int id;
   final String name;
   final String description;
+  @JsonKey(name: 'image')
   final String imageUrl;
 
   const RestaurantModel({

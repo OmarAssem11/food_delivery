@@ -16,15 +16,20 @@ class _OrdersApiService implements OrdersApiService {
   String? baseUrl;
 
   @override
-  Future<ResponseModel<OrderDetailsModel>> getOrderDetails() async {
+  Future<ResponseModel<OrderDetailsModel>> getOrderDetails(
+      {required token, required language}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{
+      r'Authorization': token,
+      r'lang': language
+    };
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<ResponseModel<OrderDetailsModel>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '',
+                .compose(_dio.options, 'order/details',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = ResponseModel<OrderDetailsModel>.fromJson(

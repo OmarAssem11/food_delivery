@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:food_delivery/core/data/constants/constants.dart';
 import 'package:food_delivery/core/domain/error/failure.dart';
 import 'package:food_delivery/features/auth/domain/datasources/local_datasource/auth_local_datasource.dart';
 import 'package:food_delivery/features/localization/domain/datasources/local_datasources/localization_local_datasource.dart';
@@ -29,7 +30,7 @@ class RestaurantsRepositoryImpl implements RestaurantsRepository {
       final language = _localizationLocalDataSource.getLanguage() ?? 'en';
       final restaurantListResponse =
           await _restaurantRemoteDataSource.getAllRestaurants(
-        token: token,
+        token: '$tokenType $token',
         language: language,
       );
       final restaurantEntities = restaurantListResponse.data
@@ -50,13 +51,13 @@ class RestaurantsRepositoryImpl implements RestaurantsRepository {
       final language = _localizationLocalDataSource.getLanguage() ?? 'en';
       final restaurantDetailsResponse =
           await _restaurantRemoteDataSource.getRestaurantDetails(
-        token: token,
+        token: '$tokenType $token',
         language: language,
         restaurantId: restaurantId,
       );
       return right(restaurantDetailsResponse.data.fromModel);
     } catch (error) {
-      return left(const Failure('Error while getting restaurants'));
+      return left(const Failure('Error while getting restaurant details'));
     }
   }
 }

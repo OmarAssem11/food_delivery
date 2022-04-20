@@ -7,7 +7,6 @@ extension ProductMapper on ProductModel {
         name: name,
         description: description,
         imageUrl: imageUrl,
-        category: category,
         price: price,
       );
 }

@@ -7,8 +7,9 @@ extension ProductDetailsMapper on ProductDetailsModel {
         name: name,
         description: description,
         imageUrl: imageUrl,
-        category: category,
         price: price,
+        categoryId: categoryId,
+        categoryName: categoryName,
         restaurantId: restaurantId,
         restaurantName: restaurantName,
       );

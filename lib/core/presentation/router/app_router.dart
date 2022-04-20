@@ -16,6 +16,7 @@ import 'package:food_delivery/features/profile/presentation/bloc/view_profile_cu
 import 'package:food_delivery/features/profile/presentation/screens/edit_profile_screen.dart';
 import 'package:food_delivery/features/profile/presentation/screens/view_profile_screen.dart';
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_cubit.dart';
+import 'package:food_delivery/features/restaurants/presentation/screens/home_screen.dart';
 import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_details_screen.dart';
 import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_list_screen.dart';
 import 'package:page_transition/page_transition.dart';
@@ -24,6 +25,14 @@ Route<PageTransition>? onGenerateRoute(
   RouteSettings routeSettings,
 ) {
   switch (routeSettings.name) {
+    case HomeScreen.routeName:
+      return PageTransition(
+        child: BlocProvider(
+          create: (context) => getIt<RestaurantsCubit>(),
+          child: const HomeScreen(),
+        ),
+        type: PageTransitionType.leftToRightWithFade,
+      );
     case StarterScreen.routeName:
       return PageTransition(
         child: BlocProvider(

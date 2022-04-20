@@ -7,7 +7,7 @@ import 'package:food_delivery/core/presentation/theme/app_theme.dart';
 import 'package:food_delivery/di/injectable.dart';
 import 'package:food_delivery/features/localization/presentation/bloc/localization_cubit.dart';
 import 'package:food_delivery/features/localization/presentation/bloc/localization_state.dart';
-import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_list_screen.dart';
+import 'package:food_delivery/features/restaurants/presentation/screens/home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,7 +34,7 @@ class FoodDeliveryApp extends StatelessWidget {
             locale: Locale(state is ChangeLangSuccess ? state.local : 'en'),
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            initialRoute: RestaurantsListScreen.routeName,
+            initialRoute: HomeScreen.routeName,
           );
         },
       ),

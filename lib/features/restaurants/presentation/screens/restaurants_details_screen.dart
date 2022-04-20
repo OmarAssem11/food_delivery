@@ -44,11 +44,30 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen> {
             },
             getRestaurantDetailsSuccess: (restaurant) => Column(
               children: [
-                Image.network(
-                  restaurant.imageUrl,
-                  fit: BoxFit.cover,
-                  height: MediaQuery.of(context).size.height * .3,
-                  width: double.infinity,
+                Stack(
+                  children: [
+                    Image.network(
+                      restaurant.imageUrl,
+                      fit: BoxFit.cover,
+                      height: MediaQuery.of(context).size.height * .3,
+                      width: double.infinity,
+                    ),
+                    Positioned(
+                      top: 40,
+                      left: 16,
+                      child: InkWell(
+                        onTap: Navigator.of(context).pop,
+                        child: const CircleAvatar(
+                          backgroundColor: Colors.white,
+                          child: Icon(
+                            Icons.arrow_back,
+                            color: Colors.black87,
+                            size: 30,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
                 Expanded(
                   child: Padding(

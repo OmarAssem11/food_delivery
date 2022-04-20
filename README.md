@@ -25,4 +25,3 @@
 * cached_network_image
 * json_serializable
 * fluttertoast
-* intl

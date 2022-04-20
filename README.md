@@ -10,6 +10,7 @@
 * View product details
 * Add product to cart
 * View your cart and proceed to checkout
+* Localization (en, ar)
 
 ## Packages:
 

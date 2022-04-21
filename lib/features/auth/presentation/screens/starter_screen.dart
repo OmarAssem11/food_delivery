@@ -23,12 +23,14 @@ class _StarterScreenState extends State<StarterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AuthCubit, AuthState>(
-      builder: (context, state) => state.maybeWhen(
-        loggedIn: () => const HomeScreen(),
-        notLoggedIn: () => const LoginScreen(),
-        orElse: () => const Scaffold(),
+    return BlocListener<AuthCubit, AuthState>(
+      listener: (context, state) => state.mapOrNull(
+        loggedIn: (_) =>
+            Navigator.of(context).pushReplacementNamed(HomeScreen.routeName),
+        notLoggedIn: (_) =>
+            Navigator.of(context).pushReplacementNamed(LoginScreen.routeName),
       ),
+      child: const Scaffold(),
     );
   }
 }

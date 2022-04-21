@@ -5,8 +5,10 @@ class EditProfileImage extends StatelessWidget {
     required this.imageUrl,
     required this.onPressed,
   });
+
   final String imageUrl;
   final Function() onPressed;
+
   @override
   Widget build(BuildContext context) {
     return Stack(

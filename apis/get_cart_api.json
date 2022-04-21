@@ -1,0 +1,20 @@
+{  
+    "status": 200,
+    "message": "user cart ",
+    "data": [
+        {
+            "products": {
+                "id": 1,
+                "name": "ahmedk",
+                "price": 50,
+                "image": "https://megatrustapi2.s3.amazonaws.com/attachements/mgi3XAds95CM9vayYy9fWIb21hunmEOyp0S5Ev0b.png",
+                "description": "um. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc.  Phasellus bibendum turpis ut ipsum egestas, s"
+            },
+            "count": 5,
+            "restaurants": {
+                "id": 1,
+                "name": "wiki"
+            }
+        }
+    ]
+}

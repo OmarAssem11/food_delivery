@@ -4,15 +4,16 @@ class ProfileItem extends StatelessWidget {
   final String text;
   final String prefix;
   final IconData icon;
+
   const ProfileItem({
     required this.text,
     required this.prefix,
     required this.icon,
   });
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
     return Padding(
       padding: const EdgeInsets.only(
         bottom: 16,
@@ -28,11 +29,11 @@ class ProfileItem extends StatelessWidget {
           const SizedBox(width: 8),
           Text(
             prefix,
-            style: textTheme.headline4,
+            style: theme.textTheme.headline4,
           ),
           Text(
             text,
-            style: textTheme.headline2,
+            style: theme.textTheme.headline2,
           ),
         ],
       ),

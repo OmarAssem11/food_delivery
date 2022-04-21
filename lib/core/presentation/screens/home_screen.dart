@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:food_delivery/core/presentation/screens/menu_screen.dart';
-import 'package:food_delivery/features/auth/presentation/widgets/logout_widget.dart';
+import 'package:food_delivery/di/injectable.dart';
+import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
+import 'package:food_delivery/features/auth/presentation/widgets/logout_alert.dart';
+import 'package:food_delivery/features/localization/presentation/widgets/language_alert.dart';
 import 'package:food_delivery/features/orders/presentation/screens/orders_screen.dart';
 import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_list_screen.dart';
 
@@ -40,6 +44,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       mainScreen: getScreen(),
       menuBackgroundColor: Theme.of(context).colorScheme.primary,
+      menuScreenWidth: MediaQuery.of(context).size.width * .6,
+      borderRadius: 40,
+      angle: -10,
     );
   }
 
@@ -52,9 +59,12 @@ class _HomeScreenState extends State<HomeScreen> {
       return const OrdersScreen();
     } else if (currentItem ==
         MenuItem(appLocalizations.language, Icons.language)) {
-      return Container();
+      return const LanguageAlertDialog();
     } else {
-      return const LogoutWidget();
+      return BlocProvider(
+        create: (context) => getIt<AuthCubit>(),
+        child: const LogoutAlertDialog(),
+      );
     }
   }
 }

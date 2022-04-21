@@ -1,0 +1,21 @@
+{
+    "status": 200,
+    "message": "product details",
+    "data": {
+        "id": 1,
+        "image": "https://megatrustapi2.s3.amazonaws.com/attachements/mgi3XAds95CM9vayYy9fWIb21hunmEOyp0S5Ev0b.png",
+        "name": "esraa khaled",
+        "description": "um. Maecenas ips",
+        "price": 10,
+        "categoery": {
+            "id": 1,
+            "name": "wiki"
+        },
+        "restarunt": [
+            {
+                "id": 1,
+                "name": "sory"
+            }
+        ]
+    }
+}

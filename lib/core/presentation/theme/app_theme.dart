@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 const Color _primaryColor = Colors.deepOrange;
 
@@ -51,36 +52,48 @@ ThemeData appTheme = ThemeData(
       foregroundColor: MaterialStateProperty.all(_primaryColor),
     ),
   ),
-  textTheme: const TextTheme(
-    headline4: TextStyle(
-      fontSize: 30,
-      color: Colors.black,
-      fontWeight: FontWeight.bold,
+  textTheme: TextTheme(
+    headline4: GoogleFonts.lato(
+      textStyle: const TextStyle(
+        fontSize: 30,
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
+      ),
     ),
-    headline5: TextStyle(
-      fontSize: 24,
-      color: Colors.black,
-      fontWeight: FontWeight.bold,
+    headline5: GoogleFonts.lato(
+      textStyle: const TextStyle(
+        fontSize: 24,
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
+      ),
     ),
-    subtitle1: TextStyle(
-      fontSize: 16,
-      color: Colors.black,
-      fontWeight: FontWeight.bold,
+    subtitle1: GoogleFonts.lato(
+      textStyle: const TextStyle(
+        fontSize: 16,
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
+      ),
     ),
-    subtitle2: TextStyle(
-      fontSize: 18,
-      color: Color.fromARGB(255, 117, 117, 117),
-      fontWeight: FontWeight.bold,
+    subtitle2: GoogleFonts.lato(
+      textStyle: const TextStyle(
+        fontSize: 18,
+        color: Color.fromARGB(255, 117, 117, 117),
+        fontWeight: FontWeight.bold,
+      ),
     ),
-    caption: TextStyle(
-      fontSize: 16,
-      color: Color.fromARGB(255, 117, 117, 117),
-      fontWeight: FontWeight.w500,
+    caption: GoogleFonts.lato(
+      textStyle: const TextStyle(
+        fontSize: 16,
+        color: Color.fromARGB(255, 117, 117, 117),
+        fontWeight: FontWeight.w500,
+      ),
     ),
-    bodyText1: TextStyle(
-      fontSize: 16,
-      color: Colors.black,
-      fontWeight: FontWeight.w500,
+    bodyText1: GoogleFonts.lato(
+      textStyle: const TextStyle(
+        fontSize: 16,
+        color: Colors.black,
+        fontWeight: FontWeight.w500,
+      ),
     ),
   ),
 );

@@ -27,13 +27,9 @@ class _RestaurantsListScreenState extends State<RestaurantsListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Builder(
-          builder: (ctx) {
-            return IconButton(
-              onPressed: ZoomDrawer.of(ctx)!.toggle,
-              icon: const Icon(Icons.menu),
-            );
-          },
+        leading: IconButton(
+          onPressed: ZoomDrawer.of(context)!.toggle,
+          icon: const Icon(Icons.menu),
         ),
         actions: [
           IconButton(

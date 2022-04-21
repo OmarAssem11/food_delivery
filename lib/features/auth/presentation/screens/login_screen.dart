@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:food_delivery/core/presentation/screens/home_screen.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/core/presentation/validation/validators.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
@@ -10,7 +11,6 @@ import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:food_delivery/features/auth/presentation/bloc/auth_state.dart';
 import 'package:food_delivery/features/auth/presentation/screens/register_screen.dart';
 import 'package:food_delivery/features/auth/presentation/widgets/curved_widget.dart';
-import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_list_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen();
@@ -107,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             success: () =>
                                 WidgetsBinding.instance!.addPostFrameCallback(
                               (_) => Navigator.of(context).pushReplacementNamed(
-                                RestaurantsListScreen.routeName,
+                                HomeScreen.routeName,
                               ),
                             ),
                             orElse: () {},

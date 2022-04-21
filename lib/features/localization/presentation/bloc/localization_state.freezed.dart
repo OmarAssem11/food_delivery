@@ -26,9 +26,9 @@ class _$LocalizationStateTearOff {
     return const LocalizationLoading();
   }
 
-  ChangeLangSuccess changeLangSuccess(String local) {
+  ChangeLangSuccess changeLangSuccess(String langCode) {
     return ChangeLangSuccess(
-      local,
+      langCode,
     );
   }
 
@@ -52,7 +52,7 @@ mixin _$LocalizationState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String local) changeLangSuccess,
+    required TResult Function(String langCode) changeLangSuccess,
     required TResult Function() getLangSuccess,
     required TResult Function(String error) error,
   }) =>
@@ -61,7 +61,7 @@ mixin _$LocalizationState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String local)? changeLangSuccess,
+    TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
     TResult Function(String error)? error,
   }) =>
@@ -70,7 +70,7 @@ mixin _$LocalizationState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String local)? changeLangSuccess,
+    TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -166,7 +166,7 @@ class _$LocalizationInitial implements LocalizationInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String local) changeLangSuccess,
+    required TResult Function(String langCode) changeLangSuccess,
     required TResult Function() getLangSuccess,
     required TResult Function(String error) error,
   }) {
@@ -178,7 +178,7 @@ class _$LocalizationInitial implements LocalizationInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String local)? changeLangSuccess,
+    TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
     TResult Function(String error)? error,
   }) {
@@ -190,7 +190,7 @@ class _$LocalizationInitial implements LocalizationInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String local)? changeLangSuccess,
+    TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -289,7 +289,7 @@ class _$LocalizationLoading implements LocalizationLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String local) changeLangSuccess,
+    required TResult Function(String langCode) changeLangSuccess,
     required TResult Function() getLangSuccess,
     required TResult Function(String error) error,
   }) {
@@ -301,7 +301,7 @@ class _$LocalizationLoading implements LocalizationLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String local)? changeLangSuccess,
+    TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
     TResult Function(String error)? error,
   }) {
@@ -313,7 +313,7 @@ class _$LocalizationLoading implements LocalizationLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String local)? changeLangSuccess,
+    TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -374,7 +374,7 @@ abstract class $ChangeLangSuccessCopyWith<$Res> {
   factory $ChangeLangSuccessCopyWith(
           ChangeLangSuccess value, $Res Function(ChangeLangSuccess) then) =
       _$ChangeLangSuccessCopyWithImpl<$Res>;
-  $Res call({String local});
+  $Res call({String langCode});
 }
 
 /// @nodoc
@@ -390,12 +390,12 @@ class _$ChangeLangSuccessCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? local = freezed,
+    Object? langCode = freezed,
   }) {
     return _then(ChangeLangSuccess(
-      local == freezed
-          ? _value.local
-          : local // ignore: cast_nullable_to_non_nullable
+      langCode == freezed
+          ? _value.langCode
+          : langCode // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -404,14 +404,14 @@ class _$ChangeLangSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ChangeLangSuccess implements ChangeLangSuccess {
-  const _$ChangeLangSuccess(this.local);
+  const _$ChangeLangSuccess(this.langCode);
 
   @override
-  final String local;
+  final String langCode;
 
   @override
   String toString() {
-    return 'LocalizationState.changeLangSuccess(local: $local)';
+    return 'LocalizationState.changeLangSuccess(langCode: $langCode)';
   }
 
   @override
@@ -419,12 +419,12 @@ class _$ChangeLangSuccess implements ChangeLangSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ChangeLangSuccess &&
-            const DeepCollectionEquality().equals(other.local, local));
+            const DeepCollectionEquality().equals(other.langCode, langCode));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(local));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(langCode));
 
   @JsonKey(ignore: true)
   @override
@@ -436,11 +436,11 @@ class _$ChangeLangSuccess implements ChangeLangSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String local) changeLangSuccess,
+    required TResult Function(String langCode) changeLangSuccess,
     required TResult Function() getLangSuccess,
     required TResult Function(String error) error,
   }) {
-    return changeLangSuccess(local);
+    return changeLangSuccess(langCode);
   }
 
   @override
@@ -448,11 +448,11 @@ class _$ChangeLangSuccess implements ChangeLangSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String local)? changeLangSuccess,
+    TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
     TResult Function(String error)? error,
   }) {
-    return changeLangSuccess?.call(local);
+    return changeLangSuccess?.call(langCode);
   }
 
   @override
@@ -460,13 +460,13 @@ class _$ChangeLangSuccess implements ChangeLangSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String local)? changeLangSuccess,
+    TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (changeLangSuccess != null) {
-      return changeLangSuccess(local);
+      return changeLangSuccess(langCode);
     }
     return orElse();
   }
@@ -513,9 +513,9 @@ class _$ChangeLangSuccess implements ChangeLangSuccess {
 }
 
 abstract class ChangeLangSuccess implements LocalizationState {
-  const factory ChangeLangSuccess(String local) = _$ChangeLangSuccess;
+  const factory ChangeLangSuccess(String langCode) = _$ChangeLangSuccess;
 
-  String get local;
+  String get langCode;
   @JsonKey(ignore: true)
   $ChangeLangSuccessCopyWith<ChangeLangSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -564,7 +564,7 @@ class _$GetLangSuccess implements GetLangSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String local) changeLangSuccess,
+    required TResult Function(String langCode) changeLangSuccess,
     required TResult Function() getLangSuccess,
     required TResult Function(String error) error,
   }) {
@@ -576,7 +576,7 @@ class _$GetLangSuccess implements GetLangSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String local)? changeLangSuccess,
+    TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
     TResult Function(String error)? error,
   }) {
@@ -588,7 +588,7 @@ class _$GetLangSuccess implements GetLangSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String local)? changeLangSuccess,
+    TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -713,7 +713,7 @@ class _$LocalizationErrorDetails implements LocalizationErrorDetails {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String local) changeLangSuccess,
+    required TResult Function(String langCode) changeLangSuccess,
     required TResult Function() getLangSuccess,
     required TResult Function(String error) error,
   }) {
@@ -725,7 +725,7 @@ class _$LocalizationErrorDetails implements LocalizationErrorDetails {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String local)? changeLangSuccess,
+    TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
     TResult Function(String error)? error,
   }) {
@@ -737,7 +737,7 @@ class _$LocalizationErrorDetails implements LocalizationErrorDetails {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String local)? changeLangSuccess,
+    TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
     TResult Function(String error)? error,
     required TResult orElse(),

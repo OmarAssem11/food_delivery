@@ -1,0 +1,21 @@
+{
+    "status": 200,
+    "message": "Restarunt details ",
+    "data": {
+        "id": 1,
+        "image": "https://megatrustapi2.s3.amazonaws.com/attachements/mgi3XAds95CM9vayYy9fWIb21hunmEOyp0S5Ev0b.png",
+        "name": "sory",
+        "description": "tur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos  sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam recusandae alias error harum maxime adipisci amet laborum. Perspiciatis  minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit  quibusdam sed amet tempora. Sit laborum ab, eius fugit doloribus tenetur",
+        "address": "sidi gaber",
+        "phone": "0234658636",
+        "products": [
+            {
+                "id": 1,
+                "image": "https://megatrustapi2.s3.amazonaws.com/attachements/mgi3XAds95CM9vayYy9fWIb21hunmEOyp0S5Ev0b.png",
+                "name": "esraa khaled",
+                "description": "um. Maecenas ips",
+                "price": 10
+            }
+        ]
+    }
+}

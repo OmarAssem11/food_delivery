@@ -26,7 +26,7 @@ class LocalizationCubit extends Cubit<LocalizationState> {
     );
   }
 
-  Future<void> getLanguage(String newLang) async {
+  Future<void> getLanguage() async {
     emit(const LocalizationLoading());
     final result = await _getLanguageUseCase(const NoParams());
     emit(

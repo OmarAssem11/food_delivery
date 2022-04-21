@@ -47,6 +47,7 @@ class _ViewProfileScreenState extends State<ViewProfileScreen> {
                     ),
                     radius: 55,
                   ),
+                  const SizedBox(height: 16),
                   Text(
                     profile.name,
                     style: Theme.of(context).textTheme.headline1,

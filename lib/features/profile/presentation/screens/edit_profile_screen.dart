@@ -33,12 +33,12 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
   @override
   void didChangeDependencies() {
+    super.didChangeDependencies();
     user = ModalRoute.of(context)!.settings.arguments! as ProfileEntity;
     nameController = TextEditingController(text: user.name);
     emailController = TextEditingController(text: user.email);
     phoneController = TextEditingController(text: user.phone);
     addressController = TextEditingController(text: user.address);
-    super.didChangeDependencies();
   }
 
   @override

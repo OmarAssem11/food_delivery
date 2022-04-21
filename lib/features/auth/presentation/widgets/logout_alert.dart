@@ -5,8 +5,8 @@ import 'package:food_delivery/core/presentation/screens/home_screen.dart';
 import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:food_delivery/features/auth/presentation/screens/login_screen.dart';
 
-class LogoutWidget extends StatelessWidget {
-  const LogoutWidget();
+class LogoutAlertDialog extends StatelessWidget {
+  const LogoutAlertDialog();
 
   @override
   Widget build(BuildContext context) {

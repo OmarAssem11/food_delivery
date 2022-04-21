@@ -5,7 +5,7 @@ part 'localization_state.freezed.dart';
 class LocalizationState with _$LocalizationState {
   const factory LocalizationState.initial() = LocalizationInitial;
   const factory LocalizationState.loading() = LocalizationLoading;
-  const factory LocalizationState.changeLangSuccess(final String local) =
+  const factory LocalizationState.changeLangSuccess(final String langCode) =
       ChangeLangSuccess;
   const factory LocalizationState.getLangSuccess() = GetLangSuccess;
   const factory LocalizationState.error(final String error) =

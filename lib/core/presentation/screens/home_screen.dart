@@ -25,22 +25,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void didChangeDependencies() {
+    super.didChangeDependencies();
     appLocalizations = AppLocalizations.of(context)!;
     currentItem = MenuItem(appLocalizations.restaurants, Icons.restaurant);
-    super.didChangeDependencies();
   }
 
   @override
   Widget build(BuildContext context) {
     return ZoomDrawer(
-      menuScreen: Builder(
-        builder: (context) => MenuScreen(
-          currentItem: currentItem,
-          onSelectedItem: (item) {
-            setState(() => currentItem = item);
-            ZoomDrawer.of(context)!.close();
-          },
-        ),
+      menuScreen: MenuScreen(
+        currentItem: currentItem,
+        onSelectedItem: (item) {
+          setState(() => currentItem = item);
+          ZoomDrawer.of(context)!.close();
+        },
       ),
       mainScreen: getScreen(),
       menuBackgroundColor: Theme.of(context).colorScheme.primary,

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/features/cart/domain/entities/ordered_product_entity.dart';
+import 'package:food_delivery/features/products/data/models/product_model/product_model.dart';
 import 'package:food_delivery/features/products/presentation/widgets/quantity_price_counter.dart';
 
 class OrderedProductItem extends StatelessWidget {
   const OrderedProductItem(this.product);
 
-  final OrderedProductEntity product;
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {

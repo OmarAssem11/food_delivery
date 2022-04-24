@@ -64,10 +64,10 @@ class _CartScreenState extends State<CartScreen> {
               title: Column(
                 children: [
                   Text(appLocalizations.basket),
-                  Text(
-                    '${cart.restaurantName} - ${cart.restaurantAddress}',
-                    style: textTheme.caption,
-                  ),
+                  // Text(
+                  //   '${cart.restaurantName} - ${cart.restaurantAddress}',
+                  //   style: textTheme.caption,
+                  // ),
                 ],
               ),
               centerTitle: true,
@@ -80,8 +80,8 @@ class _CartScreenState extends State<CartScreen> {
                   Expanded(
                     child: ListView.builder(
                       itemBuilder: (context, index) =>
-                          OrderedProductItem(cart.orderedProducts[index]),
-                      itemCount: cart.orderedProducts.length,
+                          OrderedProductItem(cart[index].product),
+                      itemCount: cart.length,
                       physics: const NeverScrollableScrollPhysics(),
                     ),
                   ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:food_delivery/di/injectable.dart';
+import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
 import 'package:food_delivery/features/products/domain/entities/product_entity.dart';
 import 'package:food_delivery/features/products/presentation/bloc/products_cubit.dart';
 import 'package:food_delivery/features/products/presentation/widgets/product_details_bottom_sheet.dart';
@@ -66,9 +67,16 @@ class ProductItem extends StatelessWidget {
             topRight: Radius.circular(20),
           ),
         ),
-        builder: (context) => BlocProvider(
-          create: (context) =>
-              getIt<ProductsCubit>()..getProductDetails(productId: product.id),
+        builder: (context) => MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => getIt<ProductsCubit>()
+                ..getProductDetails(productId: product.id),
+            ),
+            BlocProvider(
+              create: (context) => getIt<CartCubit>(),
+            ),
+          ],
           child: const FractionallySizedBox(
             heightFactor: 0.65,
             child: ProductDetailsBottomSheet(),

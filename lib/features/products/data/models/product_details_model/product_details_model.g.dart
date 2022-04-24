@@ -13,10 +13,11 @@ ProductDetailsModel _$ProductDetailsModelFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String,
       imageUrl: json['image'] as String,
       price: (json['price'] as num).toDouble(),
-      categoryId: json['categoryId'] as int,
-      categoryName: json['categoryName'] as String,
-      restaurantId: json['restaurantId'] as int,
-      restaurantName: json['restaurantName'] as String,
+      categoryModel:
+          CategoryModel.fromJson(json['categoery'] as Map<String, dynamic>),
+      restaurantDataModels: (json['restarunt'] as List<dynamic>)
+          .map((e) => RestaurantDataModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$ProductDetailsModelToJson(
@@ -27,8 +28,6 @@ Map<String, dynamic> _$ProductDetailsModelToJson(
       'description': instance.description,
       'image': instance.imageUrl,
       'price': instance.price,
-      'categoryId': instance.categoryId,
-      'categoryName': instance.categoryName,
-      'restaurantId': instance.restaurantId,
-      'restaurantName': instance.restaurantName,
+      'categoery': instance.categoryModel,
+      'restarunt': instance.restaurantDataModels,
     };

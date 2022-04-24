@@ -15,7 +15,7 @@ abstract class CartRemoteDataSource {
     required OrderModel orderModel,
   });
 
-  Future<ResponseModel<CartModel>> getCart({
+  Future<ResponseModel<List<CartModel>>> getCart({
     required String token,
     required String language,
   });

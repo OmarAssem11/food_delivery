@@ -53,6 +53,7 @@ class AuthRepositoryImpl implements AuthRepository {
       await _authLocalDataSource.saveToken(token.data.token);
       return right(unit);
     } catch (error) {
+      print(error);
       return left(const Failure('Error while login'));
     }
   }

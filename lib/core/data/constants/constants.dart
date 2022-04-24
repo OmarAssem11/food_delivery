@@ -1,11 +1,11 @@
 //BaseUrls
-const baseUrl = 'http://51f9-41-38-218-115.ngrok.io/api/';
+const baseUrl = 'http://afbc-41-41-227-249.ngrok.io/api/';
 const imageApiBaseUrl = 'https://api.imgbb.com/1/upload';
 //Endpoints
 const registerEndpoint = 'register';
 const loginEndpoint = 'login';
 const logoutEndpoint = 'logout';
-const forgotPasswordEndpoint = 'forgetpassword';
+const forgotPasswordEndpoint = 'sendemail';
 const getAllRestaurantsEndpoint = 'restarunt/list';
 const getRestaurantDetailsEndpoint = 'restarunt/details/{restaurant_id}';
 const getProductDetailsEndpoint = 'product/details/{product_id}';

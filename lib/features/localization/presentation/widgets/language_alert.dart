@@ -28,7 +28,7 @@ class _LanguageAlertDialogState extends State<LanguageAlertDialog> {
     final appLocalizations = AppLocalizations.of(context)!;
     return BlocBuilder<LocalizationCubit, LocalizationState>(
       builder: (context, state) => state.maybeWhen(
-        initial: () => AlertDialog(
+        getLangSuccess: () => AlertDialog(
           title: Text(appLocalizations.language),
           content: Column(
             mainAxisSize: MainAxisSize.min,

@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:food_delivery/core/data/constants/constants.dart';
 import 'package:food_delivery/core/domain/error/failure.dart';
 import 'package:food_delivery/features/auth/domain/datasources/local_datasource/auth_local_datasource.dart';
 import 'package:food_delivery/features/cart/data/mappers/cart_mapper.dart';
@@ -30,7 +31,7 @@ class CartRepositoryImpl implements CartRepository {
       final token = _authLocalDataSource.getToken() ?? '';
       final language = _localizationLocalDataSource.getLanguage() ?? '';
       await _cartRemoteDataSource.addToCart(
-        token: token,
+        token: '$tokenType $token',
         language: language,
         orderModel: orderEntity.toModel,
       );
@@ -48,7 +49,7 @@ class CartRepositoryImpl implements CartRepository {
       final token = _authLocalDataSource.getToken() ?? '';
       final language = _localizationLocalDataSource.getLanguage() ?? '';
       await _cartRemoteDataSource.addToCart(
-        token: token,
+        token: '$tokenType $token',
         language: language,
         orderModel: orderEntity.toModel,
       );
@@ -59,15 +60,17 @@ class CartRepositoryImpl implements CartRepository {
   }
 
   @override
-  Future<Either<Failure, CartEntity>> getCart() async {
+  Future<Either<Failure, List<CartEntity>>> getCart() async {
     try {
       final token = _authLocalDataSource.getToken() ?? '';
       final language = _localizationLocalDataSource.getLanguage() ?? '';
       final cartResponse = await _cartRemoteDataSource.getCart(
-        token: token,
+        token: '$tokenType $token',
         language: language,
       );
-      return right(cartResponse.data.fromModel);
+      final cartEntities =
+          cartResponse.data.map((cartModel) => cartModel.fromModel).toList();
+      return right(cartEntities);
     } catch (error) {
       return left(const Failure('Error while getting cart'));
     }

@@ -29,9 +29,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
 
   @override
   void dispose() {
-    super.dispose();
     addressController.dispose();
     phoneController.dispose();
+    super.dispose();
   }
 
   @override

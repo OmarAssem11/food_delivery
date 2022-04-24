@@ -19,7 +19,9 @@ class CartCubit extends Cubit<CartState> {
   final EditCartUseCase _editCartUseCase;
   final GetCartUseCase _getCartUseCase;
 
-  Future<void> addToCart({required OrderEntity orderEntity}) async {
+  Future<void> addToCart({
+    required OrderEntity orderEntity,
+  }) async {
     emit(const AddToCartLoading());
     final result = await _addToCartUseCase(AddToCartParams(orderEntity));
     emit(

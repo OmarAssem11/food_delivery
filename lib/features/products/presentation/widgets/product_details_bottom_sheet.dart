@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
+import 'package:food_delivery/features/cart/domain/entities/order_entity.dart';
+import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
 import 'package:food_delivery/features/products/presentation/bloc/products_cubit.dart';
 import 'package:food_delivery/features/products/presentation/bloc/products_state.dart';
 import 'package:food_delivery/features/products/presentation/widgets/quantity_price_counter.dart';
@@ -99,7 +101,14 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                 padding: const EdgeInsets.all(15),
                 child: CustomElevatedButton(
                   label: appLocalizations.addToBasket,
-                  onPressed: () {},
+                  onPressed: () =>
+                      BlocProvider.of<CartCubit>(context).addToCart(
+                    orderEntity: OrderEntity(
+                      restaurantId: product.restaurantId,
+                      productId: product.id,
+                      quantity: quantity,
+                    ),
+                  ),
                   isLoading: false,
                 ),
               ),

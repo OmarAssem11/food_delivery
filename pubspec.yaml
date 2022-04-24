@@ -47,7 +47,7 @@ flutter_icons:
   ios: true
  
 flutter_native_splash:
-  color: '#ffffff'
+  color: '#FF5722'
   image: assets/images/icon.png
   
 flutter:

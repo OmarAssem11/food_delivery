@@ -36,7 +36,7 @@ class CartRemoteDataSourceImpl implements CartRemoteDataSource {
       );
 
   @override
-  Future<ResponseModel<CartModel>> getCart({
+  Future<ResponseModel<List<CartModel>>> getCart({
     required String token,
     required String language,
   }) =>

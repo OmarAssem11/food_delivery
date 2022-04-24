@@ -25,8 +25,8 @@ import '../features/auth/domain/usecases/forgot_password_use_case.dart' as _i51;
 import '../features/auth/domain/usecases/is_logged_in_use_case.dart' as _i59;
 import '../features/auth/domain/usecases/login_use_case.dart' as _i61;
 import '../features/auth/domain/usecases/logout_use_case.dart' as _i62;
-import '../features/auth/domain/usecases/register_use_case.dart' as _i65;
-import '../features/auth/presentation/bloc/auth_cubit.dart' as _i69;
+import '../features/auth/domain/usecases/register_use_case.dart' as _i66;
+import '../features/auth/presentation/bloc/auth_cubit.dart' as _i70;
 import '../features/cart/data/datasources/remote_datasource/cart_api_service.dart'
     as _i22;
 import '../features/cart/data/datasources/remote_datasource/cart_remote_datasource_impl.dart'
@@ -35,10 +35,10 @@ import '../features/cart/data/repositories/cart_repository_impl.dart' as _i44;
 import '../features/cart/domain/datasources/remote_datasource/cart_remote_datasource.dart'
     as _i23;
 import '../features/cart/domain/repositories/cart_repository.dart' as _i43;
-import '../features/cart/domain/usecases/add_to_cart_use_case.dart' as _i68;
+import '../features/cart/domain/usecases/add_to_cart_use_case.dart' as _i69;
 import '../features/cart/domain/usecases/edit_cart_use_case.dart' as _i49;
 import '../features/cart/domain/usecases/get_cart_use_case.dart' as _i52;
-import '../features/cart/presentation/bloc/cart_cubit.dart' as _i70;
+import '../features/cart/presentation/bloc/cart_cubit.dart' as _i71;
 import '../features/checkout/data/datasources/remote_datasource/checkout_api_service.dart'
     as _i25;
 import '../features/checkout/data/datasources/remote_datasource/checkout_remote_datasource_impl.dart'
@@ -50,7 +50,7 @@ import '../features/checkout/domain/datasources/remote_datasource/checkout_remot
 import '../features/checkout/domain/repositories/checkout_repository.dart'
     as _i46;
 import '../features/checkout/domain/usecases/checkout_use_case.dart' as _i48;
-import '../features/checkout/presentation/bloc/checkout_cubit.dart' as _i71;
+import '../features/checkout/presentation/bloc/checkout_cubit.dart' as _i72;
 import '../features/localization/data/datasources/local_datasources/localization_local_datasource_impl.dart'
     as _i29;
 import '../features/localization/data/repositories/localization_repository_impl.dart'
@@ -78,6 +78,8 @@ import '../features/orders/domain/usecases/get_order_details_use_case.dart'
     as _i54;
 import '../features/orders/domain/usecases/get_orders_usecase.dart' as _i55;
 import '../features/orders/presentation/bloc/orders_cubit.dart' as _i63;
+import '../features/orders/presentation/bloc/ordersList/cubit/orders_list_cubit.dart'
+    as _i64;
 import '../features/products/data/datasources/remote_datasource/products_api_service.dart'
     as _i7;
 import '../features/products/data/datasources/remote_datasource/products_remote_datasource_impl.dart'
@@ -90,7 +92,7 @@ import '../features/products/domain/repositories/products_repository.dart'
     as _i34;
 import '../features/products/domain/usecases/get_product_details_use_case.dart'
     as _i56;
-import '../features/products/presentation/bloc/products_cubit.dart' as _i64;
+import '../features/products/presentation/bloc/products_cubit.dart' as _i65;
 import '../features/profile/data/datasources/profile_api_service.dart' as _i10;
 import '../features/profile/data/datasources/profile_remote_datasource_impl.dart'
     as _i12;
@@ -103,9 +105,9 @@ import '../features/profile/domain/repositories/profile_repository.dart'
 import '../features/profile/domain/usecases/edit_profile_use_case.dart' as _i50;
 import '../features/profile/domain/usecases/view_profile_use_case.dart' as _i40;
 import '../features/profile/presentation/bloc/edit_profile_cubit/edit_profile_cubit.dart'
-    as _i72;
+    as _i73;
 import '../features/profile/presentation/bloc/view_profile_cubit/view_profile_cubit.dart'
-    as _i67;
+    as _i68;
 import '../features/restaurants/data/datasources/remote_datasource/restaurants_api_service.dart'
     as _i13;
 import '../features/restaurants/data/datasources/remote_datasource/restaurants_remote_datasource_impl.dart'
@@ -121,8 +123,8 @@ import '../features/restaurants/domain/usecases/get_restaurant_details_usecase.d
 import '../features/restaurants/domain/usecases/get_restaurants_list_usecases.dart'
     as _i58;
 import '../features/restaurants/presentation/bloc/restaurants_cubit.dart'
-    as _i66;
-import 'app_module.dart' as _i73; // ignore_for_file: unnecessary_lambdas
+    as _i67;
+import 'app_module.dart' as _i74; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -231,29 +233,31 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => _i62.LogoutUseCase(get<_i41.AuthRepository>()));
   gh.factory<_i63.OrdersCubit>(
       () => _i63.OrdersCubit(get<_i54.GetOrderDetailsUseCase>()));
-  gh.factory<_i64.ProductsCubit>(
-      () => _i64.ProductsCubit(get<_i56.GetProductDetailsUseCase>()));
-  gh.lazySingleton<_i65.RegisterUseCase>(
-      () => _i65.RegisterUseCase(get<_i41.AuthRepository>()));
-  gh.factory<_i66.RestaurantsCubit>(() => _i66.RestaurantsCubit(
+  gh.factory<_i64.OrdersListCubit>(
+      () => _i64.OrdersListCubit(get<_i55.GetOrdersListUseCase>()));
+  gh.factory<_i65.ProductsCubit>(
+      () => _i65.ProductsCubit(get<_i56.GetProductDetailsUseCase>()));
+  gh.lazySingleton<_i66.RegisterUseCase>(
+      () => _i66.RegisterUseCase(get<_i41.AuthRepository>()));
+  gh.factory<_i67.RestaurantsCubit>(() => _i67.RestaurantsCubit(
       get<_i58.GetRestaurantsListUseCase>(),
       get<_i57.GetRestaurantDetailsUseCase>()));
-  gh.factory<_i67.ViewProfileCubit>(
-      () => _i67.ViewProfileCubit(get<_i40.ViewProfileUseCase>()));
-  gh.lazySingleton<_i68.AddToCartUseCase>(
-      () => _i68.AddToCartUseCase(get<_i43.CartRepository>()));
-  gh.factory<_i69.AuthCubit>(() => _i69.AuthCubit(
-      get<_i65.RegisterUseCase>(),
+  gh.factory<_i68.ViewProfileCubit>(
+      () => _i68.ViewProfileCubit(get<_i40.ViewProfileUseCase>()));
+  gh.lazySingleton<_i69.AddToCartUseCase>(
+      () => _i69.AddToCartUseCase(get<_i43.CartRepository>()));
+  gh.factory<_i70.AuthCubit>(() => _i70.AuthCubit(
+      get<_i66.RegisterUseCase>(),
       get<_i61.LoginUseCase>(),
       get<_i62.LogoutUseCase>(),
       get<_i59.IsLoggedInUseCase>()));
-  gh.factory<_i70.CartCubit>(() => _i70.CartCubit(get<_i68.AddToCartUseCase>(),
+  gh.factory<_i71.CartCubit>(() => _i71.CartCubit(get<_i69.AddToCartUseCase>(),
       get<_i49.EditCartUseCase>(), get<_i52.GetCartUseCase>()));
-  gh.factory<_i71.CheckoutCubit>(
-      () => _i71.CheckoutCubit(get<_i48.CheckoutUseCase>()));
-  gh.factory<_i72.EditProfileCubit>(
-      () => _i72.EditProfileCubit(get<_i50.EditProfileUseCase>()));
+  gh.factory<_i72.CheckoutCubit>(
+      () => _i72.CheckoutCubit(get<_i48.CheckoutUseCase>()));
+  gh.factory<_i73.EditProfileCubit>(
+      () => _i73.EditProfileCubit(get<_i50.EditProfileUseCase>()));
   return get;
 }
 
-class _$AppModule extends _i73.AppModule {}
+class _$AppModule extends _i74.AppModule {}

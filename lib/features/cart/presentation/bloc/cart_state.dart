@@ -14,7 +14,7 @@ class CartState with _$CartState {
   const factory CartState.editCartError(final String error) =
       EditCartErrorDetails;
   const factory CartState.getCartLoading() = GetCartLoading;
-  const factory CartState.getCartSuccess(final CartEntity cartEntity) =
+  const factory CartState.getCartSuccess(final List<CartEntity> cartEntity) =
       GetCartSuccess;
   const factory CartState.getCartError(final String error) =
       GetCartErrorDetails;

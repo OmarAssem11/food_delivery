@@ -7,8 +7,8 @@ const loginEndpoint = 'login';
 const logoutEndpoint = 'logout';
 const forgotPasswordEndpoint = 'sendemail';
 const getAllRestaurantsEndpoint = 'restarunt/list';
-const getRestaurantDetailsEndpoint = 'restarunt/details/{restaurant_id}';
-const getProductDetailsEndpoint = 'product/details/{product_id}';
+const getRestaurantDetailsEndpoint = 'restarunt/details/{restaurantId}';
+const getProductDetailsEndpoint = 'product/details/{productId}';
 const addToCartEndpoint = 'cart/add';
 const editCartEndpoint = 'cart/update';
 const getCartEndpoint = 'cart/usercart';
@@ -18,9 +18,6 @@ const viewProfileEndpoint = 'profile';
 const editProfileEndpoint = 'edit_profile';
 //ApiKeys
 const imageApiKey = 'ad54db45a510342fbfef1568797bf4fd';
-//Paths
-const restaurantIdPath = '{restaurant_id}';
-const productIdPath = '{product_id}';
 //Headers
 const languageHeader = 'lang';
 const authorization = 'Authorization';

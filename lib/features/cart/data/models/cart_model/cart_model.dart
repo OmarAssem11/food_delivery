@@ -1,24 +1,22 @@
-import 'package:food_delivery/features/cart/data/models/ordered_product_model/ordered_product_model.dart';
+import 'package:food_delivery/features/products/data/models/product_model/product_model.dart';
+import 'package:food_delivery/features/restaurants/data/models/restaurant_data_model/restaurant_data_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'cart_model.g.dart';
 
 @JsonSerializable()
 class CartModel {
-  final String restaurantName;
-  final String restaurantAddress;
-  final double subTotal;
-  final double deliveryFee;
-  final double totalAmount;
-  final List<OrderedProductModel> orderedProducts;
+  @JsonKey(name: 'products')
+  final ProductModel product;
+  @JsonKey(name: 'count')
+  final int quantity;
+  @JsonKey(name: 'restaurants')
+  final RestaurantDataModel restaurantData;
 
   const CartModel({
-    required this.restaurantName,
-    required this.restaurantAddress,
-    required this.subTotal,
-    required this.deliveryFee,
-    required this.totalAmount,
-    required this.orderedProducts,
+    required this.product,
+    required this.quantity,
+    required this.restaurantData,
   });
 
   factory CartModel.fromJson(Map<String, dynamic> json) =>

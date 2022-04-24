@@ -17,6 +17,6 @@ abstract class ProductsApiService {
   Future<ResponseModel<ProductDetailsModel>> getProductDetails({
     @Header(authorization) required String token,
     @Header(languageHeader) required String language,
-    @Path(productIdPath) required int productId,
+    @Path() required int productId,
   });
 }

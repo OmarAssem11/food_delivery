@@ -23,6 +23,6 @@ abstract class RestaurantsApiService {
   Future<ResponseModel<RestaurantDetailsModel>> getRestaurantDetails({
     @Header(languageHeader) required String language,
     @Header(authorization) required String token,
-    @Path(restaurantIdPath) required int restaurantId,
+    @Path() required int restaurantId,
   });
 }

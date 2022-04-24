@@ -6,12 +6,12 @@ import 'package:food_delivery/features/cart/domain/repositories/cart_repository.
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
-class GetCartUseCase implements UseCase<CartEntity, NoParams> {
+class GetCartUseCase implements UseCase<List<CartEntity>, NoParams> {
   final CartRepository _cartRepository;
 
   const GetCartUseCase(this._cartRepository);
 
   @override
-  Future<Either<Failure, CartEntity>> call(NoParams noParams) =>
+  Future<Either<Failure, List<CartEntity>>> call(NoParams noParams) =>
       _cartRepository.getCart();
 }

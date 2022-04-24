@@ -9,6 +9,7 @@ abstract class AppModule {
         BaseOptions(
           baseUrl: baseUrl,
           receiveDataWhenStatusError: true,
+          followRedirects: true,
         ),
       );
 

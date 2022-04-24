@@ -23,7 +23,7 @@ class FoodDeliveryApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<LocalizationCubit>(),
+      create: (context) => getIt<LocalizationCubit>()..getLanguage(),
       child: BlocBuilder<LocalizationCubit, LocalizationState>(
         builder: (context, state) {
           return MaterialApp(

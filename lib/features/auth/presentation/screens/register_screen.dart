@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:food_delivery/core/presentation/screens/home_screen.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/core/presentation/validation/validators.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
@@ -11,7 +12,6 @@ import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:food_delivery/features/auth/presentation/bloc/auth_state.dart';
 import 'package:food_delivery/features/auth/presentation/screens/login_screen.dart';
 import 'package:food_delivery/features/auth/presentation/widgets/curved_widget.dart';
-import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_list_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen();
@@ -39,10 +39,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   void dispose() {
-    super.dispose();
     nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
+    super.dispose();
   }
 
   @override
@@ -117,7 +117,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               Navigator.of(context)
                                   .popUntil((route) => route.isFirst);
                               Navigator.of(context).pushReplacementNamed(
-                                RestaurantsListScreen.routeName,
+                                HomeScreen.routeName,
                               );
                             },
                           ),

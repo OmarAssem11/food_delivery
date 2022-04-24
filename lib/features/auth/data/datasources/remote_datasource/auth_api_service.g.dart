@@ -94,7 +94,7 @@ class _AuthApiService implements AuthApiService {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<ResponseModel<dynamic>>(
             Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'forgetpassword',
+                .compose(_dio.options, 'sendemail',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = ResponseModel<dynamic>.fromJson(

@@ -1,6 +1,7 @@
 import 'package:food_delivery/core/data/models/response_model/response_model.dart';
 import 'package:food_delivery/features/orders/data/datasources/remote_datasource/orders_api_service.dart';
 import 'package:food_delivery/features/orders/data/models/order_details_model.dart';
+import 'package:food_delivery/features/orders/data/models/order_model.dart';
 import 'package:food_delivery/features/orders/domain/datasources/remote_datasource/orders_remote_datasource.dart';
 import 'package:injectable/injectable.dart';
 
@@ -19,4 +20,9 @@ class OrdersRemoteDataSourceImpl implements OrdersRemoteDataSource {
         token: token,
         language: language,
       );
+
+  @override
+  Future<ResponseModel<List<OrderModel>>> getOrders(
+          {required String token, required String language,}) =>
+      _ordersApiService.getOrdersList(token: token, language: language);
 }

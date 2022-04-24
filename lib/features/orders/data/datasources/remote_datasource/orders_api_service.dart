@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:food_delivery/core/data/constants/constants.dart';
 import 'package:food_delivery/core/data/models/response_model/response_model.dart';
 import 'package:food_delivery/features/orders/data/models/order_details_model.dart';
+import 'package:food_delivery/features/orders/data/models/order_model.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -15,6 +16,11 @@ abstract class OrdersApiService {
 
   @GET(getOrderDetailsEndpoint)
   Future<ResponseModel<OrderDetailsModel>> getOrderDetails({
+    @Header(authorization) required String token,
+    @Header(languageHeader) required String language,
+  });
+   @GET("get_orders_list")
+  Future<ResponseModel<List<OrderModel>>> getOrdersList({
     @Header(authorization) required String token,
     @Header(languageHeader) required String language,
   });

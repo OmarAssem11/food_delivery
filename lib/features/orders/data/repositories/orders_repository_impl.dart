@@ -4,8 +4,10 @@ import 'package:food_delivery/core/domain/error/failure.dart';
 import 'package:food_delivery/features/auth/domain/datasources/local_datasource/auth_local_datasource.dart';
 import 'package:food_delivery/features/localization/domain/datasources/local_datasources/localization_local_datasource.dart';
 import 'package:food_delivery/features/orders/data/mappers/order_details_mapper.dart';
+import 'package:food_delivery/features/orders/data/mappers/order_mapper.dart';
 import 'package:food_delivery/features/orders/domain/datasources/remote_datasource/orders_remote_datasource.dart';
 import 'package:food_delivery/features/orders/domain/entities/order_details_entity.dart';
+import 'package:food_delivery/features/orders/domain/entities/order_list_entity.dart';
 import 'package:food_delivery/features/orders/domain/repositories/orders_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -34,6 +36,24 @@ class OrdersRepositoryImpl implements OrdersRepository {
       return right(orderDetailsResponse.data.fromModel);
     } catch (error) {
       return left(const Failure('Error while getting order details'));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<OrderListEntity>>> getOrders() async {
+    try {
+      final token = _authLocalDataSource.getToken() ?? '';
+      final language = _localizationLocalDataSource.getLanguage() ?? 'en';
+      final ordersListResponse = await _ordersRemoteDataSource.getOrders(
+        token: '$tokenType $token',
+        language: language,
+      );
+      final ordersEntities = ordersListResponse.data
+          .map((orderModel) => orderModel.fromModel)
+          .toList();
+      return right(ordersEntities);
+    } catch (error) {
+      return left(const Failure('Error while getting orders list'));
     }
   }
 }

@@ -33,18 +33,21 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return ZoomDrawer(
-      menuScreen: MenuScreen(
-        currentItem: currentItem,
-        onSelectedItem: (item) {
-          setState(() => currentItem = item);
-          ZoomDrawer.of(context)!.close();
-        },
+      menuScreen: Builder(
+        builder: (ctx) => MenuScreen(
+          currentItem: currentItem,
+          onSelectedItem: (item) {
+            setState(() => currentItem = item);
+            ZoomDrawer.of(ctx)!.close();
+          },
+        ),
       ),
       mainScreen: getScreen(),
       menuBackgroundColor: Theme.of(context).colorScheme.primary,
       menuScreenWidth: MediaQuery.of(context).size.width * .6,
       borderRadius: 40,
       angle: -10,
+      isRtl: appLocalizations.localeName == 'ar',
     );
   }
 

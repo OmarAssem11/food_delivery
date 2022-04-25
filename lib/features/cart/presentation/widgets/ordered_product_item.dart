@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/features/cart/domain/entities/ordered_product_entity.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_delivery/features/cart/domain/entities/order_entity.dart';
+import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
+import 'package:food_delivery/features/products/data/models/product_model/product_model.dart';
 import 'package:food_delivery/features/products/presentation/widgets/quantity_price_counter.dart';
 
 class OrderedProductItem extends StatelessWidget {
-  const OrderedProductItem(this.product);
+  const OrderedProductItem({
+    required this.product,
+    required this.quantity,
+  });
 
-  final OrderedProductEntity product;
+  final ProductModel product;
+  final int quantity;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
-      padding: const EdgeInsets.only(bottom: 8),
+      height: 74,
+      padding: const EdgeInsets.only(bottom: 12),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -25,8 +32,16 @@ class OrderedProductItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 QuantityPriceCounter(
+                  initialValue: quantity,
                   price: product.price,
-                  onValueChanged: (value) {},
+                  onValueChanged: (newQuantity) =>
+                      BlocProvider.of<CartCubit>(context).editCart(
+                    orderEntity: OrderEntity(
+                      restaurantId: 0,
+                      productId: product.id,
+                      quantity: newQuantity,
+                    ),
+                  ),
                 ),
               ],
             ),

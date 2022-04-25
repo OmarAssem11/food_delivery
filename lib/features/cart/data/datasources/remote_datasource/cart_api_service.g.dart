@@ -25,7 +25,8 @@ class _CartApiService implements CartApiService {
       r'lang': language
     };
     _headers.removeWhere((k, v) => v == null);
-    final _data = orderModel;
+    final _data = <String, dynamic>{};
+    _data.addAll(orderModel.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<ResponseModel<dynamic>>(
             Options(method: 'POST', headers: _headers, extra: _extra)
@@ -49,7 +50,8 @@ class _CartApiService implements CartApiService {
       r'lang': language
     };
     _headers.removeWhere((k, v) => v == null);
-    final _data = orderModel;
+    final _data = <String, dynamic>{};
+    _data.addAll(orderModel.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<ResponseModel<dynamic>>(
             Options(method: 'POST', headers: _headers, extra: _extra)
@@ -64,7 +66,7 @@ class _CartApiService implements CartApiService {
   }
 
   @override
-  Future<ResponseModel<CartModel>> getCart(
+  Future<ResponseModel<List<CartModel>>> getCart(
       {required token, required language}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -75,14 +77,16 @@ class _CartApiService implements CartApiService {
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ResponseModel<CartModel>>(
+        _setStreamType<ResponseModel<List<CartModel>>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, 'cart/usercart',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = ResponseModel<CartModel>.fromJson(
+    final value = ResponseModel<List<CartModel>>.fromJson(
       _result.data!,
-      (json) => CartModel.fromJson(json as Map<String, dynamic>),
+      (json) => (json as List<dynamic>)
+          .map<CartModel>((i) => CartModel.fromJson(i as Map<String, dynamic>))
+          .toList(),
     );
     return value;
   }

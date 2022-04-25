@@ -3,29 +3,27 @@ import 'package:food_delivery/features/restaurants/domain/entities/restaurant_en
 import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_details_screen.dart';
 
 class RestaurantItem extends StatelessWidget {
-  final RestaurantEntity restaurantEntity;
-
   const RestaurantItem({required this.restaurantEntity});
+
+  final RestaurantEntity restaurantEntity;
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        InkWell(
-          onTap: () => Navigator.of(context).pushNamed(
-            RestaurantDetailsScreen.routeName,
-            arguments: restaurantEntity.id,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(
-              left: 18,
-              right: 18,
-              top: 10,
-              bottom: 10,
-            ),
-            child: ClipRRect(
+    return InkWell(
+      onTap: () => Navigator.of(context).pushNamed(
+        RestaurantDetailsScreen.routeName,
+        arguments: restaurantEntity.id,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 8,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.network(
                 restaurantEntity.imageUrl,
@@ -34,23 +32,21 @@ class RestaurantItem extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
             ),
-          ),
+            const SizedBox(height: 4),
+            Text(
+              restaurantEntity.name,
+              style: textTheme.headline4,
+            ),
+            const SizedBox(height: 4),
+            Text(
+              restaurantEntity.description,
+              style: textTheme.subtitle1,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(left: 18),
-          child: Text(
-            restaurantEntity.name,
-            style: textTheme.headline4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 18),
-          child: Text(
-            restaurantEntity.description,
-            style: textTheme.subtitle1,
-          ),
-        ),
-      ],
+      ),
     );
   }
 }

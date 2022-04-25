@@ -25,7 +25,8 @@ class LocalizationRepositoryImpl implements LocalizationRepository {
   @override
   Future<Either<Failure, String>> getLanguage() async {
     try {
-      final String language = _localizationLocalDataSource.getLanguage()!;
+      final String language =
+          _localizationLocalDataSource.getLanguage() ?? 'en';
       return right(language);
     } catch (error) {
       return left(const Failure('Error while getting language'));

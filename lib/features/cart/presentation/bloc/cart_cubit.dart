@@ -19,7 +19,9 @@ class CartCubit extends Cubit<CartState> {
   final EditCartUseCase _editCartUseCase;
   final GetCartUseCase _getCartUseCase;
 
-  Future<void> addToCart({required OrderEntity orderEntity}) async {
+  Future<void> addToCart({
+    required OrderEntity orderEntity,
+  }) async {
     emit(const AddToCartLoading());
     final result = await _addToCartUseCase(AddToCartParams(orderEntity));
     emit(
@@ -31,12 +33,12 @@ class CartCubit extends Cubit<CartState> {
   }
 
   Future<void> editCart({required OrderEntity orderEntity}) async {
-    emit(const AddToCartLoading());
+    emit(const EditCartLoading());
     final result = await _editCartUseCase(EditCartParams(orderEntity));
     emit(
       result.fold(
-        (failure) => AddToCartErrorDetails(failure.error),
-        (_) => const AddToCartSuccess(),
+        (failure) => EditCartErrorDetails(failure.error),
+        (_) => const EditCartSuccess(),
       ),
     );
   }

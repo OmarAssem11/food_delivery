@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
+import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_cubit.dart';
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_state.dart';
 import 'package:food_delivery/features/restaurants/presentation/widgets/product_item.dart';
@@ -35,9 +36,7 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen> {
       body: BlocBuilder<RestaurantsCubit, RestaurantsState>(
         builder: (context, state) {
           return state.maybeWhen(
-            getRestaurantDetailsLoading: () => const Center(
-              child: CircularProgressIndicator(),
-            ),
+            getRestaurantDetailsLoading: () => const LoadingIndicator(),
             getRestaurantDetailsError: (error) {
               showErrorToast(errorMessage: error);
               return Container();
@@ -58,11 +57,12 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen> {
                       child: InkWell(
                         onTap: Navigator.of(context).pop,
                         child: const CircleAvatar(
+                          radius: 18,
                           backgroundColor: Colors.white,
                           child: Icon(
                             Icons.arrow_back,
                             color: Colors.black87,
-                            size: 30,
+                            size: 28,
                           ),
                         ),
                       ),
@@ -89,8 +89,9 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen> {
                         ),
                         Expanded(
                           child: ListView.separated(
-                            itemBuilder: (context, index) =>
-                                ProductItem(restaurant.products[index]),
+                            itemBuilder: (context, index) => ProductItem(
+                              restaurant.products.reversed.toList()[index],
+                            ),
                             itemCount: restaurant.products.length,
                             physics: const BouncingScrollPhysics(),
                             separatorBuilder: (context, index) => const Divider(

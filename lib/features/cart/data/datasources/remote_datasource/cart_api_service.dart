@@ -29,7 +29,7 @@ abstract class CartApiService {
   });
 
   @GET(getCartEndpoint)
-  Future<ResponseModel<CartModel>> getCart({
+  Future<ResponseModel<List<CartModel>>> getCart({
     @Header(authorization) required String token,
     @Header(languageHeader) required String language,
   });

@@ -37,11 +37,13 @@ class ProductItem extends StatelessWidget {
                 Text(
                   product.description,
                   style: textTheme.caption,
+                  maxLines: 4,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 8),
                 Text(
                   '${AppLocalizations.of(context)!.egp} ${product.price}',
-                  style: textTheme.caption,
+                  style: textTheme.subtitle1,
                 ),
               ],
             ),

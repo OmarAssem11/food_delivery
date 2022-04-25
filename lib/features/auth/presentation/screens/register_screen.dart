@@ -148,7 +148,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       children: [
                         Text(
                           appLocalizations.alreadyHaveAnAccount,
-                          style: textTheme.headline6,
+                          style: textTheme.subtitle1,
                         ),
                         TextButton(
                           onPressed: () => Navigator.of(context)

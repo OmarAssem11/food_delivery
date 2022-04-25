@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:food_delivery/core/data/constants/constants.dart';
 import 'package:food_delivery/core/domain/error/failure.dart';
 import 'package:food_delivery/features/auth/domain/datasources/local_datasource/auth_local_datasource.dart';
 import 'package:food_delivery/features/checkout/data/mappers/checkout_mapper.dart';
@@ -28,7 +29,7 @@ class CheckoutRepositoryImpl implements CheckoutRepository {
       final token = _authLocalDataSource.getToken() ?? '';
       final language = _localizationLocalDataSource.getLanguage() ?? '';
       await _checkoutRemoteDataSource.checkout(
-        token: token,
+        token: '$tokenType $token',
         language: language,
         checkoutModel: checkoutEntity.toModel,
       );

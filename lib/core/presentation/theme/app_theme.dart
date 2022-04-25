@@ -44,7 +44,7 @@ ThemeData appTheme = ThemeData(
     style: ButtonStyle(
       textStyle: MaterialStateProperty.all(
         const TextStyle(
-          fontSize: 18,
+          fontSize: 17,
           color: Colors.black,
           fontWeight: FontWeight.bold,
         ),

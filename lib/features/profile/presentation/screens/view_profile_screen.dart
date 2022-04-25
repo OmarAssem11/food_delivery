@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
+import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
 import 'package:food_delivery/features/profile/presentation/bloc/view_profile_cubit/view_profile_cubit.dart';
 import 'package:food_delivery/features/profile/presentation/bloc/view_profile_cubit/view_profile_state.dart';
 import 'package:food_delivery/features/profile/presentation/screens/edit_profile_screen.dart';
@@ -32,7 +33,7 @@ class _ViewProfileScreenState extends State<ViewProfileScreen> {
               );
               return Container();
             },
-            loading: () => const Center(child: CircularProgressIndicator()),
+            loading: () => const LoadingIndicator(),
             error: (error) {
               showErrorToast(errorMessage: error);
               return Container();

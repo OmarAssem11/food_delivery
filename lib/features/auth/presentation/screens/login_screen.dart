@@ -134,7 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         children: [
                           Text(
                             appLocalizations.doNotHaveAnAccount,
-                            style: textTheme.headline6,
+                            style: textTheme.subtitle1,
                           ),
                           TextButton(
                             onPressed: () => Navigator.of(context)

@@ -7,7 +7,7 @@ class OrderItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-            final textTheme = Theme.of(context).textTheme;
+    final textTheme = Theme.of(context).textTheme;
     return Container(
       padding: const EdgeInsets.only(left: 20, right: 10, top: 10),
       height: MediaQuery.of(context).size.height / 4,
@@ -47,7 +47,7 @@ class OrderItem extends StatelessWidget {
                   ),
                   Text(
                     orderEntity.lastDate,
-                    style: textTheme.caption
+                    style: textTheme.caption,
                   ),
                   Text(
                     orderEntity.orderId.toString(),
@@ -57,11 +57,12 @@ class OrderItem extends StatelessWidget {
               ),
               const Spacer(),
               const Align(
-                  alignment: Alignment.centerRight,
-                  child: Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.grey,
-                  )),
+                alignment: Alignment.centerRight,
+                child: Icon(
+                  Icons.arrow_forward_ios,
+                  color: Colors.grey,
+                ),
+              ),
             ],
           ),
           const Padding(padding: EdgeInsets.all(15)),
@@ -70,24 +71,29 @@ class OrderItem extends StatelessWidget {
             children: [
               Wrap(
                 crossAxisAlignment: WrapCrossAlignment.center,
-                children:  [
+                children: [
                   const Icon(
                     Icons.refresh,
                     color: Colors.deepOrange,
                   ),
                   Text(
                     'Re-order',
-                    style: textTheme.subtitle1?.copyWith(color: Colors.deepOrange),
+                    style:
+                        textTheme.subtitle1?.copyWith(color: Colors.deepOrange),
                   ),
                 ],
               ),
               Wrap(
                 crossAxisAlignment: WrapCrossAlignment.center,
-                children:  [
-                  const Icon(Icons.rate_review_outlined, color: Colors.deepOrange),
+                children: [
+                  const Icon(
+                    Icons.rate_review_outlined,
+                    color: Colors.deepOrange,
+                  ),
                   Text(
                     'Rate Order',
-                    style: textTheme.subtitle1?.copyWith(color: Colors.deepOrange),
+                    style:
+                        textTheme.subtitle1?.copyWith(color: Colors.deepOrange),
                   ),
                 ],
               ),

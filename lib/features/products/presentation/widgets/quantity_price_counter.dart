@@ -4,10 +4,12 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class QuantityPriceCounter extends StatefulWidget {
   final double price;
   final ValueChanged<int> onValueChanged;
+  final int? initialValue;
 
   const QuantityPriceCounter({
     required this.price,
     required this.onValueChanged,
+    this.initialValue,
   });
 
   @override
@@ -15,14 +17,20 @@ class QuantityPriceCounter extends StatefulWidget {
 }
 
 class _QuantityPriceCounterState extends State<QuantityPriceCounter> {
-  int quantity = 1;
+  late int quantity;
+
+  @override
+  void initState() {
+    super.initState();
+    quantity = widget.initialValue ?? 1;
+  }
 
   @override
   Widget build(BuildContext context) {
     final subtitle1 = Theme.of(context).textTheme.subtitle1;
     final primaryColor = Theme.of(context).colorScheme.primary;
     return SizedBox(
-      height: 24,
+      height: 33,
       child: Row(
         children: [
           Text(

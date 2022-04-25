@@ -2,6 +2,7 @@ import 'package:flutter/material.dart ';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
 import 'package:food_delivery/features/cart/presentation/screens/cart_screen.dart';
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_cubit.dart';
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_state.dart';
@@ -46,17 +47,17 @@ class _RestaurantsListScreenState extends State<RestaurantsListScreen> {
       body: BlocBuilder<RestaurantsCubit, RestaurantsState>(
         builder: (context, state) {
           return state.maybeWhen(
-            getAllRestaurantLoading: () => const Center(
-              child: CircularProgressIndicator(),
-            ),
+            getAllRestaurantLoading: () => const LoadingIndicator(),
             getAllRestaurantSuccess: (restaurants) => ListView.separated(
               itemBuilder: (context, index) => RestaurantItem(
-                restaurantEntity: restaurants[index],
+                restaurantEntity: restaurants.reversed.toList()[index],
               ),
               itemCount: restaurants.length,
               separatorBuilder: (context, index) => const Divider(
                 thickness: 1,
                 color: Colors.grey,
+                indent: 20,
+                endIndent: 20,
               ),
             ),
             orElse: () => Container(),

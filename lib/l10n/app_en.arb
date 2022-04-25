@@ -28,11 +28,18 @@
     "anythingElseWeNeedToKnow": "Anything else we need to know?",
     "paymentSummery": "Payment summery",
     "subtotal": "Subtotal",
+    "deliveryFee": "Delivery fee",
+    "totalAmount": "Total amount",
     "checkout": "Checkout",
     "addToBasket": "Add to basket",
+    "itemAddedToYourBasket": "Item added to your basket",
+    "viewBasket": "View basket",
+    "yourBasketIsEmpty": "Your basket is empty!",
     "address": "Address",
     "phone": "Phone",
     "payWith": "Pay with",
     "cashOnDelivery": "Cash on delivery",
-    "placeOrder": "place order"
+    "placeOrder": "place order",
+    "yourOrders": "Your orders",
+    "orderDetails": "Order details"
 }

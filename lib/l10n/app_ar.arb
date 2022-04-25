@@ -27,12 +27,19 @@
     "addANote": "إضافة ملاحظة",
     "anythingElseWeNeedToKnow": "اي شئ آخر يجب ان نعرفه؟",
     "paymentSummery": "ملخص الدفع",
-    "subtotal": "الإجمالي",
+    "subtotal": "المجموع",
+    "deliveryFee": "التوصيل",
+    "totalAmount": "الإجمالي",
     "checkout": "متابعة إلي الشراء",
     "addToBasket": "إضافة الي السلة",
+    "itemAddedToYourBasket": "تم إضافة العنصر إلي السلة",
+    "viewBasket": "عرض السلة",
+    "yourBasketIsEmpty": "!السلة فارغة",
     "address": "العنوان",
     "phone": "رقم الهاتف",
     "payWith": "وسيلة الدفع",
     "cashOnDelivery": "الدفع عند الإستلام",
-    "placeOrder": "تأكيد الطلب"
+    "placeOrder": "تأكيد الطلب",
+    "yourOrders": "طلباتك",
+    "orderDetails": "تفاصيل الطلب"
 }

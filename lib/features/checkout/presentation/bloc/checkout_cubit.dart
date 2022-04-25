@@ -10,7 +10,9 @@ class CheckoutCubit extends Cubit<CheckoutState> {
 
   final CheckoutUseCase _checkoutUseCase;
 
-  Future<void> checkout({required CheckoutEntity checkoutEntity}) async {
+  Future<void> checkout({
+    required CheckoutEntity checkoutEntity,
+  }) async {
     emit(const CheckoutLoading());
     final result = await _checkoutUseCase(
       CheckoutData(

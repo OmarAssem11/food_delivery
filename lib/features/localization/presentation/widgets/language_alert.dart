@@ -29,6 +29,9 @@ class _LanguageAlertDialogState extends State<LanguageAlertDialog> {
     return BlocBuilder<LocalizationCubit, LocalizationState>(
       builder: (context, state) => state.maybeWhen(
         getLangSuccess: () => AlertDialog(
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+          ),
           title: Text(appLocalizations.language),
           content: Column(
             mainAxisSize: MainAxisSize.min,
@@ -45,6 +48,9 @@ class _LanguageAlertDialogState extends State<LanguageAlertDialog> {
         changeLangSuccess: (lang) {
           radioValue = lang;
           return AlertDialog(
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(16)),
+            ),
             title: Text(appLocalizations.language),
             content: Column(
               mainAxisSize: MainAxisSize.min,

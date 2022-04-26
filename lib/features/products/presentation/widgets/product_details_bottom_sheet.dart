@@ -98,6 +98,7 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                     ),
                     const SizedBox(height: 12),
                     QuantityPriceCounter(
+                      isInCart: false,
                       price: product.price,
                       onValueChanged: (value) =>
                           setState(() => quantity = value),

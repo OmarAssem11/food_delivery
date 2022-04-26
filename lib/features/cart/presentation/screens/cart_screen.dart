@@ -52,7 +52,7 @@ class _CartScreenState extends State<CartScreen> {
       listener: (context, state) {
         if (state is GetCartSuccess) {
           cart = state.cartEntity;
-        } else if (state is EditCartSuccess) {}
+        } 
       },
       builder: (context, state) {
         return state.maybeWhen(

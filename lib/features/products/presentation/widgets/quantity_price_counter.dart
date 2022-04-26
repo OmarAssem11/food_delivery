@@ -5,11 +5,13 @@ class QuantityPriceCounter extends StatefulWidget {
   final double price;
   final ValueChanged<int> onValueChanged;
   final int? initialValue;
+  final bool isInCart;
 
   const QuantityPriceCounter({
     required this.price,
     required this.onValueChanged,
-    this.initialValue,
+    this.initialValue, 
+    required this.isInCart,
   });
 
   @override
@@ -45,7 +47,10 @@ class _QuantityPriceCounterState extends State<QuantityPriceCounter> {
               color: primaryColor,
             ),
             onPressed: () => setState(() {
-              if (quantity > 1) {
+              if (!widget.isInCart && quantity > 1) {
+                quantity--;
+                widget.onValueChanged(quantity);
+              }else if (widget.isInCart && quantity >=1 ) {
                 quantity--;
                 widget.onValueChanged(quantity);
               }

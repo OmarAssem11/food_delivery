@@ -9,10 +9,12 @@ class OrderedProductItem extends StatelessWidget {
   const OrderedProductItem({
     required this.product,
     required this.quantity,
+    required this.restaurantId,
   });
 
   final ProductModel product;
   final int quantity;
+  final int restaurantId;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,7 @@ class OrderedProductItem extends StatelessWidget {
                   onValueChanged: (newQuantity) =>
                       BlocProvider.of<CartCubit>(context).editCart(
                     orderEntity: OrderEntity(
-                      restaurantId: 0,
+                      restaurantId: restaurantId,
                       productId: product.id,
                       quantity: newQuantity,
                     ),

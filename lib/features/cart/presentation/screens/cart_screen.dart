@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
+import 'package:food_delivery/features/cart/domain/entities/cart_entity.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_state.dart';
 import 'package:food_delivery/features/cart/presentation/widgets/ordered_product_item.dart';
@@ -24,6 +25,7 @@ class _CartScreenState extends State<CartScreen> {
   final noteController = TextEditingController();
   late TextTheme textTheme;
   late AppLocalizations appLocalizations;
+  List<CartEntity> cart = [];
 
   @override
   void initState() {
@@ -46,7 +48,12 @@ class _CartScreenState extends State<CartScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CartCubit, CartState>(
+    return BlocConsumer<CartCubit, CartState>(
+      listener: (context, state) {
+        if (state is GetCartSuccess) {
+          cart = state.cartEntity;
+        } else if (state is EditCartSuccess) {}
+      },
       builder: (context, state) {
         return state.maybeWhen(
           getCartLoading: () => Scaffold(
@@ -59,7 +66,13 @@ class _CartScreenState extends State<CartScreen> {
               appBar: AppBar(),
             );
           },
-          getCartSuccess: (cart) {
+          editCartError: (error) {
+            showErrorToast(errorMessage: error);
+            return Scaffold(
+              appBar: AppBar(),
+            );
+          },
+          orElse: () {
             double subtotal = 0;
             cart
                 .map(
@@ -103,19 +116,17 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                     body: Padding(
                       padding: const EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      child: ListView(
                         children: [
-                          Expanded(
-                            child: ListView.builder(
-                              itemBuilder: (context, index) =>
-                                  OrderedProductItem(
-                                product: cart[index].product,
-                                quantity: cart[index].quantity,
-                              ),
-                              itemCount: cart.length,
-                              physics: const NeverScrollableScrollPhysics(),
+                          ListView.builder(
+                            itemBuilder: (context, index) => OrderedProductItem(
+                              product: cart[index].product,
+                              quantity: cart[index].quantity,
+                              restaurantId: cart[index].restaurantData.id,
                             ),
+                            itemCount: cart.length,
+                            shrinkWrap: true,
+                            physics: const ClampingScrollPhysics(),
                           ),
                           const SizedBox(height: 8),
                           Text(
@@ -150,7 +161,7 @@ class _CartScreenState extends State<CartScreen> {
                             subtotal: subtotal,
                             deliveryFee: 30,
                           ),
-                          const Spacer(),
+                          const SizedBox(height: 24),
                           CustomElevatedButton(
                             label: appLocalizations.checkout,
                             onPressed: () => Navigator.of(context).pushNamed(
@@ -164,7 +175,6 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                   );
           },
-          orElse: () => Container(),
         );
       },
     );

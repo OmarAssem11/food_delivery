@@ -19,4 +19,10 @@ abstract class CartRemoteDataSource {
     required String token,
     required String language,
   });
+
+  Future <ResponseModel> deleteCart({
+    required String token,
+    required String language, 
+    required OrderModel orderModel,
+  });
 }

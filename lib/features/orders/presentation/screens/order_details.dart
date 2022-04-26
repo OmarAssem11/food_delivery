@@ -42,6 +42,7 @@ class OrderDeatails extends StatelessWidget {
                       Icon(Icons.add_location_sharp, color: Colors.grey,),
                       SizedBox(width: 5,), 
                       Text('address'),
+                      
 
 
                   ],) 

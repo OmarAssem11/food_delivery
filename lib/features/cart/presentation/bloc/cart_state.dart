@@ -18,4 +18,8 @@ class CartState with _$CartState {
       GetCartSuccess;
   const factory CartState.getCartError(final String error) =
       GetCartErrorDetails;
+  const factory CartState.deleteCartLoading() = DeleteCartLoading;
+  const factory CartState.deleteCartSuccess() = DeleteCartSuccess;
+  const factory CartState.deleteCartError(final String error) =
+      DeleteCartErrorDetails;
 }

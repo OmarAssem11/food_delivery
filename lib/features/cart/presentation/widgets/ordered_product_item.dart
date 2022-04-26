@@ -34,17 +34,32 @@ class OrderedProductItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 QuantityPriceCounter(
+                  isInCart: true,
                   initialValue: quantity,
                   price: product.price,
-                  onValueChanged: (newQuantity) =>
-                      BlocProvider.of<CartCubit>(context).editCart(
+                  onValueChanged: (newQuantity){
+                    if (newQuantity==1 ){
+                       BlocProvider.of<CartCubit>(context).deleteCart(
                     orderEntity: OrderEntity(
                       restaurantId: restaurantId,
                       productId: product.id,
                       quantity: newQuantity,
                     ),
-                  ),
-                ),
+                  );
+
+                    }else{
+                       BlocProvider.of<CartCubit>(context).editCart(
+                    orderEntity: OrderEntity(
+                      restaurantId: restaurantId,
+                      productId: product.id,
+                      quantity: newQuantity,
+                    ),
+                  );
+
+                    }
+                  }
+                     
+                ,),
               ],
             ),
           ),

@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_delivery/core/domain/usecases/usecase.dart';
 import 'package:food_delivery/features/cart/domain/entities/order_entity.dart';
 import 'package:food_delivery/features/cart/domain/usecases/add_to_cart_use_case.dart';
+import 'package:food_delivery/features/cart/domain/usecases/delete_cart_use_case.dart';
 import 'package:food_delivery/features/cart/domain/usecases/edit_cart_use_case.dart';
 import 'package:food_delivery/features/cart/domain/usecases/get_cart_use_case.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_state.dart';
@@ -12,12 +14,14 @@ class CartCubit extends Cubit<CartState> {
   CartCubit(
     this._addToCartUseCase,
     this._editCartUseCase,
-    this._getCartUseCase,
+    this._getCartUseCase, 
+    this._deleteCartUseCase,
   ) : super(const CartInitial());
 
   final AddToCartUseCase _addToCartUseCase;
   final EditCartUseCase _editCartUseCase;
   final GetCartUseCase _getCartUseCase;
+  final DeleteCartUseCase _deleteCartUseCase;
 
   Future<void> addToCart({
     required OrderEntity orderEntity,
@@ -51,6 +55,19 @@ class CartCubit extends Cubit<CartState> {
         (failure) => GetCartErrorDetails(failure.error),
         (cart) => GetCartSuccess(cart),
       ),
+    );
+  }
+
+  Future<void> deleteCart({
+    required OrderEntity orderEntity,
+  }) async{
+    emit(const DeleteCartLoading());
+    final result = await _deleteCartUseCase(DeleteCartParams(orderEntity));
+    emit(
+      result.fold(
+        (failure) => DeleteCartErrorDetails(failure.error),
+         (delete) => const DeleteCartSuccess(),
+         ),
     );
   }
 }

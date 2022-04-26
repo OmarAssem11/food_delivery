@@ -75,4 +75,20 @@ class CartRepositoryImpl implements CartRepository {
       return left(const Failure('Error while getting cart'));
     }
   }
+
+  @override
+  Future<Either<Failure, Unit>> deleteCart({required OrderEntity orderEntity}) async {
+    try{
+      final token = _authLocalDataSource.getToken()??'';
+      final language =_localizationLocalDataSource.getLanguage() ??'';
+       await _cartRemoteDataSource.deleteCart(
+        token: '$tokenType $token',
+         language: language, 
+         orderModel: orderEntity.toModel,
+         );
+         return right(unit);
+    } catch(error){
+      return left(const Failure('error while deleting cart'));
+    }
+  }
 }

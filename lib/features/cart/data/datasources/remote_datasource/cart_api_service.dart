@@ -33,4 +33,11 @@ abstract class CartApiService {
     @Header(authorization) required String token,
     @Header(languageHeader) required String language,
   });
+
+@POST(deleteCartEndpoint)
+Future<ResponseModel> deleteCart({
+  @Header(authorization) required String token,
+  @Header(languageHeader) required String language,
+  @Body() required OrderModel orderModel,
+});
 }

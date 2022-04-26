@@ -9,4 +9,6 @@ abstract class CartRepository {
   Future<Either<Failure, Unit>> editCart({required OrderEntity orderEntity});
 
   Future<Either<Failure, List<CartEntity>>> getCart();
+
+  Future<Either<Failure, Unit>> deleteCart({required OrderEntity orderEntity});
 }

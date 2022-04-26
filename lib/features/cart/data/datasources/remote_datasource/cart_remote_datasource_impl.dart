@@ -44,4 +44,13 @@ class CartRemoteDataSourceImpl implements CartRemoteDataSource {
         token: token,
         language: language,
       );
+
+  @override
+  Future<ResponseModel> deleteCart({
+    required String token,
+     required String language, 
+     required OrderModel orderModel}) =>
+     _cartApiService.deleteCart(token: token, 
+     language: language,
+      orderModel: orderModel,);
 }

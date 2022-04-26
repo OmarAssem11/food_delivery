@@ -11,6 +11,7 @@ const getRestaurantDetailsEndpoint = 'restarunt/details/{restaurantId}';
 const getProductDetailsEndpoint = 'product/details/{productId}';
 const addToCartEndpoint = 'cart/add';
 const editCartEndpoint = 'cart/update';
+const deleteCartEndpoint='cart/delete';
 const getCartEndpoint = 'cart/usercart';
 const checkoutEndpoint = 'order/checkout';
 const getOrderDetailsEndpoint = 'order/details';

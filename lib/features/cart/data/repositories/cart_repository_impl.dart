@@ -48,7 +48,7 @@ class CartRepositoryImpl implements CartRepository {
     try {
       final token = _authLocalDataSource.getToken() ?? '';
       final language = _localizationLocalDataSource.getLanguage() ?? '';
-      await _cartRemoteDataSource.addToCart(
+      await _cartRemoteDataSource.editCart(
         token: '$tokenType $token',
         language: language,
         orderModel: orderEntity.toModel,

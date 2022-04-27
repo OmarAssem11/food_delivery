@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+import 'package:dartz/dartz.dart' hide Order;
 import 'package:food_delivery/core/data/constants/constants.dart';
 import 'package:food_delivery/core/domain/error/failure.dart';
 import 'package:food_delivery/features/auth/domain/datasources/local_datasource/auth_local_datasource.dart';
@@ -6,8 +6,7 @@ import 'package:food_delivery/features/localization/domain/datasources/local_dat
 import 'package:food_delivery/features/orders/data/mappers/order_details_mapper.dart';
 import 'package:food_delivery/features/orders/data/mappers/order_mapper.dart';
 import 'package:food_delivery/features/orders/domain/datasources/remote_datasource/orders_remote_datasource.dart';
-import 'package:food_delivery/features/orders/domain/entities/order_details_entity.dart';
-import 'package:food_delivery/features/orders/domain/entities/order_list_entity.dart';
+import 'package:food_delivery/features/orders/domain/entities/order.dart';
 import 'package:food_delivery/features/orders/domain/repositories/orders_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -24,7 +23,7 @@ class OrdersRepositoryImpl implements OrdersRepository {
   );
 
   @override
-  Future<Either<Failure, OrderDetailsEntity>> getOrderDetails() async {
+  Future<Either<Failure, Order>> getOrderDetails() async {
     try {
       final token = _authLocalDataSource.getToken() ?? '';
       final language = _localizationLocalDataSource.getLanguage() ?? 'en';
@@ -40,7 +39,7 @@ class OrdersRepositoryImpl implements OrdersRepository {
   }
 
   @override
-  Future<Either<Failure, List<OrderListEntity>>> getOrders() async {
+  Future<Either<Failure, List<Order>>> getOrders() async {
     try {
       final token = _authLocalDataSource.getToken() ?? '';
       final language = _localizationLocalDataSource.getLanguage() ?? 'en';

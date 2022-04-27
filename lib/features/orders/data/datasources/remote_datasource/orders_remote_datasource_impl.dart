@@ -22,7 +22,12 @@ class OrdersRemoteDataSourceImpl implements OrdersRemoteDataSource {
       );
 
   @override
-  Future<ResponseModel<List<OrderModel>>> getOrders(
-          {required String token, required String language,}) =>
-      _ordersApiService.getOrdersList(token: token, language: language);
+  Future<ResponseModel<List<OrderModel>>> getOrders({
+    required String token,
+    required String language,
+  }) =>
+      _ordersApiService.getOrdersList(
+        token: token,
+        language: language,
+      );
 }

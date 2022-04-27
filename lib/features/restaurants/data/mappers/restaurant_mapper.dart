@@ -1,8 +1,8 @@
 import 'package:food_delivery/features/restaurants/data/models/restaurant_model/restaurant_model.dart';
-import 'package:food_delivery/features/restaurants/domain/entities/restaurant_entity.dart';
+import 'package:food_delivery/features/restaurants/domain/entities/restaurant.dart';
 
 extension RestaurantMapper on RestaurantModel {
-  RestaurantEntity get fromModel => RestaurantEntity(
+  Restaurant get fromModel => Restaurant(
         id: id,
         name: name,
         description: description,

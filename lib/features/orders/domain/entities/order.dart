@@ -1,16 +1,13 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:equatable/equatable.dart';
 
-part 'order_model.g.dart';
-
-@JsonSerializable()
-class OrderModel {
+class Order extends Equatable {
   final int id;
   final String status;
   final String dateTime;
   final String restaurantName;
   final String restaurantImage;
 
-  const OrderModel({
+  const Order({
     required this.id,
     required this.status,
     required this.dateTime,
@@ -18,6 +15,6 @@ class OrderModel {
     required this.restaurantImage,
   });
 
-  factory OrderModel.fromJson(Map<String, dynamic> json) =>
-      _$OrderModelFromJson(json);
+  @override
+  List<Object?> get props => [id];
 }

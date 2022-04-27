@@ -22,12 +22,27 @@ class _$OrdersStateTearOff {
     return const OrdersInitial();
   }
 
+  GetOrdersListLoading getOrdersListLoading() {
+    return const GetOrdersListLoading();
+  }
+
+  GetOrdersListSuccess getOrdersListSuccess(List<Order> ordersList) {
+    return GetOrdersListSuccess(
+      ordersList,
+    );
+  }
+
+  GetOrdersListErrorDetails getOrdersListError(String error) {
+    return GetOrdersListErrorDetails(
+      error,
+    );
+  }
+
   GetOrderDetailsLoading getOrderDetailsLoading() {
     return const GetOrderDetailsLoading();
   }
 
-  GetOrderDetailsSuccess getOrderDetailsSuccess(
-      OrderDetailsEntity orderDetails) {
+  GetOrderDetailsSuccess getOrderDetailsSuccess(Order orderDetails) {
     return GetOrderDetailsSuccess(
       orderDetails,
     );
@@ -48,25 +63,33 @@ mixin _$OrdersState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getOrdersListLoading,
+    required TResult Function(List<Order> ordersList) getOrdersListSuccess,
+    required TResult Function(String error) getOrdersListError,
     required TResult Function() getOrderDetailsLoading,
-    required TResult Function(OrderDetailsEntity orderDetails)
-        getOrderDetailsSuccess,
+    required TResult Function(Order orderDetails) getOrderDetailsSuccess,
     required TResult Function(String error) getOrderDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> ordersList)? getOrdersListSuccess,
+    TResult Function(String error)? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
-    TResult Function(OrderDetailsEntity orderDetails)? getOrderDetailsSuccess,
+    TResult Function(Order orderDetails)? getOrderDetailsSuccess,
     TResult Function(String error)? getOrderDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> ordersList)? getOrdersListSuccess,
+    TResult Function(String error)? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
-    TResult Function(OrderDetailsEntity orderDetails)? getOrderDetailsSuccess,
+    TResult Function(Order orderDetails)? getOrderDetailsSuccess,
     TResult Function(String error)? getOrderDetailsError,
     required TResult orElse(),
   }) =>
@@ -74,6 +97,10 @@ mixin _$OrdersState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(OrdersInitial value) initial,
+    required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
+    required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
+    required TResult Function(GetOrdersListErrorDetails value)
+        getOrdersListError,
     required TResult Function(GetOrderDetailsLoading value)
         getOrderDetailsLoading,
     required TResult Function(GetOrderDetailsSuccess value)
@@ -85,6 +112,9 @@ mixin _$OrdersState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
@@ -93,6 +123,9 @@ mixin _$OrdersState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
@@ -158,9 +191,11 @@ class _$OrdersInitial implements OrdersInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getOrdersListLoading,
+    required TResult Function(List<Order> ordersList) getOrdersListSuccess,
+    required TResult Function(String error) getOrdersListError,
     required TResult Function() getOrderDetailsLoading,
-    required TResult Function(OrderDetailsEntity orderDetails)
-        getOrderDetailsSuccess,
+    required TResult Function(Order orderDetails) getOrderDetailsSuccess,
     required TResult Function(String error) getOrderDetailsError,
   }) {
     return initial();
@@ -170,8 +205,11 @@ class _$OrdersInitial implements OrdersInitial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> ordersList)? getOrdersListSuccess,
+    TResult Function(String error)? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
-    TResult Function(OrderDetailsEntity orderDetails)? getOrderDetailsSuccess,
+    TResult Function(Order orderDetails)? getOrderDetailsSuccess,
     TResult Function(String error)? getOrderDetailsError,
   }) {
     return initial?.call();
@@ -181,8 +219,11 @@ class _$OrdersInitial implements OrdersInitial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> ordersList)? getOrdersListSuccess,
+    TResult Function(String error)? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
-    TResult Function(OrderDetailsEntity orderDetails)? getOrderDetailsSuccess,
+    TResult Function(Order orderDetails)? getOrderDetailsSuccess,
     TResult Function(String error)? getOrderDetailsError,
     required TResult orElse(),
   }) {
@@ -196,6 +237,10 @@ class _$OrdersInitial implements OrdersInitial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(OrdersInitial value) initial,
+    required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
+    required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
+    required TResult Function(GetOrdersListErrorDetails value)
+        getOrdersListError,
     required TResult Function(GetOrderDetailsLoading value)
         getOrderDetailsLoading,
     required TResult Function(GetOrderDetailsSuccess value)
@@ -210,6 +255,9 @@ class _$OrdersInitial implements OrdersInitial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
@@ -221,6 +269,9 @@ class _$OrdersInitial implements OrdersInitial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
@@ -235,6 +286,487 @@ class _$OrdersInitial implements OrdersInitial {
 
 abstract class OrdersInitial implements OrdersState {
   const factory OrdersInitial() = _$OrdersInitial;
+}
+
+/// @nodoc
+abstract class $GetOrdersListLoadingCopyWith<$Res> {
+  factory $GetOrdersListLoadingCopyWith(GetOrdersListLoading value,
+          $Res Function(GetOrdersListLoading) then) =
+      _$GetOrdersListLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$GetOrdersListLoadingCopyWithImpl<$Res>
+    extends _$OrdersStateCopyWithImpl<$Res>
+    implements $GetOrdersListLoadingCopyWith<$Res> {
+  _$GetOrdersListLoadingCopyWithImpl(
+      GetOrdersListLoading _value, $Res Function(GetOrdersListLoading) _then)
+      : super(_value, (v) => _then(v as GetOrdersListLoading));
+
+  @override
+  GetOrdersListLoading get _value => super._value as GetOrdersListLoading;
+}
+
+/// @nodoc
+
+class _$GetOrdersListLoading implements GetOrdersListLoading {
+  const _$GetOrdersListLoading();
+
+  @override
+  String toString() {
+    return 'OrdersState.getOrdersListLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is GetOrdersListLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getOrdersListLoading,
+    required TResult Function(List<Order> ordersList) getOrdersListSuccess,
+    required TResult Function(String error) getOrdersListError,
+    required TResult Function() getOrderDetailsLoading,
+    required TResult Function(Order orderDetails) getOrderDetailsSuccess,
+    required TResult Function(String error) getOrderDetailsError,
+  }) {
+    return getOrdersListLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> ordersList)? getOrdersListSuccess,
+    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrderDetailsLoading,
+    TResult Function(Order orderDetails)? getOrderDetailsSuccess,
+    TResult Function(String error)? getOrderDetailsError,
+  }) {
+    return getOrdersListLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> ordersList)? getOrdersListSuccess,
+    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrderDetailsLoading,
+    TResult Function(Order orderDetails)? getOrderDetailsSuccess,
+    TResult Function(String error)? getOrderDetailsError,
+    required TResult orElse(),
+  }) {
+    if (getOrdersListLoading != null) {
+      return getOrdersListLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OrdersInitial value) initial,
+    required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
+    required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
+    required TResult Function(GetOrdersListErrorDetails value)
+        getOrdersListError,
+    required TResult Function(GetOrderDetailsLoading value)
+        getOrderDetailsLoading,
+    required TResult Function(GetOrderDetailsSuccess value)
+        getOrderDetailsSuccess,
+    required TResult Function(GetOrderDetailsErrorDetails value)
+        getOrderDetailsError,
+  }) {
+    return getOrdersListLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
+    TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
+    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+  }) {
+    return getOrdersListLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
+    TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
+    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    required TResult orElse(),
+  }) {
+    if (getOrdersListLoading != null) {
+      return getOrdersListLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetOrdersListLoading implements OrdersState {
+  const factory GetOrdersListLoading() = _$GetOrdersListLoading;
+}
+
+/// @nodoc
+abstract class $GetOrdersListSuccessCopyWith<$Res> {
+  factory $GetOrdersListSuccessCopyWith(GetOrdersListSuccess value,
+          $Res Function(GetOrdersListSuccess) then) =
+      _$GetOrdersListSuccessCopyWithImpl<$Res>;
+  $Res call({List<Order> ordersList});
+}
+
+/// @nodoc
+class _$GetOrdersListSuccessCopyWithImpl<$Res>
+    extends _$OrdersStateCopyWithImpl<$Res>
+    implements $GetOrdersListSuccessCopyWith<$Res> {
+  _$GetOrdersListSuccessCopyWithImpl(
+      GetOrdersListSuccess _value, $Res Function(GetOrdersListSuccess) _then)
+      : super(_value, (v) => _then(v as GetOrdersListSuccess));
+
+  @override
+  GetOrdersListSuccess get _value => super._value as GetOrdersListSuccess;
+
+  @override
+  $Res call({
+    Object? ordersList = freezed,
+  }) {
+    return _then(GetOrdersListSuccess(
+      ordersList == freezed
+          ? _value.ordersList
+          : ordersList // ignore: cast_nullable_to_non_nullable
+              as List<Order>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetOrdersListSuccess implements GetOrdersListSuccess {
+  const _$GetOrdersListSuccess(this.ordersList);
+
+  @override
+  final List<Order> ordersList;
+
+  @override
+  String toString() {
+    return 'OrdersState.getOrdersListSuccess(ordersList: $ordersList)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetOrdersListSuccess &&
+            const DeepCollectionEquality()
+                .equals(other.ordersList, ordersList));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(ordersList));
+
+  @JsonKey(ignore: true)
+  @override
+  $GetOrdersListSuccessCopyWith<GetOrdersListSuccess> get copyWith =>
+      _$GetOrdersListSuccessCopyWithImpl<GetOrdersListSuccess>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getOrdersListLoading,
+    required TResult Function(List<Order> ordersList) getOrdersListSuccess,
+    required TResult Function(String error) getOrdersListError,
+    required TResult Function() getOrderDetailsLoading,
+    required TResult Function(Order orderDetails) getOrderDetailsSuccess,
+    required TResult Function(String error) getOrderDetailsError,
+  }) {
+    return getOrdersListSuccess(ordersList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> ordersList)? getOrdersListSuccess,
+    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrderDetailsLoading,
+    TResult Function(Order orderDetails)? getOrderDetailsSuccess,
+    TResult Function(String error)? getOrderDetailsError,
+  }) {
+    return getOrdersListSuccess?.call(ordersList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> ordersList)? getOrdersListSuccess,
+    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrderDetailsLoading,
+    TResult Function(Order orderDetails)? getOrderDetailsSuccess,
+    TResult Function(String error)? getOrderDetailsError,
+    required TResult orElse(),
+  }) {
+    if (getOrdersListSuccess != null) {
+      return getOrdersListSuccess(ordersList);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OrdersInitial value) initial,
+    required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
+    required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
+    required TResult Function(GetOrdersListErrorDetails value)
+        getOrdersListError,
+    required TResult Function(GetOrderDetailsLoading value)
+        getOrderDetailsLoading,
+    required TResult Function(GetOrderDetailsSuccess value)
+        getOrderDetailsSuccess,
+    required TResult Function(GetOrderDetailsErrorDetails value)
+        getOrderDetailsError,
+  }) {
+    return getOrdersListSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
+    TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
+    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+  }) {
+    return getOrdersListSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
+    TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
+    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    required TResult orElse(),
+  }) {
+    if (getOrdersListSuccess != null) {
+      return getOrdersListSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetOrdersListSuccess implements OrdersState {
+  const factory GetOrdersListSuccess(List<Order> ordersList) =
+      _$GetOrdersListSuccess;
+
+  List<Order> get ordersList;
+  @JsonKey(ignore: true)
+  $GetOrdersListSuccessCopyWith<GetOrdersListSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetOrdersListErrorDetailsCopyWith<$Res> {
+  factory $GetOrdersListErrorDetailsCopyWith(GetOrdersListErrorDetails value,
+          $Res Function(GetOrdersListErrorDetails) then) =
+      _$GetOrdersListErrorDetailsCopyWithImpl<$Res>;
+  $Res call({String error});
+}
+
+/// @nodoc
+class _$GetOrdersListErrorDetailsCopyWithImpl<$Res>
+    extends _$OrdersStateCopyWithImpl<$Res>
+    implements $GetOrdersListErrorDetailsCopyWith<$Res> {
+  _$GetOrdersListErrorDetailsCopyWithImpl(GetOrdersListErrorDetails _value,
+      $Res Function(GetOrdersListErrorDetails) _then)
+      : super(_value, (v) => _then(v as GetOrdersListErrorDetails));
+
+  @override
+  GetOrdersListErrorDetails get _value =>
+      super._value as GetOrdersListErrorDetails;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(GetOrdersListErrorDetails(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetOrdersListErrorDetails implements GetOrdersListErrorDetails {
+  const _$GetOrdersListErrorDetails(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'OrdersState.getOrdersListError(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetOrdersListErrorDetails &&
+            const DeepCollectionEquality().equals(other.error, error));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+
+  @JsonKey(ignore: true)
+  @override
+  $GetOrdersListErrorDetailsCopyWith<GetOrdersListErrorDetails> get copyWith =>
+      _$GetOrdersListErrorDetailsCopyWithImpl<GetOrdersListErrorDetails>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getOrdersListLoading,
+    required TResult Function(List<Order> ordersList) getOrdersListSuccess,
+    required TResult Function(String error) getOrdersListError,
+    required TResult Function() getOrderDetailsLoading,
+    required TResult Function(Order orderDetails) getOrderDetailsSuccess,
+    required TResult Function(String error) getOrderDetailsError,
+  }) {
+    return getOrdersListError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> ordersList)? getOrdersListSuccess,
+    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrderDetailsLoading,
+    TResult Function(Order orderDetails)? getOrderDetailsSuccess,
+    TResult Function(String error)? getOrderDetailsError,
+  }) {
+    return getOrdersListError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> ordersList)? getOrdersListSuccess,
+    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrderDetailsLoading,
+    TResult Function(Order orderDetails)? getOrderDetailsSuccess,
+    TResult Function(String error)? getOrderDetailsError,
+    required TResult orElse(),
+  }) {
+    if (getOrdersListError != null) {
+      return getOrdersListError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OrdersInitial value) initial,
+    required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
+    required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
+    required TResult Function(GetOrdersListErrorDetails value)
+        getOrdersListError,
+    required TResult Function(GetOrderDetailsLoading value)
+        getOrderDetailsLoading,
+    required TResult Function(GetOrderDetailsSuccess value)
+        getOrderDetailsSuccess,
+    required TResult Function(GetOrderDetailsErrorDetails value)
+        getOrderDetailsError,
+  }) {
+    return getOrdersListError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
+    TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
+    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+  }) {
+    return getOrdersListError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
+    TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
+    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    required TResult orElse(),
+  }) {
+    if (getOrdersListError != null) {
+      return getOrdersListError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetOrdersListErrorDetails implements OrdersState {
+  const factory GetOrdersListErrorDetails(String error) =
+      _$GetOrdersListErrorDetails;
+
+  String get error;
+  @JsonKey(ignore: true)
+  $GetOrdersListErrorDetailsCopyWith<GetOrdersListErrorDetails> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -279,9 +811,11 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getOrdersListLoading,
+    required TResult Function(List<Order> ordersList) getOrdersListSuccess,
+    required TResult Function(String error) getOrdersListError,
     required TResult Function() getOrderDetailsLoading,
-    required TResult Function(OrderDetailsEntity orderDetails)
-        getOrderDetailsSuccess,
+    required TResult Function(Order orderDetails) getOrderDetailsSuccess,
     required TResult Function(String error) getOrderDetailsError,
   }) {
     return getOrderDetailsLoading();
@@ -291,8 +825,11 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> ordersList)? getOrdersListSuccess,
+    TResult Function(String error)? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
-    TResult Function(OrderDetailsEntity orderDetails)? getOrderDetailsSuccess,
+    TResult Function(Order orderDetails)? getOrderDetailsSuccess,
     TResult Function(String error)? getOrderDetailsError,
   }) {
     return getOrderDetailsLoading?.call();
@@ -302,8 +839,11 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> ordersList)? getOrdersListSuccess,
+    TResult Function(String error)? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
-    TResult Function(OrderDetailsEntity orderDetails)? getOrderDetailsSuccess,
+    TResult Function(Order orderDetails)? getOrderDetailsSuccess,
     TResult Function(String error)? getOrderDetailsError,
     required TResult orElse(),
   }) {
@@ -317,6 +857,10 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(OrdersInitial value) initial,
+    required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
+    required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
+    required TResult Function(GetOrdersListErrorDetails value)
+        getOrdersListError,
     required TResult Function(GetOrderDetailsLoading value)
         getOrderDetailsLoading,
     required TResult Function(GetOrderDetailsSuccess value)
@@ -331,6 +875,9 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
@@ -342,6 +889,9 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
@@ -363,7 +913,7 @@ abstract class $GetOrderDetailsSuccessCopyWith<$Res> {
   factory $GetOrderDetailsSuccessCopyWith(GetOrderDetailsSuccess value,
           $Res Function(GetOrderDetailsSuccess) then) =
       _$GetOrderDetailsSuccessCopyWithImpl<$Res>;
-  $Res call({OrderDetailsEntity orderDetails});
+  $Res call({Order orderDetails});
 }
 
 /// @nodoc
@@ -385,7 +935,7 @@ class _$GetOrderDetailsSuccessCopyWithImpl<$Res>
       orderDetails == freezed
           ? _value.orderDetails
           : orderDetails // ignore: cast_nullable_to_non_nullable
-              as OrderDetailsEntity,
+              as Order,
     ));
   }
 }
@@ -396,7 +946,7 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
   const _$GetOrderDetailsSuccess(this.orderDetails);
 
   @override
-  final OrderDetailsEntity orderDetails;
+  final Order orderDetails;
 
   @override
   String toString() {
@@ -426,9 +976,11 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getOrdersListLoading,
+    required TResult Function(List<Order> ordersList) getOrdersListSuccess,
+    required TResult Function(String error) getOrdersListError,
     required TResult Function() getOrderDetailsLoading,
-    required TResult Function(OrderDetailsEntity orderDetails)
-        getOrderDetailsSuccess,
+    required TResult Function(Order orderDetails) getOrderDetailsSuccess,
     required TResult Function(String error) getOrderDetailsError,
   }) {
     return getOrderDetailsSuccess(orderDetails);
@@ -438,8 +990,11 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> ordersList)? getOrdersListSuccess,
+    TResult Function(String error)? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
-    TResult Function(OrderDetailsEntity orderDetails)? getOrderDetailsSuccess,
+    TResult Function(Order orderDetails)? getOrderDetailsSuccess,
     TResult Function(String error)? getOrderDetailsError,
   }) {
     return getOrderDetailsSuccess?.call(orderDetails);
@@ -449,8 +1004,11 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> ordersList)? getOrdersListSuccess,
+    TResult Function(String error)? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
-    TResult Function(OrderDetailsEntity orderDetails)? getOrderDetailsSuccess,
+    TResult Function(Order orderDetails)? getOrderDetailsSuccess,
     TResult Function(String error)? getOrderDetailsError,
     required TResult orElse(),
   }) {
@@ -464,6 +1022,10 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(OrdersInitial value) initial,
+    required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
+    required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
+    required TResult Function(GetOrdersListErrorDetails value)
+        getOrdersListError,
     required TResult Function(GetOrderDetailsLoading value)
         getOrderDetailsLoading,
     required TResult Function(GetOrderDetailsSuccess value)
@@ -478,6 +1040,9 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
@@ -489,6 +1054,9 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
@@ -502,10 +1070,10 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
 }
 
 abstract class GetOrderDetailsSuccess implements OrdersState {
-  const factory GetOrderDetailsSuccess(OrderDetailsEntity orderDetails) =
+  const factory GetOrderDetailsSuccess(Order orderDetails) =
       _$GetOrderDetailsSuccess;
 
-  OrderDetailsEntity get orderDetails;
+  Order get orderDetails;
   @JsonKey(ignore: true)
   $GetOrderDetailsSuccessCopyWith<GetOrderDetailsSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -580,9 +1148,11 @@ class _$GetOrderDetailsErrorDetails implements GetOrderDetailsErrorDetails {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getOrdersListLoading,
+    required TResult Function(List<Order> ordersList) getOrdersListSuccess,
+    required TResult Function(String error) getOrdersListError,
     required TResult Function() getOrderDetailsLoading,
-    required TResult Function(OrderDetailsEntity orderDetails)
-        getOrderDetailsSuccess,
+    required TResult Function(Order orderDetails) getOrderDetailsSuccess,
     required TResult Function(String error) getOrderDetailsError,
   }) {
     return getOrderDetailsError(error);
@@ -592,8 +1162,11 @@ class _$GetOrderDetailsErrorDetails implements GetOrderDetailsErrorDetails {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> ordersList)? getOrdersListSuccess,
+    TResult Function(String error)? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
-    TResult Function(OrderDetailsEntity orderDetails)? getOrderDetailsSuccess,
+    TResult Function(Order orderDetails)? getOrderDetailsSuccess,
     TResult Function(String error)? getOrderDetailsError,
   }) {
     return getOrderDetailsError?.call(error);
@@ -603,8 +1176,11 @@ class _$GetOrderDetailsErrorDetails implements GetOrderDetailsErrorDetails {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getOrdersListLoading,
+    TResult Function(List<Order> ordersList)? getOrdersListSuccess,
+    TResult Function(String error)? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
-    TResult Function(OrderDetailsEntity orderDetails)? getOrderDetailsSuccess,
+    TResult Function(Order orderDetails)? getOrderDetailsSuccess,
     TResult Function(String error)? getOrderDetailsError,
     required TResult orElse(),
   }) {
@@ -618,6 +1194,10 @@ class _$GetOrderDetailsErrorDetails implements GetOrderDetailsErrorDetails {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(OrdersInitial value) initial,
+    required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
+    required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
+    required TResult Function(GetOrdersListErrorDetails value)
+        getOrdersListError,
     required TResult Function(GetOrderDetailsLoading value)
         getOrderDetailsLoading,
     required TResult Function(GetOrderDetailsSuccess value)
@@ -632,6 +1212,9 @@ class _$GetOrderDetailsErrorDetails implements GetOrderDetailsErrorDetails {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
@@ -643,6 +1226,9 @@ class _$GetOrderDetailsErrorDetails implements GetOrderDetailsErrorDetails {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OrdersInitial value)? initial,
+    TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
+    TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
+    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
     TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,

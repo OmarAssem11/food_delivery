@@ -1,8 +1,8 @@
 import 'package:food_delivery/features/products/data/models/product_details_model/product_details_model.dart';
-import 'package:food_delivery/features/products/domain/entities/product_details_entity.dart';
+import 'package:food_delivery/features/products/domain/entities/product.dart';
 
 extension ProductDetailsMapper on ProductDetailsModel {
-  ProductDetailsEntity get fromModel => ProductDetailsEntity(
+  Product get fromModel => Product(
         id: id,
         name: name,
         description: description,

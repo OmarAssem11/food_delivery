@@ -5,7 +5,7 @@ import 'package:food_delivery/features/auth/domain/datasources/local_datasource/
 import 'package:food_delivery/features/localization/domain/datasources/local_datasources/localization_local_datasource.dart';
 import 'package:food_delivery/features/products/data/mappers/product_details_mapper.dart';
 import 'package:food_delivery/features/products/domain/datasources/remote_datasource/products_remote_datasource.dart';
-import 'package:food_delivery/features/products/domain/entities/product_details_entity.dart';
+import 'package:food_delivery/features/products/domain/entities/product.dart';
 import 'package:food_delivery/features/products/domain/repositories/products_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -22,7 +22,7 @@ class ProductsRepositoryImpl implements ProductsRepository {
   );
 
   @override
-  Future<Either<Failure, ProductDetailsEntity>> getProductDetails({
+  Future<Either<Failure, Product>> getProductDetails({
     required int productId,
   }) async {
     try {

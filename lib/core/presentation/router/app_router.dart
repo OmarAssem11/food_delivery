@@ -11,7 +11,7 @@ import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
 import 'package:food_delivery/features/cart/presentation/screens/cart_screen.dart';
 import 'package:food_delivery/features/checkout/presentation/bloc/checkout_cubit.dart';
 import 'package:food_delivery/features/checkout/presentation/screens/checkout_screen.dart';
-import 'package:food_delivery/features/orders/presentation/bloc/ordersList/cubit/orders_list_cubit.dart';
+import 'package:food_delivery/features/orders/presentation/bloc/orders_cubit.dart';
 import 'package:food_delivery/features/orders/presentation/screens/order_details_screen.dart';
 import 'package:food_delivery/features/orders/presentation/screens/orders_screen.dart';
 import 'package:food_delivery/features/profile/presentation/bloc/profile_cubit.dart';
@@ -104,7 +104,7 @@ Route<PageTransition>? onGenerateRoute(
     case OrdersScreen.routeName:
       return PageTransition(
         child: BlocProvider(
-          create: (context) => getIt<OrdersListCubit>(),
+          create: (context) => getIt<OrdersCubit>(),
           child: const OrdersScreen(),
         ),
         type: PageTransitionType.leftToRightWithFade,
@@ -112,7 +112,7 @@ Route<PageTransition>? onGenerateRoute(
     case OrderDetailsScreen.routeName:
       return PageTransition(
         child: BlocProvider(
-          create: (context) => getIt<OrdersListCubit>(),
+          create: (context) => getIt<OrdersCubit>(),
           child: const OrderDetailsScreen(),
         ),
         type: PageTransitionType.leftToRightWithFade,

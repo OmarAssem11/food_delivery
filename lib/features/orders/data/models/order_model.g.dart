@@ -7,18 +7,18 @@ part of 'order_model.dart';
 // **************************************************************************
 
 OrderModel _$OrderModelFromJson(Map<String, dynamic> json) => OrderModel(
-      json['restaurantName'] as String,
-      json['orderState'] as String,
-      json['lastDate'] as String,
-      json['orderId'] as int,
-      json['restaurantImage'] as String,
+      id: json['id'] as int,
+      status: json['status'] as String,
+      dateTime: json['dateTime'] as String,
+      restaurantName: json['restaurantName'] as String,
+      restaurantImage: json['restaurantImage'] as String,
     );
 
 Map<String, dynamic> _$OrderModelToJson(OrderModel instance) =>
     <String, dynamic>{
+      'id': instance.id,
+      'status': instance.status,
+      'dateTime': instance.dateTime,
       'restaurantName': instance.restaurantName,
-      'orderState': instance.orderState,
-      'lastDate': instance.lastDate,
-      'orderId': instance.orderId,
       'restaurantImage': instance.restaurantImage,
     };

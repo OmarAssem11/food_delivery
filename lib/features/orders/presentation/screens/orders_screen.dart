@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
-import 'package:food_delivery/features/orders/presentation/bloc/ordersList/cubit/orders_list_cubit.dart';
+import 'package:food_delivery/features/orders/presentation/bloc/orders_cubit.dart';
+import 'package:food_delivery/features/orders/presentation/bloc/orders_state.dart';
 import 'package:food_delivery/features/orders/presentation/widgets/order_item.dart';
 
 class OrdersScreen extends StatefulWidget {
@@ -19,7 +20,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<OrdersListCubit>(context).getOrdersList();
+    BlocProvider.of<OrdersCubit>(context).getOrdersList();
   }
 
   @override
@@ -32,7 +33,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
         ),
         title: Text(AppLocalizations.of(context)!.yourOrders),
       ),
-      body: BlocBuilder<OrdersListCubit, OrdersListState>(
+      body: BlocBuilder<OrdersCubit, OrdersState>(
         builder: (context, state) {
           return state.maybeWhen(
             getOrdersListLoading: () => const LoadingIndicator(),

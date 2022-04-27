@@ -1,12 +1,12 @@
 import 'package:food_delivery/features/orders/data/models/order_model.dart';
-import 'package:food_delivery/features/orders/domain/entities/order_list_entity.dart';
+import 'package:food_delivery/features/orders/domain/entities/order.dart';
 
 extension OrderMapper on OrderModel {
-  OrderListEntity get fromModel =>  OrderListEntity(
-    orderId: orderId , 
-    restaurantImage: restaurantImage , 
-    restaurantName: restaurantName , 
-    lastDate: lastDate , 
-    orderState: orderState,
-  );
+  Order get fromModel => Order(
+        id: id,
+        status: status,
+        dateTime: dateTime,
+        restaurantName: restaurantName,
+        restaurantImage: restaurantImage,
+      );
 }

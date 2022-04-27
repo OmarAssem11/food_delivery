@@ -13,8 +13,7 @@ import 'package:food_delivery/features/checkout/presentation/screens/checkout_sc
 import 'package:food_delivery/features/orders/presentation/bloc/ordersList/cubit/orders_list_cubit.dart';
 import 'package:food_delivery/features/orders/presentation/screens/order_details_screen.dart';
 import 'package:food_delivery/features/orders/presentation/screens/orders_screen.dart';
-import 'package:food_delivery/features/profile/presentation/bloc/edit_profile_cubit/edit_profile_cubit.dart';
-import 'package:food_delivery/features/profile/presentation/bloc/view_profile_cubit/view_profile_cubit.dart';
+import 'package:food_delivery/features/profile/presentation/bloc/profile_cubit.dart';
 import 'package:food_delivery/features/profile/presentation/screens/edit_profile_screen.dart';
 import 'package:food_delivery/features/profile/presentation/screens/view_profile_screen.dart';
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_cubit.dart';
@@ -112,14 +111,14 @@ Route<PageTransition>? onGenerateRoute(
     case ViewProfileScreen.routeName:
       return MaterialPageRoute(
         builder: (context) => BlocProvider(
-          create: (context) => getIt<ViewProfileCubit>(),
+          create: (context) => getIt<ProfileCubit>(),
           child: const ViewProfileScreen(),
         ),
       );
     case EditProfileScreen.routeName:
       return MaterialPageRoute(
         builder: (context) => BlocProvider(
-          create: (context) => getIt<EditProfileCubit>(),
+          create: (context) => getIt<ProfileCubit>(),
           child: const EditProfileScreen(),
         ),
       );

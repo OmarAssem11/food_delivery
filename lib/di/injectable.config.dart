@@ -25,7 +25,7 @@ import '../features/auth/domain/usecases/forgot_password_use_case.dart' as _i52;
 import '../features/auth/domain/usecases/is_logged_in_use_case.dart' as _i60;
 import '../features/auth/domain/usecases/login_use_case.dart' as _i62;
 import '../features/auth/domain/usecases/logout_use_case.dart' as _i63;
-import '../features/auth/domain/usecases/register_use_case.dart' as _i67;
+import '../features/auth/domain/usecases/register_use_case.dart' as _i68;
 import '../features/auth/presentation/bloc/auth_cubit.dart' as _i71;
 import '../features/cart/data/datasources/remote_datasource/cart_api_service.dart'
     as _i22;
@@ -105,10 +105,7 @@ import '../features/profile/domain/repositories/profile_repository.dart'
     as _i36;
 import '../features/profile/domain/usecases/edit_profile_use_case.dart' as _i51;
 import '../features/profile/domain/usecases/view_profile_use_case.dart' as _i40;
-import '../features/profile/presentation/bloc/edit_profile_cubit/edit_profile_cubit.dart'
-    as _i74;
-import '../features/profile/presentation/bloc/view_profile_cubit/view_profile_cubit.dart'
-    as _i69;
+import '../features/profile/presentation/bloc/profile_cubit.dart' as _i67;
 import '../features/restaurants/data/datasources/remote_datasource/restaurants_api_service.dart'
     as _i13;
 import '../features/restaurants/data/datasources/remote_datasource/restaurants_remote_datasource_impl.dart'
@@ -124,8 +121,8 @@ import '../features/restaurants/domain/usecases/get_restaurant_details_usecase.d
 import '../features/restaurants/domain/usecases/get_restaurants_list_usecases.dart'
     as _i59;
 import '../features/restaurants/presentation/bloc/restaurants_cubit.dart'
-    as _i68;
-import 'app_module.dart' as _i75; // ignore_for_file: unnecessary_lambdas
+    as _i69;
+import 'app_module.dart' as _i74; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -240,17 +237,17 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => _i65.OrdersListCubit(get<_i56.GetOrdersListUseCase>()));
   gh.factory<_i66.ProductsCubit>(
       () => _i66.ProductsCubit(get<_i57.GetProductDetailsUseCase>()));
-  gh.lazySingleton<_i67.RegisterUseCase>(
-      () => _i67.RegisterUseCase(get<_i41.AuthRepository>()));
-  gh.factory<_i68.RestaurantsCubit>(() => _i68.RestaurantsCubit(
+  gh.factory<_i67.ProfileCubit>(() => _i67.ProfileCubit(
+      get<_i40.ViewProfileUseCase>(), get<_i51.EditProfileUseCase>()));
+  gh.lazySingleton<_i68.RegisterUseCase>(
+      () => _i68.RegisterUseCase(get<_i41.AuthRepository>()));
+  gh.factory<_i69.RestaurantsCubit>(() => _i69.RestaurantsCubit(
       get<_i59.GetRestaurantsListUseCase>(),
       get<_i58.GetRestaurantDetailsUseCase>()));
-  gh.factory<_i69.ViewProfileCubit>(
-      () => _i69.ViewProfileCubit(get<_i40.ViewProfileUseCase>()));
   gh.lazySingleton<_i70.AddToCartUseCase>(
       () => _i70.AddToCartUseCase(get<_i43.CartRepository>()));
   gh.factory<_i71.AuthCubit>(() => _i71.AuthCubit(
-      get<_i67.RegisterUseCase>(),
+      get<_i68.RegisterUseCase>(),
       get<_i62.LoginUseCase>(),
       get<_i63.LogoutUseCase>(),
       get<_i60.IsLoggedInUseCase>()));
@@ -261,9 +258,7 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       get<_i49.DeleteCartUseCase>()));
   gh.factory<_i73.CheckoutCubit>(
       () => _i73.CheckoutCubit(get<_i48.CheckoutUseCase>()));
-  gh.factory<_i74.EditProfileCubit>(
-      () => _i74.EditProfileCubit(get<_i51.EditProfileUseCase>()));
   return get;
 }
 
-class _$AppModule extends _i75.AppModule {}
+class _$AppModule extends _i74.AppModule {}

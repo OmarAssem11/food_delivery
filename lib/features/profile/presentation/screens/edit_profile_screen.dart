@@ -1,13 +1,14 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/core/presentation/validation/validators.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_text_form_field.dart';
 import 'package:food_delivery/features/profile/domain/entities/profile_entity.dart';
-import 'package:food_delivery/features/profile/presentation/bloc/edit_profile_cubit/edit_profile_cubit.dart';
-import 'package:food_delivery/features/profile/presentation/bloc/edit_profile_cubit/edit_profile_state.dart';
+import 'package:food_delivery/features/profile/presentation/bloc/profile_cubit.dart';
+import 'package:food_delivery/features/profile/presentation/bloc/profile_state.dart';
 import 'package:food_delivery/features/profile/presentation/screens/view_profile_screen.dart';
 import 'package:food_delivery/features/profile/presentation/widgets/edit_profile_image.dart';
 import 'package:image_picker/image_picker.dart';
@@ -27,6 +28,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   late TextEditingController emailController;
   late TextEditingController phoneController;
   late TextEditingController addressController;
+  late AppLocalizations appLocalizations;
   final passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   File? imageFile;
@@ -34,6 +36,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    appLocalizations = AppLocalizations.of(context)!;
     user = ModalRoute.of(context)!.settings.arguments! as ProfileEntity;
     nameController = TextEditingController(text: user.name);
     emailController = TextEditingController(text: user.email);
@@ -45,18 +48,18 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Edit profile'),
+        title: Text(appLocalizations.editProfile),
       ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16),
-          child: BlocBuilder<EditProfileCubit, EditProfileState>(
+          child: BlocBuilder<ProfileCubit, ProfileState>(
             builder: (context, state) {
               bool isLoading = false;
               state.maybeWhen(
-                loading: () => isLoading = true,
-                error: (error) => showErrorToast(errorMessage: error),
-                success: () {
+                editLoading: () => isLoading = true,
+                editError: (error) => showErrorToast(errorMessage: error),
+                editSuccess: () {
                   WidgetsBinding.instance!.addPostFrameCallback(
                     (_) {
                       Navigator.of(context).popUntil((route) => route.isFirst);
@@ -79,18 +82,19 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                     CustomTextFormField(
                       controller: nameController,
-                      hintText: 'Change name',
+                      hintText: appLocalizations.change,
                       keyboardType: TextInputType.name,
                       validator: (name) => generalValidator(
                         context: context,
                         value: name,
-                        fieldName: 'Name',
+                        fieldName: appLocalizations.name,
                       ),
                       prefixIcon: Icons.person_outline,
                     ),
                     CustomTextFormField(
                       controller: emailController,
-                      hintText: 'Change email address',
+                      hintText:
+                          '${appLocalizations.change} ${appLocalizations.emailAddress}',
                       keyboardType: TextInputType.emailAddress,
                       validator: (email) => emailValidator(
                         context: context,
@@ -100,7 +104,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                     CustomTextFormField(
                       controller: passwordController,
-                      hintText: 'Change password',
+                      hintText:
+                          '${appLocalizations.change} ${appLocalizations.password}',
                       keyboardType: TextInputType.visiblePassword,
                       validator: (password) => editPasswordValidator(
                         context: context,
@@ -110,7 +115,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                     CustomTextFormField(
                       controller: phoneController,
-                      hintText: 'Change phone number',
+                      hintText:
+                          '${appLocalizations.change} ${appLocalizations.phoneNumber}',
                       keyboardType: TextInputType.phone,
                       validator: (phone) => phoneValidator(
                         context: context,
@@ -120,22 +126,22 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                     CustomTextFormField(
                       controller: addressController,
-                      hintText: 'Change address',
+                      hintText:
+                          '${appLocalizations.change} ${appLocalizations.address}',
                       keyboardType: TextInputType.name,
                       validator: (address) => generalValidator(
                         context: context,
                         value: address,
-                        fieldName: 'Address',
+                        fieldName: appLocalizations.address,
                       ),
                       prefixIcon: Icons.home_work_outlined,
                     ),
                     const SizedBox(height: 16),
                     CustomElevatedButton(
-                      label: 'submit',
+                      label: appLocalizations.submit,
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          BlocProvider.of<EditProfileCubit>(context)
-                              .editProfile(
+                          BlocProvider.of<ProfileCubit>(context).editProfile(
                             profile: ProfileEntity(
                               name: nameController.text,
                               email: emailController.text,

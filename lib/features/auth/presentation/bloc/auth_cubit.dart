@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_delivery/core/domain/usecases/usecase.dart';
 import 'package:food_delivery/features/auth/domain/entities/login_entity.dart';
 import 'package:food_delivery/features/auth/domain/entities/register_entity.dart';
+import 'package:food_delivery/features/auth/domain/usecases/forgot_password_use_case.dart';
 import 'package:food_delivery/features/auth/domain/usecases/is_logged_in_use_case.dart';
 import 'package:food_delivery/features/auth/domain/usecases/login_use_case.dart';
 import 'package:food_delivery/features/auth/domain/usecases/logout_use_case.dart';
@@ -16,12 +17,14 @@ class AuthCubit extends Cubit<AuthState> {
     this._loginUseCase,
     this._logoutUseCase,
     this._isLoggedInUseCase,
+    this._forgotPasswordUseCase,
   ) : super(const AuthInitial());
 
   final RegisterUseCase _registerUserCase;
   final LoginUseCase _loginUseCase;
   final LogoutUseCase _logoutUseCase;
   final IsLoggedInUseCase _isLoggedInUseCase;
+  final ForgotPasswordUseCase _forgotPasswordUseCase;
 
   Future<void> register({required RegisterEntity registerEntity}) async {
     emit(const AuthLoading());
@@ -86,4 +89,16 @@ class AuthCubit extends Cubit<AuthState> {
       ),
     );
   }
+
+Future<void> forgotPassword({
+  required String email,
+}) async{
+  emit(const ForgotPasswordLoading());
+final result = await _forgotPasswordUseCase(ForgotPasswordParams(email: email));
+emit(
+result.fold(
+  (failure) => ForgotPasswordError(failure.error),
+  (forgotPassword) => const ForgotPasswordSuccess(),),
+);
+}
 }

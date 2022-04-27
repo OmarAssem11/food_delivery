@@ -253,7 +253,8 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       get<_i67.RegisterUseCase>(),
       get<_i62.LoginUseCase>(),
       get<_i63.LogoutUseCase>(),
-      get<_i60.IsLoggedInUseCase>()));
+      get<_i60.IsLoggedInUseCase>(),
+      get<_i52.ForgotPasswordUseCase>()));
   gh.factory<_i72.CartCubit>(() => _i72.CartCubit(
       get<_i70.AddToCartUseCase>(),
       get<_i50.EditCartUseCase>(),

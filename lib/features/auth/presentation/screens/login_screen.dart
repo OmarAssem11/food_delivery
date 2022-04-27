@@ -9,6 +9,7 @@ import 'package:food_delivery/core/presentation/widgets/custom_text_form_field.d
 import 'package:food_delivery/core/presentation/widgets/password_text_form_field.dart';
 import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:food_delivery/features/auth/presentation/bloc/auth_state.dart';
+import 'package:food_delivery/features/auth/presentation/screens/forgot_password_screen.dart';
 import 'package:food_delivery/features/auth/presentation/screens/register_screen.dart';
 import 'package:food_delivery/features/auth/presentation/widgets/curved_widget.dart';
 
@@ -95,7 +96,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       PasswordTextFormField(controller: passwordController),
                       const SizedBox(
-                        height: 30,
+                        height: 5,
+                      ),
+                      TextButton(onPressed: ()=> Navigator.of(context)
+                                .popAndPushNamed(ForgotPasswordScreen.routeName),
+                      child:  Text(appLocalizations.forgotPassword),
+                        ),
+                      const SizedBox(
+                        height: 20,
                       ),
                       BlocBuilder<AuthCubit, AuthState>(
                         builder: (context, state) {

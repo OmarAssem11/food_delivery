@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_delivery/core/presentation/screens/home_screen.dart';
 import 'package:food_delivery/di/injectable.dart';
 import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
+import 'package:food_delivery/features/auth/presentation/screens/forgot_password_screen.dart';
 import 'package:food_delivery/features/auth/presentation/screens/login_screen.dart';
 import 'package:food_delivery/features/auth/presentation/screens/register_screen.dart';
 import 'package:food_delivery/features/auth/presentation/screens/starter_screen.dart';
@@ -56,6 +57,14 @@ Route<PageTransition>? onGenerateRoute(
         child: BlocProvider(
           create: (context) => getIt<AuthCubit>(),
           child: const RegisterScreen(),
+        ),
+        type: PageTransitionType.leftToRightWithFade,
+      );
+      case ForgotPasswordScreen.routeName:
+      return PageTransition(
+        child: BlocProvider(
+          create: (context) => getIt<AuthCubit>(),
+          child:  const ForgotPasswordScreen(),
         ),
         type: PageTransitionType.leftToRightWithFade,
       );

@@ -42,5 +42,11 @@
     "cashOnDelivery": "Cash on delivery",
     "placeOrder": "place order",
     "yourOrders": "Your orders",
-    "orderDetails": "Order details"
+    "orderDetails": "Order details",
+    "profile": "Profile",
+    "editProfile": "Edit profile",
+    "change": "Change",
+    "edit": "Edit",
+    "email": "Email",
+    "phoneNumber": "Phone number"
 }

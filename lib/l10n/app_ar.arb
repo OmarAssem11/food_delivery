@@ -42,5 +42,8 @@
     "cashOnDelivery": "الدفع عند الإستلام",
     "placeOrder": "تأكيد الطلب",
     "yourOrders": "طلباتك",
-    "orderDetails": "تفاصيل الطلب"
+    "orderDetails": "تفاصيل الطلب",
+    "profile": "الملف الشخصي",
+    "editProfile": "تعديل الملف الشخصي",
+    "change": "تغيير"
 }

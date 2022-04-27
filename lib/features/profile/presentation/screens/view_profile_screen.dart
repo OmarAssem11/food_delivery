@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
-import 'package:food_delivery/features/profile/presentation/bloc/view_profile_cubit/view_profile_cubit.dart';
-import 'package:food_delivery/features/profile/presentation/bloc/view_profile_cubit/view_profile_state.dart';
+import 'package:food_delivery/features/profile/presentation/bloc/profile_cubit.dart';
+import 'package:food_delivery/features/profile/presentation/bloc/profile_state.dart';
 import 'package:food_delivery/features/profile/presentation/screens/edit_profile_screen.dart';
 import 'package:food_delivery/features/profile/presentation/widgets/profile_item.dart';
 
@@ -20,25 +21,26 @@ class ViewProfileScreen extends StatefulWidget {
 class _ViewProfileScreenState extends State<ViewProfileScreen> {
   @override
   Widget build(BuildContext context) {
+    final appLocalizations = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profile'),
+        title: Text(AppLocalizations.of(context)!.editProfile),
       ),
-      body: BlocBuilder<ViewProfileCubit, ViewProfileState>(
+      body: BlocBuilder<ProfileCubit, ProfileState>(
         builder: (context, state) {
           return state.maybeWhen(
             initial: () {
               WidgetsBinding.instance!.addPostFrameCallback(
-                (_) => BlocProvider.of<ViewProfileCubit>(context).viewProfile(),
+                (_) => BlocProvider.of<ProfileCubit>(context).viewProfile(),
               );
               return Container();
             },
-            loading: () => const LoadingIndicator(),
-            error: (error) {
+            viewLoading: () => const LoadingIndicator(),
+            viewError: (error) {
               showErrorToast(errorMessage: error);
               return Container();
             },
-            success: (profile) {
+            viewSuccess: (profile) {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -56,22 +58,22 @@ class _ViewProfileScreenState extends State<ViewProfileScreen> {
                   const SizedBox(height: 20),
                   ProfileItem(
                     text: profile.email,
-                    prefix: 'Email: ',
+                    prefix: appLocalizations.email,
                     icon: Icons.email_rounded,
                   ),
                   ProfileItem(
                     text: profile.address,
-                    prefix: 'Address: ',
+                    prefix: appLocalizations.address,
                     icon: Icons.location_on,
                   ),
                   ProfileItem(
                     text: profile.phone,
-                    prefix: 'Phone: ',
+                    prefix: appLocalizations.phone,
                     icon: Icons.phone,
                   ),
                   const SizedBox(height: 12),
                   CustomElevatedButton(
-                    label: 'edit',
+                    label: appLocalizations.edit,
                     onPressed: () => Navigator.of(context).pushNamed(
                       EditProfileScreen.routeName,
                       arguments: profile,

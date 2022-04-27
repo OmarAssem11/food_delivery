@@ -1,4 +1,4 @@
-import 'package:food_delivery/features/products/data/models/product_data_model/category_model.dart';
+import 'package:food_delivery/features/products/data/models/category_model/category_model.dart';
 import 'package:food_delivery/features/restaurants/data/models/restaurant_data_model/restaurant_data_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 

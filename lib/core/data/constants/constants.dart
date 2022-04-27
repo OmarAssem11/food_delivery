@@ -1,5 +1,5 @@
 //BaseUrls
-const baseUrl = 'http://afbc-41-41-227-249.ngrok.io/api/';
+const baseUrl = 'http://c0fa-197-55-224-63.ngrok.io/api/';
 const imageApiBaseUrl = 'https://api.imgbb.com/1/upload';
 //Endpoints
 const registerEndpoint = 'register';
@@ -11,7 +11,7 @@ const getRestaurantDetailsEndpoint = 'restarunt/details/{restaurantId}';
 const getProductDetailsEndpoint = 'product/details/{productId}';
 const addToCartEndpoint = 'cart/add';
 const editCartEndpoint = 'cart/update';
-const deleteCartEndpoint='cart/delete';
+const deleteCartEndpoint = 'cart/delete';
 const getCartEndpoint = 'cart/usercart';
 const checkoutEndpoint = 'order/checkout';
 const getOrderDetailsEndpoint = 'order/details';

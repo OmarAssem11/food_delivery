@@ -52,7 +52,7 @@ class _CartScreenState extends State<CartScreen> {
       listener: (context, state) {
         if (state is GetCartSuccess) {
           cart = state.cartEntity;
-        } 
+        }
       },
       builder: (context, state) {
         return state.maybeWhen(
@@ -107,7 +107,7 @@ class _CartScreenState extends State<CartScreen> {
                         children: [
                           Text(appLocalizations.basket),
                           Text(
-                            cart[0].restaurantData.name,
+                            '${cart[0].restaurantData.name} - ${cart[0].restaurantData.address}',
                             style: textTheme.caption,
                           ),
                         ],

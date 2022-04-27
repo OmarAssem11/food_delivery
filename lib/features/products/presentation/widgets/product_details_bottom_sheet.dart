@@ -93,7 +93,7 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                     ),
                     const SizedBox(height: 15),
                     Text(
-                      product.description,
+                      product.description!,
                       style: textTheme.bodySmall,
                     ),
                     const SizedBox(height: 12),

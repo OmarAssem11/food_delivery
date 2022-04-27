@@ -10,7 +10,6 @@ class OrderItem extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     return Container(
       padding: const EdgeInsets.only(left: 20, right: 10, top: 10),
-      height: MediaQuery.of(context).size.height / 4,
       child: Column(
         children: [
           Row(
@@ -65,40 +64,6 @@ class OrderItem extends StatelessWidget {
               ),
             ],
           ),
-          const Padding(padding: EdgeInsets.all(15)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Wrap(
-                crossAxisAlignment: WrapCrossAlignment.center,
-                children: [
-                  const Icon(
-                    Icons.refresh,
-                    color: Colors.deepOrange,
-                  ),
-                  Text(
-                    'Re-order',
-                    style:
-                        textTheme.subtitle1?.copyWith(color: Colors.deepOrange),
-                  ),
-                ],
-              ),
-              Wrap(
-                crossAxisAlignment: WrapCrossAlignment.center,
-                children: [
-                  const Icon(
-                    Icons.rate_review_outlined,
-                    color: Colors.deepOrange,
-                  ),
-                  Text(
-                    'Rate Order',
-                    style:
-                        textTheme.subtitle1?.copyWith(color: Colors.deepOrange),
-                  ),
-                ],
-              ),
-            ],
-          )
         ],
       ),
     );

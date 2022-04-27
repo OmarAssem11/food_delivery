@@ -5,11 +5,16 @@
 * Register
 * Login
 * Logout
+* Forgot password
 * View all restaurants
 * View restaurant details and products
 * View product details
 * Add product to cart
 * View your cart and proceed to checkout
+* View your orders and order details
+* Track your order
+* View profile
+* Edit profile
 * Localization (en, ar)
 
 ## Packages:
@@ -26,6 +31,7 @@
 * shared_preferences
 * cached_network_image
 * json_serializable
+* lottie
 * page_transition
 * fluttertoast
 * google_fonts

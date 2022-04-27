@@ -6,6 +6,7 @@
     "email": "البريد الإلكتروني",
     "emailAddress": "البريد الإلكتروني",
     "password": "كلمة السر",
+    "forgotPassword":"هل نسيت كلمة السر؟",
     "canNotBeEmpty": "لا يمكن ان يكون فارغ",
     "emailCanNotBeEmpty": "البريد الإلكتروني لا يمكن ان يكون فارغ",
     "invalidEmailFormat": "صيغة بريد إلكتروني غير صالحة",  

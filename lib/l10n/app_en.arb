@@ -6,6 +6,7 @@
     "email": "Email",
     "emailAddress": "Email Address",
     "password": "Password",
+    "forgotPassword": "forgot password?",
     "canNotBeEmpty": "can't be empty",
     "emailCanNotBeEmpty": "Email can't be empty",
     "invalidEmailFormat": "Invalid email format",

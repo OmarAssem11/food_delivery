@@ -1,12 +1,12 @@
 import 'package:food_delivery/features/products/data/mappers/product_mapper.dart';
 import 'package:food_delivery/features/restaurants/data/models/restaurant_details_model/restaurant_details_model.dart';
-import 'package:food_delivery/features/restaurants/domain/entities/restaurant_details_entity.dart';
+import 'package:food_delivery/features/restaurants/domain/entities/restaurant.dart';
 
 extension RestaurantDetailsMapper on RestaurantDetailsModel {
-  RestaurantDetailsEntity get fromModel {
+  Restaurant get fromModel {
     final productEntities =
         products.map((productModel) => productModel.fromModel).toList();
-    return RestaurantDetailsEntity(
+    return Restaurant(
       id: id,
       name: name,
       description: description,

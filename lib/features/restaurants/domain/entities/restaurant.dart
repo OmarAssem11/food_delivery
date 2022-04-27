@@ -1,16 +1,23 @@
 import 'package:equatable/equatable.dart';
+import 'package:food_delivery/features/products/domain/entities/product.dart';
 
-class RestaurantEntity extends Equatable {
+class Restaurant extends Equatable {
   final int id;
   final String name;
   final String description;
   final String imageUrl;
+  final String? address;
+  final String? phone;
+  final List<Product>? products;
 
-  const RestaurantEntity({
+  const Restaurant({
     required this.id,
     required this.name,
     required this.description,
     required this.imageUrl,
+    this.address,
+    this.phone,
+    this.products,
   });
 
   @override

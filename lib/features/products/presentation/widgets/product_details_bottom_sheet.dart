@@ -132,7 +132,7 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                         onPressed: () =>
                             BlocProvider.of<CartCubit>(context).addToCart(
                           orderEntity: OrderEntity(
-                            restaurantId: product.restaurantId,
+                            restaurantId: product.restaurantId!,
                             productId: product.id,
                             quantity: quantity,
                           ),

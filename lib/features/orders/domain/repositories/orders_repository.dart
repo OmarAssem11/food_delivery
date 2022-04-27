@@ -1,9 +1,8 @@
-import 'package:dartz/dartz.dart';
+import 'package:dartz/dartz.dart' hide Order;
 import 'package:food_delivery/core/domain/error/failure.dart';
-import 'package:food_delivery/features/orders/domain/entities/order_details_entity.dart';
-import 'package:food_delivery/features/orders/domain/entities/order_list_entity.dart';
+import 'package:food_delivery/features/orders/domain/entities/order.dart';
 
 abstract class OrdersRepository {
-  Future<Either<Failure, OrderDetailsEntity>> getOrderDetails();
-  Future<Either<Failure, List<OrderListEntity>>> getOrders();
+  Future<Either<Failure, Order>> getOrderDetails();
+  Future<Either<Failure, List<Order>>> getOrders();
 }

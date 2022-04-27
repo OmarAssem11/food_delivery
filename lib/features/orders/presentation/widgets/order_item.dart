@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/features/orders/domain/entities/order_list_entity.dart';
+import 'package:food_delivery/features/orders/domain/entities/order.dart';
 
 class OrderItem extends StatelessWidget {
-  final OrderListEntity orderEntity;
-  const OrderItem({Key? key, required this.orderEntity}) : super(key: key);
+  const OrderItem({required this.orderEntity});
+
+  final Order orderEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -41,15 +42,15 @@ class OrderItem extends StatelessWidget {
                     style: textTheme.headline5,
                   ),
                   Text(
-                    orderEntity.orderState,
+                    orderEntity.status,
                     style: textTheme.subtitle1?.copyWith(color: Colors.green),
                   ),
                   Text(
-                    orderEntity.lastDate,
+                    orderEntity.dateTime,
                     style: textTheme.caption,
                   ),
                   Text(
-                    orderEntity.orderId.toString(),
+                    orderEntity.id.toString(),
                     style: textTheme.caption,
                   ),
                 ],

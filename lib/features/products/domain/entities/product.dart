@@ -1,18 +1,26 @@
 import 'package:equatable/equatable.dart';
 
-class ProductEntity extends Equatable {
+class Product extends Equatable {
   final int id;
   final String name;
   final String description;
   final String imageUrl;
   final double price;
+  final int? categoryId;
+  final String? categoryName;
+  final int? restaurantId;
+  final String? restaurantName;
 
-  const ProductEntity({
+  const Product({
     required this.id,
     required this.name,
     required this.description,
     required this.imageUrl,
     required this.price,
+    this.categoryId,
+    this.categoryName,
+    this.restaurantId,
+    this.restaurantName,
   });
 
   @override

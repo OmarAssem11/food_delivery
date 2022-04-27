@@ -6,8 +6,7 @@ import 'package:food_delivery/features/localization/domain/datasources/local_dat
 import 'package:food_delivery/features/restaurants/data/mappers/restaurant_details_mapper.dart';
 import 'package:food_delivery/features/restaurants/data/mappers/restaurant_mapper.dart';
 import 'package:food_delivery/features/restaurants/domain/datasources/remote_datasource/restaurants_remote_datasource.dart';
-import 'package:food_delivery/features/restaurants/domain/entities/restaurant_details_entity.dart';
-import 'package:food_delivery/features/restaurants/domain/entities/restaurant_entity.dart';
+import 'package:food_delivery/features/restaurants/domain/entities/restaurant.dart';
 import 'package:food_delivery/features/restaurants/domain/repositories/restaurants_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -24,7 +23,7 @@ class RestaurantsRepositoryImpl implements RestaurantsRepository {
   );
 
   @override
-  Future<Either<Failure, List<RestaurantEntity>>> getAllRestaurants() async {
+  Future<Either<Failure, List<Restaurant>>> getAllRestaurants() async {
     try {
       final token = _authLocalDataSource.getToken() ?? '';
       final language = _localizationLocalDataSource.getLanguage() ?? 'en';
@@ -43,7 +42,7 @@ class RestaurantsRepositoryImpl implements RestaurantsRepository {
   }
 
   @override
-  Future<Either<Failure, RestaurantDetailsEntity>> getRestaurantDetails({
+  Future<Either<Failure, Restaurant>> getRestaurantDetails({
     required int restaurantId,
   }) async {
     try {

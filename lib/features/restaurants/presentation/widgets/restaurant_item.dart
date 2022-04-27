@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/features/restaurants/domain/entities/restaurant_entity.dart';
+import 'package:food_delivery/features/restaurants/domain/entities/restaurant.dart';
 import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_details_screen.dart';
 
 class RestaurantItem extends StatelessWidget {
   const RestaurantItem({required this.restaurantEntity});
 
-  final RestaurantEntity restaurantEntity;
+  final Restaurant restaurantEntity;
 
   @override
   Widget build(BuildContext context) {

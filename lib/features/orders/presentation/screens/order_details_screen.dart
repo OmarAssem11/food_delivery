@@ -1,13 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class OrderDetailsScreen extends StatelessWidget {
+class OrderDetailsScreen extends StatefulWidget {
   const OrderDetailsScreen();
   static const routeName = 'order_details';
+
+  @override
+  State<OrderDetailsScreen> createState() => _OrderDetailsScreenState();
+}
+
+class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
+  late TextTheme textTheme;
+  late AppLocalizations appLocalizations;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    textTheme = Theme
+        .of(context)
+        .textTheme;
+    appLocalizations = AppLocalizations.of(context)!;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Order'),
+        title: const Center(child: Text('My Order')),
         elevation: 0.0,
       ),
       body: Padding(
@@ -61,3 +79,4 @@ class OrderDetailsScreen extends StatelessWidget {
     );
   }
 }
+

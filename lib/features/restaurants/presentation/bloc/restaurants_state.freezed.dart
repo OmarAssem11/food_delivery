@@ -27,7 +27,7 @@ class _$RestaurantsStateTearOff {
   }
 
   GetAllRestaurantSuccess getAllRestaurantSuccess(
-      List<RestaurantEntity> restaurantsList) {
+      List<Restaurant> restaurantsList) {
     return GetAllRestaurantSuccess(
       restaurantsList,
     );
@@ -44,7 +44,7 @@ class _$RestaurantsStateTearOff {
   }
 
   GetRestaurantDetailsSuccess getRestaurantDetailsSuccess(
-      RestaurantDetailsEntity restaurant) {
+      Restaurant restaurant) {
     return GetRestaurantDetailsSuccess(
       restaurant,
     );
@@ -66,11 +66,11 @@ mixin _$RestaurantsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getAllRestaurantLoading,
-    required TResult Function(List<RestaurantEntity> restaurantsList)
+    required TResult Function(List<Restaurant> restaurantsList)
         getAllRestaurantSuccess,
     required TResult Function(String error) getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
-    required TResult Function(RestaurantDetailsEntity restaurant)
+    required TResult Function(Restaurant restaurant)
         getRestaurantDetailsSuccess,
     required TResult Function(String error) getRestaurantDetailsError,
   }) =>
@@ -79,12 +79,10 @@ mixin _$RestaurantsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
-    TResult Function(List<RestaurantEntity> restaurantsList)?
-        getAllRestaurantSuccess,
+    TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantDetailsEntity restaurant)?
-        getRestaurantDetailsSuccess,
+    TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
   }) =>
       throw _privateConstructorUsedError;
@@ -92,12 +90,10 @@ mixin _$RestaurantsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
-    TResult Function(List<RestaurantEntity> restaurantsList)?
-        getAllRestaurantSuccess,
+    TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantDetailsEntity restaurant)?
-        getRestaurantDetailsSuccess,
+    TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
     required TResult orElse(),
   }) =>
@@ -210,11 +206,11 @@ class _$RestaurantsInitial implements RestaurantsInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getAllRestaurantLoading,
-    required TResult Function(List<RestaurantEntity> restaurantsList)
+    required TResult Function(List<Restaurant> restaurantsList)
         getAllRestaurantSuccess,
     required TResult Function(String error) getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
-    required TResult Function(RestaurantDetailsEntity restaurant)
+    required TResult Function(Restaurant restaurant)
         getRestaurantDetailsSuccess,
     required TResult Function(String error) getRestaurantDetailsError,
   }) {
@@ -226,12 +222,10 @@ class _$RestaurantsInitial implements RestaurantsInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
-    TResult Function(List<RestaurantEntity> restaurantsList)?
-        getAllRestaurantSuccess,
+    TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantDetailsEntity restaurant)?
-        getRestaurantDetailsSuccess,
+    TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
   }) {
     return initial?.call();
@@ -242,12 +236,10 @@ class _$RestaurantsInitial implements RestaurantsInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
-    TResult Function(List<RestaurantEntity> restaurantsList)?
-        getAllRestaurantSuccess,
+    TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantDetailsEntity restaurant)?
-        getRestaurantDetailsSuccess,
+    TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -363,11 +355,11 @@ class _$GetAllRestaurantLoading implements GetAllRestaurantLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getAllRestaurantLoading,
-    required TResult Function(List<RestaurantEntity> restaurantsList)
+    required TResult Function(List<Restaurant> restaurantsList)
         getAllRestaurantSuccess,
     required TResult Function(String error) getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
-    required TResult Function(RestaurantDetailsEntity restaurant)
+    required TResult Function(Restaurant restaurant)
         getRestaurantDetailsSuccess,
     required TResult Function(String error) getRestaurantDetailsError,
   }) {
@@ -379,12 +371,10 @@ class _$GetAllRestaurantLoading implements GetAllRestaurantLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
-    TResult Function(List<RestaurantEntity> restaurantsList)?
-        getAllRestaurantSuccess,
+    TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantDetailsEntity restaurant)?
-        getRestaurantDetailsSuccess,
+    TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
   }) {
     return getAllRestaurantLoading?.call();
@@ -395,12 +385,10 @@ class _$GetAllRestaurantLoading implements GetAllRestaurantLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
-    TResult Function(List<RestaurantEntity> restaurantsList)?
-        getAllRestaurantSuccess,
+    TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantDetailsEntity restaurant)?
-        getRestaurantDetailsSuccess,
+    TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -478,7 +466,7 @@ abstract class $GetAllRestaurantSuccessCopyWith<$Res> {
   factory $GetAllRestaurantSuccessCopyWith(GetAllRestaurantSuccess value,
           $Res Function(GetAllRestaurantSuccess) then) =
       _$GetAllRestaurantSuccessCopyWithImpl<$Res>;
-  $Res call({List<RestaurantEntity> restaurantsList});
+  $Res call({List<Restaurant> restaurantsList});
 }
 
 /// @nodoc
@@ -500,7 +488,7 @@ class _$GetAllRestaurantSuccessCopyWithImpl<$Res>
       restaurantsList == freezed
           ? _value.restaurantsList
           : restaurantsList // ignore: cast_nullable_to_non_nullable
-              as List<RestaurantEntity>,
+              as List<Restaurant>,
     ));
   }
 }
@@ -511,7 +499,7 @@ class _$GetAllRestaurantSuccess implements GetAllRestaurantSuccess {
   const _$GetAllRestaurantSuccess(this.restaurantsList);
 
   @override
-  final List<RestaurantEntity> restaurantsList;
+  final List<Restaurant> restaurantsList;
 
   @override
   String toString() {
@@ -542,11 +530,11 @@ class _$GetAllRestaurantSuccess implements GetAllRestaurantSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getAllRestaurantLoading,
-    required TResult Function(List<RestaurantEntity> restaurantsList)
+    required TResult Function(List<Restaurant> restaurantsList)
         getAllRestaurantSuccess,
     required TResult Function(String error) getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
-    required TResult Function(RestaurantDetailsEntity restaurant)
+    required TResult Function(Restaurant restaurant)
         getRestaurantDetailsSuccess,
     required TResult Function(String error) getRestaurantDetailsError,
   }) {
@@ -558,12 +546,10 @@ class _$GetAllRestaurantSuccess implements GetAllRestaurantSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
-    TResult Function(List<RestaurantEntity> restaurantsList)?
-        getAllRestaurantSuccess,
+    TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantDetailsEntity restaurant)?
-        getRestaurantDetailsSuccess,
+    TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
   }) {
     return getAllRestaurantSuccess?.call(restaurantsList);
@@ -574,12 +560,10 @@ class _$GetAllRestaurantSuccess implements GetAllRestaurantSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
-    TResult Function(List<RestaurantEntity> restaurantsList)?
-        getAllRestaurantSuccess,
+    TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantDetailsEntity restaurant)?
-        getRestaurantDetailsSuccess,
+    TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -649,10 +633,10 @@ class _$GetAllRestaurantSuccess implements GetAllRestaurantSuccess {
 }
 
 abstract class GetAllRestaurantSuccess implements RestaurantsState {
-  const factory GetAllRestaurantSuccess(
-      List<RestaurantEntity> restaurantsList) = _$GetAllRestaurantSuccess;
+  const factory GetAllRestaurantSuccess(List<Restaurant> restaurantsList) =
+      _$GetAllRestaurantSuccess;
 
-  List<RestaurantEntity> get restaurantsList;
+  List<Restaurant> get restaurantsList;
   @JsonKey(ignore: true)
   $GetAllRestaurantSuccessCopyWith<GetAllRestaurantSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -729,11 +713,11 @@ class _$GetAllRestaurantErrorDetails implements GetAllRestaurantErrorDetails {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getAllRestaurantLoading,
-    required TResult Function(List<RestaurantEntity> restaurantsList)
+    required TResult Function(List<Restaurant> restaurantsList)
         getAllRestaurantSuccess,
     required TResult Function(String error) getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
-    required TResult Function(RestaurantDetailsEntity restaurant)
+    required TResult Function(Restaurant restaurant)
         getRestaurantDetailsSuccess,
     required TResult Function(String error) getRestaurantDetailsError,
   }) {
@@ -745,12 +729,10 @@ class _$GetAllRestaurantErrorDetails implements GetAllRestaurantErrorDetails {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
-    TResult Function(List<RestaurantEntity> restaurantsList)?
-        getAllRestaurantSuccess,
+    TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantDetailsEntity restaurant)?
-        getRestaurantDetailsSuccess,
+    TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
   }) {
     return getAllRestaurantError?.call(error);
@@ -761,12 +743,10 @@ class _$GetAllRestaurantErrorDetails implements GetAllRestaurantErrorDetails {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
-    TResult Function(List<RestaurantEntity> restaurantsList)?
-        getAllRestaurantSuccess,
+    TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantDetailsEntity restaurant)?
-        getRestaurantDetailsSuccess,
+    TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -891,11 +871,11 @@ class _$GetRestaurantDetailsLoading implements GetRestaurantDetailsLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getAllRestaurantLoading,
-    required TResult Function(List<RestaurantEntity> restaurantsList)
+    required TResult Function(List<Restaurant> restaurantsList)
         getAllRestaurantSuccess,
     required TResult Function(String error) getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
-    required TResult Function(RestaurantDetailsEntity restaurant)
+    required TResult Function(Restaurant restaurant)
         getRestaurantDetailsSuccess,
     required TResult Function(String error) getRestaurantDetailsError,
   }) {
@@ -907,12 +887,10 @@ class _$GetRestaurantDetailsLoading implements GetRestaurantDetailsLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
-    TResult Function(List<RestaurantEntity> restaurantsList)?
-        getAllRestaurantSuccess,
+    TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantDetailsEntity restaurant)?
-        getRestaurantDetailsSuccess,
+    TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
   }) {
     return getRestaurantDetailsLoading?.call();
@@ -923,12 +901,10 @@ class _$GetRestaurantDetailsLoading implements GetRestaurantDetailsLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
-    TResult Function(List<RestaurantEntity> restaurantsList)?
-        getAllRestaurantSuccess,
+    TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantDetailsEntity restaurant)?
-        getRestaurantDetailsSuccess,
+    TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -1007,7 +983,7 @@ abstract class $GetRestaurantDetailsSuccessCopyWith<$Res> {
           GetRestaurantDetailsSuccess value,
           $Res Function(GetRestaurantDetailsSuccess) then) =
       _$GetRestaurantDetailsSuccessCopyWithImpl<$Res>;
-  $Res call({RestaurantDetailsEntity restaurant});
+  $Res call({Restaurant restaurant});
 }
 
 /// @nodoc
@@ -1030,7 +1006,7 @@ class _$GetRestaurantDetailsSuccessCopyWithImpl<$Res>
       restaurant == freezed
           ? _value.restaurant
           : restaurant // ignore: cast_nullable_to_non_nullable
-              as RestaurantDetailsEntity,
+              as Restaurant,
     ));
   }
 }
@@ -1041,7 +1017,7 @@ class _$GetRestaurantDetailsSuccess implements GetRestaurantDetailsSuccess {
   const _$GetRestaurantDetailsSuccess(this.restaurant);
 
   @override
-  final RestaurantDetailsEntity restaurant;
+  final Restaurant restaurant;
 
   @override
   String toString() {
@@ -1072,11 +1048,11 @@ class _$GetRestaurantDetailsSuccess implements GetRestaurantDetailsSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getAllRestaurantLoading,
-    required TResult Function(List<RestaurantEntity> restaurantsList)
+    required TResult Function(List<Restaurant> restaurantsList)
         getAllRestaurantSuccess,
     required TResult Function(String error) getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
-    required TResult Function(RestaurantDetailsEntity restaurant)
+    required TResult Function(Restaurant restaurant)
         getRestaurantDetailsSuccess,
     required TResult Function(String error) getRestaurantDetailsError,
   }) {
@@ -1088,12 +1064,10 @@ class _$GetRestaurantDetailsSuccess implements GetRestaurantDetailsSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
-    TResult Function(List<RestaurantEntity> restaurantsList)?
-        getAllRestaurantSuccess,
+    TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantDetailsEntity restaurant)?
-        getRestaurantDetailsSuccess,
+    TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
   }) {
     return getRestaurantDetailsSuccess?.call(restaurant);
@@ -1104,12 +1078,10 @@ class _$GetRestaurantDetailsSuccess implements GetRestaurantDetailsSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
-    TResult Function(List<RestaurantEntity> restaurantsList)?
-        getAllRestaurantSuccess,
+    TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantDetailsEntity restaurant)?
-        getRestaurantDetailsSuccess,
+    TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -1179,10 +1151,10 @@ class _$GetRestaurantDetailsSuccess implements GetRestaurantDetailsSuccess {
 }
 
 abstract class GetRestaurantDetailsSuccess implements RestaurantsState {
-  const factory GetRestaurantDetailsSuccess(
-      RestaurantDetailsEntity restaurant) = _$GetRestaurantDetailsSuccess;
+  const factory GetRestaurantDetailsSuccess(Restaurant restaurant) =
+      _$GetRestaurantDetailsSuccess;
 
-  RestaurantDetailsEntity get restaurant;
+  Restaurant get restaurant;
   @JsonKey(ignore: true)
   $GetRestaurantDetailsSuccessCopyWith<GetRestaurantDetailsSuccess>
       get copyWith => throw _privateConstructorUsedError;
@@ -1260,11 +1232,11 @@ class _$GetRestaurantDetailsErrorDetails
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getAllRestaurantLoading,
-    required TResult Function(List<RestaurantEntity> restaurantsList)
+    required TResult Function(List<Restaurant> restaurantsList)
         getAllRestaurantSuccess,
     required TResult Function(String error) getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
-    required TResult Function(RestaurantDetailsEntity restaurant)
+    required TResult Function(Restaurant restaurant)
         getRestaurantDetailsSuccess,
     required TResult Function(String error) getRestaurantDetailsError,
   }) {
@@ -1276,12 +1248,10 @@ class _$GetRestaurantDetailsErrorDetails
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
-    TResult Function(List<RestaurantEntity> restaurantsList)?
-        getAllRestaurantSuccess,
+    TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantDetailsEntity restaurant)?
-        getRestaurantDetailsSuccess,
+    TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
   }) {
     return getRestaurantDetailsError?.call(error);
@@ -1292,12 +1262,10 @@ class _$GetRestaurantDetailsErrorDetails
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
-    TResult Function(List<RestaurantEntity> restaurantsList)?
-        getAllRestaurantSuccess,
+    TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
     TResult Function(String error)? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
-    TResult Function(RestaurantDetailsEntity restaurant)?
-        getRestaurantDetailsSuccess,
+    TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
     TResult Function(String error)? getRestaurantDetailsError,
     required TResult orElse(),
   }) {

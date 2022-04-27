@@ -1,5 +1,4 @@
-import 'package:food_delivery/features/restaurants/domain/entities/restaurant_details_entity.dart';
-import 'package:food_delivery/features/restaurants/domain/entities/restaurant_entity.dart';
+import 'package:food_delivery/features/restaurants/domain/entities/restaurant.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'restaurants_state.freezed.dart';
@@ -10,14 +9,14 @@ class RestaurantsState with _$RestaurantsState {
   const factory RestaurantsState.getAllRestaurantLoading() =
       GetAllRestaurantLoading;
   const factory RestaurantsState.getAllRestaurantSuccess(
-    final List<RestaurantEntity> restaurantsList,
+    final List<Restaurant> restaurantsList,
   ) = GetAllRestaurantSuccess;
   const factory RestaurantsState.getAllRestaurantError(final String error) =
       GetAllRestaurantErrorDetails;
   const factory RestaurantsState.getRestaurantDetailsLoading() =
       GetRestaurantDetailsLoading;
   const factory RestaurantsState.getRestaurantDetailsSuccess(
-    final RestaurantDetailsEntity restaurant,
+    final Restaurant restaurant,
   ) = GetRestaurantDetailsSuccess;
   const factory RestaurantsState.getRestaurantDetailsError(final String error) =
       GetRestaurantDetailsErrorDetails;

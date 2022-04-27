@@ -7,7 +7,7 @@ import 'package:food_delivery/di/injectable.dart';
 import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:food_delivery/features/auth/presentation/widgets/logout_alert.dart';
 import 'package:food_delivery/features/localization/presentation/widgets/language_alert.dart';
-import 'package:food_delivery/features/orders/presentation/bloc/ordersList/cubit/orders_list_cubit.dart';
+import 'package:food_delivery/features/orders/presentation/bloc/orders_cubit.dart';
 import 'package:food_delivery/features/orders/presentation/screens/orders_screen.dart';
 import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_list_screen.dart';
 
@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
     } else if (currentItem ==
         MenuItem(appLocalizations.myOrders, Icons.receipt_long_rounded)) {
       return BlocProvider(
-        create: (context) => getIt<OrdersListCubit>(),
+        create: (context) => getIt<OrdersCubit>(),
         child: const OrdersScreen(),
       );
     } else if (currentItem ==

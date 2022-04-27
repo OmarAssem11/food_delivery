@@ -90,9 +90,9 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen> {
                         Expanded(
                           child: ListView.separated(
                             itemBuilder: (context, index) => ProductItem(
-                              restaurant.products.reversed.toList()[index],
+                              restaurant.products!.reversed.toList()[index],
                             ),
-                            itemCount: restaurant.products.length,
+                            itemCount: restaurant.products!.length,
                             physics: const BouncingScrollPhysics(),
                             separatorBuilder: (context, index) => const Divider(
                               color: Colors.grey,

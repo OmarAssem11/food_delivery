@@ -3,14 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:food_delivery/di/injectable.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
-import 'package:food_delivery/features/products/domain/entities/product_entity.dart';
+import 'package:food_delivery/features/products/domain/entities/product.dart';
 import 'package:food_delivery/features/products/presentation/bloc/products_cubit.dart';
 import 'package:food_delivery/features/products/presentation/widgets/product_details_bottom_sheet.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem(this.product);
 
-  final ProductEntity product;
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class ProductItem extends StatelessWidget {
 
   Future<void> _showProductDetailsBottomSheet({
     required BuildContext context,
-    required ProductEntity product,
+    required Product product,
   }) =>
       showModalBottomSheet(
         context: context,

@@ -114,7 +114,7 @@ Route<PageTransition>? onGenerateRoute(
       return PageTransition(
         child: BlocProvider(
           create: (context) => getIt<OrdersListCubit>(),
-          child: const OrderDetailsScreen(),
+          child: OrderDetailsScreen(),
         ),
         type: PageTransitionType.leftToRightWithFade,
       );

@@ -3,6 +3,7 @@
     "register": "إنشاء حساب",
     "userName": "أسم المستخدم",
     "name": "الإسم",
+    "email": "البريد الإلكتروني",
     "emailAddress": "البريد الإلكتروني",
     "password": "كلمة السر",
     "forgotPassword":"هل نسيت كلمة السر؟",
@@ -37,7 +38,8 @@
     "viewBasket": "عرض السلة",
     "yourBasketIsEmpty": "!السلة فارغة",
     "address": "العنوان",
-    "phone": "رقم الهاتف",
+    "phone": "الهاتف",
+    "phoneNumber": "رقم الهاتف",
     "payWith": "وسيلة الدفع",
     "cashOnDelivery": "الدفع عند الإستلام",
     "placeOrder": "تأكيد الطلب",
@@ -45,5 +47,6 @@
     "orderDetails": "تفاصيل الطلب",
     "profile": "الملف الشخصي",
     "editProfile": "تعديل الملف الشخصي",
-    "change": "تغيير"
+    "change": "تغيير",
+    "edit": "تعديل"
 }

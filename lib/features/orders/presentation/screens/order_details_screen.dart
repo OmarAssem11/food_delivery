@@ -23,7 +23,6 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
     BlocProvider.of<OrdersCubit>(context).getOrderDetails();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

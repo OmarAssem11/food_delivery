@@ -41,12 +41,7 @@ class OrdersRepositoryImpl implements OrdersRepository {
   @override
   Future<Either<Failure, List<Order>>> getOrders() async {
     try {
-      final token = _authLocalDataSource.getToken() ?? '';
-      final language = _localizationLocalDataSource.getLanguage() ?? 'en';
-      final ordersListResponse = await _ordersRemoteDataSource.getOrders(
-        token: '$tokenType $token',
-        language: language,
-      );
+      final ordersListResponse = await _ordersRemoteDataSource.getOrders();
       final ordersEntities = ordersListResponse.data
           .map((orderModel) => orderModel.fromModel)
           .toList();

@@ -36,7 +36,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     super.didChangeDependencies();
     arguments =
         ModalRoute.of(context)!.settings.arguments! as CheckoutArguments;
-    addressController = TextEditingController(text: arguments.address , );
+    addressController = TextEditingController(
+      text: arguments.address,
+    );
     textTheme = Theme.of(context).textTheme;
     appLocalizations = AppLocalizations.of(context)!;
   }
@@ -141,8 +143,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   return CustomElevatedButton(
                     label: appLocalizations.placeOrder,
                     onPressed: () {
-                      showErrorToast(errorMessage: arguments.address);
-
                       if (_formKey.currentState!.validate()) {
                         BlocProvider.of<CheckoutCubit>(context).checkout(
                           checkoutEntity: CheckoutEntity(

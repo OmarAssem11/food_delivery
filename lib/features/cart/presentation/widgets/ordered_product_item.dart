@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_delivery/features/cart/domain/entities/cart_order.dart';
+import 'package:food_delivery/features/cart/domain/entities/cart_order/cart_order.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
 import 'package:food_delivery/features/products/data/models/product_model/product_model.dart';
 import 'package:food_delivery/features/products/presentation/widgets/quantity_price_counter.dart';
 
-class OrderedProductItem extends StatelessWidget {
-  const OrderedProductItem({
+class CartProductItem extends StatelessWidget {
+  const CartProductItem({
     required this.product,
     required this.quantity,
     required this.restaurantId,
@@ -38,7 +38,7 @@ class OrderedProductItem extends StatelessWidget {
                   initialValue: quantity,
                   price: product.price,
                   onValueChanged: (newQuantity) {
-                    if (newQuantity == 1) {
+                    if (newQuantity == 0) {
                       BlocProvider.of<CartCubit>(context).deleteCart(
                         cartOrder: CartOrder(
                           restaurantId: restaurantId,

@@ -24,7 +24,7 @@ class _ViewProfileScreenState extends State<ViewProfileScreen> {
     final appLocalizations = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.editProfile),
+        title: Text(appLocalizations.profile),
       ),
       body: BlocBuilder<ProfileCubit, ProfileState>(
         builder: (context, state) {

@@ -9,11 +9,9 @@ import 'package:food_delivery/core/presentation/widgets/custom_text_form_field.d
 import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:food_delivery/features/auth/presentation/bloc/auth_state.dart';
 
-
 class ForgotPasswordScreen extends StatefulWidget {
-  const ForgotPasswordScreen({ Key? key }) : super(key: key);
-   static const routeName = 'forgotPassword';
-   
+  const ForgotPasswordScreen({Key? key}) : super(key: key);
+  static const routeName = 'forgotPassword';
 
   @override
   State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
@@ -24,7 +22,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   late AppLocalizations appLocalizations;
   final _formKey = GlobalKey<FormState>();
   final emailController = TextEditingController(text: '');
-  
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -35,85 +33,90 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  AppBar(),
-      body:  Form(
-                key: _formKey,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          height: 200,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primary,
-                            image: const DecorationImage(
-                              image: AssetImage(
-                                'assets/images/forgot password.png',
-                              ),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          appLocalizations.forgotPassword,
-                          style: textTheme.headline4,
-                        ),
-                        const SizedBox(
-                          height: 15,
-                        ),
-                        const Text("Don't worry it happens.Please enter the address \n associated with your account.",),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        CustomTextFormField(
-                          controller: emailController,
-                          hintText: appLocalizations.emailAddress,
-                          prefixIcon: Icons.email_outlined,
-                          keyboardType: TextInputType.emailAddress,
-                          validator: (email) => emailValidator(
-                            context: context,
-                            email: email,
-                          ),
+      appBar: AppBar(),
+      body: Form(
+        key: _formKey,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: 200,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.primary,
+                    image: const DecorationImage(
+                      image: AssetImage(
+                        'assets/images/forgot password.png',
                       ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                       BlocBuilder<AuthCubit, AuthState>(
-                            builder: (context, state) {
-                              bool isLoading = false;
-                              state.maybeWhen(
-                                forgotPasswordLoading: () => isLoading = true,
-                                forgotPasswordError: (error) =>
-                                    showErrorToast(errorMessage: error),
-                                forgotPasswordSuccess: () =>
-                                    WidgetsBinding.instance!.addPostFrameCallback(
-                                  (_) => Fluttertoast.showToast(msg: 'Please check your email to reset password'),
-                                  ), orElse: () {  },
-                                );
-                              return CustomElevatedButton(
-                                label: appLocalizations.submit,
-                                onPressed: () {
-                                  if (_formKey.currentState!.validate()) {
-                                    BlocProvider.of<AuthCubit>(context).forgotPassword(email: emailController.text);
-                                  }
-                                },
-                                isLoading: isLoading,
-                              );
-                            },
-                          ),
-                      ],
-                      ),
+                      fit: BoxFit.cover,
+                    ),
                   ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  appLocalizations.forgotPassword,
+                  style: textTheme.headline4,
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                const Text(
+                  "Don't worry it happens.Please enter the address \n associated with your account.",
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                CustomTextFormField(
+                  controller: emailController,
+                  hintText: appLocalizations.emailAddress,
+                  prefixIcon: Icons.email_outlined,
+                  keyboardType: TextInputType.emailAddress,
+                  validator: (email) => emailValidator(
+                    context: context,
+                    email: email,
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                BlocBuilder<AuthCubit, AuthState>(
+                  builder: (context, state) {
+                    bool isLoading = false;
+                    state.maybeWhen(
+                      forgotPasswordLoading: () => isLoading = true,
+                      forgotPasswordError: (error) =>
+                          showErrorToast(errorMessage: error),
+                      forgotPasswordSuccess: () =>
+                          WidgetsBinding.instance!.addPostFrameCallback(
+                        (_) => Fluttertoast.showToast(
+                          msg: 'Please check your email to reset password',
+                        ),
+                      ),
+                      orElse: () {},
+                    );
+                    return CustomElevatedButton(
+                      label: appLocalizations.submit,
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          BlocProvider.of<AuthCubit>(context)
+                              .forgotPassword(email: emailController.text);
+                        }
+                      },
+                      isLoading: isLoading,
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
         ),
-    ),
-
+      ),
     );
   }
 }

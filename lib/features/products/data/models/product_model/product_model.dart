@@ -6,17 +6,17 @@ part 'product_model.g.dart';
 class ProductModel {
   final int id;
   final String name;
-  final String description;
+  final double price;
   @JsonKey(name: 'image')
   final String imageUrl;
-  final double price;
+  final String? description;
 
   const ProductModel({
     required this.id,
     required this.name,
-    required this.description,
-    required this.imageUrl,
     required this.price,
+    required this.imageUrl,
+    this.description,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) =>

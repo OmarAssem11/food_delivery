@@ -10,7 +10,7 @@ import 'package:food_delivery/features/orders/presentation/widgets/product_item.
 class OrderDetailsScreen extends StatefulWidget {
   const OrderDetailsScreen();
 
-  static const routeName = 'orders';
+  static const routeName = 'order_details';
 
   @override
   State<OrderDetailsScreen> createState() => _OrderDetailsScreenState();
@@ -22,6 +22,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
     BlocProvider.of<OrdersCubit>(context).getOrderDetails();
     super.initState();
   }
+
 
   @override
   Widget build(BuildContext context) {

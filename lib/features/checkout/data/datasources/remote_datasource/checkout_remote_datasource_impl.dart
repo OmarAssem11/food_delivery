@@ -12,13 +12,9 @@ class CheckoutRemoteDataSourceImpl implements CheckoutRemoteDataSource {
 
   @override
   Future<ResponseModel> checkout({
-    required String language,
-    required String token,
     required CheckoutModel checkoutModel,
   }) =>
       _checkoutApiService.checkout(
-        token: token,
-        language: language,
         checkoutModel: checkoutModel,
       );
 }

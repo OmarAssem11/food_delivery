@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:food_delivery/core/data/constants/constants.dart';
 import 'package:food_delivery/core/data/models/response_model/response_model.dart';
-import 'package:food_delivery/features/cart/data/models/cart_model/cart_model.dart';
-import 'package:food_delivery/features/cart/data/models/order_model/order_model.dart';
+import 'package:food_delivery/features/cart/data/models/cart_order_model/cart_order_model.dart';
+import 'package:food_delivery/features/cart/data/models/cart_product_model/cart_product_model.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/http.dart';
 
@@ -16,28 +16,19 @@ abstract class CartApiService {
 
   @POST(addToCartEndpoint)
   Future<ResponseModel> addToCart({
-    @Header(authorization) required String token,
-    @Header(languageHeader) required String language,
-    @Body() required OrderModel orderModel,
+    @Body() required CartOrderModel cartOrderModel,
   });
 
   @POST(editCartEndpoint)
   Future<ResponseModel> editCart({
-    @Header(authorization) required String token,
-    @Header(languageHeader) required String language,
-    @Body() required OrderModel orderModel,
+    @Body() required CartOrderModel cartOrderModel,
+  });
+
+  @POST(deleteCartEndpoint)
+  Future<ResponseModel> deleteCart({
+    @Body() required CartOrderModel cartOrderModel,
   });
 
   @GET(getCartEndpoint)
-  Future<ResponseModel<List<CartModel>>> getCart({
-    @Header(authorization) required String token,
-    @Header(languageHeader) required String language,
-  });
-
-@POST(deleteCartEndpoint)
-Future<ResponseModel> deleteCart({
-  @Header(authorization) required String token,
-  @Header(languageHeader) required String language,
-  @Body() required OrderModel orderModel,
-});
+  Future<ResponseModel<List<CartModel>>> getCart();
 }

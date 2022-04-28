@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
-import 'package:food_delivery/di/injectable.dart';
 import 'package:food_delivery/features/orders/presentation/bloc/orders_cubit.dart';
 import 'package:food_delivery/features/orders/presentation/bloc/orders_state.dart';
 import 'package:food_delivery/features/orders/presentation/widgets/product_item.dart';
 
 class OrderDetailsScreen extends StatefulWidget {
   const OrderDetailsScreen();
-
   static const routeName = 'order_details';
 
   @override
@@ -17,62 +15,66 @@ class OrderDetailsScreen extends StatefulWidget {
 }
 
 class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
+  late int orderId;
+
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<OrdersCubit>(context).getOrderDetails();
+    BlocProvider.of<OrdersCubit>(context).getOrderDetails(orderId: orderId);
   }
 
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    orderId = ModalRoute.of(context)!.settings!.arguments! as int;
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.myOrders),
-      ),
-      body: Column(
-        children: [
-          const Center(child: Text('Holmes Burger')),
-          const SizedBox(
-            height: 8,
-          ),
-          Row(
-            children: const [
-              Icon(
-                Icons.location_on_outlined,
-                color: Colors.grey,
-                size: 15,
-              ),
-              SizedBox(
-                width: 8,
-              ),
-              Text('Restaurant Address'),
-            ],
-          ),
-          const Center(child: Text('Delivered')),
-          BlocProvider(
-            create: (context) => getIt<OrdersCubit>(),
-            child: BlocBuilder<OrdersCubit, OrdersState>(
-              builder: (context, state) {
-                return state.maybeWhen(
-                  getOrdersListLoading: () => const LoadingIndicator(),
-                  getOrdersListSuccess: (orders) => ListView.separated(
-                    itemBuilder: (context, index) => ProductItem(
-                      order: orders[index],
+    return BlocBuilder<OrdersCubit, OrdersState>(
+      builder: (context, state) {
+        return state.maybeWhen(
+          getOrderDetailsLoading: () => const LoadingIndicator(),
+          getOrderDetailsSuccess: (order) => Scaffold(
+            appBar: AppBar(
+              title: Text(AppLocalizations.of(context)!.myOrders),
+            ),
+            body: Column(
+              children: [
+                Center(child: Text(order[0].restaurantName)),
+                const SizedBox(
+                  height: 8,
+                ),
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.location_on_outlined,
+                      color: Colors.grey,
+                      size: 15,
                     ),
-                    itemCount: orders.length,
-                    separatorBuilder: (context, index) => const Divider(
-                      thickness: 1,
-                      color: Color.fromARGB(255, 220, 220, 220),
+                    const SizedBox(
+                      width: 8,
                     ),
+                    Text(order[0].restaurantAddress!),
+                  ],
+                ),
+                Center(child: Text(order[0].status)),
+                ListView.separated(
+                  itemBuilder: (context, index) => ProductItem(
+                    order: order[index],
                   ),
-                  orElse: () => Container(),
-                );
-              },
+                  itemCount: order.length,
+                  separatorBuilder: (context, index) => const Divider(
+                    thickness: 1,
+                    color: Color.fromARGB(255, 220, 220, 220),
+                  ),
+                ),
+              ],
             ),
           ),
-        ],
-      ),
+          orElse: () => Container(),
+        );
+      },
     );
   }
 }

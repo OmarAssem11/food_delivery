@@ -14,7 +14,7 @@ const editCartEndpoint = 'cart/update';
 const deleteCartEndpoint = 'cart/delete';
 const getCartEndpoint = 'cart/usercart';
 const checkoutEndpoint = 'order/checkout';
-const getOrderDetailsEndpoint = 'order/details';
+const getOrderDetailsEndpoint = 'order/details/{orderId}';
 const viewProfileEndpoint = 'profile';
 const editProfileEndpoint = 'edit_profile';
 //ApiKeys

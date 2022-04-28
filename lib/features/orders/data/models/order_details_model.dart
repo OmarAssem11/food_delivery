@@ -11,7 +11,6 @@ class OrderDetailsModel {
   final ProductDataModel productDataModel;
   final int count;
 
-
   const OrderDetailsModel({
     required this.productDataModel,
     required this.orderDataModel,

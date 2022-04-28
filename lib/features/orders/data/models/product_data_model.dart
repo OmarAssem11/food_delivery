@@ -10,8 +10,12 @@ class ProductDataModel {
   final String price;
   final List<RestaurantDataModel> restaurant;
 
-  ProductDataModel(
-      {required this.name, required this.image, required this.price, required this.restaurant,});
+  ProductDataModel({
+    required this.name,
+    required this.image,
+    required this.price,
+    required this.restaurant,
+  });
 
   factory ProductDataModel.fromJson(Map<String, dynamic> json) =>
       _$ProductDataModelFromJson(json);

@@ -10,7 +10,7 @@ class QuantityPriceCounter extends StatefulWidget {
   const QuantityPriceCounter({
     required this.price,
     required this.onValueChanged,
-    this.initialValue, 
+    this.initialValue,
     required this.isInCart,
   });
 
@@ -50,7 +50,7 @@ class _QuantityPriceCounterState extends State<QuantityPriceCounter> {
               if (!widget.isInCart && quantity > 1) {
                 quantity--;
                 widget.onValueChanged(quantity);
-              }else if (widget.isInCart && quantity >=1 ) {
+              } else if (widget.isInCart && quantity >= 1) {
                 quantity--;
                 widget.onValueChanged(quantity);
               }

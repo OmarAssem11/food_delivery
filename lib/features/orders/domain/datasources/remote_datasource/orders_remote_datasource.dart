@@ -3,9 +3,8 @@ import 'package:food_delivery/features/orders/data/models/order_details_model.da
 import 'package:food_delivery/features/orders/data/models/order_model.dart';
 
 abstract class OrdersRemoteDataSource {
-  Future<ResponseModel<OrderDetailsModel>> getOrderDetails({
-    required String token,
-    required String language,
+  Future<ResponseModel<List<OrderDetailsModel>>> getOrderDetails({
+    required int orderId,
   });
   Future<ResponseModel<List<OrderModel>>> getOrders({
     required String token,

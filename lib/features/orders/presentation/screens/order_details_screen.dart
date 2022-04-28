@@ -19,8 +19,8 @@ class OrderDetailsScreen extends StatefulWidget {
 class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
   @override
   void initState() {
-    BlocProvider.of<OrdersCubit>(context).getOrderDetails();
     super.initState();
+    BlocProvider.of<OrdersCubit>(context).getOrderDetails();
   }
 
 

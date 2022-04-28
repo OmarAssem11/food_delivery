@@ -8,18 +8,18 @@ part of 'order_details_model.dart';
 
 OrderDetailsModel _$OrderDetailsModelFromJson(Map<String, dynamic> json) =>
     OrderDetailsModel(
-      id: json['id'] as int,
+      productDataModel: ProductDataModel.fromJson(
+          json['productDataModel'] as Map<String, dynamic>),
+      orderDataModel: OrderDataModel.fromJson(
+          json['orderDataModel'] as Map<String, dynamic>),
+      count: json['count'] as int,
       status: json['status'] as String,
-      dateTime: json['dateTime'] as String,
-      restaurantName: json['restaurantName'] as String,
-      restaurantImage: json['restaurantImage'] as String,
     );
 
 Map<String, dynamic> _$OrderDetailsModelToJson(OrderDetailsModel instance) =>
     <String, dynamic>{
-      'id': instance.id,
+      'orderDataModel': instance.orderDataModel,
       'status': instance.status,
-      'dateTime': instance.dateTime,
-      'restaurantName': instance.restaurantName,
-      'restaurantImage': instance.restaurantImage,
+      'productDataModel': instance.productDataModel,
+      'count': instance.count,
     };

@@ -16,25 +16,24 @@ class _OrdersApiService implements OrdersApiService {
   String? baseUrl;
 
   @override
-  Future<ResponseModel<OrderDetailsModel>> getOrderDetails(
-      {required token, required language}) async {
+  Future<ResponseModel<List<OrderDetailsModel>>> getOrderDetails(
+      {required orderId}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{
-      r'Authorization': token,
-      r'lang': language
-    };
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ResponseModel<OrderDetailsModel>>(
+        _setStreamType<ResponseModel<List<OrderDetailsModel>>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'order/details',
+                .compose(_dio.options, 'order/details/${orderId}',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = ResponseModel<OrderDetailsModel>.fromJson(
+    final value = ResponseModel<List<OrderDetailsModel>>.fromJson(
       _result.data!,
-      (json) => OrderDetailsModel.fromJson(json as Map<String, dynamic>),
+      (json) => (json as List<dynamic>)
+          .map<OrderDetailsModel>(
+              (i) => OrderDetailsModel.fromJson(i as Map<String, dynamic>))
+          .toList(),
     );
     return value;
   }

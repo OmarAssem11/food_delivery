@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_delivery/core/domain/usecases/usecase.dart';
+import 'package:food_delivery/features/orders/domain/entities/order.dart';
 import 'package:food_delivery/features/orders/domain/usecases/get_order_details_use_case.dart';
 import 'package:food_delivery/features/orders/domain/usecases/get_orders_usecase.dart';
 import 'package:food_delivery/features/orders/presentation/bloc/orders_state.dart';
@@ -26,14 +27,19 @@ class OrdersCubit extends Cubit<OrdersState> {
     );
   }
 
-  Future<void> getOrderDetails() async {
-    emit(const GetOrderDetailsLoading());
-    final result = await _getOrderDetailsUseCase(const GetOrderDetailsParams());
-    emit(
-      result.fold(
-        (failure) => GetOrderDetailsErrorDetails(failure.error),
-        (orderDetails) => GetOrderDetailsSuccess(orderDetails),
-      ),
-    );
+  Future<void> getOrderDetails({
+    required int orderId,
+  }) async {
+    Future<void> getOrderDetails() async {
+      emit(const GetOrderDetailsLoading());
+      final result = await _getOrderDetailsUseCase(
+          GetOrderDetailsParams(orderId: orderId));
+      emit(
+        result.fold(
+          (failure) => GetOrderDetailsErrorDetails(failure.error),
+          (orderDetails) => GetOrderDetailsSuccess(orderDetails),
+        ),
+      );
+    }
   }
 }

@@ -13,6 +13,7 @@ import 'package:food_delivery/features/checkout/presentation/bloc/checkout_cubit
 import 'package:food_delivery/features/checkout/presentation/screens/address_location_screen.dart';
 import 'package:food_delivery/features/checkout/presentation/screens/checkout_screen.dart';
 import 'package:food_delivery/features/orders/presentation/bloc/orders_cubit.dart';
+import 'package:food_delivery/features/orders/presentation/screens/order_details_screen.dart';
 import 'package:food_delivery/features/orders/presentation/screens/orders_screen.dart';
 import 'package:food_delivery/features/profile/presentation/bloc/profile_cubit.dart';
 import 'package:food_delivery/features/profile/presentation/screens/edit_profile_screen.dart';
@@ -109,6 +110,16 @@ Route<PageTransition>? onGenerateRoute(
         ),
         type: PageTransitionType.leftToRightWithFade,
       );
+    case OrderDetailsScreen.routeName:
+      return PageTransition(
+        child: BlocProvider(
+          create: (context) => getIt<OrdersCubit>(),
+          child: const OrderDetailsScreen(),
+        ),
+        settings: routeSettings,
+        type: PageTransitionType.leftToRightWithFade,
+      );
+
     case ViewProfileScreen.routeName:
       return PageTransition(
         child: BlocProvider(

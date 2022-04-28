@@ -9,6 +9,28 @@ class ProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Center(
+          child: Row(
+            children: [
+              SizedBox(
+                width: 60,
+                height: 60,
+                child: Image.network(order.productImage!),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              Column(
+                children: [
+                  Text(order.productName!),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
         Row(
           children: [
             SizedBox(

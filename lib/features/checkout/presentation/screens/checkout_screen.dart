@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/core/presentation/validation/validators.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
@@ -9,6 +10,7 @@ import 'package:food_delivery/features/cart/presentation/widgets/payment_summery
 import 'package:food_delivery/features/checkout/domain/entities/checkout_entity.dart';
 import 'package:food_delivery/features/checkout/presentation/bloc/checkout_cubit.dart';
 import 'package:food_delivery/features/checkout/presentation/bloc/checkout_state.dart';
+import 'package:food_delivery/features/checkout/presentation/screens/address_location_screen.dart';
 import 'package:food_delivery/features/orders/presentation/screens/order_details_screen.dart';
 
 class CheckoutScreen extends StatefulWidget {
@@ -22,9 +24,9 @@ class CheckoutScreen extends StatefulWidget {
 
 class _CheckoutScreenState extends State<CheckoutScreen> {
   final _formKey = GlobalKey<FormState>();
-  final addressController = TextEditingController(text: 'ali hyba, sidi beshr');
+  TextEditingController addressController = TextEditingController();
   final phoneController = TextEditingController(text: '01098031996');
-  late double subtotal;
+  late CheckoutArguments arguments;
   late TextTheme textTheme;
   late AppLocalizations appLocalizations;
   bool isLoading = false;
@@ -32,7 +34,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    subtotal = ModalRoute.of(context)!.settings.arguments! as double;
+    arguments =
+        ModalRoute.of(context)!.settings.arguments! as CheckoutArguments;
+    addressController = TextEditingController(text: arguments.address , );
     textTheme = Theme.of(context).textTheme;
     appLocalizations = AppLocalizations.of(context)!;
   }
@@ -114,7 +118,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               ),
               const SizedBox(height: 16),
               PaymentSummery(
-                subtotal: subtotal,
+                subtotal: arguments.subTotal,
                 deliveryFee: 30,
               ),
               const Spacer(),
@@ -137,6 +141,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   return CustomElevatedButton(
                     label: appLocalizations.placeOrder,
                     onPressed: () {
+                      showErrorToast(errorMessage: arguments.address);
+
                       if (_formKey.currentState!.validate()) {
                         BlocProvider.of<CheckoutCubit>(context).checkout(
                           checkoutEntity: CheckoutEntity(

@@ -10,9 +10,9 @@ import 'package:food_delivery/features/auth/presentation/screens/starter_screen.
 import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
 import 'package:food_delivery/features/cart/presentation/screens/cart_screen.dart';
 import 'package:food_delivery/features/checkout/presentation/bloc/checkout_cubit.dart';
+import 'package:food_delivery/features/checkout/presentation/screens/address_location_screen.dart';
 import 'package:food_delivery/features/checkout/presentation/screens/checkout_screen.dart';
 import 'package:food_delivery/features/orders/presentation/bloc/orders_cubit.dart';
-import 'package:food_delivery/features/orders/presentation/screens/order_details_screen.dart';
 import 'package:food_delivery/features/orders/presentation/screens/orders_screen.dart';
 import 'package:food_delivery/features/profile/presentation/bloc/profile_cubit.dart';
 import 'package:food_delivery/features/profile/presentation/screens/edit_profile_screen.dart';
@@ -59,11 +59,11 @@ Route<PageTransition>? onGenerateRoute(
         ),
         type: PageTransitionType.leftToRightWithFade,
       );
-      case ForgotPasswordScreen.routeName:
+    case ForgotPasswordScreen.routeName:
       return PageTransition(
         child: BlocProvider(
           create: (context) => getIt<AuthCubit>(),
-          child:  const ForgotPasswordScreen(),
+          child: const ForgotPasswordScreen(),
         ),
         type: PageTransitionType.leftToRightWithFade,
       );
@@ -110,18 +110,26 @@ Route<PageTransition>? onGenerateRoute(
         type: PageTransitionType.leftToRightWithFade,
       );
     case ViewProfileScreen.routeName:
-      return MaterialPageRoute(
-        builder: (context) => BlocProvider(
+      return PageTransition(
+        child: BlocProvider(
           create: (context) => getIt<ProfileCubit>(),
           child: const ViewProfileScreen(),
         ),
+        type: PageTransitionType.leftToRightWithFade,
       );
     case EditProfileScreen.routeName:
-      return MaterialPageRoute(
-        builder: (context) => BlocProvider(
+      return PageTransition(
+        child: BlocProvider(
           create: (context) => getIt<ProfileCubit>(),
           child: const EditProfileScreen(),
         ),
+        type: PageTransitionType.leftToRightWithFade,
+      );
+    case AddressLocationScreen.routeName:
+      return PageTransition(
+        child: const AddressLocationScreen(),
+        settings: routeSettings,
+        type: PageTransitionType.leftToRightWithFade,
       );
     default:
       return null;

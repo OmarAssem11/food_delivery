@@ -1,9 +1,0 @@
-{
-    "status": 404,
-    "message": "validation error",
-    "errors": {
-        "restaurant_id": [
-            "The restaurant id field is required."
-        ]
-    }
-}

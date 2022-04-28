@@ -15,9 +15,7 @@ class RestaurantDataModel {
     required this.name,
     this.address,
     this.imageUrl,
-
-  });
-
+    
   factory RestaurantDataModel.fromJson(Map<String, dynamic> json) =>
       _$RestaurantDataModelFromJson(json);
 }

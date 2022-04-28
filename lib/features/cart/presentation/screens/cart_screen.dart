@@ -4,12 +4,11 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
-import 'package:food_delivery/features/cart/domain/entities/cart_product.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_state.dart';
 import 'package:food_delivery/features/cart/presentation/widgets/ordered_product_item.dart';
 import 'package:food_delivery/features/cart/presentation/widgets/payment_summery.dart';
-import 'package:food_delivery/features/checkout/presentation/screens/checkout_screen.dart';
+import 'package:food_delivery/features/checkout/presentation/screens/address_location_screen.dart';
 import 'package:lottie/lottie.dart';
 
 class CartScreen extends StatefulWidget {
@@ -25,7 +24,6 @@ class _CartScreenState extends State<CartScreen> {
   final noteController = TextEditingController();
   late TextTheme textTheme;
   late AppLocalizations appLocalizations;
-  List<CartProduct> cartProductsList = [];
 
   @override
   void initState() {
@@ -49,12 +47,10 @@ class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<CartCubit, CartState>(
-      listener: (context, state) {
-        if (state is GetCartSuccess) {
-          cartProductsList = state.cartProductsList;
-        }
-      },
+      listener: (context, state) {},
       builder: (context, state) {
+        final cartProductsList =
+            BlocProvider.of<CartCubit>(context).cartProductsList;
         return state.maybeWhen(
           getCartLoading: () => Scaffold(
             appBar: AppBar(),
@@ -80,6 +76,7 @@ class _CartScreenState extends State<CartScreen> {
                       cartEntity.product.price * cartEntity.quantity,
                 )
                 .toList();
+            print(subtotal);
             return cartProductsList.isEmpty
                 ? Scaffold(
                     appBar: AppBar(
@@ -119,7 +116,7 @@ class _CartScreenState extends State<CartScreen> {
                       child: ListView(
                         children: [
                           ListView.builder(
-                            itemBuilder: (context, index) => OrderedProductItem(
+                            itemBuilder: (context, index) => CartProductItem(
                               product: cartProductsList[index].product,
                               quantity: cartProductsList[index].quantity,
                               restaurantId:
@@ -166,7 +163,7 @@ class _CartScreenState extends State<CartScreen> {
                           CustomElevatedButton(
                             label: appLocalizations.checkout,
                             onPressed: () => Navigator.of(context).pushNamed(
-                              CheckoutScreen.routeName,
+                              AddressLocationScreen.routeName,
                               arguments: subtotal,
                             ),
                             isLoading: false,

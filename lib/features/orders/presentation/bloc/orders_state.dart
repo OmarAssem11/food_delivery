@@ -14,7 +14,7 @@ class OrdersState with _$OrdersState {
       GetOrdersListErrorDetails;
   const factory OrdersState.getOrderDetailsLoading() = GetOrderDetailsLoading;
   const factory OrdersState.getOrderDetailsSuccess(
-    final Order orderDetails,
+    final List<Order> orderDetails,
   ) = GetOrderDetailsSuccess;
   const factory OrdersState.getOrderDetailsError(final String error) =
       GetOrderDetailsErrorDetails;

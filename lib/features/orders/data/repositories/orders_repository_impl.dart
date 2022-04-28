@@ -23,16 +23,15 @@ class OrdersRepositoryImpl implements OrdersRepository {
   );
 
   @override
-  Future<Either<Failure, Order>> getOrderDetails() async {
+  Future<Either<Failure, List<Order>>> getOrderDetails(
+      {required int orderId}) async {
     try {
-      final token = _authLocalDataSource.getToken() ?? '';
-      final language = _localizationLocalDataSource.getLanguage() ?? 'en';
       final orderDetailsResponse =
-          await _ordersRemoteDataSource.getOrderDetails(
-        token: '$tokenType $token',
-        language: language,
-      );
-      return right(orderDetailsResponse.data.fromModel);
+          await _ordersRemoteDataSource.getOrderDetails(orderId: orderId);
+      final orderDetails = orderDetailsResponse.data
+          .map((orderDetailsModel) => orderDetailsModel.fromModel)
+          .toList();
+      return right(orderDetails);
     } catch (error) {
       return left(const Failure('Error while getting order details'));
     }

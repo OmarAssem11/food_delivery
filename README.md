@@ -29,6 +29,9 @@
 * get_it
 * injectable
 * shared_preferences
+* google_maps_flutter
+* geocoding
+* geolocator
 * cached_network_image
 * json_serializable
 * lottie

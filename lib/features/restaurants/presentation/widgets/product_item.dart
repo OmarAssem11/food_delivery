@@ -16,12 +16,10 @@ class ProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return InkWell(
-      onTap: () {
-        _showProductDetailsBottomSheet(
-          context: context,
-          product: product,
-        );
-      },
+      onTap: () => _showProductDetailsBottomSheet(
+        context: context,
+        product: product,
+      ),
       child: Row(
         children: [
           Expanded(
@@ -35,7 +33,7 @@ class ProductItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  product.description,
+                  product.description!,
                   style: textTheme.caption,
                   maxLines: 4,
                   overflow: TextOverflow.ellipsis,

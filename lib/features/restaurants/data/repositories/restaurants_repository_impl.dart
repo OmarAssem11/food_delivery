@@ -1,8 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:food_delivery/core/data/constants/constants.dart';
 import 'package:food_delivery/core/domain/error/failure.dart';
-import 'package:food_delivery/features/auth/domain/datasources/local_datasource/auth_local_datasource.dart';
-import 'package:food_delivery/features/localization/domain/datasources/local_datasources/localization_local_datasource.dart';
 import 'package:food_delivery/features/restaurants/data/mappers/restaurant_details_mapper.dart';
 import 'package:food_delivery/features/restaurants/data/mappers/restaurant_mapper.dart';
 import 'package:food_delivery/features/restaurants/domain/datasources/remote_datasource/restaurants_remote_datasource.dart';
@@ -13,25 +10,14 @@ import 'package:injectable/injectable.dart';
 @LazySingleton(as: RestaurantsRepository)
 class RestaurantsRepositoryImpl implements RestaurantsRepository {
   final RestaurantsRemoteDataSource _restaurantRemoteDataSource;
-  final AuthLocalDataSource _authLocalDataSource;
-  final LocalizationLocalDataSource _localizationLocalDataSource;
 
-  const RestaurantsRepositoryImpl(
-    this._restaurantRemoteDataSource,
-    this._authLocalDataSource,
-    this._localizationLocalDataSource,
-  );
+  const RestaurantsRepositoryImpl(this._restaurantRemoteDataSource);
 
   @override
   Future<Either<Failure, List<Restaurant>>> getAllRestaurants() async {
     try {
-      final token = _authLocalDataSource.getToken() ?? '';
-      final language = _localizationLocalDataSource.getLanguage() ?? 'en';
       final restaurantListResponse =
-          await _restaurantRemoteDataSource.getAllRestaurants(
-        token: '$tokenType $token',
-        language: language,
-      );
+          await _restaurantRemoteDataSource.getAllRestaurants();
       final restaurantEntities = restaurantListResponse.data
           .map((restaurantModel) => restaurantModel.fromModel)
           .toList();
@@ -46,12 +32,8 @@ class RestaurantsRepositoryImpl implements RestaurantsRepository {
     required int restaurantId,
   }) async {
     try {
-      final token = _authLocalDataSource.getToken() ?? '';
-      final language = _localizationLocalDataSource.getLanguage() ?? 'en';
       final restaurantDetailsResponse =
           await _restaurantRemoteDataSource.getRestaurantDetails(
-        token: '$tokenType $token',
-        language: language,
         restaurantId: restaurantId,
       );
       return right(restaurantDetailsResponse.data.fromModel);

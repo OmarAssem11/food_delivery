@@ -3,6 +3,7 @@
     "register": "REGISTER",
     "userName": "User Name",
     "name": "Name",
+    "email": "Email",
     "emailAddress": "Email Address",
     "password": "Password",
     "forgotPassword": "forgot password?",
@@ -38,6 +39,7 @@
     "yourBasketIsEmpty": "Your basket is empty!",
     "address": "Address",
     "phone": "Phone",
+    "phoneNumber": "Phone number",
     "payWith": "Pay with",
     "cashOnDelivery": "Cash on delivery",
     "placeOrder": "place order",
@@ -46,7 +48,5 @@
     "profile": "Profile",
     "editProfile": "Edit profile",
     "change": "Change",
-    "edit": "Edit",
-    "email": "Email",
-    "phoneNumber": "Phone number"
+    "edit": "Edit"
 }

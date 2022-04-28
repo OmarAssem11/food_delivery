@@ -1,4 +1,5 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:json_annotation/json_annotation.dart';
+
 part 'response_model.g.dart';
 
 @JsonSerializable(genericArgumentFactories: true)
@@ -7,6 +8,7 @@ class ResponseModel<Data> {
   final String message;
   final dynamic errors;
   final Data data;
+
   ResponseModel({
     required this.status,
     required this.message,

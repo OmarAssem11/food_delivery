@@ -12,13 +12,9 @@ class ProductsRemoteDataSourceImpl implements ProductsRemoteDataSource {
 
   @override
   Future<ResponseModel<ProductDetailsModel>> getProductDetails({
-    required String token,
-    required String language,
     required int productId,
   }) =>
       _productsApiService.getProductDetails(
-        language: language,
-        token: token,
         productId: productId,
       );
 }

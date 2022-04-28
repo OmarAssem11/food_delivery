@@ -3,8 +3,6 @@ import 'package:food_delivery/features/checkout/data/models/checkout_model.dart'
 
 abstract class CheckoutRemoteDataSource {
   Future<ResponseModel> checkout({
-    required String token,
-    required String language,
     required CheckoutModel checkoutModel,
   });
 }

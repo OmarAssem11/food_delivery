@@ -12,24 +12,14 @@ class RestaurantsRemoteDataSourceImpl implements RestaurantsRemoteDataSource {
   const RestaurantsRemoteDataSourceImpl(this._restaurantsApiService);
 
   @override
-  Future<ResponseModel<List<RestaurantModel>>> getAllRestaurants({
-    required String token,
-    required String language,
-  }) =>
-      _restaurantsApiService.getAllRestaurants(
-        token: token,
-        language: language,
-      );
+  Future<ResponseModel<List<RestaurantModel>>> getAllRestaurants() =>
+      _restaurantsApiService.getAllRestaurants();
 
   @override
   Future<ResponseModel<RestaurantDetailsModel>> getRestaurantDetails({
-    required String token,
-    required String language,
     required int restaurantId,
   }) =>
       _restaurantsApiService.getRestaurantDetails(
-        language: language,
-        token: token,
         restaurantId: restaurantId,
       );
 }

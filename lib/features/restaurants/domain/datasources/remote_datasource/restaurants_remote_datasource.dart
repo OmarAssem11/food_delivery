@@ -3,14 +3,9 @@ import 'package:food_delivery/features/restaurants/data/models/restaurant_detail
 import 'package:food_delivery/features/restaurants/data/models/restaurant_model/restaurant_model.dart';
 
 abstract class RestaurantsRemoteDataSource {
-  Future<ResponseModel<List<RestaurantModel>>> getAllRestaurants({
-    required String token,
-    required String language,
-  });
+  Future<ResponseModel<List<RestaurantModel>>> getAllRestaurants();
 
   Future<ResponseModel<RestaurantDetailsModel>> getRestaurantDetails({
-    required String token,
-    required String language,
     required int restaurantId,
   });
 }

@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:food_delivery/core/domain/error/failure.dart';
 import 'package:food_delivery/core/domain/usecases/usecase.dart';
-import 'package:food_delivery/features/cart/domain/entities/order_entity.dart';
+import 'package:food_delivery/features/cart/domain/entities/cart_order.dart';
 import 'package:food_delivery/features/cart/domain/repositories/cart_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -17,15 +17,15 @@ class AddToCartUseCase implements UseCase<Unit, AddToCartParams> {
     AddToCartParams addToCartParams,
   ) =>
       _cartRepository.addToCart(
-        orderEntity: addToCartParams.orderEntity,
+        cartOrder: addToCartParams.cartOrder,
       );
 }
 
 class AddToCartParams extends Equatable {
-  final OrderEntity orderEntity;
+  final CartOrder cartOrder;
 
-  const AddToCartParams(this.orderEntity);
+  const AddToCartParams(this.cartOrder);
 
   @override
-  List<Object?> get props => [orderEntity];
+  List<Object?> get props => [cartOrder];
 }

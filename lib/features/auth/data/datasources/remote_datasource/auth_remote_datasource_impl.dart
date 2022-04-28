@@ -9,45 +9,33 @@ import 'package:injectable/injectable.dart';
 @LazySingleton(as: AuthRemoteDataSource)
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   final AuthApiService _authApiService;
+
   const AuthRemoteDataSourceImpl(this._authApiService);
 
   @override
   Future<ResponseModel<TokenModel>> register({
-    required String language,
     required RegisterModel registerModel,
   }) =>
       _authApiService.register(
-        language: language,
         registerModel: registerModel,
       );
 
   @override
   Future<ResponseModel<TokenModel>> login({
-    required String language,
     required LoginModel loginModel,
   }) =>
       _authApiService.login(
-        language: language,
         loginModel: loginModel,
       );
 
   @override
-  Future<ResponseModel<void>> logout({
-    required String token,
-    required String language,
-  }) =>
-      _authApiService.logout(
-        token: token,
-        language: language,
-      );
+  Future<ResponseModel<void>> logout() => _authApiService.logout();
 
   @override
   Future<ResponseModel<void>> forgotPassword({
-    required String language,
     required String email,
   }) =>
       _authApiService.forgotPPassword(
-        language: language,
         email: email,
       );
 }

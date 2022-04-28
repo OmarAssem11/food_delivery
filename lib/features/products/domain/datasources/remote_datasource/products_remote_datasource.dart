@@ -3,8 +3,6 @@ import 'package:food_delivery/features/products/data/models/product_details_mode
 
 abstract class ProductsRemoteDataSource {
   Future<ResponseModel<ProductDetailsModel>> getProductDetails({
-    required String token,
-    required String language,
     required int productId,
   });
 }

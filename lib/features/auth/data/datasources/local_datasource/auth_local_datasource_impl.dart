@@ -1,3 +1,4 @@
+import 'package:food_delivery/core/data/constants/constants.dart';
 import 'package:food_delivery/features/auth/domain/datasources/local_datasource/auth_local_datasource.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -10,11 +11,11 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
 
   @override
   Future<bool> saveToken(String token) =>
-      _sharedPreferences.setString('token', token);
+      _sharedPreferences.setString(tokenKey, token);
 
   @override
-  String? getToken() => _sharedPreferences.getString('token');
+  String? getToken() => _sharedPreferences.getString(tokenKey);
 
   @override
-  Future<void> deleteToken() => _sharedPreferences.remove('token');
+  Future<void> deleteToken() => _sharedPreferences.remove(tokenKey);
 }

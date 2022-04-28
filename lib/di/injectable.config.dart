@@ -209,7 +209,6 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => _i57.LogoutUseCase(get<_i30.AuthRepository>()));
   gh.lazySingleton<_i58.OrdersRepository>(() => _i59.OrdersRepositoryImpl(
       get<_i5.OrdersRemoteDataSource>(),
-
       get<_i26.AuthLocalDataSource>(),
       get<_i52.LocalizationLocalDataSource>()));
   gh.factory<_i60.ProductsCubit>(

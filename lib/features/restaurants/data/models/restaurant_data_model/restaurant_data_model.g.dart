@@ -11,6 +11,7 @@ RestaurantDataModel _$RestaurantDataModelFromJson(Map<String, dynamic> json) =>
       id: json['id'] as int,
       name: json['name'] as String,
       address: json['address'] as String?,
+      imageUrl: json['image'] as String?,
     );
 
 Map<String, dynamic> _$RestaurantDataModelToJson(
@@ -19,4 +20,5 @@ Map<String, dynamic> _$RestaurantDataModelToJson(
       'id': instance.id,
       'name': instance.name,
       'address': instance.address,
+      'image': instance.imageUrl,
     };

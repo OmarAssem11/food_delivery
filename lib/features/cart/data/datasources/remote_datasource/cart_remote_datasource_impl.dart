@@ -1,7 +1,7 @@
 import 'package:food_delivery/core/data/models/response_model/response_model.dart';
 import 'package:food_delivery/features/cart/data/datasources/remote_datasource/cart_api_service.dart';
-import 'package:food_delivery/features/cart/data/models/cart_model/cart_model.dart';
-import 'package:food_delivery/features/cart/data/models/order_model/order_model.dart';
+import 'package:food_delivery/features/cart/data/models/cart_order_model/cart_order_model.dart';
+import 'package:food_delivery/features/cart/data/models/cart_product_model/cart_product_model.dart';
 import 'package:food_delivery/features/cart/domain/datasources/remote_datasource/cart_remote_datasource.dart';
 import 'package:injectable/injectable.dart';
 
@@ -13,44 +13,28 @@ class CartRemoteDataSourceImpl implements CartRemoteDataSource {
 
   @override
   Future<ResponseModel> addToCart({
-    required String token,
-    required String language,
-    required OrderModel orderModel,
+    required CartOrderModel cartOrderModel,
   }) =>
       _cartApiService.addToCart(
-        token: token,
-        language: language,
-        orderModel: orderModel,
+        cartOrderModel: cartOrderModel,
       );
 
   @override
   Future<ResponseModel> editCart({
-    required String token,
-    required String language,
-    required OrderModel orderModel,
+    required CartOrderModel cartOrderModel,
   }) =>
       _cartApiService.editCart(
-        token: token,
-        language: language,
-        orderModel: orderModel,
-      );
-
-  @override
-  Future<ResponseModel<List<CartModel>>> getCart({
-    required String token,
-    required String language,
-  }) =>
-      _cartApiService.getCart(
-        token: token,
-        language: language,
+        cartOrderModel: cartOrderModel,
       );
 
   @override
   Future<ResponseModel> deleteCart({
-    required String token,
-     required String language, 
-     required OrderModel orderModel,}) =>
-     _cartApiService.deleteCart(token: token, 
-     language: language,
-      orderModel: orderModel,);
+    required CartOrderModel cartOrderModel,
+  }) =>
+      _cartApiService.deleteCart(
+        cartOrderModel: cartOrderModel,
+      );
+
+  @override
+  Future<ResponseModel<List<CartModel>>> getCart() => _cartApiService.getCart();
 }

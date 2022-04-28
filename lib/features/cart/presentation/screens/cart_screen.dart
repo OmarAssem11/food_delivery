@@ -4,7 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
-import 'package:food_delivery/features/cart/domain/entities/cart_entity.dart';
+import 'package:food_delivery/features/cart/domain/entities/cart_product.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_state.dart';
 import 'package:food_delivery/features/cart/presentation/widgets/ordered_product_item.dart';
@@ -25,7 +25,7 @@ class _CartScreenState extends State<CartScreen> {
   final noteController = TextEditingController();
   late TextTheme textTheme;
   late AppLocalizations appLocalizations;
-  List<CartEntity> cart = [];
+  List<CartProduct> cartProductsList = [];
 
   @override
   void initState() {
@@ -51,7 +51,7 @@ class _CartScreenState extends State<CartScreen> {
     return BlocConsumer<CartCubit, CartState>(
       listener: (context, state) {
         if (state is GetCartSuccess) {
-          cart = state.cartEntity;
+          cartProductsList = state.cartProductsList;
         }
       },
       builder: (context, state) {
@@ -74,13 +74,13 @@ class _CartScreenState extends State<CartScreen> {
           },
           orElse: () {
             double subtotal = 0;
-            cart
+            cartProductsList
                 .map(
                   (cartEntity) => subtotal +=
                       cartEntity.product.price * cartEntity.quantity,
                 )
                 .toList();
-            return cart.isEmpty
+            return cartProductsList.isEmpty
                 ? Scaffold(
                     appBar: AppBar(
                       title: Text(appLocalizations.basket),
@@ -107,7 +107,7 @@ class _CartScreenState extends State<CartScreen> {
                         children: [
                           Text(appLocalizations.basket),
                           Text(
-                            '${cart[0].restaurantData.name} - ${cart[0].restaurantData.address}',
+                            '${cartProductsList[0].restaurantData.name} - ${cartProductsList[0].restaurantData.address}',
                             style: textTheme.caption,
                           ),
                         ],
@@ -120,11 +120,12 @@ class _CartScreenState extends State<CartScreen> {
                         children: [
                           ListView.builder(
                             itemBuilder: (context, index) => OrderedProductItem(
-                              product: cart[index].product,
-                              quantity: cart[index].quantity,
-                              restaurantId: cart[index].restaurantData.id,
+                              product: cartProductsList[index].product,
+                              quantity: cartProductsList[index].quantity,
+                              restaurantId:
+                                  cartProductsList[index].restaurantData.id,
                             ),
-                            itemCount: cart.length,
+                            itemCount: cartProductsList.length,
                             shrinkWrap: true,
                             physics: const ClampingScrollPhysics(),
                           ),

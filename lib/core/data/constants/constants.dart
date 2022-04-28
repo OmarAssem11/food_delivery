@@ -1,5 +1,5 @@
 //BaseUrls
-const baseUrl = 'http://c0fa-197-55-224-63.ngrok.io/api/';
+const baseUrl = 'http://e288-197-55-30-110.ngrok.io/api/';
 const imageApiBaseUrl = 'https://api.imgbb.com/1/upload';
 //Endpoints
 const registerEndpoint = 'register';
@@ -23,3 +23,5 @@ const imageApiKey = 'ad54db45a510342fbfef1568797bf4fd';
 const languageHeader = 'lang';
 const authorization = 'Authorization';
 const tokenType = 'Bearer';
+const tokenKey = 'token';
+const languageKey = 'language';

@@ -5,6 +5,7 @@ import 'package:food_delivery/features/restaurants/data/models/restaurant_detail
 import 'package:food_delivery/features/restaurants/data/models/restaurant_model/restaurant_model.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/http.dart';
+
 part 'restaurants_api_service.g.dart';
 
 @lazySingleton
@@ -14,15 +15,10 @@ abstract class RestaurantsApiService {
   factory RestaurantsApiService(Dio dio) = _RestaurantsApiService;
 
   @GET(getAllRestaurantsEndpoint)
-  Future<ResponseModel<List<RestaurantModel>>> getAllRestaurants({
-    @Header(languageHeader) required String language,
-    @Header(authorization) required String token,
-  });
+  Future<ResponseModel<List<RestaurantModel>>> getAllRestaurants();
 
   @GET(getRestaurantDetailsEndpoint)
   Future<ResponseModel<RestaurantDetailsModel>> getRestaurantDetails({
-    @Header(languageHeader) required String language,
-    @Header(authorization) required String token,
     @Path() required int restaurantId,
   });
 }

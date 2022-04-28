@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_delivery/features/cart/domain/entities/order_entity.dart';
+import 'package:food_delivery/features/cart/domain/entities/cart_order.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
 import 'package:food_delivery/features/products/data/models/product_model/product_model.dart';
 import 'package:food_delivery/features/products/presentation/widgets/quantity_price_counter.dart';
@@ -37,29 +37,26 @@ class OrderedProductItem extends StatelessWidget {
                   isInCart: true,
                   initialValue: quantity,
                   price: product.price,
-                  onValueChanged: (newQuantity){
-                    if (newQuantity==1 ){
-                       BlocProvider.of<CartCubit>(context).deleteCart(
-                    orderEntity: OrderEntity(
-                      restaurantId: restaurantId,
-                      productId: product.id,
-                      quantity: newQuantity,
-                    ),
-                  );
-
-                    }else{
-                       BlocProvider.of<CartCubit>(context).editCart(
-                    orderEntity: OrderEntity(
-                      restaurantId: restaurantId,
-                      productId: product.id,
-                      quantity: newQuantity,
-                    ),
-                  );
-
+                  onValueChanged: (newQuantity) {
+                    if (newQuantity == 1) {
+                      BlocProvider.of<CartCubit>(context).deleteCart(
+                        cartOrder: CartOrder(
+                          restaurantId: restaurantId,
+                          productId: product.id,
+                          quantity: newQuantity,
+                        ),
+                      );
+                    } else {
+                      BlocProvider.of<CartCubit>(context).editCart(
+                        cartOrder: CartOrder(
+                          restaurantId: restaurantId,
+                          productId: product.id,
+                          quantity: newQuantity,
+                        ),
+                      );
                     }
-                  }
-                     
-                ,),
+                  },
+                ),
               ],
             ),
           ),

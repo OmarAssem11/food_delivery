@@ -1,3 +1,4 @@
+import 'package:food_delivery/core/data/constants/constants.dart';
 import 'package:food_delivery/features/localization/domain/datasources/local_datasources/localization_local_datasource.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -10,8 +11,8 @@ class LocalizationLocalDataSourceImpl implements LocalizationLocalDataSource {
 
   @override
   Future<bool> saveLanguage(String lang) =>
-      _sharedPreferences.setString('lang', lang);
+      _sharedPreferences.setString(languageKey, lang);
 
   @override
-  String? getLanguage() => _sharedPreferences.getString('lang');
+  String? getLanguage() => _sharedPreferences.getString(languageKey);
 }

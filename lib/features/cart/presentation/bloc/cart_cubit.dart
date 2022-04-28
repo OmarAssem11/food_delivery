@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_delivery/core/domain/usecases/usecase.dart';
-import 'package:food_delivery/features/cart/domain/entities/order_entity.dart';
+import 'package:food_delivery/features/cart/domain/entities/cart_order.dart';
 import 'package:food_delivery/features/cart/domain/usecases/add_to_cart_use_case.dart';
 import 'package:food_delivery/features/cart/domain/usecases/delete_cart_use_case.dart';
 import 'package:food_delivery/features/cart/domain/usecases/edit_cart_use_case.dart';
@@ -13,7 +13,7 @@ class CartCubit extends Cubit<CartState> {
   CartCubit(
     this._addToCartUseCase,
     this._editCartUseCase,
-    this._getCartUseCase, 
+    this._getCartUseCase,
     this._deleteCartUseCase,
   ) : super(const CartInitial());
 
@@ -23,10 +23,10 @@ class CartCubit extends Cubit<CartState> {
   final DeleteCartUseCase _deleteCartUseCase;
 
   Future<void> addToCart({
-    required OrderEntity orderEntity,
+    required CartOrder cartOrder,
   }) async {
     emit(const AddToCartLoading());
-    final result = await _addToCartUseCase(AddToCartParams(orderEntity));
+    final result = await _addToCartUseCase(AddToCartParams(cartOrder));
     emit(
       result.fold(
         (failure) => AddToCartErrorDetails(failure.error),
@@ -35,13 +35,28 @@ class CartCubit extends Cubit<CartState> {
     );
   }
 
-  Future<void> editCart({required OrderEntity orderEntity}) async {
+  Future<void> editCart({
+    required CartOrder cartOrder,
+  }) async {
     emit(const EditCartLoading());
-    final result = await _editCartUseCase(EditCartParams(orderEntity));
+    final result = await _editCartUseCase(EditCartParams(cartOrder));
     emit(
       result.fold(
         (failure) => EditCartErrorDetails(failure.error),
         (_) => const EditCartSuccess(),
+      ),
+    );
+  }
+
+  Future<void> deleteCart({
+    required CartOrder cartOrder,
+  }) async {
+    emit(const DeleteCartLoading());
+    final result = await _deleteCartUseCase(DeleteCartParams(cartOrder));
+    emit(
+      result.fold(
+        (failure) => DeleteCartErrorDetails(failure.error),
+        (delete) => const DeleteCartSuccess(),
       ),
     );
   }
@@ -54,19 +69,6 @@ class CartCubit extends Cubit<CartState> {
         (failure) => GetCartErrorDetails(failure.error),
         (cart) => GetCartSuccess(cart),
       ),
-    );
-  }
-
-  Future<void> deleteCart({
-    required OrderEntity orderEntity,
-  }) async{
-    emit(const DeleteCartLoading());
-    final result = await _deleteCartUseCase(DeleteCartParams(orderEntity));
-    emit(
-      result.fold(
-        (failure) => DeleteCartErrorDetails(failure.error),
-         (delete) => const DeleteCartSuccess(),
-         ),
     );
   }
 }

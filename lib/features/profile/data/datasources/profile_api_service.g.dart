@@ -16,11 +16,10 @@ class _ProfileApiService implements ProfileApiService {
   String? baseUrl;
 
   @override
-  Future<ProfileModel> viewProfile({required token}) async {
+  Future<ProfileModel> viewProfile() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<ProfileModel>(
@@ -33,12 +32,10 @@ class _ProfileApiService implements ProfileApiService {
   }
 
   @override
-  Future<ProfileModel> editProfile(
-      {required token, required profileModel}) async {
+  Future<ProfileModel> editProfile({required profileModel}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(profileModel.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(

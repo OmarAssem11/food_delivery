@@ -1,39 +1,26 @@
 import 'package:dartz/dartz.dart';
-import 'package:food_delivery/core/data/constants/constants.dart';
 import 'package:food_delivery/core/domain/error/failure.dart';
-import 'package:food_delivery/features/auth/domain/datasources/local_datasource/auth_local_datasource.dart';
-import 'package:food_delivery/features/cart/data/mappers/cart_mapper.dart';
-import 'package:food_delivery/features/cart/data/mappers/order_mapper.dart';
+import 'package:food_delivery/features/cart/data/mappers/cart_order_mapper.dart';
+import 'package:food_delivery/features/cart/data/mappers/cart_product_mapper.dart';
 import 'package:food_delivery/features/cart/domain/datasources/remote_datasource/cart_remote_datasource.dart';
-import 'package:food_delivery/features/cart/domain/entities/cart_entity.dart';
-import 'package:food_delivery/features/cart/domain/entities/order_entity.dart';
+import 'package:food_delivery/features/cart/domain/entities/cart_order.dart';
+import 'package:food_delivery/features/cart/domain/entities/cart_product.dart';
 import 'package:food_delivery/features/cart/domain/repositories/cart_repository.dart';
-import 'package:food_delivery/features/localization/domain/datasources/local_datasources/localization_local_datasource.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: CartRepository)
 class CartRepositoryImpl implements CartRepository {
-  final AuthLocalDataSource _authLocalDataSource;
   final CartRemoteDataSource _cartRemoteDataSource;
-  final LocalizationLocalDataSource _localizationLocalDataSource;
 
-  const CartRepositoryImpl(
-    this._authLocalDataSource,
-    this._cartRemoteDataSource,
-    this._localizationLocalDataSource,
-  );
+  const CartRepositoryImpl(this._cartRemoteDataSource);
 
   @override
   Future<Either<Failure, Unit>> addToCart({
-    required OrderEntity orderEntity,
+    required CartOrder cartOrder,
   }) async {
     try {
-      final token = _authLocalDataSource.getToken() ?? '';
-      final language = _localizationLocalDataSource.getLanguage() ?? '';
       await _cartRemoteDataSource.addToCart(
-        token: '$tokenType $token',
-        language: language,
-        orderModel: orderEntity.toModel,
+        cartOrderModel: cartOrder.toModel,
       );
       return right(unit);
     } catch (error) {
@@ -43,15 +30,11 @@ class CartRepositoryImpl implements CartRepository {
 
   @override
   Future<Either<Failure, Unit>> editCart({
-    required OrderEntity orderEntity,
+    required CartOrder cartOrder,
   }) async {
     try {
-      final token = _authLocalDataSource.getToken() ?? '';
-      final language = _localizationLocalDataSource.getLanguage() ?? '';
       await _cartRemoteDataSource.editCart(
-        token: '$tokenType $token',
-        language: language,
-        orderModel: orderEntity.toModel,
+        cartOrderModel: cartOrder.toModel,
       );
       return right(unit);
     } catch (error) {
@@ -60,35 +43,28 @@ class CartRepositoryImpl implements CartRepository {
   }
 
   @override
-  Future<Either<Failure, List<CartEntity>>> getCart() async {
+  Future<Either<Failure, Unit>> deleteCart({
+    required CartOrder cartOrder,
+  }) async {
     try {
-      final token = _authLocalDataSource.getToken() ?? '';
-      final language = _localizationLocalDataSource.getLanguage() ?? '';
-      final cartResponse = await _cartRemoteDataSource.getCart(
-        token: '$tokenType $token',
-        language: language,
+      await _cartRemoteDataSource.deleteCart(
+        cartOrderModel: cartOrder.toModel,
       );
-      final cartEntities =
-          cartResponse.data.map((cartModel) => cartModel.fromModel).toList();
-      return right(cartEntities);
+      return right(unit);
     } catch (error) {
-      return left(const Failure('Error while getting cart'));
+      return left(const Failure('error while deleting cart'));
     }
   }
 
   @override
-  Future<Either<Failure, Unit>> deleteCart({required OrderEntity orderEntity}) async {
-    try{
-      final token = _authLocalDataSource.getToken()??'';
-      final language =_localizationLocalDataSource.getLanguage() ??'';
-       await _cartRemoteDataSource.deleteCart(
-        token: '$tokenType $token',
-         language: language, 
-         orderModel: orderEntity.toModel,
-         );
-         return right(unit);
-    } catch(error){
-      return left(const Failure('error while deleting cart'));
+  Future<Either<Failure, List<CartProduct>>> getCart() async {
+    try {
+      final cartResponse = await _cartRemoteDataSource.getCart();
+      final cartProductsList =
+          cartResponse.data.map((cartModel) => cartModel.fromModel).toList();
+      return right(cartProductsList);
+    } catch (error) {
+      return left(const Failure('Error while getting cart'));
     }
   }
 }

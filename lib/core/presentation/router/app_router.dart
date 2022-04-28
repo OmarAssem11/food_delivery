@@ -109,14 +109,6 @@ Route<PageTransition>? onGenerateRoute(
         ),
         type: PageTransitionType.leftToRightWithFade,
       );
-    case OrderDetailsScreen.routeName:
-      return PageTransition(
-        child: BlocProvider(
-          create: (context) => getIt<OrdersCubit>(),
-          child: const OrderDetailsScreen(),
-        ),
-        type: PageTransitionType.leftToRightWithFade,
-      );
     case ViewProfileScreen.routeName:
       return MaterialPageRoute(
         builder: (context) => BlocProvider(

@@ -20,6 +20,7 @@ class GetOrderDetailsUseCase implements UseCase<Order, GetOrderDetailsParams> {
 }
 
 class GetOrderDetailsParams extends Equatable {
+
   const GetOrderDetailsParams();
 
   @override

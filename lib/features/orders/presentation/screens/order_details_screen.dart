@@ -18,15 +18,10 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
   late int orderId;
 
   @override
-  void initState() {
-    super.initState();
-    BlocProvider.of<OrdersCubit>(context).getOrderDetails(orderId: orderId);
-  }
-
-  @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    orderId = ModalRoute.of(context)!.settings!.arguments! as int;
+    orderId = ModalRoute.of(context)!.settings.arguments! as int;
+    BlocProvider.of<OrdersCubit>(context).getOrderDetails(orderId: orderId);
   }
 
   @override

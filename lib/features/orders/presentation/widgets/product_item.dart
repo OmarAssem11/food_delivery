@@ -30,6 +30,7 @@ class ProductItem extends StatelessWidget {
               )
             ],
           ),
+        ),
         Row(
           children: [
             SizedBox(

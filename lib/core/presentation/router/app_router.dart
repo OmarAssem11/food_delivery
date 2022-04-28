@@ -116,6 +116,7 @@ Route<PageTransition>? onGenerateRoute(
           create: (context) => getIt<OrdersCubit>(),
           child: const OrderDetailsScreen(),
         ),
+        settings: routeSettings,
         type: PageTransitionType.leftToRightWithFade,
       );
 

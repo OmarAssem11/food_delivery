@@ -6,8 +6,5 @@ abstract class OrdersRemoteDataSource {
   Future<ResponseModel<List<OrderDetailsModel>>> getOrderDetails({
     required int orderId,
   });
-  Future<ResponseModel<List<OrderModel>>> getOrders({
-    required String token,
-    required String language,
-  });
+  Future<ResponseModel<List<OrderModel>>> getOrders();
 }

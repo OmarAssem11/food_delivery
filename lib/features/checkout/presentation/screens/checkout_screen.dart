@@ -143,8 +143,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   return CustomElevatedButton(
                     label: appLocalizations.placeOrder,
                     onPressed: () {
-                      showErrorToast(errorMessage: arguments.address);
-
                       if (_formKey.currentState!.validate()) {
                         BlocProvider.of<CheckoutCubit>(context).checkout(
                           checkoutEntity: CheckoutEntity(

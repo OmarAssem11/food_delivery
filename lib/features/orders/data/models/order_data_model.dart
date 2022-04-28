@@ -4,8 +4,11 @@ part 'order_data_model.g.dart';
 @JsonSerializable()
 class OrderDataModel {
   final int id;
+  @JsonKey(name: "delivery_fee")
   final int? deliveryFee;
+  @JsonKey(name: "totalprice")
   final int? totalPrice;
+  @JsonKey(name: "created_at")
   final String createdTime;
 
   OrderDataModel({

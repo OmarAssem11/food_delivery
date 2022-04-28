@@ -17,12 +17,6 @@ class OrdersRemoteDataSourceImpl implements OrdersRemoteDataSource {
       _ordersApiService.getOrderDetails(orderId: orderId);
 
   @override
-  Future<ResponseModel<List<OrderModel>>> getOrders({
-    required String token,
-    required String language,
-  }) =>
-      _ordersApiService.getOrdersList(
-        token: token,
-        language: language,
-      );
+  Future<ResponseModel<List<OrderModel>>> getOrders() =>
+      _ordersApiService.getOrdersList();
 }

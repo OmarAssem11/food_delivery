@@ -30,6 +30,7 @@ class OrdersCubit extends Cubit<OrdersState> {
   Future<void> getOrderDetails({
     required int orderId,
   }) async {
+  Future<void> getOrderDetails() async {
     emit(const GetOrderDetailsLoading());
     final result =
         await _getOrderDetailsUseCase(GetOrderDetailsParams(orderId: orderId));

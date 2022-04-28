@@ -1,21 +1,19 @@
+import 'package:food_delivery/features/orders/data/models/order_data_model.dart';
+import 'package:food_delivery/features/restaurants/data/models/restaurant_data_model/restaurant_data_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'order_model.g.dart';
 
 @JsonSerializable()
 class OrderModel {
-  final int id;
   final String status;
-  final String dateTime;
-  final String restaurantName;
-  final String restaurantImage;
+  final OrderDataModel order;
+  final List<RestaurantDataModel> restarunt;
 
   const OrderModel({
-    required this.id,
     required this.status,
-    required this.dateTime,
-    required this.restaurantName,
-    required this.restaurantImage,
+    required this.order,
+    required this.restarunt,
   });
 
   factory OrderModel.fromJson(Map<String, dynamic> json) =>

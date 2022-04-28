@@ -17,6 +17,7 @@ const checkoutEndpoint = 'order/checkout';
 const getOrderDetailsEndpoint = 'order/details/{orderId}';
 const viewProfileEndpoint = 'profile';
 const editProfileEndpoint = 'edit_profile';
+const orderListEndPoint = "order/userorders";
 //ApiKeys
 const imageApiKey = 'ad54db45a510342fbfef1568797bf4fd';
 //Headers

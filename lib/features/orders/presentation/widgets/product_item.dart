@@ -30,6 +30,25 @@ class ProductItem extends StatelessWidget {
               )
             ],
           ),
+        Row(
+          children: [
+            SizedBox(
+              width: 60,
+              height: 60,
+              child: Image.network(order.restaurantImage),
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+            Column(
+              children: [
+                Text(order.restaurantName),
+                const SizedBox(
+                  height: 5,
+                ),
+              ],
+            )
+          ],
         ),
       ],
     );

@@ -19,9 +19,7 @@ abstract class OrdersApiService {
   Future<ResponseModel<List<OrderDetailsModel>>> getOrderDetails({
     @Path() required int orderId,
   });
-  @GET("get_orders_list")
-  Future<ResponseModel<List<OrderModel>>> getOrdersList({
-    @Header(authorization) required String token,
-    @Header(languageHeader) required String language,
-  });
+
+  @GET(orderListEndPoint)
+  Future<ResponseModel<List<OrderModel>>> getOrdersList();
 }

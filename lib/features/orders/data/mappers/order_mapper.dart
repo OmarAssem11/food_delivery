@@ -3,10 +3,10 @@ import 'package:food_delivery/features/orders/domain/entities/order.dart';
 
 extension OrderMapper on OrderModel {
   Order get fromModel => Order(
-        id: id,
+        id: order.id,
         status: status,
-        dateTime: dateTime,
-        restaurantName: restaurantName,
-        restaurantImage: restaurantImage,
+        dateTime: order.createdTime,
+        restaurantName: restarunt[0].name,
+        restaurantImage: restarunt[0].imageUrl!,
       );
 }

@@ -22,6 +22,7 @@ class GetOrderDetailsUseCase
 
 class GetOrderDetailsParams extends Equatable {
   final int orderId;
+  
   const GetOrderDetailsParams({required this.orderId});
 
   @override

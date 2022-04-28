@@ -14,7 +14,7 @@ ThemeData appTheme = ThemeData(
     onError: Colors.black,
     background: Colors.black,
     onBackground: Color.fromARGB(255, 240, 240, 240),
-    surface: Color.fromARGB(255, 240, 245, 250),
+    surface: Color.fromARGB(255, 220, 220, 220),
     onSurface: Colors.black,
   ),
   scaffoldBackgroundColor: Colors.white,

@@ -6,7 +6,7 @@
     "email": "Email",
     "emailAddress": "Email Address",
     "password": "Password",
-    "forgotPassword": "forgot password?",
+    "forgotPassword": "Forgot password?",
     "canNotBeEmpty": "can't be empty",
     "emailCanNotBeEmpty": "Email can't be empty",
     "invalidEmailFormat": "Invalid email format",
@@ -43,12 +43,16 @@
     "payWith": "Pay with",
     "cashOnDelivery": "Cash on delivery",
     "placeOrder": "place order",
-    "yourOrders": "Your orders",
     "orderDetails": "Order details",
     "profile": "Profile",
     "editProfile": "Edit profile",
     "change": "Change",
     "edit": "Edit",
     "confirmAddress":"Confirm address",
-    "orderId": "Order Id "
+    "orderId": "Order ID",
+    "forgotPasswordCaption": "Don't worry it happens. Please enter the address \n associated with your account",
+    "checkYourEmail": "Please check your email to reset password",
+    "pleaseEnableYourLocation": "Please enable Your Location Service",
+    "locationPermissionsDenied": "Location permissions are denied",
+    "locationPermissionsPermanentlyDenied": "Location permissions are permanently denied, we cannot request permissions"
 }

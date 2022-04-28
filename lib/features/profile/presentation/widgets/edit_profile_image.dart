@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class EditProfileImage extends StatelessWidget {
@@ -18,9 +19,7 @@ class EditProfileImage extends StatelessWidget {
             bottom: 16,
           ),
           child: CircleAvatar(
-            backgroundImage: NetworkImage(
-              imageUrl,
-            ),
+            backgroundImage: CachedNetworkImageProvider(imageUrl),
             radius: 50,
           ),
         ),

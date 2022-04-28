@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
 import 'package:food_delivery/features/orders/presentation/bloc/orders_cubit.dart';
 import 'package:food_delivery/features/orders/presentation/bloc/orders_state.dart';
@@ -20,12 +21,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<OrdersCubit>(context).getOrdersList();
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
+    BlocProvider.of<OrdersCubit>(context).getOrders();
   }
 
   @override
@@ -36,20 +32,25 @@ class _OrdersScreenState extends State<OrdersScreen> {
           onPressed: ZoomDrawer.of(context)!.toggle,
           icon: const Icon(Icons.menu),
         ),
-        title: Text(AppLocalizations.of(context)!.yourOrders),
+        title: Text(AppLocalizations.of(context)!.myOrders),
       ),
       body: BlocBuilder<OrdersCubit, OrdersState>(
         builder: (context, state) {
           return state.maybeWhen(
             getOrdersListLoading: () => const LoadingIndicator(),
+            getOrdersListError: (error) {
+              showErrorToast(errorMessage: error);
+              return Container();
+            },
             getOrdersListSuccess: (orders) => ListView.separated(
               itemBuilder: (context, index) => OrderItem(
-                orderEntity: orders[index],
+                order: orders[index],
               ),
               itemCount: orders.length,
-              separatorBuilder: (context, index) => const Divider(
+              separatorBuilder: (context, index) => Divider(
                 thickness: 1,
-                color: Color.fromARGB(255, 220, 220, 220),
+                height: 8,
+                color: Theme.of(context).colorScheme.surface,
               ),
             ),
             orElse: () => Container(),

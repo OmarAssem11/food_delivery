@@ -43,13 +43,16 @@
     "payWith": "وسيلة الدفع",
     "cashOnDelivery": "الدفع عند الإستلام",
     "placeOrder": "تأكيد الطلب",
-    "yourOrders": "طلباتك",
     "orderDetails": "تفاصيل الطلب",
     "profile": "الملف الشخصي",
     "editProfile": "تعديل الملف الشخصي",
     "change": "تغيير",
     "edit": "تعديل",
     "confirmAddress" : "تأكيد العنوان",
-    "orderId": "رقم الطلب "
-
+    "orderId": "رقم الطلب",
+    "forgotPasswordCaption": "لا تقلق، برجاء ادخال البريد الإلكتروني المسجل في حسابك",
+    "checkYourEmail": "برجاء التحقق من بريدك الإلكتروني لتغيير كلمة السر",
+    "pleaseEnableYourLocation": "برجاء قم بتفعيل تحديد الموقع",
+    "locationPermissionsDenied": "تصاريح الوصول إلي موقع الهاتف مرفوضة",
+    "locationPermissionsPermanentlyDenied": "تصاريح الوصول إلي موقع الهاتف مرفوضة نهائيا، لا نستطيع طلب التصاريح"
 }

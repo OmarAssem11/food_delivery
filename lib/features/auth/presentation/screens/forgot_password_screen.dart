@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:food_delivery/core/presentation/util/done_snackbar.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/core/presentation/validation/validators.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
@@ -10,7 +10,8 @@ import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:food_delivery/features/auth/presentation/bloc/auth_state.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
-  const ForgotPasswordScreen({Key? key}) : super(key: key);
+  const ForgotPasswordScreen();
+
   static const routeName = 'forgotPassword';
 
   @override
@@ -21,13 +22,19 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   late TextTheme textTheme;
   late AppLocalizations appLocalizations;
   final _formKey = GlobalKey<FormState>();
-  final emailController = TextEditingController(text: '');
+  final emailController = TextEditingController();
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     textTheme = Theme.of(context).textTheme;
     appLocalizations = AppLocalizations.of(context)!;
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    super.dispose();
   }
 
   @override
@@ -56,22 +63,17 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20),
                 Text(
                   appLocalizations.forgotPassword,
                   style: textTheme.headline4,
                 ),
-                const SizedBox(
-                  height: 15,
+                const SizedBox(height: 15),
+                Text(
+                  appLocalizations.forgotPasswordCaption,
+                  style: textTheme.caption,
                 ),
-                const Text(
-                  "Don't worry it happens.Please enter the address \n associated with your account.",
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
+                const SizedBox(height: 20),
                 CustomTextFormField(
                   controller: emailController,
                   hintText: appLocalizations.emailAddress,
@@ -82,9 +84,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     email: email,
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20),
                 BlocBuilder<AuthCubit, AuthState>(
                   builder: (context, state) {
                     bool isLoading = false;
@@ -94,8 +94,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           showErrorToast(errorMessage: error),
                       forgotPasswordSuccess: () =>
                           WidgetsBinding.instance!.addPostFrameCallback(
-                        (_) => Fluttertoast.showToast(
-                          msg: 'Please check your email to reset password',
+                        (_) => showDoneSnackBar(
+                          context: context,
+                          message: appLocalizations.checkYourEmail,
                         ),
                       ),
                       orElse: () {},

@@ -48,5 +48,6 @@
     "profile": "الملف الشخصي",
     "editProfile": "تعديل الملف الشخصي",
     "change": "تغيير",
-    "edit": "تعديل"
+    "edit": "تعديل",
+    "confirmAddress" : "تأكيد العنوان"
 }

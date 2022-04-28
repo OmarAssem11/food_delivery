@@ -12,7 +12,7 @@ class ProductItem extends StatelessWidget {
 
         Row(
           children: [
-            Container(
+            SizedBox(
               width: 60,
               height: 60,
               child: Image.network(order.restaurantImage),

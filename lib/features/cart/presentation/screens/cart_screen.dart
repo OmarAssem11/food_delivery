@@ -8,7 +8,7 @@ import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_state.dart';
 import 'package:food_delivery/features/cart/presentation/widgets/ordered_product_item.dart';
 import 'package:food_delivery/features/cart/presentation/widgets/payment_summery.dart';
-import 'package:food_delivery/features/checkout/presentation/screens/checkout_screen.dart';
+import 'package:food_delivery/features/checkout/presentation/screens/address_location_screen.dart';
 import 'package:lottie/lottie.dart';
 
 class CartScreen extends StatefulWidget {
@@ -163,7 +163,7 @@ class _CartScreenState extends State<CartScreen> {
                           CustomElevatedButton(
                             label: appLocalizations.checkout,
                             onPressed: () => Navigator.of(context).pushNamed(
-                              CheckoutScreen.routeName,
+                              AddressLocationScreen.routeName,
                               arguments: subtotal,
                             ),
                             isLoading: false,

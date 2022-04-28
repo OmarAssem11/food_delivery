@@ -6,8 +6,10 @@ part 'order_details_model.g.dart';
 
 @JsonSerializable()
 class OrderDetailsModel {
+  @JsonKey(name: "order")
   final OrderDataModel orderDataModel;
   final String status;
+  @JsonKey(name: "products")
   final ProductDataModel productDataModel;
   final int count;
 

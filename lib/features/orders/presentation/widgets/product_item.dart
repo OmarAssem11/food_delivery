@@ -15,14 +15,14 @@ class ProductItem extends StatelessWidget {
               SizedBox(
                 width: 60,
                 height: 60,
-                child: Image.network(order.productImage!),
+                // child: Image.network(order.productImage!),
               ),
               const SizedBox(
                 width: 20,
               ),
               Column(
                 children: [
-                  Text(order.productName!),
+                  // Text(order.productName!),
                   const SizedBox(
                     height: 5,
                   ),

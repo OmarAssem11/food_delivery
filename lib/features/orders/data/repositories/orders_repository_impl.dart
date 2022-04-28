@@ -33,6 +33,8 @@ class OrdersRepositoryImpl implements OrdersRepository {
           .toList();
       return right(orderDetails);
     } catch (error) {
+      print(error);
+
       return left(const Failure('Error while getting order details'));
     }
   }

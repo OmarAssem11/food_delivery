@@ -15,14 +15,17 @@ class CheckoutRepositoryImpl implements CheckoutRepository {
   );
 
   @override
-  Future<Either<Failure, Unit>> checkout({
+  Future<Either<Failure, int>> checkout({
     required CheckoutEntity checkoutEntity,
   }) async {
+    late int orderId;
     try {
-      await _checkoutRemoteDataSource.checkout(
+      final checkoutResponseModels = await _checkoutRemoteDataSource.checkout(
         checkoutModel: checkoutEntity.toModel,
       );
-      return right(unit);
+      checkoutResponseModels.data.map(
+          (checkoutResponseModel) => orderId = checkoutResponseModel.order.id,).toList();
+      return right(orderId);
     } catch (error) {
       return left(const Failure('Error while checkout'));
     }

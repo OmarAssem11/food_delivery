@@ -5,6 +5,6 @@ part 'checkout_state.freezed.dart';
 class CheckoutState with _$CheckoutState {
   const factory CheckoutState.initial() = CheckoutInitial;
   const factory CheckoutState.loading() = CheckoutLoading;
-  const factory CheckoutState.success() = CheckoutSuccess;
+  const factory CheckoutState.success(final int orderId) = CheckoutSuccess;
   const factory CheckoutState.error(final String error) = CheckoutErrorDetails;
 }

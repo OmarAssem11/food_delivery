@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:food_delivery/core/data/constants/constants.dart';
 import 'package:food_delivery/core/data/models/response_model/response_model.dart';
 import 'package:food_delivery/features/checkout/data/models/checkout_model.dart';
+import 'package:food_delivery/features/checkout/data/models/checkout_response_model.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -14,7 +15,7 @@ abstract class CheckoutApiService {
   factory CheckoutApiService(Dio dio) = _CheckoutApiService;
 
   @POST(checkoutEndpoint)
-  Future<ResponseModel> checkout({
+  Future<ResponseModel<List<CheckoutResponseModel>>> checkout({
     @Body() required CheckoutModel checkoutModel,
   });
 }

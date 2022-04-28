@@ -1,7 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:food_delivery/core/data/constants/constants.dart';
 import 'package:food_delivery/core/domain/error/failure.dart';
-import 'package:food_delivery/features/auth/domain/datasources/local_datasource/auth_local_datasource.dart';
 import 'package:food_delivery/features/profile/data/mappers/profile_mapper.dart';
 import 'package:food_delivery/features/profile/data/models/profile_model.dart';
 import 'package:food_delivery/features/profile/domain/datasources/profile_remote_datasource.dart';
@@ -13,23 +11,16 @@ import 'package:injectable/injectable.dart';
 @LazySingleton(as: ProfileRepository)
 class ProfileRepositoryImpl implements ProfileRepository {
   final ProfileRemoteDataSource _profileRemoteDataSource;
-  final AuthLocalDataSource _authLocalDataSource;
 
-  const ProfileRepositoryImpl(
-    this._profileRemoteDataSource,
-    this._authLocalDataSource,
-  );
+  const ProfileRepositoryImpl(this._profileRemoteDataSource);
 
   @override
   Future<Either<Failure, ProfileEntity>> viewProfile() async {
     try {
-      final token = _authLocalDataSource.getToken()!;
-      final profile = await _profileRemoteDataSource.viewProfile(
-        token: '$tokenType $token',
-      );
+      final profile = await _profileRemoteDataSource.viewProfile();
       return right(profile.fromModel);
     } catch (error) {
-      return left(const Failure('Error while viewing profile'));
+      return left(const Failure('Error while getting profile'));
     }
   }
 
@@ -38,13 +29,11 @@ class ProfileRepositoryImpl implements ProfileRepository {
     required EditProfileData editProfileData,
   }) async {
     try {
-      final token = _authLocalDataSource.getToken()!;
       if (editProfileData.imageFile != null) {
         final uploadedImageUrl = await _profileRemoteDataSource.uploadImage(
           image: editProfileData.imageFile!,
         );
         await _profileRemoteDataSource.editProfile(
-          token: '$tokenType $token',
           profileModel: ProfileModel(
             name: editProfileData.profile.name,
             email: editProfileData.profile.email,
@@ -56,7 +45,6 @@ class ProfileRepositoryImpl implements ProfileRepository {
         );
       } else {
         await _profileRemoteDataSource.editProfile(
-          token: '$tokenType $token',
           profileModel: editProfileData.profile.toModel,
         );
       }

@@ -10,6 +10,7 @@ RestaurantDataModel _$RestaurantDataModelFromJson(Map<String, dynamic> json) =>
     RestaurantDataModel(
       id: json['id'] as int,
       name: json['name'] as String,
+      address: json['address'] as String?,
     );
 
 Map<String, dynamic> _$RestaurantDataModelToJson(
@@ -17,4 +18,5 @@ Map<String, dynamic> _$RestaurantDataModelToJson(
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'address': instance.address,
     };

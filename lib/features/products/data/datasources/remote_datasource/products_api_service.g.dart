@@ -17,14 +17,10 @@ class _ProductsApiService implements ProductsApiService {
 
   @override
   Future<ResponseModel<ProductDetailsModel>> getProductDetails(
-      {required token, required language, required productId}) async {
+      {required productId}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{
-      r'Authorization': token,
-      r'lang': language
-    };
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<ResponseModel<ProductDetailsModel>>(

@@ -1,9 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'order_model.g.dart';
+part 'cart_order_model.g.dart';
 
 @JsonSerializable()
-class OrderModel {
+class CartOrderModel {
   @JsonKey(name: 'restaurant_id')
   final int restaurantId;
   @JsonKey(name: 'product_id')
@@ -11,11 +11,11 @@ class OrderModel {
   @JsonKey(name: 'count')
   final int quantity;
 
-  const OrderModel({
+  const CartOrderModel({
     required this.restaurantId,
     required this.productId,
     required this.quantity,
   });
 
-  Map<String, dynamic> toJson() => _$OrderModelToJson(this);
+  Map<String, dynamic> toJson() => _$CartOrderModelToJson(this);
 }

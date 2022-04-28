@@ -16,15 +16,10 @@ class _CheckoutApiService implements CheckoutApiService {
   String? baseUrl;
 
   @override
-  Future<ResponseModel<dynamic>> checkout(
-      {required token, required language, required checkoutModel}) async {
+  Future<ResponseModel<dynamic>> checkout({required checkoutModel}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{
-      r'Authorization': token,
-      r'lang': language
-    };
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(checkoutModel.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(

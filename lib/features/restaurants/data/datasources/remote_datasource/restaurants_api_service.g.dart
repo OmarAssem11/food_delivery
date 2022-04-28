@@ -16,15 +16,10 @@ class _RestaurantsApiService implements RestaurantsApiService {
   String? baseUrl;
 
   @override
-  Future<ResponseModel<List<RestaurantModel>>> getAllRestaurants(
-      {required language, required token}) async {
+  Future<ResponseModel<List<RestaurantModel>>> getAllRestaurants() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{
-      r'lang': language,
-      r'Authorization': token
-    };
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<ResponseModel<List<RestaurantModel>>>(
@@ -44,14 +39,10 @@ class _RestaurantsApiService implements RestaurantsApiService {
 
   @override
   Future<ResponseModel<RestaurantDetailsModel>> getRestaurantDetails(
-      {required language, required token, required restaurantId}) async {
+      {required restaurantId}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{
-      r'lang': language,
-      r'Authorization': token
-    };
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<ResponseModel<RestaurantDetailsModel>>(

@@ -15,8 +15,6 @@ abstract class CheckoutApiService {
 
   @POST(checkoutEndpoint)
   Future<ResponseModel> checkout({
-    @Header(authorization) required String token,
-    @Header(languageHeader) required String language,
     @Body() required CheckoutModel checkoutModel,
   });
 }

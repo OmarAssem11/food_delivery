@@ -1,6 +1,7 @@
 import 'package:food_delivery/core/data/models/response_model/response_model.dart';
 import 'package:food_delivery/features/checkout/data/datasources/remote_datasource/checkout_api_service.dart';
 import 'package:food_delivery/features/checkout/data/models/checkout_model.dart';
+import 'package:food_delivery/features/checkout/data/models/checkout_response_model.dart';
 import 'package:food_delivery/features/checkout/domain/datasources/remote_datasource/checkout_remote_datasource.dart';
 import 'package:injectable/injectable.dart';
 
@@ -11,7 +12,7 @@ class CheckoutRemoteDataSourceImpl implements CheckoutRemoteDataSource {
   const CheckoutRemoteDataSourceImpl(this._checkoutApiService);
 
   @override
-  Future<ResponseModel> checkout({
+  Future<ResponseModel<List<CheckoutResponseModel>>> checkout({
     required CheckoutModel checkoutModel,
   }) =>
       _checkoutApiService.checkout(

@@ -26,8 +26,10 @@ class _$CheckoutStateTearOff {
     return const CheckoutLoading();
   }
 
-  CheckoutSuccess success() {
-    return const CheckoutSuccess();
+  CheckoutSuccess success(int orderId) {
+    return CheckoutSuccess(
+      orderId,
+    );
   }
 
   CheckoutErrorDetails error(String error) {
@@ -46,7 +48,7 @@ mixin _$CheckoutState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function(int orderId) success,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,7 +56,7 @@ mixin _$CheckoutState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(int orderId)? success,
     TResult Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,7 +64,7 @@ mixin _$CheckoutState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(int orderId)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -154,7 +156,7 @@ class _$CheckoutInitial implements CheckoutInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function(int orderId) success,
     required TResult Function(String error) error,
   }) {
     return initial();
@@ -165,7 +167,7 @@ class _$CheckoutInitial implements CheckoutInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(int orderId)? success,
     TResult Function(String error)? error,
   }) {
     return initial?.call();
@@ -176,7 +178,7 @@ class _$CheckoutInitial implements CheckoutInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(int orderId)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -271,7 +273,7 @@ class _$CheckoutLoading implements CheckoutLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function(int orderId) success,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -282,7 +284,7 @@ class _$CheckoutLoading implements CheckoutLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(int orderId)? success,
     TResult Function(String error)? error,
   }) {
     return loading?.call();
@@ -293,7 +295,7 @@ class _$CheckoutLoading implements CheckoutLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(int orderId)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -350,6 +352,7 @@ abstract class $CheckoutSuccessCopyWith<$Res> {
   factory $CheckoutSuccessCopyWith(
           CheckoutSuccess value, $Res Function(CheckoutSuccess) then) =
       _$CheckoutSuccessCopyWithImpl<$Res>;
+  $Res call({int orderId});
 }
 
 /// @nodoc
@@ -362,36 +365,59 @@ class _$CheckoutSuccessCopyWithImpl<$Res>
 
   @override
   CheckoutSuccess get _value => super._value as CheckoutSuccess;
+
+  @override
+  $Res call({
+    Object? orderId = freezed,
+  }) {
+    return _then(CheckoutSuccess(
+      orderId == freezed
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$CheckoutSuccess implements CheckoutSuccess {
-  const _$CheckoutSuccess();
+  const _$CheckoutSuccess(this.orderId);
+
+  @override
+  final int orderId;
 
   @override
   String toString() {
-    return 'CheckoutState.success()';
+    return 'CheckoutState.success(orderId: $orderId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is CheckoutSuccess);
+        (other.runtimeType == runtimeType &&
+            other is CheckoutSuccess &&
+            const DeepCollectionEquality().equals(other.orderId, orderId));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(orderId));
+
+  @JsonKey(ignore: true)
+  @override
+  $CheckoutSuccessCopyWith<CheckoutSuccess> get copyWith =>
+      _$CheckoutSuccessCopyWithImpl<CheckoutSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function(int orderId) success,
     required TResult Function(String error) error,
   }) {
-    return success();
+    return success(orderId);
   }
 
   @override
@@ -399,10 +425,10 @@ class _$CheckoutSuccess implements CheckoutSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(int orderId)? success,
     TResult Function(String error)? error,
   }) {
-    return success?.call();
+    return success?.call(orderId);
   }
 
   @override
@@ -410,12 +436,12 @@ class _$CheckoutSuccess implements CheckoutSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(int orderId)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success();
+      return success(orderId);
     }
     return orElse();
   }
@@ -459,7 +485,12 @@ class _$CheckoutSuccess implements CheckoutSuccess {
 }
 
 abstract class CheckoutSuccess implements CheckoutState {
-  const factory CheckoutSuccess() = _$CheckoutSuccess;
+  const factory CheckoutSuccess(int orderId) = _$CheckoutSuccess;
+
+  int get orderId;
+  @JsonKey(ignore: true)
+  $CheckoutSuccessCopyWith<CheckoutSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -530,7 +561,7 @@ class _$CheckoutErrorDetails implements CheckoutErrorDetails {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function(int orderId) success,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -541,7 +572,7 @@ class _$CheckoutErrorDetails implements CheckoutErrorDetails {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(int orderId)? success,
     TResult Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -552,7 +583,7 @@ class _$CheckoutErrorDetails implements CheckoutErrorDetails {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(int orderId)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {

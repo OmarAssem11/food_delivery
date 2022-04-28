@@ -33,7 +33,6 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
     subtotal = ModalRoute.of(context)!.settings.arguments! as double;
     appLocalizations = AppLocalizations.of(context)!;
   }
-
   @override
   void dispose() {
     controller.dispose();

@@ -48,5 +48,6 @@
     "profile": "Profile",
     "editProfile": "Edit profile",
     "change": "Change",
-    "edit": "Edit"
+    "edit": "Edit",
+    "confirmAddress":"Confirm address"
 }

@@ -34,7 +34,6 @@ class FoodDeliveryApp extends StatelessWidget {
             locale: Locale(state is ChangeLangSuccess ? state.langCode : 'en'),
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            initialRoute: OrderDetailsScreen.routeName,
           );
         },
       ),

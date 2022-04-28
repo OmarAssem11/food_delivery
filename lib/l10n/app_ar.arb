@@ -49,5 +49,7 @@
     "editProfile": "تعديل الملف الشخصي",
     "change": "تغيير",
     "edit": "تعديل",
-    "confirmAddress" : "تأكيد العنوان"
+    "confirmAddress" : "تأكيد العنوان",
+    "orderId": "رقم الطلب "
+
 }

@@ -49,5 +49,6 @@
     "editProfile": "Edit profile",
     "change": "Change",
     "edit": "Edit",
-    "confirmAddress":"Confirm address"
+    "confirmAddress":"Confirm address",
+    "orderId": "Order Id "
 }

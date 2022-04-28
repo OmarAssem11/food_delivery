@@ -98,10 +98,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SizedBox(
                         height: 5,
                       ),
-                      TextButton(onPressed: ()=> Navigator.of(context)
-                                .popAndPushNamed(ForgotPasswordScreen.routeName),
-                      child:  Text(appLocalizations.forgotPassword),
-                        ),
+                      TextButton(
+                        onPressed: () => Navigator.of(context)
+                            .popAndPushNamed(ForgotPasswordScreen.routeName),
+                        child: Text(appLocalizations.forgotPassword),
+                      ),
                       const SizedBox(
                         height: 20,
                       ),

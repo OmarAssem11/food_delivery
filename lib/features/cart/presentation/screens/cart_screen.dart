@@ -76,7 +76,6 @@ class _CartScreenState extends State<CartScreen> {
                       cartEntity.product.price * cartEntity.quantity,
                 )
                 .toList();
-            print(subtotal);
             return cartProductsList.isEmpty
                 ? Scaffold(
                     appBar: AppBar(

@@ -1,4 +1,3 @@
-import 'package:food_delivery/features/cart/domain/entities/cart_product.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'cart_state.freezed.dart';
@@ -23,9 +22,7 @@ class CartState with _$CartState {
       DeleteCartErrorDetails;
 
   const factory CartState.getCartLoading() = GetCartLoading;
-  const factory CartState.getCartSuccess(
-    final List<CartProduct> cartProductsList,
-  ) = GetCartSuccess;
+  const factory CartState.getCartSuccess() = GetCartSuccess;
   const factory CartState.getCartError(final String error) =
       GetCartErrorDetails;
 }

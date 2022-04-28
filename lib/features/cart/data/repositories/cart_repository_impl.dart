@@ -3,8 +3,8 @@ import 'package:food_delivery/core/domain/error/failure.dart';
 import 'package:food_delivery/features/cart/data/mappers/cart_order_mapper.dart';
 import 'package:food_delivery/features/cart/data/mappers/cart_product_mapper.dart';
 import 'package:food_delivery/features/cart/domain/datasources/remote_datasource/cart_remote_datasource.dart';
-import 'package:food_delivery/features/cart/domain/entities/cart_order.dart';
-import 'package:food_delivery/features/cart/domain/entities/cart_product.dart';
+import 'package:food_delivery/features/cart/domain/entities/cart_order/cart_order.dart';
+import 'package:food_delivery/features/cart/domain/entities/cart_product/cart_product.dart';
 import 'package:food_delivery/features/cart/domain/repositories/cart_repository.dart';
 import 'package:injectable/injectable.dart';
 

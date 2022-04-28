@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:food_delivery/features/restaurants/data/models/restaurant_data_model/restaurant_data_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -7,7 +9,8 @@ part 'product_data_model.g.dart';
 class ProductDataModel {
   final String name;
   final String image;
-  final String price;
+  final int price;
+  @JsonKey(name: "restarunt")
   final List<RestaurantDataModel> restaurant;
 
   ProductDataModel({

@@ -25,7 +25,7 @@ class _OrdersApiService implements OrdersApiService {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<ResponseModel<List<OrderDetailsModel>>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'order/details/${orderId}',
+                .compose(_dio.options, 'order/userorder/${orderId}',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = ResponseModel<List<OrderDetailsModel>>.fromJson(

@@ -79,7 +79,9 @@ import '../features/orders/domain/repositories/orders_repository.dart' as _i58;
 import '../features/orders/domain/usecases/get_order_details_use_case.dart'
     as _i70;
 import '../features/orders/domain/usecases/get_orders_usecase.dart' as _i71;
-import '../features/orders/presentation/bloc/orders_cubit.dart' as _i73;
+import '../features/orders/presentation/bloc/order%20details/cubit/order_details_cubit.dart'
+    as _i73;
+import '../features/orders/presentation/bloc/orders_cubit.dart' as _i74;
 import '../features/products/data/datasources/remote_datasource/products_api_service.dart'
     as _i7;
 import '../features/products/data/datasources/remote_datasource/products_remote_datasource_impl.dart'
@@ -121,7 +123,7 @@ import '../features/restaurants/domain/usecases/get_restaurants_list_usecases.da
     as _i50;
 import '../features/restaurants/presentation/bloc/restaurants_cubit.dart'
     as _i63;
-import 'app_module.dart' as _i74; // ignore_for_file: unnecessary_lambdas
+import 'app_module.dart' as _i75; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -245,9 +247,11 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => _i71.GetOrdersListUseCase(get<_i58.OrdersRepository>()));
   gh.lazySingleton<_i72.LocalizationCubit>(() => _i72.LocalizationCubit(
       get<_i67.ChangeLanguageUseCase>(), get<_i69.GetLanguageUseCase>()));
-  gh.factory<_i73.OrdersCubit>(() => _i73.OrdersCubit(
+  gh.factory<_i73.OrderDetailsCubit>(
+      () => _i73.OrderDetailsCubit(get<_i70.GetOrderDetailsUseCase>()));
+  gh.factory<_i74.OrdersCubit>(() => _i74.OrdersCubit(
       get<_i71.GetOrdersListUseCase>(), get<_i70.GetOrderDetailsUseCase>()));
   return get;
 }
 
-class _$AppModule extends _i74.AppModule {}
+class _$AppModule extends _i75.AppModule {}

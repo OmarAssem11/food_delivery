@@ -9,15 +9,15 @@ part of 'order_data_model.dart';
 OrderDataModel _$OrderDataModelFromJson(Map<String, dynamic> json) =>
     OrderDataModel(
       id: json['id'] as int,
-      createdTime: json['created_at'] as String,
-      totalPrice: json['totalprice'] as int?,
-      deliveryFee: json['delivery_fee'] as int?,
+      dateTime: json['created_at'] as String,
+      totalPrice: (json['totalprice'] as num?)?.toDouble(),
+      deliveryFee: (json['delivery_fee'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$OrderDataModelToJson(OrderDataModel instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'created_at': instance.dateTime,
       'delivery_fee': instance.deliveryFee,
       'totalprice': instance.totalPrice,
-      'created_at': instance.createdTime,
     };

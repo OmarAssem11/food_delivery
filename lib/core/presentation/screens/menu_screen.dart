@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:food_delivery/features/profile/presentation/screens/view_profile_screen.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({
@@ -32,15 +31,11 @@ class MenuScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
-                  InkWell(
-                    onTap: () => Navigator.of(context)
-                        .pushNamed(ViewProfileScreen.routeName),
-                    child: const CircleAvatar(
-                      backgroundImage: NetworkImage(
-                        'https://img.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg?t=st=1650507204~exp=1650507804~hmac=9fd6ecf7f782504c8dcee7a4b77751477aed00e7a5992a680fa18b9e201473e8&w=1060',
-                      ),
-                      radius: 50,
+                  const CircleAvatar(
+                    backgroundImage: NetworkImage(
+                      'https://img.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg?t=st=1650507204~exp=1650507804~hmac=9fd6ecf7f782504c8dcee7a4b77751477aed00e7a5992a680fa18b9e201473e8&w=1060',
                     ),
+                    radius: 50,
                   ),
                   const SizedBox(height: 16),
                   Text(

@@ -95,17 +95,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       PasswordTextFormField(controller: passwordController),
-                      const SizedBox(
-                        height: 5,
-                      ),
+                      const SizedBox(height: 5),
                       TextButton(
                         onPressed: () => Navigator.of(context)
-                            .popAndPushNamed(ForgotPasswordScreen.routeName),
+                            .pushNamed(ForgotPasswordScreen.routeName),
                         child: Text(appLocalizations.forgotPassword),
                       ),
-                      const SizedBox(
-                        height: 20,
-                      ),
+                      const SizedBox(height: 5),
                       BlocBuilder<AuthCubit, AuthState>(
                         builder: (context, state) {
                           bool isLoading = false;
@@ -135,9 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           );
                         },
                       ),
-                      const SizedBox(
-                        height: 30,
-                      ),
+                      const SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

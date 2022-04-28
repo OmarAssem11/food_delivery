@@ -7,8 +7,9 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class AddressLocationScreen extends StatefulWidget {
-  const AddressLocationScreen({Key? key}) : super(key: key);
-  static const routeName = 'address';
+  const AddressLocationScreen();
+
+  static const routeName = 'address_location';
 
   @override
   State<AddressLocationScreen> createState() => _AddressLocationScreenState();
@@ -33,6 +34,7 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
     subtotal = ModalRoute.of(context)!.settings.arguments! as double;
     appLocalizations = AppLocalizations.of(context)!;
   }
+
   @override
   void dispose() {
     controller.dispose();
@@ -79,8 +81,6 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
               margin: const EdgeInsets.only(bottom: 25),
               child: ElevatedButton(
                 onPressed: () async {
-                  // final String address =
-                  //     await getAddressFromLatLong(currentPosition!);
                   Navigator.of(context).pushNamed(
                     CheckoutScreen.routeName,
                     arguments: CheckoutArguments(
@@ -118,21 +118,22 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
 
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      showErrorToast(errorMessage: "Please enable Your Location Service");
+      showErrorToast(errorMessage: appLocalizations.pleaseEnableYourLocation);
     }
 
     permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
-        showErrorToast(errorMessage: "Location permissions are denied");
+        showErrorToast(
+          errorMessage: appLocalizations.locationPermissionsDenied,
+        );
       }
     }
 
     if (permission == LocationPermission.deniedForever) {
       showErrorToast(
-        errorMessage:
-            "Location permissions are permanently denied, we cannot request permissions.",
+        errorMessage: appLocalizations.locationPermissionsPermanentlyDenied,
       );
     }
   }
@@ -162,5 +163,8 @@ class CheckoutArguments {
   final String address;
   final double subTotal;
 
-  CheckoutArguments({required this.address, required this.subTotal});
+  const CheckoutArguments({
+    required this.address,
+    required this.subTotal,
+  });
 }

@@ -6,13 +6,13 @@ class Order extends Equatable {
   final String dateTime;
   final String restaurantName;
   final String restaurantImage;
-  final String? subTotal;
-  final String? deliveryFee;
-  final String? totalPrice;
+  final double? subTotal;
+  final double? deliveryFee;
+  final double? totalPrice;
   final String? restaurantAddress;
   final String? productName;
   final String? productImage;
-  final int? price;
+  final double? price;
   final int? count;
 
   const Order({

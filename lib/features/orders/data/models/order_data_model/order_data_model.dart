@@ -1,19 +1,20 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:json_annotation/json_annotation.dart';
+
 part 'order_data_model.g.dart';
 
 @JsonSerializable()
 class OrderDataModel {
   final int id;
-  @JsonKey(name: "delivery_fee")
-  final int? deliveryFee;
-  @JsonKey(name: "totalprice")
-  final int? totalPrice;
-  @JsonKey(name: "created_at")
-  final String createdTime;
+  @JsonKey(name: 'created_at')
+  final String dateTime;
+  @JsonKey(name: 'delivery_fee')
+  final double? deliveryFee;
+  @JsonKey(name: 'totalprice')
+  final double? totalPrice;
 
   OrderDataModel({
     required this.id,
-    required this.createdTime,
+    required this.dateTime,
     this.totalPrice,
     this.deliveryFee,
   });

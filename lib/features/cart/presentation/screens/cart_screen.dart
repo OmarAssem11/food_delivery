@@ -72,8 +72,8 @@ class _CartScreenState extends State<CartScreen> {
             double subtotal = 0;
             cartProductsList
                 .map(
-                  (cartEntity) => subtotal +=
-                      cartEntity.product.price * cartEntity.quantity,
+                  (cartProduct) => subtotal +=
+                      cartProduct.product.price * cartProduct.quantity,
                 )
                 .toList();
             return cartProductsList.isEmpty

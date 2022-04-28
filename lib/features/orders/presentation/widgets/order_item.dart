@@ -1,28 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:food_delivery/core/presentation/constants/constants.dart';
 import 'package:food_delivery/features/orders/domain/entities/order.dart';
+import 'package:food_delivery/features/orders/presentation/screens/order_details_screen.dart';
 import 'package:intl/intl.dart';
 
-import '../screens/order_details_screen.dart';
-
 class OrderItem extends StatelessWidget {
-  const OrderItem({required this.orderEntity});
+  const OrderItem({required this.order});
 
-  final Order orderEntity;
+  final Order order;
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     final appLocalizations = AppLocalizations.of(context)!;
-    final dateFormat =
-        DateFormat('d MMMM yyyy hh:mm ', appLocalizations.localeName);
+    final dateFormat = DateFormat(orderDateFormat, appLocalizations.localeName);
     return InkWell(
       onTap: () => Navigator.of(context).pushNamed(
         OrderDetailsScreen.routeName,
-        arguments: orderEntity.id,
+        arguments: order.id,
       ),
       child: Container(
-        padding: const EdgeInsets.only(left: 20, right: 10, top: 10),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 10,
+        ),
         child: Column(
           children: [
             Row(
@@ -30,7 +32,11 @@ class OrderItem extends StatelessWidget {
               children: [
                 Container(
                   padding: const EdgeInsets.only(
-                      bottom: 7, top: 7, left: 5, right: 5),
+                    bottom: 7,
+                    top: 7,
+                    left: 5,
+                    right: 5,
+                  ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(
@@ -38,7 +44,7 @@ class OrderItem extends StatelessWidget {
                     ),
                   ),
                   child: Image.network(
-                    orderEntity.restaurantImage,
+                    order.restaurantImage,
                     width: 60,
                     height: 60,
                   ),
@@ -50,35 +56,29 @@ class OrderItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      orderEntity.restaurantName,
+                      order.restaurantName,
                       style: textTheme.headline5,
                     ),
                     const SizedBox(
                       height: 7,
                     ),
                     Text(
-                      orderEntity.status,
+                      order.status,
                       style: textTheme.subtitle1?.copyWith(color: Colors.green),
                     ),
                     const SizedBox(
                       height: 7,
                     ),
                     Text(
-                      dateFormat.format(DateTime.parse(orderEntity.dateTime)),
+                      dateFormat.format(DateTime.parse(order.dateTime)),
                       style: textTheme.caption,
                     ),
                     const SizedBox(
                       height: 7,
                     ),
-                    Row(
-                      children: [
-                        Text(appLocalizations.orderId,
-                            style: textTheme.caption),
-                        Text(
-                          orderEntity.id.toString(),
-                          style: textTheme.caption,
-                        ),
-                      ],
+                    Text(
+                      '${appLocalizations.orderId}: ${order.id}',
+                      style: textTheme.caption,
                     ),
                   ],
                 ),

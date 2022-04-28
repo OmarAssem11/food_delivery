@@ -4,14 +4,14 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class QuantityPriceCounter extends StatefulWidget {
   final double price;
   final ValueChanged<int> onValueChanged;
-  final int? initialValue;
   final bool isInCart;
+  final int? initialValue;
 
   const QuantityPriceCounter({
     required this.price,
     required this.onValueChanged,
-    this.initialValue,
     required this.isInCart,
+    this.initialValue,
   });
 
   @override

@@ -111,11 +111,11 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                   padding: const EdgeInsets.all(15),
                   child: BlocConsumer<CartCubit, CartState>(
                     listener: (context, state) {
-                      if (state is AddToCartLoading) {
-                        isLoading = true;
-                      } else if (state is AddToCartErrorDetails) {
-                        showErrorToast(errorMessage: state.error);
-                      }
+                      state.mapOrNull(
+                        addToCartLoading: (_) => isLoading = true,
+                        addToCartError: (state) =>
+                            showErrorToast(errorMessage: state.error),
+                      );
                     },
                     builder: (context, state) {
                       return state.maybeWhen(

@@ -54,5 +54,7 @@
     "checkYourEmail": "Please check your email to reset password",
     "pleaseEnableYourLocation": "Please enable Your Location Service",
     "locationPermissionsDenied": "Location permissions are denied",
-    "locationPermissionsPermanentlyDenied": "Location permissions are permanently denied, we cannot request permissions"
+    "locationPermissionsPermanentlyDenied": "Location permissions are permanently denied, we cannot request permissions",
+    "somethingWentWrong": "Something went wrong!",
+    "retry": "Retry"
 }

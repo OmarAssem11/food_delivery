@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
+import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:food_delivery/features/checkout/presentation/screens/checkout_screen.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -79,17 +80,22 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
             alignment: Alignment.bottomCenter,
             child: Container(
               margin: const EdgeInsets.only(bottom: 25),
-              child: ElevatedButton(
-                onPressed: () async {
-                  Navigator.of(context).pushNamed(
-                    CheckoutScreen.routeName,
-                    arguments: CheckoutArguments(
-                      address: await getAddressFromLatLong(currentPosition!),
-                      subTotal: subtotal,
-                    ),
-                  );
-                },
-                child: Text(appLocalizations.confirmAddress),
+              child: SizedBox(
+                height: 45,
+                width: 231,
+                child: CustomElevatedButton(
+                  onPressed: () async {
+                    Navigator.of(context).pushNamed(
+                      CheckoutScreen.routeName,
+                      arguments: CheckoutArguments(
+                        address: await getAddressFromLatLong(currentPosition!),
+                        subTotal: subtotal,
+                      ),
+                    );
+                  },
+                  label: appLocalizations.confirmAddress,
+                  isLoading: false,
+                ),
               ),
             ),
           ),

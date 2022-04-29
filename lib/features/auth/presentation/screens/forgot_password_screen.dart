@@ -57,7 +57,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     color: Theme.of(context).colorScheme.primary,
                     image: const DecorationImage(
                       image: AssetImage(
-                        'assets/images/forgot password.png',
+                        'assets/images/forgot_password.png',
                       ),
                       fit: BoxFit.cover,
                     ),

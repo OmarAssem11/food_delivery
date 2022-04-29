@@ -5,4 +5,4 @@ const List<String> languages = ['English', 'العربية'];
 const emailFormat =
     r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
 //Data formate
-const orderDateFormat = 'd MMMM yyyy hh:mm';
+const orderDateFormat = 'd MMMM yyyy  hh:mm';

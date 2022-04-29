@@ -8,7 +8,7 @@ extension OrderDetailsMapper on OrderDetailsModel {
         deliveryFee: orderDataModel.deliveryFee,
         status: status,
         count: count,
-        dateTime: orderDataModel.dateTime,
+        dateTime: orderDataModel.dateTime!,
         productName: productDataModel.name,
         productImage: productDataModel.image,
         restaurantName: productDataModel.restaurantDataModels[0].name,

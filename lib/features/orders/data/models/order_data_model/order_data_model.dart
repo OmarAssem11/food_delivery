@@ -6,7 +6,7 @@ part 'order_data_model.g.dart';
 class OrderDataModel {
   final int id;
   @JsonKey(name: 'created_at')
-  final String dateTime;
+  final String? dateTime;
   @JsonKey(name: 'delivery_fee')
   final double? deliveryFee;
   @JsonKey(name: 'totalprice')
@@ -14,7 +14,7 @@ class OrderDataModel {
 
   OrderDataModel({
     required this.id,
-    required this.dateTime,
+    this.dateTime,
     this.totalPrice,
     this.deliveryFee,
   });

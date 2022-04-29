@@ -5,7 +5,7 @@ extension OrderMapper on OrderModel {
   Order get fromModel => Order(
         id: order.id,
         status: status,
-        dateTime: order.dateTime,
+        dateTime: order.dateTime!,
         restaurantName: restaurantDataModels[0].name,
         restaurantImage: restaurantDataModels[0].imageUrl!,
       );

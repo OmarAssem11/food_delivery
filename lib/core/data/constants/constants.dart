@@ -1,5 +1,5 @@
 //BaseUrls
-const baseUrl = 'http://ca73-156-211-224-109.ngrok.io/api/';
+const baseUrl = 'http://9ae5-156-194-46-208.ngrok.io/api/';
 const imageApiBaseUrl = 'https://api.imgbb.com/1/upload';
 //Endpoints
 const registerEndpoint = 'register';

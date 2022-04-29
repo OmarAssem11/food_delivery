@@ -4,7 +4,10 @@ import 'package:food_delivery/features/orders/domain/entities/order.dart';
 extension OrderDetailsMapper on OrderDetailsModel {
   Order get fromModel => Order(
         id: orderDataModel.id,
+        subTotal: orderDataModel.totalPrice,
+        deliveryFee: orderDataModel.deliveryFee,
         status: status,
+        count: count,
         dateTime: orderDataModel.dateTime,
         productName: productDataModel.name,
         productImage: productDataModel.image,

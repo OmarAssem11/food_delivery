@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_delivery/core/presentation/util/error_toast.dart';
+import 'package:food_delivery/core/presentation/screens/error_screen.dart';
 import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_cubit.dart';
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_state.dart';
@@ -17,13 +17,14 @@ class RestaurantDetailsScreen extends StatefulWidget {
 }
 
 class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen> {
+  late int restaurantId;
   late TextTheme textTheme;
   late ColorScheme colorScheme;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final restaurantId = ModalRoute.of(context)!.settings.arguments! as int;
+    restaurantId = ModalRoute.of(context)!.settings.arguments! as int;
     BlocProvider.of<RestaurantsCubit>(context)
         .getRestaurantDetails(restaurantId: restaurantId);
     textTheme = Theme.of(context).textTheme;
@@ -37,10 +38,10 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen> {
         builder: (context, state) {
           return state.maybeWhen(
             getRestaurantDetailsLoading: () => const LoadingIndicator(),
-            getRestaurantDetailsError: (error) {
-              showErrorToast(errorMessage: error);
-              return Container();
-            },
+            getRestaurantDetailsError: (_) => ErrorScreen(
+              onRetry: () => BlocProvider.of<RestaurantsCubit>(context)
+                  .getRestaurantDetails(restaurantId: restaurantId),
+            ),
             getRestaurantDetailsSuccess: (restaurant) => Column(
               children: [
                 Stack(

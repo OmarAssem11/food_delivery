@@ -36,7 +36,7 @@
     "addToBasket": "إضافة الي السلة",
     "itemAddedToYourBasket": "تم إضافة العنصر إلي السلة",
     "viewBasket": "عرض السلة",
-    "yourBasketIsEmpty": "!السلة فارغة",
+    "yourBasketIsEmpty": "السلة فارغة!",
     "address": "العنوان",
     "phone": "الهاتف",
     "phoneNumber": "رقم الهاتف",
@@ -54,5 +54,7 @@
     "checkYourEmail": "برجاء التحقق من بريدك الإلكتروني لتغيير كلمة السر",
     "pleaseEnableYourLocation": "برجاء قم بتفعيل تحديد الموقع",
     "locationPermissionsDenied": "تصاريح الوصول إلي موقع الهاتف مرفوضة",
-    "locationPermissionsPermanentlyDenied": "تصاريح الوصول إلي موقع الهاتف مرفوضة نهائيا، لا نستطيع طلب التصاريح"
+    "locationPermissionsPermanentlyDenied": "تصاريح الوصول إلي موقع الهاتف مرفوضة نهائيا، لا نستطيع طلب التصاريح",
+    "somethingWentWrong": "لقد حدث خطأ ما!",
+    "retry": "أعد المحاولة"
 }

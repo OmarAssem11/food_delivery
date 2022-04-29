@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:food_delivery/core/presentation/util/error_toast.dart';
+import 'package:food_delivery/core/presentation/screens/error_screen.dart';
 import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
 import 'package:food_delivery/features/orders/presentation/bloc/orders_cubit.dart';
 import 'package:food_delivery/features/orders/presentation/bloc/orders_state.dart';
@@ -38,18 +38,23 @@ class _OrdersScreenState extends State<OrdersScreen> {
         builder: (context, state) {
           return state.maybeWhen(
             getOrdersListLoading: () => const LoadingIndicator(),
-            getOrdersListError: (error) {
-              showErrorToast(errorMessage: error);
-              return Container();
-            },
+            getOrdersListError: (_) => ErrorScreen(
+              onRetry: BlocProvider.of<OrdersCubit>(context).getOrders,
+            ),
             getOrdersListSuccess: (orders) => ListView.separated(
-              itemBuilder: (context, index) => OrderItem(
-                order: orders[index],
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: OrderItem(
+                    order: orders[index],
+                  ),
+                ),
               ),
               itemCount: orders.length,
               separatorBuilder: (context, index) => Divider(
                 thickness: 1,
-                height: 8,
+                height: 1,
                 color: Theme.of(context).colorScheme.surface,
               ),
             ),

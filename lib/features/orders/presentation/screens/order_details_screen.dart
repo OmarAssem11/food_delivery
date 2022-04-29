@@ -58,7 +58,11 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                   ),
                   const SizedBox(height: 16),
                   Lottie.asset(
-                    'assets/lottie/${order[0].status.toLowerCase()}.json',
+                    order[0].status == 'Pending'
+                        ? 'assets/lottie/pending.json'
+                        : order[0].status == 'Out for Delivery'
+                            ? 'assets/lottie/processing.json'
+                            : 'assets/lottie/delivered.json',
                   ),
                   const Divider(thickness: 1),
                   ListView.separated(

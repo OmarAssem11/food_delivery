@@ -43,11 +43,11 @@ class _OrdersScreenState extends State<OrdersScreen> {
             ),
             getOrdersListSuccess: (orders) => ListView.separated(
               itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8),
                 child: Padding(
                   padding: const EdgeInsets.all(8),
                   child: OrderItem(
-                    order: orders[index],
+                    order: orders.reversed.toList()[index],
                   ),
                 ),
               ),

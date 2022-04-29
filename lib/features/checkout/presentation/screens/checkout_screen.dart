@@ -121,7 +121,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               const SizedBox(height: 16),
               PaymentSummery(
                 subtotal: arguments.subTotal,
-                deliveryFee: 30,
+                deliveryFee: 35,
               ),
               const Spacer(),
               BlocConsumer<CheckoutCubit, CheckoutState>(

@@ -20,7 +20,7 @@ class OrderStatusText extends StatelessWidget {
             'Preparing',
             style: textStyle.copyWith(color: Colors.orange),
           )
-        : status == 'Processing'
+        : status == 'Out for Delivery'
             ? Text(
                 'On the way',
                 style: textStyle.copyWith(color: Colors.blue),

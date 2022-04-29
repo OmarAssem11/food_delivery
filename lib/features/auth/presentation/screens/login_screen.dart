@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
   late TextTheme textTheme;
   late AppLocalizations appLocalizations;
   final _formKey = GlobalKey<FormState>();
-  final emailController = TextEditingController(text: 'omar@gmail.com');
+  final emailController = TextEditingController(text: 'omarassem@gmail.com');
   final passwordController = TextEditingController(text: '12345678');
 
   @override

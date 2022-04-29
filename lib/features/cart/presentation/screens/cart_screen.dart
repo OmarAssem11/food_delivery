@@ -154,7 +154,7 @@ class _CartScreenState extends State<CartScreen> {
                           const SizedBox(height: 16),
                           PaymentSummery(
                             subtotal: subtotal,
-                            deliveryFee: 30,
+                            deliveryFee: 35,
                           ),
                           const SizedBox(height: 24),
                           CustomElevatedButton(

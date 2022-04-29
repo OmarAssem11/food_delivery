@@ -27,12 +27,7 @@ class OrderItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: const EdgeInsets.only(
-                  bottom: 7,
-                  top: 7,
-                  left: 5,
-                  right: 5,
-                ),
+                padding: const EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   border: Border.all(
@@ -41,13 +36,12 @@ class OrderItem extends StatelessWidget {
                 ),
                 child: Image.network(
                   order.restaurantImage,
-                  width: 60,
-                  height: 60,
+                  fit: BoxFit.cover,
+                  width: 75,
+                  height: 75,
                 ),
               ),
-              const SizedBox(
-                width: 17,
-              ),
+              const SizedBox(width: 16),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -55,23 +49,17 @@ class OrderItem extends StatelessWidget {
                     order.restaurantName,
                     style: textTheme.headline5,
                   ),
-                  const SizedBox(
-                    height: 7,
-                  ),
+                  const SizedBox(height: 6),
                   OrderStatusText(
                     status: order.status,
                     isInOrderDetails: false,
                   ),
-                  const SizedBox(
-                    height: 7,
-                  ),
+                  const SizedBox(height: 7),
                   Text(
                     dateFormat.format(DateTime.parse(order.dateTime)),
                     style: textTheme.caption,
                   ),
-                  const SizedBox(
-                    height: 7,
-                  ),
+                  const SizedBox(height: 7),
                   Text(
                     '${appLocalizations.orderId}: ${order.id}',
                     style: textTheme.caption,

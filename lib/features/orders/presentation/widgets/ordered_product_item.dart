@@ -8,33 +8,22 @@ class OrderedProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       children: [
-        Center(
-          child: Row(
-            children: [
-              SizedBox(
-                height: 80,
-                width: 80,
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.all(Radius.circular(8)),
-                  child: Image.network(
-                    order.productImage!,
-                  ),
-                ),
-              ),
-              const SizedBox(width: 20),
-              Column(
-                children: [
-                  Text(
-                    '${order.count}  x  ${order.productName!}',
-                    style: Theme.of(context).textTheme.bodyText1,
-                  ),
-                  const SizedBox(height: 5),
-                ],
-              )
-            ],
+        SizedBox(
+          height: 75,
+          width: 75,
+          child: ClipRRect(
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
+            child: Image.network(
+              order.productImage!,
+            ),
           ),
+        ),
+        const SizedBox(width: 12),
+        Text(
+          '${order.count}  x  ${order.productName!}',
+          style: Theme.of(context).textTheme.bodyText1,
         ),
       ],
     );

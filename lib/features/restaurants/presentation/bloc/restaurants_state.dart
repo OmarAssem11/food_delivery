@@ -11,13 +11,13 @@ class RestaurantsState with _$RestaurantsState {
   const factory RestaurantsState.getAllRestaurantSuccess(
     final List<Restaurant> restaurantsList,
   ) = GetAllRestaurantSuccess;
-  const factory RestaurantsState.getAllRestaurantError(final String error) =
-      GetAllRestaurantErrorDetails;
+  const factory RestaurantsState.getAllRestaurantError() =
+      GetAllRestaurantError;
   const factory RestaurantsState.getRestaurantDetailsLoading() =
       GetRestaurantDetailsLoading;
   const factory RestaurantsState.getRestaurantDetailsSuccess(
     final Restaurant restaurant,
   ) = GetRestaurantDetailsSuccess;
-  const factory RestaurantsState.getRestaurantDetailsError(final String error) =
-      GetRestaurantDetailsErrorDetails;
+  const factory RestaurantsState.getRestaurantDetailsError() =
+      GetRestaurantDetailsError;
 }

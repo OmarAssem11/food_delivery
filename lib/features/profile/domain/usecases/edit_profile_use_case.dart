@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:food_delivery/core/domain/error/failure.dart';
+import 'package:food_delivery/core/domain/failure/failure.dart';
 import 'package:food_delivery/core/domain/usecases/usecase.dart';
 import 'package:food_delivery/features/profile/domain/entities/profile_entity.dart';
 import 'package:food_delivery/features/profile/domain/repositories/profile_repository.dart';

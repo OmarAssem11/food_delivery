@@ -1,5 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:food_delivery/core/domain/error/failure.dart';
+import 'package:food_delivery/core/data/app_exception/app_exception.dart';
+import 'package:food_delivery/core/domain/failure/failure.dart';
+import 'package:food_delivery/core/domain/failure/return_failure.dart';
 import 'package:food_delivery/features/products/data/mappers/product_details_mapper.dart';
 import 'package:food_delivery/features/products/domain/datasources/remote_datasource/products_remote_datasource.dart';
 import 'package:food_delivery/features/products/domain/entities/product.dart';
@@ -22,8 +24,8 @@ class ProductsRepositoryImpl implements ProductsRepository {
         productId: productId,
       );
       return right(productsResponse.data.fromModel);
-    } catch (error) {
-      return left(const Failure('Error while getting product details'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 }

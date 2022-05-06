@@ -13,7 +13,9 @@ ResponseModel<Data> _$ResponseModelFromJson<Data>(
     ResponseModel<Data>(
       status: json['status'] as int,
       message: json['message'] as String,
-      errors: json['errors'],
+      errors: json['errors'] == null
+          ? null
+          : ErrorModel.fromJson(json['errors'] as Map<String, dynamic>),
       data: fromJsonData(json['data']),
     );
 

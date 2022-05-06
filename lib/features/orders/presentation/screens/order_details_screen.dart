@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:food_delivery/core/presentation/screens/error_screen.dart';
+import 'package:food_delivery/core/presentation/widgets/errors_widget.dart';
 import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
 import 'package:food_delivery/features/cart/presentation/widgets/payment_summery.dart';
 import 'package:food_delivery/features/orders/presentation/bloc/orders_cubit.dart';
 import 'package:food_delivery/features/orders/presentation/bloc/orders_state.dart';
 import 'package:food_delivery/features/orders/presentation/widgets/order_status_text.dart';
 import 'package:food_delivery/features/orders/presentation/widgets/ordered_product_item.dart';
+import 'package:food_delivery/gen/assets.gen.dart';
 import 'package:lottie/lottie.dart';
 
 class OrderDetailsScreen extends StatefulWidget {
@@ -42,7 +43,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
         builder: (context, state) {
           return state.maybeWhen(
             getOrderDetailsLoading: () => const LoadingIndicator(),
-            getOrderDetailsError: (_) => ErrorScreen(
+            getOrderDetailsError: () => ErrorsWidget(
               onRetry: () => BlocProvider.of<OrdersCubit>(context)
                   .getOrderDetails(orderId: orderId),
             ),
@@ -59,10 +60,10 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                   const SizedBox(height: 16),
                   Lottie.asset(
                     order[0].status == 'Pending'
-                        ? 'assets/lottie/pending.json'
+                        ? Assets.lottie.pending
                         : order[0].status == 'Out for Delivery'
-                            ? 'assets/lottie/processing.json'
-                            : 'assets/lottie/delivered.json',
+                            ? Assets.lottie.processing
+                            : Assets.lottie.delivered,
                   ),
                   const Divider(thickness: 1),
                   ListView.separated(

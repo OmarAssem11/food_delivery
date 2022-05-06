@@ -9,7 +9,7 @@ class ProfileModel {
   final String password;
   final String phone;
   final String address;
-  final String imageUrl;
+  final String? imageUrl;
 
   const ProfileModel({
     required this.name,
@@ -17,7 +17,7 @@ class ProfileModel {
     required this.password,
     required this.phone,
     required this.address,
-    required this.imageUrl,
+    this.imageUrl,
   });
 
   factory ProfileModel.fromJson(Map<String, dynamic> json) =>

@@ -10,12 +10,10 @@ class OrdersState with _$OrdersState {
   const factory OrdersState.getOrdersListSuccess(
     final List<Order> ordersList,
   ) = GetOrdersListSuccess;
-  const factory OrdersState.getOrdersListError(final String error) =
-      GetOrdersListErrorDetails;
+  const factory OrdersState.getOrdersListError() = GetOrdersListError;
   const factory OrdersState.getOrderDetailsLoading() = GetOrderDetailsLoading;
   const factory OrdersState.getOrderDetailsSuccess(
     final List<Order> orderDetails,
   ) = GetOrderDetailsSuccess;
-  const factory OrdersState.getOrderDetailsError(final String error) =
-      GetOrderDetailsErrorDetails;
+  const factory OrdersState.getOrderDetailsError() = GetOrderDetailsError;
 }

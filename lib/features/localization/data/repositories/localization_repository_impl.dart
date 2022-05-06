@@ -1,5 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:food_delivery/core/domain/error/failure.dart';
+import 'package:food_delivery/core/data/app_exception/app_exception.dart';
+import 'package:food_delivery/core/domain/failure/failure.dart';
+import 'package:food_delivery/core/domain/failure/return_failure.dart';
 import 'package:food_delivery/features/localization/domain/datasources/local_datasources/localization_local_datasource.dart';
 import 'package:food_delivery/features/localization/domain/repositories/localization_repository.dart';
 import 'package:injectable/injectable.dart';
@@ -17,8 +19,8 @@ class LocalizationRepositoryImpl implements LocalizationRepository {
     try {
       await _localizationLocalDataSource.saveLanguage(newLang);
       return right(unit);
-    } catch (error) {
-      return left(const Failure('Error while changing language'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 
@@ -28,8 +30,8 @@ class LocalizationRepositoryImpl implements LocalizationRepository {
       final String language =
           _localizationLocalDataSource.getLanguage() ?? 'en';
       return right(language);
-    } catch (error) {
-      return left(const Failure('Error while getting language'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 }

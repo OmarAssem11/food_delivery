@@ -30,10 +30,8 @@ class _$AuthStateTearOff {
     return const AuthSuccess();
   }
 
-  AuthErrorDetails error(String error) {
-    return AuthErrorDetails(
-      error,
-    );
+  AuthError error() {
+    return const AuthError();
   }
 
   AuthLoggedIn loggedIn() {
@@ -52,10 +50,8 @@ class _$AuthStateTearOff {
     return const ForgotPasswordSuccess();
   }
 
-  ForgotPasswordError forgotPasswordError(String error) {
-    return ForgotPasswordError(
-      error,
-    );
+  ForgotPasswordError forgotPasswordError() {
+    return const ForgotPasswordError();
   }
 }
 
@@ -69,12 +65,12 @@ mixin _$AuthState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String error) error,
+    required TResult Function() error,
     required TResult Function() loggedIn,
     required TResult Function() notLoggedIn,
     required TResult Function() forgotPasswordLoading,
     required TResult Function() forgotPasswordSuccess,
-    required TResult Function(String error) forgotPasswordError,
+    required TResult Function() forgotPasswordError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,12 +78,12 @@ mixin _$AuthState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -95,12 +91,12 @@ mixin _$AuthState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -109,7 +105,7 @@ mixin _$AuthState {
     required TResult Function(AuthInitial value) initial,
     required TResult Function(AuthLoading value) loading,
     required TResult Function(AuthSuccess value) success,
-    required TResult Function(AuthErrorDetails value) error,
+    required TResult Function(AuthError value) error,
     required TResult Function(AuthLoggedIn value) loggedIn,
     required TResult Function(AuthNotLoggedIn value) notLoggedIn,
     required TResult Function(ForgotPasswordLoading value)
@@ -124,7 +120,7 @@ mixin _$AuthState {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -137,7 +133,7 @@ mixin _$AuthState {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -206,12 +202,12 @@ class _$AuthInitial implements AuthInitial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String error) error,
+    required TResult Function() error,
     required TResult Function() loggedIn,
     required TResult Function() notLoggedIn,
     required TResult Function() forgotPasswordLoading,
     required TResult Function() forgotPasswordSuccess,
-    required TResult Function(String error) forgotPasswordError,
+    required TResult Function() forgotPasswordError,
   }) {
     return initial();
   }
@@ -222,12 +218,12 @@ class _$AuthInitial implements AuthInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
   }) {
     return initial?.call();
   }
@@ -238,12 +234,12 @@ class _$AuthInitial implements AuthInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -258,7 +254,7 @@ class _$AuthInitial implements AuthInitial {
     required TResult Function(AuthInitial value) initial,
     required TResult Function(AuthLoading value) loading,
     required TResult Function(AuthSuccess value) success,
-    required TResult Function(AuthErrorDetails value) error,
+    required TResult Function(AuthError value) error,
     required TResult Function(AuthLoggedIn value) loggedIn,
     required TResult Function(AuthNotLoggedIn value) notLoggedIn,
     required TResult Function(ForgotPasswordLoading value)
@@ -276,7 +272,7 @@ class _$AuthInitial implements AuthInitial {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -292,7 +288,7 @@ class _$AuthInitial implements AuthInitial {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -354,12 +350,12 @@ class _$AuthLoading implements AuthLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String error) error,
+    required TResult Function() error,
     required TResult Function() loggedIn,
     required TResult Function() notLoggedIn,
     required TResult Function() forgotPasswordLoading,
     required TResult Function() forgotPasswordSuccess,
-    required TResult Function(String error) forgotPasswordError,
+    required TResult Function() forgotPasswordError,
   }) {
     return loading();
   }
@@ -370,12 +366,12 @@ class _$AuthLoading implements AuthLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
   }) {
     return loading?.call();
   }
@@ -386,12 +382,12 @@ class _$AuthLoading implements AuthLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -406,7 +402,7 @@ class _$AuthLoading implements AuthLoading {
     required TResult Function(AuthInitial value) initial,
     required TResult Function(AuthLoading value) loading,
     required TResult Function(AuthSuccess value) success,
-    required TResult Function(AuthErrorDetails value) error,
+    required TResult Function(AuthError value) error,
     required TResult Function(AuthLoggedIn value) loggedIn,
     required TResult Function(AuthNotLoggedIn value) notLoggedIn,
     required TResult Function(ForgotPasswordLoading value)
@@ -424,7 +420,7 @@ class _$AuthLoading implements AuthLoading {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -440,7 +436,7 @@ class _$AuthLoading implements AuthLoading {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -502,12 +498,12 @@ class _$AuthSuccess implements AuthSuccess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String error) error,
+    required TResult Function() error,
     required TResult Function() loggedIn,
     required TResult Function() notLoggedIn,
     required TResult Function() forgotPasswordLoading,
     required TResult Function() forgotPasswordSuccess,
-    required TResult Function(String error) forgotPasswordError,
+    required TResult Function() forgotPasswordError,
   }) {
     return success();
   }
@@ -518,12 +514,12 @@ class _$AuthSuccess implements AuthSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
   }) {
     return success?.call();
   }
@@ -534,12 +530,12 @@ class _$AuthSuccess implements AuthSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -554,7 +550,7 @@ class _$AuthSuccess implements AuthSuccess {
     required TResult Function(AuthInitial value) initial,
     required TResult Function(AuthLoading value) loading,
     required TResult Function(AuthSuccess value) success,
-    required TResult Function(AuthErrorDetails value) error,
+    required TResult Function(AuthError value) error,
     required TResult Function(AuthLoggedIn value) loggedIn,
     required TResult Function(AuthNotLoggedIn value) notLoggedIn,
     required TResult Function(ForgotPasswordLoading value)
@@ -572,7 +568,7 @@ class _$AuthSuccess implements AuthSuccess {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -588,7 +584,7 @@ class _$AuthSuccess implements AuthSuccess {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -608,65 +604,39 @@ abstract class AuthSuccess implements AuthState {
 }
 
 /// @nodoc
-abstract class $AuthErrorDetailsCopyWith<$Res> {
-  factory $AuthErrorDetailsCopyWith(
-          AuthErrorDetails value, $Res Function(AuthErrorDetails) then) =
-      _$AuthErrorDetailsCopyWithImpl<$Res>;
-  $Res call({String error});
+abstract class $AuthErrorCopyWith<$Res> {
+  factory $AuthErrorCopyWith(AuthError value, $Res Function(AuthError) then) =
+      _$AuthErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AuthErrorDetailsCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements $AuthErrorDetailsCopyWith<$Res> {
-  _$AuthErrorDetailsCopyWithImpl(
-      AuthErrorDetails _value, $Res Function(AuthErrorDetails) _then)
-      : super(_value, (v) => _then(v as AuthErrorDetails));
+class _$AuthErrorCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements $AuthErrorCopyWith<$Res> {
+  _$AuthErrorCopyWithImpl(AuthError _value, $Res Function(AuthError) _then)
+      : super(_value, (v) => _then(v as AuthError));
 
   @override
-  AuthErrorDetails get _value => super._value as AuthErrorDetails;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(AuthErrorDetails(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  AuthError get _value => super._value as AuthError;
 }
 
 /// @nodoc
 
-class _$AuthErrorDetails implements AuthErrorDetails {
-  const _$AuthErrorDetails(this.error);
-
-  @override
-  final String error;
+class _$AuthError implements AuthError {
+  const _$AuthError();
 
   @override
   String toString() {
-    return 'AuthState.error(error: $error)';
+    return 'AuthState.error()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is AuthErrorDetails &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is AuthError);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $AuthErrorDetailsCopyWith<AuthErrorDetails> get copyWith =>
-      _$AuthErrorDetailsCopyWithImpl<AuthErrorDetails>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -674,14 +644,14 @@ class _$AuthErrorDetails implements AuthErrorDetails {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String error) error,
+    required TResult Function() error,
     required TResult Function() loggedIn,
     required TResult Function() notLoggedIn,
     required TResult Function() forgotPasswordLoading,
     required TResult Function() forgotPasswordSuccess,
-    required TResult Function(String error) forgotPasswordError,
+    required TResult Function() forgotPasswordError,
   }) {
-    return error(this.error);
+    return error();
   }
 
   @override
@@ -690,14 +660,14 @@ class _$AuthErrorDetails implements AuthErrorDetails {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
   }) {
-    return error?.call(this.error);
+    return error?.call();
   }
 
   @override
@@ -706,16 +676,16 @@ class _$AuthErrorDetails implements AuthErrorDetails {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(this.error);
+      return error();
     }
     return orElse();
   }
@@ -726,7 +696,7 @@ class _$AuthErrorDetails implements AuthErrorDetails {
     required TResult Function(AuthInitial value) initial,
     required TResult Function(AuthLoading value) loading,
     required TResult Function(AuthSuccess value) success,
-    required TResult Function(AuthErrorDetails value) error,
+    required TResult Function(AuthError value) error,
     required TResult Function(AuthLoggedIn value) loggedIn,
     required TResult Function(AuthNotLoggedIn value) notLoggedIn,
     required TResult Function(ForgotPasswordLoading value)
@@ -744,7 +714,7 @@ class _$AuthErrorDetails implements AuthErrorDetails {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -760,7 +730,7 @@ class _$AuthErrorDetails implements AuthErrorDetails {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -775,13 +745,8 @@ class _$AuthErrorDetails implements AuthErrorDetails {
   }
 }
 
-abstract class AuthErrorDetails implements AuthState {
-  const factory AuthErrorDetails(String error) = _$AuthErrorDetails;
-
-  String get error;
-  @JsonKey(ignore: true)
-  $AuthErrorDetailsCopyWith<AuthErrorDetails> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class AuthError implements AuthState {
+  const factory AuthError() = _$AuthError;
 }
 
 /// @nodoc
@@ -827,12 +792,12 @@ class _$AuthLoggedIn implements AuthLoggedIn {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String error) error,
+    required TResult Function() error,
     required TResult Function() loggedIn,
     required TResult Function() notLoggedIn,
     required TResult Function() forgotPasswordLoading,
     required TResult Function() forgotPasswordSuccess,
-    required TResult Function(String error) forgotPasswordError,
+    required TResult Function() forgotPasswordError,
   }) {
     return loggedIn();
   }
@@ -843,12 +808,12 @@ class _$AuthLoggedIn implements AuthLoggedIn {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
   }) {
     return loggedIn?.call();
   }
@@ -859,12 +824,12 @@ class _$AuthLoggedIn implements AuthLoggedIn {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
     required TResult orElse(),
   }) {
     if (loggedIn != null) {
@@ -879,7 +844,7 @@ class _$AuthLoggedIn implements AuthLoggedIn {
     required TResult Function(AuthInitial value) initial,
     required TResult Function(AuthLoading value) loading,
     required TResult Function(AuthSuccess value) success,
-    required TResult Function(AuthErrorDetails value) error,
+    required TResult Function(AuthError value) error,
     required TResult Function(AuthLoggedIn value) loggedIn,
     required TResult Function(AuthNotLoggedIn value) notLoggedIn,
     required TResult Function(ForgotPasswordLoading value)
@@ -897,7 +862,7 @@ class _$AuthLoggedIn implements AuthLoggedIn {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -913,7 +878,7 @@ class _$AuthLoggedIn implements AuthLoggedIn {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -975,12 +940,12 @@ class _$AuthNotLoggedIn implements AuthNotLoggedIn {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String error) error,
+    required TResult Function() error,
     required TResult Function() loggedIn,
     required TResult Function() notLoggedIn,
     required TResult Function() forgotPasswordLoading,
     required TResult Function() forgotPasswordSuccess,
-    required TResult Function(String error) forgotPasswordError,
+    required TResult Function() forgotPasswordError,
   }) {
     return notLoggedIn();
   }
@@ -991,12 +956,12 @@ class _$AuthNotLoggedIn implements AuthNotLoggedIn {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
   }) {
     return notLoggedIn?.call();
   }
@@ -1007,12 +972,12 @@ class _$AuthNotLoggedIn implements AuthNotLoggedIn {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
     required TResult orElse(),
   }) {
     if (notLoggedIn != null) {
@@ -1027,7 +992,7 @@ class _$AuthNotLoggedIn implements AuthNotLoggedIn {
     required TResult Function(AuthInitial value) initial,
     required TResult Function(AuthLoading value) loading,
     required TResult Function(AuthSuccess value) success,
-    required TResult Function(AuthErrorDetails value) error,
+    required TResult Function(AuthError value) error,
     required TResult Function(AuthLoggedIn value) loggedIn,
     required TResult Function(AuthNotLoggedIn value) notLoggedIn,
     required TResult Function(ForgotPasswordLoading value)
@@ -1045,7 +1010,7 @@ class _$AuthNotLoggedIn implements AuthNotLoggedIn {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -1061,7 +1026,7 @@ class _$AuthNotLoggedIn implements AuthNotLoggedIn {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -1124,12 +1089,12 @@ class _$ForgotPasswordLoading implements ForgotPasswordLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String error) error,
+    required TResult Function() error,
     required TResult Function() loggedIn,
     required TResult Function() notLoggedIn,
     required TResult Function() forgotPasswordLoading,
     required TResult Function() forgotPasswordSuccess,
-    required TResult Function(String error) forgotPasswordError,
+    required TResult Function() forgotPasswordError,
   }) {
     return forgotPasswordLoading();
   }
@@ -1140,12 +1105,12 @@ class _$ForgotPasswordLoading implements ForgotPasswordLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
   }) {
     return forgotPasswordLoading?.call();
   }
@@ -1156,12 +1121,12 @@ class _$ForgotPasswordLoading implements ForgotPasswordLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
     required TResult orElse(),
   }) {
     if (forgotPasswordLoading != null) {
@@ -1176,7 +1141,7 @@ class _$ForgotPasswordLoading implements ForgotPasswordLoading {
     required TResult Function(AuthInitial value) initial,
     required TResult Function(AuthLoading value) loading,
     required TResult Function(AuthSuccess value) success,
-    required TResult Function(AuthErrorDetails value) error,
+    required TResult Function(AuthError value) error,
     required TResult Function(AuthLoggedIn value) loggedIn,
     required TResult Function(AuthNotLoggedIn value) notLoggedIn,
     required TResult Function(ForgotPasswordLoading value)
@@ -1194,7 +1159,7 @@ class _$ForgotPasswordLoading implements ForgotPasswordLoading {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -1210,7 +1175,7 @@ class _$ForgotPasswordLoading implements ForgotPasswordLoading {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -1273,12 +1238,12 @@ class _$ForgotPasswordSuccess implements ForgotPasswordSuccess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String error) error,
+    required TResult Function() error,
     required TResult Function() loggedIn,
     required TResult Function() notLoggedIn,
     required TResult Function() forgotPasswordLoading,
     required TResult Function() forgotPasswordSuccess,
-    required TResult Function(String error) forgotPasswordError,
+    required TResult Function() forgotPasswordError,
   }) {
     return forgotPasswordSuccess();
   }
@@ -1289,12 +1254,12 @@ class _$ForgotPasswordSuccess implements ForgotPasswordSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
   }) {
     return forgotPasswordSuccess?.call();
   }
@@ -1305,12 +1270,12 @@ class _$ForgotPasswordSuccess implements ForgotPasswordSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
     required TResult orElse(),
   }) {
     if (forgotPasswordSuccess != null) {
@@ -1325,7 +1290,7 @@ class _$ForgotPasswordSuccess implements ForgotPasswordSuccess {
     required TResult Function(AuthInitial value) initial,
     required TResult Function(AuthLoading value) loading,
     required TResult Function(AuthSuccess value) success,
-    required TResult Function(AuthErrorDetails value) error,
+    required TResult Function(AuthError value) error,
     required TResult Function(AuthLoggedIn value) loggedIn,
     required TResult Function(AuthNotLoggedIn value) notLoggedIn,
     required TResult Function(ForgotPasswordLoading value)
@@ -1343,7 +1308,7 @@ class _$ForgotPasswordSuccess implements ForgotPasswordSuccess {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -1359,7 +1324,7 @@ class _$ForgotPasswordSuccess implements ForgotPasswordSuccess {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -1383,7 +1348,6 @@ abstract class $ForgotPasswordErrorCopyWith<$Res> {
   factory $ForgotPasswordErrorCopyWith(
           ForgotPasswordError value, $Res Function(ForgotPasswordError) then) =
       _$ForgotPasswordErrorCopyWithImpl<$Res>;
-  $Res call({String error});
 }
 
 /// @nodoc
@@ -1396,49 +1360,26 @@ class _$ForgotPasswordErrorCopyWithImpl<$Res>
 
   @override
   ForgotPasswordError get _value => super._value as ForgotPasswordError;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(ForgotPasswordError(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$ForgotPasswordError implements ForgotPasswordError {
-  const _$ForgotPasswordError(this.error);
-
-  @override
-  final String error;
+  const _$ForgotPasswordError();
 
   @override
   String toString() {
-    return 'AuthState.forgotPasswordError(error: $error)';
+    return 'AuthState.forgotPasswordError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ForgotPasswordError &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is ForgotPasswordError);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $ForgotPasswordErrorCopyWith<ForgotPasswordError> get copyWith =>
-      _$ForgotPasswordErrorCopyWithImpl<ForgotPasswordError>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -1446,14 +1387,14 @@ class _$ForgotPasswordError implements ForgotPasswordError {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String error) error,
+    required TResult Function() error,
     required TResult Function() loggedIn,
     required TResult Function() notLoggedIn,
     required TResult Function() forgotPasswordLoading,
     required TResult Function() forgotPasswordSuccess,
-    required TResult Function(String error) forgotPasswordError,
+    required TResult Function() forgotPasswordError,
   }) {
-    return forgotPasswordError(this.error);
+    return forgotPasswordError();
   }
 
   @override
@@ -1462,14 +1403,14 @@ class _$ForgotPasswordError implements ForgotPasswordError {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
   }) {
-    return forgotPasswordError?.call(this.error);
+    return forgotPasswordError?.call();
   }
 
   @override
@@ -1478,16 +1419,16 @@ class _$ForgotPasswordError implements ForgotPasswordError {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     TResult Function()? loggedIn,
     TResult Function()? notLoggedIn,
     TResult Function()? forgotPasswordLoading,
     TResult Function()? forgotPasswordSuccess,
-    TResult Function(String error)? forgotPasswordError,
+    TResult Function()? forgotPasswordError,
     required TResult orElse(),
   }) {
     if (forgotPasswordError != null) {
-      return forgotPasswordError(this.error);
+      return forgotPasswordError();
     }
     return orElse();
   }
@@ -1498,7 +1439,7 @@ class _$ForgotPasswordError implements ForgotPasswordError {
     required TResult Function(AuthInitial value) initial,
     required TResult Function(AuthLoading value) loading,
     required TResult Function(AuthSuccess value) success,
-    required TResult Function(AuthErrorDetails value) error,
+    required TResult Function(AuthError value) error,
     required TResult Function(AuthLoggedIn value) loggedIn,
     required TResult Function(AuthNotLoggedIn value) notLoggedIn,
     required TResult Function(ForgotPasswordLoading value)
@@ -1516,7 +1457,7 @@ class _$ForgotPasswordError implements ForgotPasswordError {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -1532,7 +1473,7 @@ class _$ForgotPasswordError implements ForgotPasswordError {
     TResult Function(AuthInitial value)? initial,
     TResult Function(AuthLoading value)? loading,
     TResult Function(AuthSuccess value)? success,
-    TResult Function(AuthErrorDetails value)? error,
+    TResult Function(AuthError value)? error,
     TResult Function(AuthLoggedIn value)? loggedIn,
     TResult Function(AuthNotLoggedIn value)? notLoggedIn,
     TResult Function(ForgotPasswordLoading value)? forgotPasswordLoading,
@@ -1548,10 +1489,5 @@ class _$ForgotPasswordError implements ForgotPasswordError {
 }
 
 abstract class ForgotPasswordError implements AuthState {
-  const factory ForgotPasswordError(String error) = _$ForgotPasswordError;
-
-  String get error;
-  @JsonKey(ignore: true)
-  $ForgotPasswordErrorCopyWith<ForgotPasswordError> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory ForgotPasswordError() = _$ForgotPasswordError;
 }

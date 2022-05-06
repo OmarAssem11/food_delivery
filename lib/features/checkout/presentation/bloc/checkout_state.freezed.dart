@@ -32,10 +32,8 @@ class _$CheckoutStateTearOff {
     );
   }
 
-  CheckoutErrorDetails error(String error) {
-    return CheckoutErrorDetails(
-      error,
-    );
+  CheckoutError error() {
+    return const CheckoutError();
   }
 }
 
@@ -49,7 +47,7 @@ mixin _$CheckoutState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(int orderId) success,
-    required TResult Function(String error) error,
+    required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,7 +55,7 @@ mixin _$CheckoutState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(int orderId)? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,7 +63,7 @@ mixin _$CheckoutState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(int orderId)? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -74,7 +72,7 @@ mixin _$CheckoutState {
     required TResult Function(CheckoutInitial value) initial,
     required TResult Function(CheckoutLoading value) loading,
     required TResult Function(CheckoutSuccess value) success,
-    required TResult Function(CheckoutErrorDetails value) error,
+    required TResult Function(CheckoutError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,7 +80,7 @@ mixin _$CheckoutState {
     TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
-    TResult Function(CheckoutErrorDetails value)? error,
+    TResult Function(CheckoutError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -90,7 +88,7 @@ mixin _$CheckoutState {
     TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
-    TResult Function(CheckoutErrorDetails value)? error,
+    TResult Function(CheckoutError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -157,7 +155,7 @@ class _$CheckoutInitial implements CheckoutInitial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(int orderId) success,
-    required TResult Function(String error) error,
+    required TResult Function() error,
   }) {
     return initial();
   }
@@ -168,7 +166,7 @@ class _$CheckoutInitial implements CheckoutInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(int orderId)? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
   }) {
     return initial?.call();
   }
@@ -179,7 +177,7 @@ class _$CheckoutInitial implements CheckoutInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(int orderId)? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -194,7 +192,7 @@ class _$CheckoutInitial implements CheckoutInitial {
     required TResult Function(CheckoutInitial value) initial,
     required TResult Function(CheckoutLoading value) loading,
     required TResult Function(CheckoutSuccess value) success,
-    required TResult Function(CheckoutErrorDetails value) error,
+    required TResult Function(CheckoutError value) error,
   }) {
     return initial(this);
   }
@@ -205,7 +203,7 @@ class _$CheckoutInitial implements CheckoutInitial {
     TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
-    TResult Function(CheckoutErrorDetails value)? error,
+    TResult Function(CheckoutError value)? error,
   }) {
     return initial?.call(this);
   }
@@ -216,7 +214,7 @@ class _$CheckoutInitial implements CheckoutInitial {
     TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
-    TResult Function(CheckoutErrorDetails value)? error,
+    TResult Function(CheckoutError value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -274,7 +272,7 @@ class _$CheckoutLoading implements CheckoutLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(int orderId) success,
-    required TResult Function(String error) error,
+    required TResult Function() error,
   }) {
     return loading();
   }
@@ -285,7 +283,7 @@ class _$CheckoutLoading implements CheckoutLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(int orderId)? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
   }) {
     return loading?.call();
   }
@@ -296,7 +294,7 @@ class _$CheckoutLoading implements CheckoutLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(int orderId)? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -311,7 +309,7 @@ class _$CheckoutLoading implements CheckoutLoading {
     required TResult Function(CheckoutInitial value) initial,
     required TResult Function(CheckoutLoading value) loading,
     required TResult Function(CheckoutSuccess value) success,
-    required TResult Function(CheckoutErrorDetails value) error,
+    required TResult Function(CheckoutError value) error,
   }) {
     return loading(this);
   }
@@ -322,7 +320,7 @@ class _$CheckoutLoading implements CheckoutLoading {
     TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
-    TResult Function(CheckoutErrorDetails value)? error,
+    TResult Function(CheckoutError value)? error,
   }) {
     return loading?.call(this);
   }
@@ -333,7 +331,7 @@ class _$CheckoutLoading implements CheckoutLoading {
     TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
-    TResult Function(CheckoutErrorDetails value)? error,
+    TResult Function(CheckoutError value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -415,7 +413,7 @@ class _$CheckoutSuccess implements CheckoutSuccess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(int orderId) success,
-    required TResult Function(String error) error,
+    required TResult Function() error,
   }) {
     return success(orderId);
   }
@@ -426,7 +424,7 @@ class _$CheckoutSuccess implements CheckoutSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(int orderId)? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
   }) {
     return success?.call(orderId);
   }
@@ -437,7 +435,7 @@ class _$CheckoutSuccess implements CheckoutSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(int orderId)? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -452,7 +450,7 @@ class _$CheckoutSuccess implements CheckoutSuccess {
     required TResult Function(CheckoutInitial value) initial,
     required TResult Function(CheckoutLoading value) loading,
     required TResult Function(CheckoutSuccess value) success,
-    required TResult Function(CheckoutErrorDetails value) error,
+    required TResult Function(CheckoutError value) error,
   }) {
     return success(this);
   }
@@ -463,7 +461,7 @@ class _$CheckoutSuccess implements CheckoutSuccess {
     TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
-    TResult Function(CheckoutErrorDetails value)? error,
+    TResult Function(CheckoutError value)? error,
   }) {
     return success?.call(this);
   }
@@ -474,7 +472,7 @@ class _$CheckoutSuccess implements CheckoutSuccess {
     TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
-    TResult Function(CheckoutErrorDetails value)? error,
+    TResult Function(CheckoutError value)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -494,67 +492,42 @@ abstract class CheckoutSuccess implements CheckoutState {
 }
 
 /// @nodoc
-abstract class $CheckoutErrorDetailsCopyWith<$Res> {
-  factory $CheckoutErrorDetailsCopyWith(CheckoutErrorDetails value,
-          $Res Function(CheckoutErrorDetails) then) =
-      _$CheckoutErrorDetailsCopyWithImpl<$Res>;
-  $Res call({String error});
+abstract class $CheckoutErrorCopyWith<$Res> {
+  factory $CheckoutErrorCopyWith(
+          CheckoutError value, $Res Function(CheckoutError) then) =
+      _$CheckoutErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CheckoutErrorDetailsCopyWithImpl<$Res>
+class _$CheckoutErrorCopyWithImpl<$Res>
     extends _$CheckoutStateCopyWithImpl<$Res>
-    implements $CheckoutErrorDetailsCopyWith<$Res> {
-  _$CheckoutErrorDetailsCopyWithImpl(
-      CheckoutErrorDetails _value, $Res Function(CheckoutErrorDetails) _then)
-      : super(_value, (v) => _then(v as CheckoutErrorDetails));
+    implements $CheckoutErrorCopyWith<$Res> {
+  _$CheckoutErrorCopyWithImpl(
+      CheckoutError _value, $Res Function(CheckoutError) _then)
+      : super(_value, (v) => _then(v as CheckoutError));
 
   @override
-  CheckoutErrorDetails get _value => super._value as CheckoutErrorDetails;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(CheckoutErrorDetails(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  CheckoutError get _value => super._value as CheckoutError;
 }
 
 /// @nodoc
 
-class _$CheckoutErrorDetails implements CheckoutErrorDetails {
-  const _$CheckoutErrorDetails(this.error);
-
-  @override
-  final String error;
+class _$CheckoutError implements CheckoutError {
+  const _$CheckoutError();
 
   @override
   String toString() {
-    return 'CheckoutState.error(error: $error)';
+    return 'CheckoutState.error()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is CheckoutErrorDetails &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is CheckoutError);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $CheckoutErrorDetailsCopyWith<CheckoutErrorDetails> get copyWith =>
-      _$CheckoutErrorDetailsCopyWithImpl<CheckoutErrorDetails>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -562,9 +535,9 @@ class _$CheckoutErrorDetails implements CheckoutErrorDetails {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(int orderId) success,
-    required TResult Function(String error) error,
+    required TResult Function() error,
   }) {
-    return error(this.error);
+    return error();
   }
 
   @override
@@ -573,9 +546,9 @@ class _$CheckoutErrorDetails implements CheckoutErrorDetails {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(int orderId)? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
   }) {
-    return error?.call(this.error);
+    return error?.call();
   }
 
   @override
@@ -584,11 +557,11 @@ class _$CheckoutErrorDetails implements CheckoutErrorDetails {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(int orderId)? success,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(this.error);
+      return error();
     }
     return orElse();
   }
@@ -599,7 +572,7 @@ class _$CheckoutErrorDetails implements CheckoutErrorDetails {
     required TResult Function(CheckoutInitial value) initial,
     required TResult Function(CheckoutLoading value) loading,
     required TResult Function(CheckoutSuccess value) success,
-    required TResult Function(CheckoutErrorDetails value) error,
+    required TResult Function(CheckoutError value) error,
   }) {
     return error(this);
   }
@@ -610,7 +583,7 @@ class _$CheckoutErrorDetails implements CheckoutErrorDetails {
     TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
-    TResult Function(CheckoutErrorDetails value)? error,
+    TResult Function(CheckoutError value)? error,
   }) {
     return error?.call(this);
   }
@@ -621,7 +594,7 @@ class _$CheckoutErrorDetails implements CheckoutErrorDetails {
     TResult Function(CheckoutInitial value)? initial,
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
-    TResult Function(CheckoutErrorDetails value)? error,
+    TResult Function(CheckoutError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -631,11 +604,6 @@ class _$CheckoutErrorDetails implements CheckoutErrorDetails {
   }
 }
 
-abstract class CheckoutErrorDetails implements CheckoutState {
-  const factory CheckoutErrorDetails(String error) = _$CheckoutErrorDetails;
-
-  String get error;
-  @JsonKey(ignore: true)
-  $CheckoutErrorDetailsCopyWith<CheckoutErrorDetails> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class CheckoutError implements CheckoutState {
+  const factory CheckoutError() = _$CheckoutError;
 }

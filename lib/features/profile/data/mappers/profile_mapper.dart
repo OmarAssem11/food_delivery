@@ -8,7 +8,6 @@ extension ProfileMapperToModel on ProfileEntity {
         password: password,
         phone: phone,
         address: address,
-        imageUrl: imageUrl,
       );
 }
 
@@ -19,6 +18,6 @@ extension ProfileMapperFromModel on ProfileModel {
         password: password,
         phone: phone,
         address: address,
-        imageUrl: imageUrl,
+        imageUrl: imageUrl!,
       );
 }

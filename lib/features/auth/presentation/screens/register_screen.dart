@@ -12,6 +12,7 @@ import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:food_delivery/features/auth/presentation/bloc/auth_state.dart';
 import 'package:food_delivery/features/auth/presentation/screens/login_screen.dart';
 import 'package:food_delivery/features/auth/presentation/widgets/curved_widget.dart';
+import 'package:food_delivery/gen/assets.gen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen();
@@ -56,11 +57,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: Container(
                 width: double.infinity,
                 height: 250,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.deepOrange,
                   image: DecorationImage(
                     image: AssetImage(
-                      'assets/images/food.jpg',
+                      Assets.images.food.path,
                     ),
                     fit: BoxFit.cover,
                   ),
@@ -110,7 +111,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         bool isLoading = false;
                         state.maybeWhen(
                           loading: () => isLoading = true,
-                          error: (error) => showErrorToast(errorMessage: error),
+                          error: () => showErrorToast(),
                           success: () =>
                               WidgetsBinding.instance!.addPostFrameCallback(
                             (_) {

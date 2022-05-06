@@ -8,21 +8,17 @@ class CartState with _$CartState {
 
   const factory CartState.addToCartLoading() = AddToCartLoading;
   const factory CartState.addToCartSuccess() = AddToCartSuccess;
-  const factory CartState.addToCartError(final String error) =
-      AddToCartErrorDetails;
+  const factory CartState.addToCartError() = AddToCartError;
 
   const factory CartState.editCartLoading() = EditCartLoading;
   const factory CartState.editCartSuccess() = EditCartSuccess;
-  const factory CartState.editCartError(final String error) =
-      EditCartErrorDetails;
+  const factory CartState.editCartError() = EditCartError;
 
   const factory CartState.deleteCartLoading() = DeleteCartLoading;
   const factory CartState.deleteCartSuccess() = DeleteCartSuccess;
-  const factory CartState.deleteCartError(final String error) =
-      DeleteCartErrorDetails;
+  const factory CartState.deleteCartError() = DeleteCartError;
 
   const factory CartState.getCartLoading() = GetCartLoading;
   const factory CartState.getCartSuccess() = GetCartSuccess;
-  const factory CartState.getCartError(final String error) =
-      GetCartErrorDetails;
+  const factory CartState.getCartError() = GetCartError;
 }

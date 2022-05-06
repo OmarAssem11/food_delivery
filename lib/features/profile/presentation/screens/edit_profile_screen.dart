@@ -58,7 +58,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               bool isLoading = false;
               state.maybeWhen(
                 editLoading: () => isLoading = true,
-                editError: (error) => showErrorToast(errorMessage: error),
+                editError: () => showErrorToast(),
                 editSuccess: () {
                   WidgetsBinding.instance!.addPostFrameCallback(
                     (_) {

@@ -1,3 +1,4 @@
+import 'package:food_delivery/core/data/models/error_model/error_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'response_model.g.dart';
@@ -6,10 +7,10 @@ part 'response_model.g.dart';
 class ResponseModel<Data> {
   final int status;
   final String message;
-  final dynamic errors;
+  final ErrorModel? errors;
   final Data data;
 
-  ResponseModel({
+  const ResponseModel({
     required this.status,
     required this.message,
     required this.errors,

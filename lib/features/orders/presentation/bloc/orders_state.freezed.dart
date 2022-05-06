@@ -32,10 +32,8 @@ class _$OrdersStateTearOff {
     );
   }
 
-  GetOrdersListErrorDetails getOrdersListError(String error) {
-    return GetOrdersListErrorDetails(
-      error,
-    );
+  GetOrdersListError getOrdersListError() {
+    return const GetOrdersListError();
   }
 
   GetOrderDetailsLoading getOrderDetailsLoading() {
@@ -48,10 +46,8 @@ class _$OrdersStateTearOff {
     );
   }
 
-  GetOrderDetailsErrorDetails getOrderDetailsError(String error) {
-    return GetOrderDetailsErrorDetails(
-      error,
-    );
+  GetOrderDetailsError getOrderDetailsError() {
+    return const GetOrderDetailsError();
   }
 }
 
@@ -65,10 +61,10 @@ mixin _$OrdersState {
     required TResult Function() initial,
     required TResult Function() getOrdersListLoading,
     required TResult Function(List<Order> ordersList) getOrdersListSuccess,
-    required TResult Function(String error) getOrdersListError,
+    required TResult Function() getOrdersListError,
     required TResult Function() getOrderDetailsLoading,
     required TResult Function(List<Order> orderDetails) getOrderDetailsSuccess,
-    required TResult Function(String error) getOrderDetailsError,
+    required TResult Function() getOrderDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,10 +72,10 @@ mixin _$OrdersState {
     TResult Function()? initial,
     TResult Function()? getOrdersListLoading,
     TResult Function(List<Order> ordersList)? getOrdersListSuccess,
-    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
     TResult Function(List<Order> orderDetails)? getOrderDetailsSuccess,
-    TResult Function(String error)? getOrderDetailsError,
+    TResult Function()? getOrderDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -87,10 +83,10 @@ mixin _$OrdersState {
     TResult Function()? initial,
     TResult Function()? getOrdersListLoading,
     TResult Function(List<Order> ordersList)? getOrdersListSuccess,
-    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
     TResult Function(List<Order> orderDetails)? getOrderDetailsSuccess,
-    TResult Function(String error)? getOrderDetailsError,
+    TResult Function()? getOrderDetailsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -99,14 +95,12 @@ mixin _$OrdersState {
     required TResult Function(OrdersInitial value) initial,
     required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
     required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
-    required TResult Function(GetOrdersListErrorDetails value)
-        getOrdersListError,
+    required TResult Function(GetOrdersListError value) getOrdersListError,
     required TResult Function(GetOrderDetailsLoading value)
         getOrderDetailsLoading,
     required TResult Function(GetOrderDetailsSuccess value)
         getOrderDetailsSuccess,
-    required TResult Function(GetOrderDetailsErrorDetails value)
-        getOrderDetailsError,
+    required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -114,10 +108,10 @@ mixin _$OrdersState {
     TResult Function(OrdersInitial value)? initial,
     TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
     TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
-    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
-    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -125,10 +119,10 @@ mixin _$OrdersState {
     TResult Function(OrdersInitial value)? initial,
     TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
     TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
-    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
-    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -193,10 +187,10 @@ class _$OrdersInitial implements OrdersInitial {
     required TResult Function() initial,
     required TResult Function() getOrdersListLoading,
     required TResult Function(List<Order> ordersList) getOrdersListSuccess,
-    required TResult Function(String error) getOrdersListError,
+    required TResult Function() getOrdersListError,
     required TResult Function() getOrderDetailsLoading,
     required TResult Function(List<Order> orderDetails) getOrderDetailsSuccess,
-    required TResult Function(String error) getOrderDetailsError,
+    required TResult Function() getOrderDetailsError,
   }) {
     return initial();
   }
@@ -207,10 +201,10 @@ class _$OrdersInitial implements OrdersInitial {
     TResult Function()? initial,
     TResult Function()? getOrdersListLoading,
     TResult Function(List<Order> ordersList)? getOrdersListSuccess,
-    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
     TResult Function(List<Order> orderDetails)? getOrderDetailsSuccess,
-    TResult Function(String error)? getOrderDetailsError,
+    TResult Function()? getOrderDetailsError,
   }) {
     return initial?.call();
   }
@@ -221,10 +215,10 @@ class _$OrdersInitial implements OrdersInitial {
     TResult Function()? initial,
     TResult Function()? getOrdersListLoading,
     TResult Function(List<Order> ordersList)? getOrdersListSuccess,
-    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
     TResult Function(List<Order> orderDetails)? getOrderDetailsSuccess,
-    TResult Function(String error)? getOrderDetailsError,
+    TResult Function()? getOrderDetailsError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -239,14 +233,12 @@ class _$OrdersInitial implements OrdersInitial {
     required TResult Function(OrdersInitial value) initial,
     required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
     required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
-    required TResult Function(GetOrdersListErrorDetails value)
-        getOrdersListError,
+    required TResult Function(GetOrdersListError value) getOrdersListError,
     required TResult Function(GetOrderDetailsLoading value)
         getOrderDetailsLoading,
     required TResult Function(GetOrderDetailsSuccess value)
         getOrderDetailsSuccess,
-    required TResult Function(GetOrderDetailsErrorDetails value)
-        getOrderDetailsError,
+    required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
   }) {
     return initial(this);
   }
@@ -257,10 +249,10 @@ class _$OrdersInitial implements OrdersInitial {
     TResult Function(OrdersInitial value)? initial,
     TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
     TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
-    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
-    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
   }) {
     return initial?.call(this);
   }
@@ -271,10 +263,10 @@ class _$OrdersInitial implements OrdersInitial {
     TResult Function(OrdersInitial value)? initial,
     TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
     TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
-    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
-    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -332,10 +324,10 @@ class _$GetOrdersListLoading implements GetOrdersListLoading {
     required TResult Function() initial,
     required TResult Function() getOrdersListLoading,
     required TResult Function(List<Order> ordersList) getOrdersListSuccess,
-    required TResult Function(String error) getOrdersListError,
+    required TResult Function() getOrdersListError,
     required TResult Function() getOrderDetailsLoading,
     required TResult Function(List<Order> orderDetails) getOrderDetailsSuccess,
-    required TResult Function(String error) getOrderDetailsError,
+    required TResult Function() getOrderDetailsError,
   }) {
     return getOrdersListLoading();
   }
@@ -346,10 +338,10 @@ class _$GetOrdersListLoading implements GetOrdersListLoading {
     TResult Function()? initial,
     TResult Function()? getOrdersListLoading,
     TResult Function(List<Order> ordersList)? getOrdersListSuccess,
-    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
     TResult Function(List<Order> orderDetails)? getOrderDetailsSuccess,
-    TResult Function(String error)? getOrderDetailsError,
+    TResult Function()? getOrderDetailsError,
   }) {
     return getOrdersListLoading?.call();
   }
@@ -360,10 +352,10 @@ class _$GetOrdersListLoading implements GetOrdersListLoading {
     TResult Function()? initial,
     TResult Function()? getOrdersListLoading,
     TResult Function(List<Order> ordersList)? getOrdersListSuccess,
-    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
     TResult Function(List<Order> orderDetails)? getOrderDetailsSuccess,
-    TResult Function(String error)? getOrderDetailsError,
+    TResult Function()? getOrderDetailsError,
     required TResult orElse(),
   }) {
     if (getOrdersListLoading != null) {
@@ -378,14 +370,12 @@ class _$GetOrdersListLoading implements GetOrdersListLoading {
     required TResult Function(OrdersInitial value) initial,
     required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
     required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
-    required TResult Function(GetOrdersListErrorDetails value)
-        getOrdersListError,
+    required TResult Function(GetOrdersListError value) getOrdersListError,
     required TResult Function(GetOrderDetailsLoading value)
         getOrderDetailsLoading,
     required TResult Function(GetOrderDetailsSuccess value)
         getOrderDetailsSuccess,
-    required TResult Function(GetOrderDetailsErrorDetails value)
-        getOrderDetailsError,
+    required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
   }) {
     return getOrdersListLoading(this);
   }
@@ -396,10 +386,10 @@ class _$GetOrdersListLoading implements GetOrdersListLoading {
     TResult Function(OrdersInitial value)? initial,
     TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
     TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
-    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
-    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
   }) {
     return getOrdersListLoading?.call(this);
   }
@@ -410,10 +400,10 @@ class _$GetOrdersListLoading implements GetOrdersListLoading {
     TResult Function(OrdersInitial value)? initial,
     TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
     TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
-    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
-    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
     required TResult orElse(),
   }) {
     if (getOrdersListLoading != null) {
@@ -497,10 +487,10 @@ class _$GetOrdersListSuccess implements GetOrdersListSuccess {
     required TResult Function() initial,
     required TResult Function() getOrdersListLoading,
     required TResult Function(List<Order> ordersList) getOrdersListSuccess,
-    required TResult Function(String error) getOrdersListError,
+    required TResult Function() getOrdersListError,
     required TResult Function() getOrderDetailsLoading,
     required TResult Function(List<Order> orderDetails) getOrderDetailsSuccess,
-    required TResult Function(String error) getOrderDetailsError,
+    required TResult Function() getOrderDetailsError,
   }) {
     return getOrdersListSuccess(ordersList);
   }
@@ -511,10 +501,10 @@ class _$GetOrdersListSuccess implements GetOrdersListSuccess {
     TResult Function()? initial,
     TResult Function()? getOrdersListLoading,
     TResult Function(List<Order> ordersList)? getOrdersListSuccess,
-    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
     TResult Function(List<Order> orderDetails)? getOrderDetailsSuccess,
-    TResult Function(String error)? getOrderDetailsError,
+    TResult Function()? getOrderDetailsError,
   }) {
     return getOrdersListSuccess?.call(ordersList);
   }
@@ -525,10 +515,10 @@ class _$GetOrdersListSuccess implements GetOrdersListSuccess {
     TResult Function()? initial,
     TResult Function()? getOrdersListLoading,
     TResult Function(List<Order> ordersList)? getOrdersListSuccess,
-    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
     TResult Function(List<Order> orderDetails)? getOrderDetailsSuccess,
-    TResult Function(String error)? getOrderDetailsError,
+    TResult Function()? getOrderDetailsError,
     required TResult orElse(),
   }) {
     if (getOrdersListSuccess != null) {
@@ -543,14 +533,12 @@ class _$GetOrdersListSuccess implements GetOrdersListSuccess {
     required TResult Function(OrdersInitial value) initial,
     required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
     required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
-    required TResult Function(GetOrdersListErrorDetails value)
-        getOrdersListError,
+    required TResult Function(GetOrdersListError value) getOrdersListError,
     required TResult Function(GetOrderDetailsLoading value)
         getOrderDetailsLoading,
     required TResult Function(GetOrderDetailsSuccess value)
         getOrderDetailsSuccess,
-    required TResult Function(GetOrderDetailsErrorDetails value)
-        getOrderDetailsError,
+    required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
   }) {
     return getOrdersListSuccess(this);
   }
@@ -561,10 +549,10 @@ class _$GetOrdersListSuccess implements GetOrdersListSuccess {
     TResult Function(OrdersInitial value)? initial,
     TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
     TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
-    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
-    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
   }) {
     return getOrdersListSuccess?.call(this);
   }
@@ -575,10 +563,10 @@ class _$GetOrdersListSuccess implements GetOrdersListSuccess {
     TResult Function(OrdersInitial value)? initial,
     TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
     TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
-    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
-    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
     required TResult orElse(),
   }) {
     if (getOrdersListSuccess != null) {
@@ -599,68 +587,42 @@ abstract class GetOrdersListSuccess implements OrdersState {
 }
 
 /// @nodoc
-abstract class $GetOrdersListErrorDetailsCopyWith<$Res> {
-  factory $GetOrdersListErrorDetailsCopyWith(GetOrdersListErrorDetails value,
-          $Res Function(GetOrdersListErrorDetails) then) =
-      _$GetOrdersListErrorDetailsCopyWithImpl<$Res>;
-  $Res call({String error});
+abstract class $GetOrdersListErrorCopyWith<$Res> {
+  factory $GetOrdersListErrorCopyWith(
+          GetOrdersListError value, $Res Function(GetOrdersListError) then) =
+      _$GetOrdersListErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetOrdersListErrorDetailsCopyWithImpl<$Res>
+class _$GetOrdersListErrorCopyWithImpl<$Res>
     extends _$OrdersStateCopyWithImpl<$Res>
-    implements $GetOrdersListErrorDetailsCopyWith<$Res> {
-  _$GetOrdersListErrorDetailsCopyWithImpl(GetOrdersListErrorDetails _value,
-      $Res Function(GetOrdersListErrorDetails) _then)
-      : super(_value, (v) => _then(v as GetOrdersListErrorDetails));
+    implements $GetOrdersListErrorCopyWith<$Res> {
+  _$GetOrdersListErrorCopyWithImpl(
+      GetOrdersListError _value, $Res Function(GetOrdersListError) _then)
+      : super(_value, (v) => _then(v as GetOrdersListError));
 
   @override
-  GetOrdersListErrorDetails get _value =>
-      super._value as GetOrdersListErrorDetails;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(GetOrdersListErrorDetails(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  GetOrdersListError get _value => super._value as GetOrdersListError;
 }
 
 /// @nodoc
 
-class _$GetOrdersListErrorDetails implements GetOrdersListErrorDetails {
-  const _$GetOrdersListErrorDetails(this.error);
-
-  @override
-  final String error;
+class _$GetOrdersListError implements GetOrdersListError {
+  const _$GetOrdersListError();
 
   @override
   String toString() {
-    return 'OrdersState.getOrdersListError(error: $error)';
+    return 'OrdersState.getOrdersListError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is GetOrdersListErrorDetails &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is GetOrdersListError);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $GetOrdersListErrorDetailsCopyWith<GetOrdersListErrorDetails> get copyWith =>
-      _$GetOrdersListErrorDetailsCopyWithImpl<GetOrdersListErrorDetails>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -668,12 +630,12 @@ class _$GetOrdersListErrorDetails implements GetOrdersListErrorDetails {
     required TResult Function() initial,
     required TResult Function() getOrdersListLoading,
     required TResult Function(List<Order> ordersList) getOrdersListSuccess,
-    required TResult Function(String error) getOrdersListError,
+    required TResult Function() getOrdersListError,
     required TResult Function() getOrderDetailsLoading,
     required TResult Function(List<Order> orderDetails) getOrderDetailsSuccess,
-    required TResult Function(String error) getOrderDetailsError,
+    required TResult Function() getOrderDetailsError,
   }) {
-    return getOrdersListError(error);
+    return getOrdersListError();
   }
 
   @override
@@ -682,12 +644,12 @@ class _$GetOrdersListErrorDetails implements GetOrdersListErrorDetails {
     TResult Function()? initial,
     TResult Function()? getOrdersListLoading,
     TResult Function(List<Order> ordersList)? getOrdersListSuccess,
-    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
     TResult Function(List<Order> orderDetails)? getOrderDetailsSuccess,
-    TResult Function(String error)? getOrderDetailsError,
+    TResult Function()? getOrderDetailsError,
   }) {
-    return getOrdersListError?.call(error);
+    return getOrdersListError?.call();
   }
 
   @override
@@ -696,14 +658,14 @@ class _$GetOrdersListErrorDetails implements GetOrdersListErrorDetails {
     TResult Function()? initial,
     TResult Function()? getOrdersListLoading,
     TResult Function(List<Order> ordersList)? getOrdersListSuccess,
-    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
     TResult Function(List<Order> orderDetails)? getOrderDetailsSuccess,
-    TResult Function(String error)? getOrderDetailsError,
+    TResult Function()? getOrderDetailsError,
     required TResult orElse(),
   }) {
     if (getOrdersListError != null) {
-      return getOrdersListError(error);
+      return getOrdersListError();
     }
     return orElse();
   }
@@ -714,14 +676,12 @@ class _$GetOrdersListErrorDetails implements GetOrdersListErrorDetails {
     required TResult Function(OrdersInitial value) initial,
     required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
     required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
-    required TResult Function(GetOrdersListErrorDetails value)
-        getOrdersListError,
+    required TResult Function(GetOrdersListError value) getOrdersListError,
     required TResult Function(GetOrderDetailsLoading value)
         getOrderDetailsLoading,
     required TResult Function(GetOrderDetailsSuccess value)
         getOrderDetailsSuccess,
-    required TResult Function(GetOrderDetailsErrorDetails value)
-        getOrderDetailsError,
+    required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
   }) {
     return getOrdersListError(this);
   }
@@ -732,10 +692,10 @@ class _$GetOrdersListErrorDetails implements GetOrdersListErrorDetails {
     TResult Function(OrdersInitial value)? initial,
     TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
     TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
-    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
-    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
   }) {
     return getOrdersListError?.call(this);
   }
@@ -746,10 +706,10 @@ class _$GetOrdersListErrorDetails implements GetOrdersListErrorDetails {
     TResult Function(OrdersInitial value)? initial,
     TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
     TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
-    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
-    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
     required TResult orElse(),
   }) {
     if (getOrdersListError != null) {
@@ -759,14 +719,8 @@ class _$GetOrdersListErrorDetails implements GetOrdersListErrorDetails {
   }
 }
 
-abstract class GetOrdersListErrorDetails implements OrdersState {
-  const factory GetOrdersListErrorDetails(String error) =
-      _$GetOrdersListErrorDetails;
-
-  String get error;
-  @JsonKey(ignore: true)
-  $GetOrdersListErrorDetailsCopyWith<GetOrdersListErrorDetails> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class GetOrdersListError implements OrdersState {
+  const factory GetOrdersListError() = _$GetOrdersListError;
 }
 
 /// @nodoc
@@ -813,10 +767,10 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
     required TResult Function() initial,
     required TResult Function() getOrdersListLoading,
     required TResult Function(List<Order> ordersList) getOrdersListSuccess,
-    required TResult Function(String error) getOrdersListError,
+    required TResult Function() getOrdersListError,
     required TResult Function() getOrderDetailsLoading,
     required TResult Function(List<Order> orderDetails) getOrderDetailsSuccess,
-    required TResult Function(String error) getOrderDetailsError,
+    required TResult Function() getOrderDetailsError,
   }) {
     return getOrderDetailsLoading();
   }
@@ -827,10 +781,10 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
     TResult Function()? initial,
     TResult Function()? getOrdersListLoading,
     TResult Function(List<Order> ordersList)? getOrdersListSuccess,
-    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
     TResult Function(List<Order> orderDetails)? getOrderDetailsSuccess,
-    TResult Function(String error)? getOrderDetailsError,
+    TResult Function()? getOrderDetailsError,
   }) {
     return getOrderDetailsLoading?.call();
   }
@@ -841,10 +795,10 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
     TResult Function()? initial,
     TResult Function()? getOrdersListLoading,
     TResult Function(List<Order> ordersList)? getOrdersListSuccess,
-    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
     TResult Function(List<Order> orderDetails)? getOrderDetailsSuccess,
-    TResult Function(String error)? getOrderDetailsError,
+    TResult Function()? getOrderDetailsError,
     required TResult orElse(),
   }) {
     if (getOrderDetailsLoading != null) {
@@ -859,14 +813,12 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
     required TResult Function(OrdersInitial value) initial,
     required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
     required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
-    required TResult Function(GetOrdersListErrorDetails value)
-        getOrdersListError,
+    required TResult Function(GetOrdersListError value) getOrdersListError,
     required TResult Function(GetOrderDetailsLoading value)
         getOrderDetailsLoading,
     required TResult Function(GetOrderDetailsSuccess value)
         getOrderDetailsSuccess,
-    required TResult Function(GetOrderDetailsErrorDetails value)
-        getOrderDetailsError,
+    required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
   }) {
     return getOrderDetailsLoading(this);
   }
@@ -877,10 +829,10 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
     TResult Function(OrdersInitial value)? initial,
     TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
     TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
-    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
-    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
   }) {
     return getOrderDetailsLoading?.call(this);
   }
@@ -891,10 +843,10 @@ class _$GetOrderDetailsLoading implements GetOrderDetailsLoading {
     TResult Function(OrdersInitial value)? initial,
     TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
     TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
-    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
-    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
     required TResult orElse(),
   }) {
     if (getOrderDetailsLoading != null) {
@@ -978,10 +930,10 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
     required TResult Function() initial,
     required TResult Function() getOrdersListLoading,
     required TResult Function(List<Order> ordersList) getOrdersListSuccess,
-    required TResult Function(String error) getOrdersListError,
+    required TResult Function() getOrdersListError,
     required TResult Function() getOrderDetailsLoading,
     required TResult Function(List<Order> orderDetails) getOrderDetailsSuccess,
-    required TResult Function(String error) getOrderDetailsError,
+    required TResult Function() getOrderDetailsError,
   }) {
     return getOrderDetailsSuccess(orderDetails);
   }
@@ -992,10 +944,10 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
     TResult Function()? initial,
     TResult Function()? getOrdersListLoading,
     TResult Function(List<Order> ordersList)? getOrdersListSuccess,
-    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
     TResult Function(List<Order> orderDetails)? getOrderDetailsSuccess,
-    TResult Function(String error)? getOrderDetailsError,
+    TResult Function()? getOrderDetailsError,
   }) {
     return getOrderDetailsSuccess?.call(orderDetails);
   }
@@ -1006,10 +958,10 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
     TResult Function()? initial,
     TResult Function()? getOrdersListLoading,
     TResult Function(List<Order> ordersList)? getOrdersListSuccess,
-    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
     TResult Function(List<Order> orderDetails)? getOrderDetailsSuccess,
-    TResult Function(String error)? getOrderDetailsError,
+    TResult Function()? getOrderDetailsError,
     required TResult orElse(),
   }) {
     if (getOrderDetailsSuccess != null) {
@@ -1024,14 +976,12 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
     required TResult Function(OrdersInitial value) initial,
     required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
     required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
-    required TResult Function(GetOrdersListErrorDetails value)
-        getOrdersListError,
+    required TResult Function(GetOrdersListError value) getOrdersListError,
     required TResult Function(GetOrderDetailsLoading value)
         getOrderDetailsLoading,
     required TResult Function(GetOrderDetailsSuccess value)
         getOrderDetailsSuccess,
-    required TResult Function(GetOrderDetailsErrorDetails value)
-        getOrderDetailsError,
+    required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
   }) {
     return getOrderDetailsSuccess(this);
   }
@@ -1042,10 +992,10 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
     TResult Function(OrdersInitial value)? initial,
     TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
     TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
-    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
-    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
   }) {
     return getOrderDetailsSuccess?.call(this);
   }
@@ -1056,10 +1006,10 @@ class _$GetOrderDetailsSuccess implements GetOrderDetailsSuccess {
     TResult Function(OrdersInitial value)? initial,
     TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
     TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
-    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
-    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
     required TResult orElse(),
   }) {
     if (getOrderDetailsSuccess != null) {
@@ -1080,69 +1030,42 @@ abstract class GetOrderDetailsSuccess implements OrdersState {
 }
 
 /// @nodoc
-abstract class $GetOrderDetailsErrorDetailsCopyWith<$Res> {
-  factory $GetOrderDetailsErrorDetailsCopyWith(
-          GetOrderDetailsErrorDetails value,
-          $Res Function(GetOrderDetailsErrorDetails) then) =
-      _$GetOrderDetailsErrorDetailsCopyWithImpl<$Res>;
-  $Res call({String error});
+abstract class $GetOrderDetailsErrorCopyWith<$Res> {
+  factory $GetOrderDetailsErrorCopyWith(GetOrderDetailsError value,
+          $Res Function(GetOrderDetailsError) then) =
+      _$GetOrderDetailsErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetOrderDetailsErrorDetailsCopyWithImpl<$Res>
+class _$GetOrderDetailsErrorCopyWithImpl<$Res>
     extends _$OrdersStateCopyWithImpl<$Res>
-    implements $GetOrderDetailsErrorDetailsCopyWith<$Res> {
-  _$GetOrderDetailsErrorDetailsCopyWithImpl(GetOrderDetailsErrorDetails _value,
-      $Res Function(GetOrderDetailsErrorDetails) _then)
-      : super(_value, (v) => _then(v as GetOrderDetailsErrorDetails));
+    implements $GetOrderDetailsErrorCopyWith<$Res> {
+  _$GetOrderDetailsErrorCopyWithImpl(
+      GetOrderDetailsError _value, $Res Function(GetOrderDetailsError) _then)
+      : super(_value, (v) => _then(v as GetOrderDetailsError));
 
   @override
-  GetOrderDetailsErrorDetails get _value =>
-      super._value as GetOrderDetailsErrorDetails;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(GetOrderDetailsErrorDetails(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  GetOrderDetailsError get _value => super._value as GetOrderDetailsError;
 }
 
 /// @nodoc
 
-class _$GetOrderDetailsErrorDetails implements GetOrderDetailsErrorDetails {
-  const _$GetOrderDetailsErrorDetails(this.error);
-
-  @override
-  final String error;
+class _$GetOrderDetailsError implements GetOrderDetailsError {
+  const _$GetOrderDetailsError();
 
   @override
   String toString() {
-    return 'OrdersState.getOrderDetailsError(error: $error)';
+    return 'OrdersState.getOrderDetailsError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is GetOrderDetailsErrorDetails &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is GetOrderDetailsError);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $GetOrderDetailsErrorDetailsCopyWith<GetOrderDetailsErrorDetails>
-      get copyWith => _$GetOrderDetailsErrorDetailsCopyWithImpl<
-          GetOrderDetailsErrorDetails>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -1150,12 +1073,12 @@ class _$GetOrderDetailsErrorDetails implements GetOrderDetailsErrorDetails {
     required TResult Function() initial,
     required TResult Function() getOrdersListLoading,
     required TResult Function(List<Order> ordersList) getOrdersListSuccess,
-    required TResult Function(String error) getOrdersListError,
+    required TResult Function() getOrdersListError,
     required TResult Function() getOrderDetailsLoading,
     required TResult Function(List<Order> orderDetails) getOrderDetailsSuccess,
-    required TResult Function(String error) getOrderDetailsError,
+    required TResult Function() getOrderDetailsError,
   }) {
-    return getOrderDetailsError(error);
+    return getOrderDetailsError();
   }
 
   @override
@@ -1164,12 +1087,12 @@ class _$GetOrderDetailsErrorDetails implements GetOrderDetailsErrorDetails {
     TResult Function()? initial,
     TResult Function()? getOrdersListLoading,
     TResult Function(List<Order> ordersList)? getOrdersListSuccess,
-    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
     TResult Function(List<Order> orderDetails)? getOrderDetailsSuccess,
-    TResult Function(String error)? getOrderDetailsError,
+    TResult Function()? getOrderDetailsError,
   }) {
-    return getOrderDetailsError?.call(error);
+    return getOrderDetailsError?.call();
   }
 
   @override
@@ -1178,14 +1101,14 @@ class _$GetOrderDetailsErrorDetails implements GetOrderDetailsErrorDetails {
     TResult Function()? initial,
     TResult Function()? getOrdersListLoading,
     TResult Function(List<Order> ordersList)? getOrdersListSuccess,
-    TResult Function(String error)? getOrdersListError,
+    TResult Function()? getOrdersListError,
     TResult Function()? getOrderDetailsLoading,
     TResult Function(List<Order> orderDetails)? getOrderDetailsSuccess,
-    TResult Function(String error)? getOrderDetailsError,
+    TResult Function()? getOrderDetailsError,
     required TResult orElse(),
   }) {
     if (getOrderDetailsError != null) {
-      return getOrderDetailsError(error);
+      return getOrderDetailsError();
     }
     return orElse();
   }
@@ -1196,14 +1119,12 @@ class _$GetOrderDetailsErrorDetails implements GetOrderDetailsErrorDetails {
     required TResult Function(OrdersInitial value) initial,
     required TResult Function(GetOrdersListLoading value) getOrdersListLoading,
     required TResult Function(GetOrdersListSuccess value) getOrdersListSuccess,
-    required TResult Function(GetOrdersListErrorDetails value)
-        getOrdersListError,
+    required TResult Function(GetOrdersListError value) getOrdersListError,
     required TResult Function(GetOrderDetailsLoading value)
         getOrderDetailsLoading,
     required TResult Function(GetOrderDetailsSuccess value)
         getOrderDetailsSuccess,
-    required TResult Function(GetOrderDetailsErrorDetails value)
-        getOrderDetailsError,
+    required TResult Function(GetOrderDetailsError value) getOrderDetailsError,
   }) {
     return getOrderDetailsError(this);
   }
@@ -1214,10 +1135,10 @@ class _$GetOrderDetailsErrorDetails implements GetOrderDetailsErrorDetails {
     TResult Function(OrdersInitial value)? initial,
     TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
     TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
-    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
-    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
   }) {
     return getOrderDetailsError?.call(this);
   }
@@ -1228,10 +1149,10 @@ class _$GetOrderDetailsErrorDetails implements GetOrderDetailsErrorDetails {
     TResult Function(OrdersInitial value)? initial,
     TResult Function(GetOrdersListLoading value)? getOrdersListLoading,
     TResult Function(GetOrdersListSuccess value)? getOrdersListSuccess,
-    TResult Function(GetOrdersListErrorDetails value)? getOrdersListError,
+    TResult Function(GetOrdersListError value)? getOrdersListError,
     TResult Function(GetOrderDetailsLoading value)? getOrderDetailsLoading,
     TResult Function(GetOrderDetailsSuccess value)? getOrderDetailsSuccess,
-    TResult Function(GetOrderDetailsErrorDetails value)? getOrderDetailsError,
+    TResult Function(GetOrderDetailsError value)? getOrderDetailsError,
     required TResult orElse(),
   }) {
     if (getOrderDetailsError != null) {
@@ -1241,12 +1162,6 @@ class _$GetOrderDetailsErrorDetails implements GetOrderDetailsErrorDetails {
   }
 }
 
-abstract class GetOrderDetailsErrorDetails implements OrdersState {
-  const factory GetOrderDetailsErrorDetails(String error) =
-      _$GetOrderDetailsErrorDetails;
-
-  String get error;
-  @JsonKey(ignore: true)
-  $GetOrderDetailsErrorDetailsCopyWith<GetOrderDetailsErrorDetails>
-      get copyWith => throw _privateConstructorUsedError;
+abstract class GetOrderDetailsError implements OrdersState {
+  const factory GetOrderDetailsError() = _$GetOrderDetailsError;
 }

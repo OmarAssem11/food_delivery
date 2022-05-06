@@ -9,10 +9,8 @@ class ProfileState with _$ProfileState {
   const factory ProfileState.viewLoading() = ViewProfileLoading;
   const factory ProfileState.viewSuccess(final ProfileEntity profile) =
       ViewProfileSuccess;
-  const factory ProfileState.viewError(final String error) =
-      ViewProfileErrorDetails;
+  const factory ProfileState.viewError() = ViewProfileError;
   const factory ProfileState.editLoading() = EditProfileLoading;
   const factory ProfileState.editSuccess() = EditProfileSuccess;
-  const factory ProfileState.editError(final String error) =
-      EditProfileErrorDetails;
+  const factory ProfileState.editError() = EditProfileError;
 }

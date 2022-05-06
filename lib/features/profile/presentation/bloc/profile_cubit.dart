@@ -22,7 +22,7 @@ class ProfileCubit extends Cubit<ProfileState> {
     final result = await _viewProfileUseCase(const NoParams());
     emit(
       result.fold(
-        (failure) => ViewProfileErrorDetails(failure.error),
+        (failure) => const ViewProfileError(),
         (profile) => ViewProfileSuccess(profile),
       ),
     );
@@ -41,7 +41,7 @@ class ProfileCubit extends Cubit<ProfileState> {
     );
     emit(
       result.fold(
-        (failure) => EditProfileErrorDetails(failure.error),
+        (failure) => const EditProfileError(),
         (_) => const EditProfileSuccess(),
       ),
     );

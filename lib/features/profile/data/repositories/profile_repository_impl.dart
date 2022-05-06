@@ -1,5 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:food_delivery/core/domain/error/failure.dart';
+import 'package:food_delivery/core/data/app_exception/app_exception.dart';
+import 'package:food_delivery/core/domain/failure/failure.dart';
+import 'package:food_delivery/core/domain/failure/return_failure.dart';
 import 'package:food_delivery/features/profile/data/mappers/profile_mapper.dart';
 import 'package:food_delivery/features/profile/data/models/profile_model.dart';
 import 'package:food_delivery/features/profile/domain/datasources/profile_remote_datasource.dart';
@@ -19,8 +21,8 @@ class ProfileRepositoryImpl implements ProfileRepository {
     try {
       final profile = await _profileRemoteDataSource.viewProfile();
       return right(profile.fromModel);
-    } catch (error) {
-      return left(const Failure('Error while getting profile'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 
@@ -30,7 +32,7 @@ class ProfileRepositoryImpl implements ProfileRepository {
   }) async {
     try {
       if (editProfileData.imageFile != null) {
-        final uploadedImageUrl = await _profileRemoteDataSource.uploadImage(
+        await _profileRemoteDataSource.uploadImage(
           image: editProfileData.imageFile!,
         );
         await _profileRemoteDataSource.editProfile(
@@ -39,7 +41,6 @@ class ProfileRepositoryImpl implements ProfileRepository {
             email: editProfileData.profile.email,
             password: editProfileData.profile.password,
             phone: editProfileData.profile.phone,
-            imageUrl: uploadedImageUrl.url,
             address: editProfileData.profile.address,
           ),
         );
@@ -49,8 +50,8 @@ class ProfileRepositoryImpl implements ProfileRepository {
         );
       }
       return right(unit);
-    } catch (error) {
-      return left(const Failure('Error while editing profile'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 }

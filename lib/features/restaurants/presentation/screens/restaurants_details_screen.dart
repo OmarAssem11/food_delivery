@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_delivery/core/presentation/screens/error_screen.dart';
+import 'package:food_delivery/core/presentation/widgets/errors_widget.dart';
 import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_cubit.dart';
 import 'package:food_delivery/features/restaurants/presentation/bloc/restaurants_state.dart';
@@ -26,7 +26,7 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen> {
     super.didChangeDependencies();
     restaurantId = ModalRoute.of(context)!.settings.arguments! as int;
     BlocProvider.of<RestaurantsCubit>(context)
-        .getRestaurantDetails(restaurantId: restaurantId);
+        .getRestaurant(restaurantId: restaurantId);
     textTheme = Theme.of(context).textTheme;
     colorScheme = Theme.of(context).colorScheme;
   }
@@ -38,9 +38,9 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen> {
         builder: (context, state) {
           return state.maybeWhen(
             getRestaurantDetailsLoading: () => const LoadingIndicator(),
-            getRestaurantDetailsError: (_) => ErrorScreen(
+            getRestaurantDetailsError: () => ErrorsWidget(
               onRetry: () => BlocProvider.of<RestaurantsCubit>(context)
-                  .getRestaurantDetails(restaurantId: restaurantId),
+                  .getRestaurant(restaurantId: restaurantId),
             ),
             getRestaurantDetailsSuccess: (restaurant) => Column(
               children: [
@@ -91,7 +91,7 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen> {
                         Expanded(
                           child: ListView.separated(
                             itemBuilder: (context, index) => ProductItem(
-                              restaurant.products!.reversed.toList()[index],
+                              restaurant.products![index],
                             ),
                             itemCount: restaurant.products!.length,
                             physics: const BouncingScrollPhysics(),

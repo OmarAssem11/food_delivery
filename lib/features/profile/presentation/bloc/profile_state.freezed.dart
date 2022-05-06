@@ -32,10 +32,8 @@ class _$ProfileStateTearOff {
     );
   }
 
-  ViewProfileErrorDetails viewError(String error) {
-    return ViewProfileErrorDetails(
-      error,
-    );
+  ViewProfileError viewError() {
+    return const ViewProfileError();
   }
 
   EditProfileLoading editLoading() {
@@ -46,10 +44,8 @@ class _$ProfileStateTearOff {
     return const EditProfileSuccess();
   }
 
-  EditProfileErrorDetails editError(String error) {
-    return EditProfileErrorDetails(
-      error,
-    );
+  EditProfileError editError() {
+    return const EditProfileError();
   }
 }
 
@@ -63,10 +59,10 @@ mixin _$ProfileState {
     required TResult Function() initial,
     required TResult Function() viewLoading,
     required TResult Function(ProfileEntity profile) viewSuccess,
-    required TResult Function(String error) viewError,
+    required TResult Function() viewError,
     required TResult Function() editLoading,
     required TResult Function() editSuccess,
-    required TResult Function(String error) editError,
+    required TResult Function() editError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -74,10 +70,10 @@ mixin _$ProfileState {
     TResult Function()? initial,
     TResult Function()? viewLoading,
     TResult Function(ProfileEntity profile)? viewSuccess,
-    TResult Function(String error)? viewError,
+    TResult Function()? viewError,
     TResult Function()? editLoading,
     TResult Function()? editSuccess,
-    TResult Function(String error)? editError,
+    TResult Function()? editError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -85,10 +81,10 @@ mixin _$ProfileState {
     TResult Function()? initial,
     TResult Function()? viewLoading,
     TResult Function(ProfileEntity profile)? viewSuccess,
-    TResult Function(String error)? viewError,
+    TResult Function()? viewError,
     TResult Function()? editLoading,
     TResult Function()? editSuccess,
-    TResult Function(String error)? editError,
+    TResult Function()? editError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -97,10 +93,10 @@ mixin _$ProfileState {
     required TResult Function(ProfileInitial value) initial,
     required TResult Function(ViewProfileLoading value) viewLoading,
     required TResult Function(ViewProfileSuccess value) viewSuccess,
-    required TResult Function(ViewProfileErrorDetails value) viewError,
+    required TResult Function(ViewProfileError value) viewError,
     required TResult Function(EditProfileLoading value) editLoading,
     required TResult Function(EditProfileSuccess value) editSuccess,
-    required TResult Function(EditProfileErrorDetails value) editError,
+    required TResult Function(EditProfileError value) editError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -108,10 +104,10 @@ mixin _$ProfileState {
     TResult Function(ProfileInitial value)? initial,
     TResult Function(ViewProfileLoading value)? viewLoading,
     TResult Function(ViewProfileSuccess value)? viewSuccess,
-    TResult Function(ViewProfileErrorDetails value)? viewError,
+    TResult Function(ViewProfileError value)? viewError,
     TResult Function(EditProfileLoading value)? editLoading,
     TResult Function(EditProfileSuccess value)? editSuccess,
-    TResult Function(EditProfileErrorDetails value)? editError,
+    TResult Function(EditProfileError value)? editError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -119,10 +115,10 @@ mixin _$ProfileState {
     TResult Function(ProfileInitial value)? initial,
     TResult Function(ViewProfileLoading value)? viewLoading,
     TResult Function(ViewProfileSuccess value)? viewSuccess,
-    TResult Function(ViewProfileErrorDetails value)? viewError,
+    TResult Function(ViewProfileError value)? viewError,
     TResult Function(EditProfileLoading value)? editLoading,
     TResult Function(EditProfileSuccess value)? editSuccess,
-    TResult Function(EditProfileErrorDetails value)? editError,
+    TResult Function(EditProfileError value)? editError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -188,10 +184,10 @@ class _$ProfileInitial implements ProfileInitial {
     required TResult Function() initial,
     required TResult Function() viewLoading,
     required TResult Function(ProfileEntity profile) viewSuccess,
-    required TResult Function(String error) viewError,
+    required TResult Function() viewError,
     required TResult Function() editLoading,
     required TResult Function() editSuccess,
-    required TResult Function(String error) editError,
+    required TResult Function() editError,
   }) {
     return initial();
   }
@@ -202,10 +198,10 @@ class _$ProfileInitial implements ProfileInitial {
     TResult Function()? initial,
     TResult Function()? viewLoading,
     TResult Function(ProfileEntity profile)? viewSuccess,
-    TResult Function(String error)? viewError,
+    TResult Function()? viewError,
     TResult Function()? editLoading,
     TResult Function()? editSuccess,
-    TResult Function(String error)? editError,
+    TResult Function()? editError,
   }) {
     return initial?.call();
   }
@@ -216,10 +212,10 @@ class _$ProfileInitial implements ProfileInitial {
     TResult Function()? initial,
     TResult Function()? viewLoading,
     TResult Function(ProfileEntity profile)? viewSuccess,
-    TResult Function(String error)? viewError,
+    TResult Function()? viewError,
     TResult Function()? editLoading,
     TResult Function()? editSuccess,
-    TResult Function(String error)? editError,
+    TResult Function()? editError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -234,10 +230,10 @@ class _$ProfileInitial implements ProfileInitial {
     required TResult Function(ProfileInitial value) initial,
     required TResult Function(ViewProfileLoading value) viewLoading,
     required TResult Function(ViewProfileSuccess value) viewSuccess,
-    required TResult Function(ViewProfileErrorDetails value) viewError,
+    required TResult Function(ViewProfileError value) viewError,
     required TResult Function(EditProfileLoading value) editLoading,
     required TResult Function(EditProfileSuccess value) editSuccess,
-    required TResult Function(EditProfileErrorDetails value) editError,
+    required TResult Function(EditProfileError value) editError,
   }) {
     return initial(this);
   }
@@ -248,10 +244,10 @@ class _$ProfileInitial implements ProfileInitial {
     TResult Function(ProfileInitial value)? initial,
     TResult Function(ViewProfileLoading value)? viewLoading,
     TResult Function(ViewProfileSuccess value)? viewSuccess,
-    TResult Function(ViewProfileErrorDetails value)? viewError,
+    TResult Function(ViewProfileError value)? viewError,
     TResult Function(EditProfileLoading value)? editLoading,
     TResult Function(EditProfileSuccess value)? editSuccess,
-    TResult Function(EditProfileErrorDetails value)? editError,
+    TResult Function(EditProfileError value)? editError,
   }) {
     return initial?.call(this);
   }
@@ -262,10 +258,10 @@ class _$ProfileInitial implements ProfileInitial {
     TResult Function(ProfileInitial value)? initial,
     TResult Function(ViewProfileLoading value)? viewLoading,
     TResult Function(ViewProfileSuccess value)? viewSuccess,
-    TResult Function(ViewProfileErrorDetails value)? viewError,
+    TResult Function(ViewProfileError value)? viewError,
     TResult Function(EditProfileLoading value)? editLoading,
     TResult Function(EditProfileSuccess value)? editSuccess,
-    TResult Function(EditProfileErrorDetails value)? editError,
+    TResult Function(EditProfileError value)? editError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -323,10 +319,10 @@ class _$ViewProfileLoading implements ViewProfileLoading {
     required TResult Function() initial,
     required TResult Function() viewLoading,
     required TResult Function(ProfileEntity profile) viewSuccess,
-    required TResult Function(String error) viewError,
+    required TResult Function() viewError,
     required TResult Function() editLoading,
     required TResult Function() editSuccess,
-    required TResult Function(String error) editError,
+    required TResult Function() editError,
   }) {
     return viewLoading();
   }
@@ -337,10 +333,10 @@ class _$ViewProfileLoading implements ViewProfileLoading {
     TResult Function()? initial,
     TResult Function()? viewLoading,
     TResult Function(ProfileEntity profile)? viewSuccess,
-    TResult Function(String error)? viewError,
+    TResult Function()? viewError,
     TResult Function()? editLoading,
     TResult Function()? editSuccess,
-    TResult Function(String error)? editError,
+    TResult Function()? editError,
   }) {
     return viewLoading?.call();
   }
@@ -351,10 +347,10 @@ class _$ViewProfileLoading implements ViewProfileLoading {
     TResult Function()? initial,
     TResult Function()? viewLoading,
     TResult Function(ProfileEntity profile)? viewSuccess,
-    TResult Function(String error)? viewError,
+    TResult Function()? viewError,
     TResult Function()? editLoading,
     TResult Function()? editSuccess,
-    TResult Function(String error)? editError,
+    TResult Function()? editError,
     required TResult orElse(),
   }) {
     if (viewLoading != null) {
@@ -369,10 +365,10 @@ class _$ViewProfileLoading implements ViewProfileLoading {
     required TResult Function(ProfileInitial value) initial,
     required TResult Function(ViewProfileLoading value) viewLoading,
     required TResult Function(ViewProfileSuccess value) viewSuccess,
-    required TResult Function(ViewProfileErrorDetails value) viewError,
+    required TResult Function(ViewProfileError value) viewError,
     required TResult Function(EditProfileLoading value) editLoading,
     required TResult Function(EditProfileSuccess value) editSuccess,
-    required TResult Function(EditProfileErrorDetails value) editError,
+    required TResult Function(EditProfileError value) editError,
   }) {
     return viewLoading(this);
   }
@@ -383,10 +379,10 @@ class _$ViewProfileLoading implements ViewProfileLoading {
     TResult Function(ProfileInitial value)? initial,
     TResult Function(ViewProfileLoading value)? viewLoading,
     TResult Function(ViewProfileSuccess value)? viewSuccess,
-    TResult Function(ViewProfileErrorDetails value)? viewError,
+    TResult Function(ViewProfileError value)? viewError,
     TResult Function(EditProfileLoading value)? editLoading,
     TResult Function(EditProfileSuccess value)? editSuccess,
-    TResult Function(EditProfileErrorDetails value)? editError,
+    TResult Function(EditProfileError value)? editError,
   }) {
     return viewLoading?.call(this);
   }
@@ -397,10 +393,10 @@ class _$ViewProfileLoading implements ViewProfileLoading {
     TResult Function(ProfileInitial value)? initial,
     TResult Function(ViewProfileLoading value)? viewLoading,
     TResult Function(ViewProfileSuccess value)? viewSuccess,
-    TResult Function(ViewProfileErrorDetails value)? viewError,
+    TResult Function(ViewProfileError value)? viewError,
     TResult Function(EditProfileLoading value)? editLoading,
     TResult Function(EditProfileSuccess value)? editSuccess,
-    TResult Function(EditProfileErrorDetails value)? editError,
+    TResult Function(EditProfileError value)? editError,
     required TResult orElse(),
   }) {
     if (viewLoading != null) {
@@ -482,10 +478,10 @@ class _$ViewProfileSuccess implements ViewProfileSuccess {
     required TResult Function() initial,
     required TResult Function() viewLoading,
     required TResult Function(ProfileEntity profile) viewSuccess,
-    required TResult Function(String error) viewError,
+    required TResult Function() viewError,
     required TResult Function() editLoading,
     required TResult Function() editSuccess,
-    required TResult Function(String error) editError,
+    required TResult Function() editError,
   }) {
     return viewSuccess(profile);
   }
@@ -496,10 +492,10 @@ class _$ViewProfileSuccess implements ViewProfileSuccess {
     TResult Function()? initial,
     TResult Function()? viewLoading,
     TResult Function(ProfileEntity profile)? viewSuccess,
-    TResult Function(String error)? viewError,
+    TResult Function()? viewError,
     TResult Function()? editLoading,
     TResult Function()? editSuccess,
-    TResult Function(String error)? editError,
+    TResult Function()? editError,
   }) {
     return viewSuccess?.call(profile);
   }
@@ -510,10 +506,10 @@ class _$ViewProfileSuccess implements ViewProfileSuccess {
     TResult Function()? initial,
     TResult Function()? viewLoading,
     TResult Function(ProfileEntity profile)? viewSuccess,
-    TResult Function(String error)? viewError,
+    TResult Function()? viewError,
     TResult Function()? editLoading,
     TResult Function()? editSuccess,
-    TResult Function(String error)? editError,
+    TResult Function()? editError,
     required TResult orElse(),
   }) {
     if (viewSuccess != null) {
@@ -528,10 +524,10 @@ class _$ViewProfileSuccess implements ViewProfileSuccess {
     required TResult Function(ProfileInitial value) initial,
     required TResult Function(ViewProfileLoading value) viewLoading,
     required TResult Function(ViewProfileSuccess value) viewSuccess,
-    required TResult Function(ViewProfileErrorDetails value) viewError,
+    required TResult Function(ViewProfileError value) viewError,
     required TResult Function(EditProfileLoading value) editLoading,
     required TResult Function(EditProfileSuccess value) editSuccess,
-    required TResult Function(EditProfileErrorDetails value) editError,
+    required TResult Function(EditProfileError value) editError,
   }) {
     return viewSuccess(this);
   }
@@ -542,10 +538,10 @@ class _$ViewProfileSuccess implements ViewProfileSuccess {
     TResult Function(ProfileInitial value)? initial,
     TResult Function(ViewProfileLoading value)? viewLoading,
     TResult Function(ViewProfileSuccess value)? viewSuccess,
-    TResult Function(ViewProfileErrorDetails value)? viewError,
+    TResult Function(ViewProfileError value)? viewError,
     TResult Function(EditProfileLoading value)? editLoading,
     TResult Function(EditProfileSuccess value)? editSuccess,
-    TResult Function(EditProfileErrorDetails value)? editError,
+    TResult Function(EditProfileError value)? editError,
   }) {
     return viewSuccess?.call(this);
   }
@@ -556,10 +552,10 @@ class _$ViewProfileSuccess implements ViewProfileSuccess {
     TResult Function(ProfileInitial value)? initial,
     TResult Function(ViewProfileLoading value)? viewLoading,
     TResult Function(ViewProfileSuccess value)? viewSuccess,
-    TResult Function(ViewProfileErrorDetails value)? viewError,
+    TResult Function(ViewProfileError value)? viewError,
     TResult Function(EditProfileLoading value)? editLoading,
     TResult Function(EditProfileSuccess value)? editSuccess,
-    TResult Function(EditProfileErrorDetails value)? editError,
+    TResult Function(EditProfileError value)? editError,
     required TResult orElse(),
   }) {
     if (viewSuccess != null) {
@@ -580,67 +576,42 @@ abstract class ViewProfileSuccess implements ProfileState {
 }
 
 /// @nodoc
-abstract class $ViewProfileErrorDetailsCopyWith<$Res> {
-  factory $ViewProfileErrorDetailsCopyWith(ViewProfileErrorDetails value,
-          $Res Function(ViewProfileErrorDetails) then) =
-      _$ViewProfileErrorDetailsCopyWithImpl<$Res>;
-  $Res call({String error});
+abstract class $ViewProfileErrorCopyWith<$Res> {
+  factory $ViewProfileErrorCopyWith(
+          ViewProfileError value, $Res Function(ViewProfileError) then) =
+      _$ViewProfileErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ViewProfileErrorDetailsCopyWithImpl<$Res>
+class _$ViewProfileErrorCopyWithImpl<$Res>
     extends _$ProfileStateCopyWithImpl<$Res>
-    implements $ViewProfileErrorDetailsCopyWith<$Res> {
-  _$ViewProfileErrorDetailsCopyWithImpl(ViewProfileErrorDetails _value,
-      $Res Function(ViewProfileErrorDetails) _then)
-      : super(_value, (v) => _then(v as ViewProfileErrorDetails));
+    implements $ViewProfileErrorCopyWith<$Res> {
+  _$ViewProfileErrorCopyWithImpl(
+      ViewProfileError _value, $Res Function(ViewProfileError) _then)
+      : super(_value, (v) => _then(v as ViewProfileError));
 
   @override
-  ViewProfileErrorDetails get _value => super._value as ViewProfileErrorDetails;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(ViewProfileErrorDetails(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  ViewProfileError get _value => super._value as ViewProfileError;
 }
 
 /// @nodoc
 
-class _$ViewProfileErrorDetails implements ViewProfileErrorDetails {
-  const _$ViewProfileErrorDetails(this.error);
-
-  @override
-  final String error;
+class _$ViewProfileError implements ViewProfileError {
+  const _$ViewProfileError();
 
   @override
   String toString() {
-    return 'ProfileState.viewError(error: $error)';
+    return 'ProfileState.viewError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ViewProfileErrorDetails &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is ViewProfileError);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $ViewProfileErrorDetailsCopyWith<ViewProfileErrorDetails> get copyWith =>
-      _$ViewProfileErrorDetailsCopyWithImpl<ViewProfileErrorDetails>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -648,12 +619,12 @@ class _$ViewProfileErrorDetails implements ViewProfileErrorDetails {
     required TResult Function() initial,
     required TResult Function() viewLoading,
     required TResult Function(ProfileEntity profile) viewSuccess,
-    required TResult Function(String error) viewError,
+    required TResult Function() viewError,
     required TResult Function() editLoading,
     required TResult Function() editSuccess,
-    required TResult Function(String error) editError,
+    required TResult Function() editError,
   }) {
-    return viewError(error);
+    return viewError();
   }
 
   @override
@@ -662,12 +633,12 @@ class _$ViewProfileErrorDetails implements ViewProfileErrorDetails {
     TResult Function()? initial,
     TResult Function()? viewLoading,
     TResult Function(ProfileEntity profile)? viewSuccess,
-    TResult Function(String error)? viewError,
+    TResult Function()? viewError,
     TResult Function()? editLoading,
     TResult Function()? editSuccess,
-    TResult Function(String error)? editError,
+    TResult Function()? editError,
   }) {
-    return viewError?.call(error);
+    return viewError?.call();
   }
 
   @override
@@ -676,14 +647,14 @@ class _$ViewProfileErrorDetails implements ViewProfileErrorDetails {
     TResult Function()? initial,
     TResult Function()? viewLoading,
     TResult Function(ProfileEntity profile)? viewSuccess,
-    TResult Function(String error)? viewError,
+    TResult Function()? viewError,
     TResult Function()? editLoading,
     TResult Function()? editSuccess,
-    TResult Function(String error)? editError,
+    TResult Function()? editError,
     required TResult orElse(),
   }) {
     if (viewError != null) {
-      return viewError(error);
+      return viewError();
     }
     return orElse();
   }
@@ -694,10 +665,10 @@ class _$ViewProfileErrorDetails implements ViewProfileErrorDetails {
     required TResult Function(ProfileInitial value) initial,
     required TResult Function(ViewProfileLoading value) viewLoading,
     required TResult Function(ViewProfileSuccess value) viewSuccess,
-    required TResult Function(ViewProfileErrorDetails value) viewError,
+    required TResult Function(ViewProfileError value) viewError,
     required TResult Function(EditProfileLoading value) editLoading,
     required TResult Function(EditProfileSuccess value) editSuccess,
-    required TResult Function(EditProfileErrorDetails value) editError,
+    required TResult Function(EditProfileError value) editError,
   }) {
     return viewError(this);
   }
@@ -708,10 +679,10 @@ class _$ViewProfileErrorDetails implements ViewProfileErrorDetails {
     TResult Function(ProfileInitial value)? initial,
     TResult Function(ViewProfileLoading value)? viewLoading,
     TResult Function(ViewProfileSuccess value)? viewSuccess,
-    TResult Function(ViewProfileErrorDetails value)? viewError,
+    TResult Function(ViewProfileError value)? viewError,
     TResult Function(EditProfileLoading value)? editLoading,
     TResult Function(EditProfileSuccess value)? editSuccess,
-    TResult Function(EditProfileErrorDetails value)? editError,
+    TResult Function(EditProfileError value)? editError,
   }) {
     return viewError?.call(this);
   }
@@ -722,10 +693,10 @@ class _$ViewProfileErrorDetails implements ViewProfileErrorDetails {
     TResult Function(ProfileInitial value)? initial,
     TResult Function(ViewProfileLoading value)? viewLoading,
     TResult Function(ViewProfileSuccess value)? viewSuccess,
-    TResult Function(ViewProfileErrorDetails value)? viewError,
+    TResult Function(ViewProfileError value)? viewError,
     TResult Function(EditProfileLoading value)? editLoading,
     TResult Function(EditProfileSuccess value)? editSuccess,
-    TResult Function(EditProfileErrorDetails value)? editError,
+    TResult Function(EditProfileError value)? editError,
     required TResult orElse(),
   }) {
     if (viewError != null) {
@@ -735,14 +706,8 @@ class _$ViewProfileErrorDetails implements ViewProfileErrorDetails {
   }
 }
 
-abstract class ViewProfileErrorDetails implements ProfileState {
-  const factory ViewProfileErrorDetails(String error) =
-      _$ViewProfileErrorDetails;
-
-  String get error;
-  @JsonKey(ignore: true)
-  $ViewProfileErrorDetailsCopyWith<ViewProfileErrorDetails> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class ViewProfileError implements ProfileState {
+  const factory ViewProfileError() = _$ViewProfileError;
 }
 
 /// @nodoc
@@ -789,10 +754,10 @@ class _$EditProfileLoading implements EditProfileLoading {
     required TResult Function() initial,
     required TResult Function() viewLoading,
     required TResult Function(ProfileEntity profile) viewSuccess,
-    required TResult Function(String error) viewError,
+    required TResult Function() viewError,
     required TResult Function() editLoading,
     required TResult Function() editSuccess,
-    required TResult Function(String error) editError,
+    required TResult Function() editError,
   }) {
     return editLoading();
   }
@@ -803,10 +768,10 @@ class _$EditProfileLoading implements EditProfileLoading {
     TResult Function()? initial,
     TResult Function()? viewLoading,
     TResult Function(ProfileEntity profile)? viewSuccess,
-    TResult Function(String error)? viewError,
+    TResult Function()? viewError,
     TResult Function()? editLoading,
     TResult Function()? editSuccess,
-    TResult Function(String error)? editError,
+    TResult Function()? editError,
   }) {
     return editLoading?.call();
   }
@@ -817,10 +782,10 @@ class _$EditProfileLoading implements EditProfileLoading {
     TResult Function()? initial,
     TResult Function()? viewLoading,
     TResult Function(ProfileEntity profile)? viewSuccess,
-    TResult Function(String error)? viewError,
+    TResult Function()? viewError,
     TResult Function()? editLoading,
     TResult Function()? editSuccess,
-    TResult Function(String error)? editError,
+    TResult Function()? editError,
     required TResult orElse(),
   }) {
     if (editLoading != null) {
@@ -835,10 +800,10 @@ class _$EditProfileLoading implements EditProfileLoading {
     required TResult Function(ProfileInitial value) initial,
     required TResult Function(ViewProfileLoading value) viewLoading,
     required TResult Function(ViewProfileSuccess value) viewSuccess,
-    required TResult Function(ViewProfileErrorDetails value) viewError,
+    required TResult Function(ViewProfileError value) viewError,
     required TResult Function(EditProfileLoading value) editLoading,
     required TResult Function(EditProfileSuccess value) editSuccess,
-    required TResult Function(EditProfileErrorDetails value) editError,
+    required TResult Function(EditProfileError value) editError,
   }) {
     return editLoading(this);
   }
@@ -849,10 +814,10 @@ class _$EditProfileLoading implements EditProfileLoading {
     TResult Function(ProfileInitial value)? initial,
     TResult Function(ViewProfileLoading value)? viewLoading,
     TResult Function(ViewProfileSuccess value)? viewSuccess,
-    TResult Function(ViewProfileErrorDetails value)? viewError,
+    TResult Function(ViewProfileError value)? viewError,
     TResult Function(EditProfileLoading value)? editLoading,
     TResult Function(EditProfileSuccess value)? editSuccess,
-    TResult Function(EditProfileErrorDetails value)? editError,
+    TResult Function(EditProfileError value)? editError,
   }) {
     return editLoading?.call(this);
   }
@@ -863,10 +828,10 @@ class _$EditProfileLoading implements EditProfileLoading {
     TResult Function(ProfileInitial value)? initial,
     TResult Function(ViewProfileLoading value)? viewLoading,
     TResult Function(ViewProfileSuccess value)? viewSuccess,
-    TResult Function(ViewProfileErrorDetails value)? viewError,
+    TResult Function(ViewProfileError value)? viewError,
     TResult Function(EditProfileLoading value)? editLoading,
     TResult Function(EditProfileSuccess value)? editSuccess,
-    TResult Function(EditProfileErrorDetails value)? editError,
+    TResult Function(EditProfileError value)? editError,
     required TResult orElse(),
   }) {
     if (editLoading != null) {
@@ -924,10 +889,10 @@ class _$EditProfileSuccess implements EditProfileSuccess {
     required TResult Function() initial,
     required TResult Function() viewLoading,
     required TResult Function(ProfileEntity profile) viewSuccess,
-    required TResult Function(String error) viewError,
+    required TResult Function() viewError,
     required TResult Function() editLoading,
     required TResult Function() editSuccess,
-    required TResult Function(String error) editError,
+    required TResult Function() editError,
   }) {
     return editSuccess();
   }
@@ -938,10 +903,10 @@ class _$EditProfileSuccess implements EditProfileSuccess {
     TResult Function()? initial,
     TResult Function()? viewLoading,
     TResult Function(ProfileEntity profile)? viewSuccess,
-    TResult Function(String error)? viewError,
+    TResult Function()? viewError,
     TResult Function()? editLoading,
     TResult Function()? editSuccess,
-    TResult Function(String error)? editError,
+    TResult Function()? editError,
   }) {
     return editSuccess?.call();
   }
@@ -952,10 +917,10 @@ class _$EditProfileSuccess implements EditProfileSuccess {
     TResult Function()? initial,
     TResult Function()? viewLoading,
     TResult Function(ProfileEntity profile)? viewSuccess,
-    TResult Function(String error)? viewError,
+    TResult Function()? viewError,
     TResult Function()? editLoading,
     TResult Function()? editSuccess,
-    TResult Function(String error)? editError,
+    TResult Function()? editError,
     required TResult orElse(),
   }) {
     if (editSuccess != null) {
@@ -970,10 +935,10 @@ class _$EditProfileSuccess implements EditProfileSuccess {
     required TResult Function(ProfileInitial value) initial,
     required TResult Function(ViewProfileLoading value) viewLoading,
     required TResult Function(ViewProfileSuccess value) viewSuccess,
-    required TResult Function(ViewProfileErrorDetails value) viewError,
+    required TResult Function(ViewProfileError value) viewError,
     required TResult Function(EditProfileLoading value) editLoading,
     required TResult Function(EditProfileSuccess value) editSuccess,
-    required TResult Function(EditProfileErrorDetails value) editError,
+    required TResult Function(EditProfileError value) editError,
   }) {
     return editSuccess(this);
   }
@@ -984,10 +949,10 @@ class _$EditProfileSuccess implements EditProfileSuccess {
     TResult Function(ProfileInitial value)? initial,
     TResult Function(ViewProfileLoading value)? viewLoading,
     TResult Function(ViewProfileSuccess value)? viewSuccess,
-    TResult Function(ViewProfileErrorDetails value)? viewError,
+    TResult Function(ViewProfileError value)? viewError,
     TResult Function(EditProfileLoading value)? editLoading,
     TResult Function(EditProfileSuccess value)? editSuccess,
-    TResult Function(EditProfileErrorDetails value)? editError,
+    TResult Function(EditProfileError value)? editError,
   }) {
     return editSuccess?.call(this);
   }
@@ -998,10 +963,10 @@ class _$EditProfileSuccess implements EditProfileSuccess {
     TResult Function(ProfileInitial value)? initial,
     TResult Function(ViewProfileLoading value)? viewLoading,
     TResult Function(ViewProfileSuccess value)? viewSuccess,
-    TResult Function(ViewProfileErrorDetails value)? viewError,
+    TResult Function(ViewProfileError value)? viewError,
     TResult Function(EditProfileLoading value)? editLoading,
     TResult Function(EditProfileSuccess value)? editSuccess,
-    TResult Function(EditProfileErrorDetails value)? editError,
+    TResult Function(EditProfileError value)? editError,
     required TResult orElse(),
   }) {
     if (editSuccess != null) {
@@ -1016,67 +981,42 @@ abstract class EditProfileSuccess implements ProfileState {
 }
 
 /// @nodoc
-abstract class $EditProfileErrorDetailsCopyWith<$Res> {
-  factory $EditProfileErrorDetailsCopyWith(EditProfileErrorDetails value,
-          $Res Function(EditProfileErrorDetails) then) =
-      _$EditProfileErrorDetailsCopyWithImpl<$Res>;
-  $Res call({String error});
+abstract class $EditProfileErrorCopyWith<$Res> {
+  factory $EditProfileErrorCopyWith(
+          EditProfileError value, $Res Function(EditProfileError) then) =
+      _$EditProfileErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$EditProfileErrorDetailsCopyWithImpl<$Res>
+class _$EditProfileErrorCopyWithImpl<$Res>
     extends _$ProfileStateCopyWithImpl<$Res>
-    implements $EditProfileErrorDetailsCopyWith<$Res> {
-  _$EditProfileErrorDetailsCopyWithImpl(EditProfileErrorDetails _value,
-      $Res Function(EditProfileErrorDetails) _then)
-      : super(_value, (v) => _then(v as EditProfileErrorDetails));
+    implements $EditProfileErrorCopyWith<$Res> {
+  _$EditProfileErrorCopyWithImpl(
+      EditProfileError _value, $Res Function(EditProfileError) _then)
+      : super(_value, (v) => _then(v as EditProfileError));
 
   @override
-  EditProfileErrorDetails get _value => super._value as EditProfileErrorDetails;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(EditProfileErrorDetails(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  EditProfileError get _value => super._value as EditProfileError;
 }
 
 /// @nodoc
 
-class _$EditProfileErrorDetails implements EditProfileErrorDetails {
-  const _$EditProfileErrorDetails(this.error);
-
-  @override
-  final String error;
+class _$EditProfileError implements EditProfileError {
+  const _$EditProfileError();
 
   @override
   String toString() {
-    return 'ProfileState.editError(error: $error)';
+    return 'ProfileState.editError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is EditProfileErrorDetails &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is EditProfileError);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $EditProfileErrorDetailsCopyWith<EditProfileErrorDetails> get copyWith =>
-      _$EditProfileErrorDetailsCopyWithImpl<EditProfileErrorDetails>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -1084,12 +1024,12 @@ class _$EditProfileErrorDetails implements EditProfileErrorDetails {
     required TResult Function() initial,
     required TResult Function() viewLoading,
     required TResult Function(ProfileEntity profile) viewSuccess,
-    required TResult Function(String error) viewError,
+    required TResult Function() viewError,
     required TResult Function() editLoading,
     required TResult Function() editSuccess,
-    required TResult Function(String error) editError,
+    required TResult Function() editError,
   }) {
-    return editError(error);
+    return editError();
   }
 
   @override
@@ -1098,12 +1038,12 @@ class _$EditProfileErrorDetails implements EditProfileErrorDetails {
     TResult Function()? initial,
     TResult Function()? viewLoading,
     TResult Function(ProfileEntity profile)? viewSuccess,
-    TResult Function(String error)? viewError,
+    TResult Function()? viewError,
     TResult Function()? editLoading,
     TResult Function()? editSuccess,
-    TResult Function(String error)? editError,
+    TResult Function()? editError,
   }) {
-    return editError?.call(error);
+    return editError?.call();
   }
 
   @override
@@ -1112,14 +1052,14 @@ class _$EditProfileErrorDetails implements EditProfileErrorDetails {
     TResult Function()? initial,
     TResult Function()? viewLoading,
     TResult Function(ProfileEntity profile)? viewSuccess,
-    TResult Function(String error)? viewError,
+    TResult Function()? viewError,
     TResult Function()? editLoading,
     TResult Function()? editSuccess,
-    TResult Function(String error)? editError,
+    TResult Function()? editError,
     required TResult orElse(),
   }) {
     if (editError != null) {
-      return editError(error);
+      return editError();
     }
     return orElse();
   }
@@ -1130,10 +1070,10 @@ class _$EditProfileErrorDetails implements EditProfileErrorDetails {
     required TResult Function(ProfileInitial value) initial,
     required TResult Function(ViewProfileLoading value) viewLoading,
     required TResult Function(ViewProfileSuccess value) viewSuccess,
-    required TResult Function(ViewProfileErrorDetails value) viewError,
+    required TResult Function(ViewProfileError value) viewError,
     required TResult Function(EditProfileLoading value) editLoading,
     required TResult Function(EditProfileSuccess value) editSuccess,
-    required TResult Function(EditProfileErrorDetails value) editError,
+    required TResult Function(EditProfileError value) editError,
   }) {
     return editError(this);
   }
@@ -1144,10 +1084,10 @@ class _$EditProfileErrorDetails implements EditProfileErrorDetails {
     TResult Function(ProfileInitial value)? initial,
     TResult Function(ViewProfileLoading value)? viewLoading,
     TResult Function(ViewProfileSuccess value)? viewSuccess,
-    TResult Function(ViewProfileErrorDetails value)? viewError,
+    TResult Function(ViewProfileError value)? viewError,
     TResult Function(EditProfileLoading value)? editLoading,
     TResult Function(EditProfileSuccess value)? editSuccess,
-    TResult Function(EditProfileErrorDetails value)? editError,
+    TResult Function(EditProfileError value)? editError,
   }) {
     return editError?.call(this);
   }
@@ -1158,10 +1098,10 @@ class _$EditProfileErrorDetails implements EditProfileErrorDetails {
     TResult Function(ProfileInitial value)? initial,
     TResult Function(ViewProfileLoading value)? viewLoading,
     TResult Function(ViewProfileSuccess value)? viewSuccess,
-    TResult Function(ViewProfileErrorDetails value)? viewError,
+    TResult Function(ViewProfileError value)? viewError,
     TResult Function(EditProfileLoading value)? editLoading,
     TResult Function(EditProfileSuccess value)? editSuccess,
-    TResult Function(EditProfileErrorDetails value)? editError,
+    TResult Function(EditProfileError value)? editError,
     required TResult orElse(),
   }) {
     if (editError != null) {
@@ -1171,12 +1111,6 @@ class _$EditProfileErrorDetails implements EditProfileErrorDetails {
   }
 }
 
-abstract class EditProfileErrorDetails implements ProfileState {
-  const factory EditProfileErrorDetails(String error) =
-      _$EditProfileErrorDetails;
-
-  String get error;
-  @JsonKey(ignore: true)
-  $EditProfileErrorDetailsCopyWith<EditProfileErrorDetails> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class EditProfileError implements ProfileState {
+  const factory EditProfileError() = _$EditProfileError;
 }

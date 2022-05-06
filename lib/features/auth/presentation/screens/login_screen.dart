@@ -12,6 +12,7 @@ import 'package:food_delivery/features/auth/presentation/bloc/auth_state.dart';
 import 'package:food_delivery/features/auth/presentation/screens/forgot_password_screen.dart';
 import 'package:food_delivery/features/auth/presentation/screens/register_screen.dart';
 import 'package:food_delivery/features/auth/presentation/widgets/curved_widget.dart';
+import 'package:food_delivery/gen/assets.gen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen();
@@ -56,9 +57,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 250,
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.primary,
-                  image: const DecorationImage(
+                  image: DecorationImage(
                     image: AssetImage(
-                      'assets/images/food.jpg',
+                      Assets.images.food.path,
                     ),
                     fit: BoxFit.cover,
                   ),
@@ -107,8 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           bool isLoading = false;
                           state.maybeWhen(
                             loading: () => isLoading = true,
-                            error: (error) =>
-                                showErrorToast(errorMessage: error),
+                            error: () => showErrorToast(),
                             success: () =>
                                 WidgetsBinding.instance!.addPostFrameCallback(
                               (_) => Navigator.of(context).pushReplacementNamed(

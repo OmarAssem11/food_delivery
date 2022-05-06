@@ -1,6 +1,5 @@
 //BaseUrls
-const baseUrl = 'http://9ae5-156-194-46-208.ngrok.io/api/';
-const imageApiBaseUrl = 'https://api.imgbb.com/1/upload';
+const baseUrl = 'http://820f-156-211-172-84.ngrok.io/api/';
 //Endpoints
 const registerEndpoint = 'register';
 const loginEndpoint = 'login';
@@ -14,12 +13,11 @@ const editCartEndpoint = 'cart/update';
 const deleteCartEndpoint = 'cart/delete';
 const getCartEndpoint = 'cart/usercart';
 const checkoutEndpoint = 'order/checkout';
+const ordersEndPoint = "order/userorders";
 const getOrderDetailsEndpoint = 'order/userorder/{orderId}';
 const viewProfileEndpoint = 'profile';
 const editProfileEndpoint = 'edit_profile';
-const orderListEndPoint = "order/userorders";
-//ApiKeys
-const imageApiKey = 'ad54db45a510342fbfef1568797bf4fd';
+const uploadImageEndpoint = 'upload_image';
 //Headers
 const languageHeader = 'lang';
 const authorization = 'Authorization';

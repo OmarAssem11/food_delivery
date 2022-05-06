@@ -20,7 +20,7 @@ class LocalizationCubit extends Cubit<LocalizationState> {
     final result = await _changeLanguageUseCase(ChangeLanguageParams(newLang));
     emit(
       result.fold(
-        (failure) => LocalizationErrorDetails(failure.error),
+        (failure) => const LocalizationError(),
         (_) => ChangeLangSuccess(newLang),
       ),
     );
@@ -31,7 +31,7 @@ class LocalizationCubit extends Cubit<LocalizationState> {
     final result = await _getLanguageUseCase(const NoParams());
     emit(
       result.fold(
-        (failure) => LocalizationErrorDetails(failure.error),
+        (failure) => const LocalizationError(),
         (lang) => const GetLangSuccess(),
       ),
     );

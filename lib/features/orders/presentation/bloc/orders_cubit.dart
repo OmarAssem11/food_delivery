@@ -20,7 +20,7 @@ class OrdersCubit extends Cubit<OrdersState> {
     final result = await _getOrdersListUseCase(const NoParams());
     emit(
       result.fold(
-        (failure) => GetOrdersListErrorDetails(failure.error),
+        (failure) => const GetOrdersListError(),
         (ordersList) => GetOrdersListSuccess(ordersList),
       ),
     );
@@ -34,7 +34,7 @@ class OrdersCubit extends Cubit<OrdersState> {
         await _getOrderDetailsUseCase(GetOrderDetailsParams(orderId: orderId));
     emit(
       result.fold(
-        (failure) => GetOrderDetailsErrorDetails(failure.error),
+        (failure) => const GetOrderDetailsError(),
         (orderDetails) => GetOrderDetailsSuccess(orderDetails),
       ),
     );

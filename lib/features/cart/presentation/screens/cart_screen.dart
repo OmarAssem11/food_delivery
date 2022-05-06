@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:food_delivery/core/presentation/screens/error_screen.dart';
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
+import 'package:food_delivery/core/presentation/widgets/errors_widget.dart';
 import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_state.dart';
 import 'package:food_delivery/features/cart/presentation/widgets/cart_product_item.dart';
 import 'package:food_delivery/features/cart/presentation/widgets/payment_summery.dart';
 import 'package:food_delivery/features/checkout/presentation/screens/address_location_screen.dart';
+import 'package:food_delivery/gen/assets.gen.dart';
 import 'package:lottie/lottie.dart';
 
 class CartScreen extends StatefulWidget {
@@ -57,11 +58,14 @@ class _CartScreenState extends State<CartScreen> {
             appBar: AppBar(),
             body: const LoadingIndicator(),
           ),
-          getCartError: (error) => ErrorScreen(
-            onRetry: BlocProvider.of<CartCubit>(context).getCart,
+          getCartError: () => Scaffold(
+            appBar: AppBar(),
+            body: ErrorsWidget(
+              onRetry: BlocProvider.of<CartCubit>(context).getCart,
+            ),
           ),
-          editCartError: (error) {
-            showErrorToast(errorMessage: error);
+          editCartError: () {
+            showErrorToast();
             return Scaffold(
               appBar: AppBar(),
             );
@@ -84,7 +88,7 @@ class _CartScreenState extends State<CartScreen> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Lottie.asset(
-                          'assets/lottie/cart.json',
+                          Assets.lottie.cart,
                           height: 300,
                         ),
                         Text(

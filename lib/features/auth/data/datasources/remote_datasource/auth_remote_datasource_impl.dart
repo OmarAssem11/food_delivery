@@ -1,3 +1,4 @@
+import 'package:food_delivery/core/data/app_exception/return_remote_app_exception.dart';
 import 'package:food_delivery/core/data/models/response_model/response_model.dart';
 import 'package:food_delivery/features/auth/data/datasources/remote_datasource/auth_api_service.dart';
 import 'package:food_delivery/features/auth/data/models/login_model/login_model.dart';
@@ -15,27 +16,48 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   @override
   Future<ResponseModel<TokenModel>> register({
     required RegisterModel registerModel,
-  }) =>
-      _authApiService.register(
+  }) async {
+    try {
+      return await _authApiService.register(
         registerModel: registerModel,
       );
+    } catch (exception) {
+      throw returnRemoteAppException(exception);
+    }
+  }
 
   @override
   Future<ResponseModel<TokenModel>> login({
     required LoginModel loginModel,
-  }) =>
-      _authApiService.login(
+  }) async {
+    try {
+      return await _authApiService.login(
         loginModel: loginModel,
       );
+    } catch (exception) {
+      throw returnRemoteAppException(exception);
+    }
+  }
 
   @override
-  Future<ResponseModel<void>> logout() => _authApiService.logout();
+  Future<ResponseModel<void>> logout() async {
+    try {
+      return await _authApiService.logout();
+    } catch (exception) {
+      throw returnRemoteAppException(exception);
+    }
+  }
 
   @override
   Future<ResponseModel<void>> forgotPassword({
     required String email,
-  }) =>
-      _authApiService.forgotPPassword(
+  }) async {
+    try {
+      return await _authApiService.forgotPPassword(
         email: email,
       );
+    } catch (exception) {
+      throw returnRemoteAppException(exception);
+    }
+  }
 }

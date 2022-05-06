@@ -33,10 +33,8 @@ class _$RestaurantsStateTearOff {
     );
   }
 
-  GetAllRestaurantErrorDetails getAllRestaurantError(String error) {
-    return GetAllRestaurantErrorDetails(
-      error,
-    );
+  GetAllRestaurantError getAllRestaurantError() {
+    return const GetAllRestaurantError();
   }
 
   GetRestaurantDetailsLoading getRestaurantDetailsLoading() {
@@ -50,10 +48,8 @@ class _$RestaurantsStateTearOff {
     );
   }
 
-  GetRestaurantDetailsErrorDetails getRestaurantDetailsError(String error) {
-    return GetRestaurantDetailsErrorDetails(
-      error,
-    );
+  GetRestaurantDetailsError getRestaurantDetailsError() {
+    return const GetRestaurantDetailsError();
   }
 }
 
@@ -68,11 +64,11 @@ mixin _$RestaurantsState {
     required TResult Function() getAllRestaurantLoading,
     required TResult Function(List<Restaurant> restaurantsList)
         getAllRestaurantSuccess,
-    required TResult Function(String error) getAllRestaurantError,
+    required TResult Function() getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
     required TResult Function(Restaurant restaurant)
         getRestaurantDetailsSuccess,
-    required TResult Function(String error) getRestaurantDetailsError,
+    required TResult Function() getRestaurantDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,10 +76,10 @@ mixin _$RestaurantsState {
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
     TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
-    TResult Function(String error)? getAllRestaurantError,
+    TResult Function()? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
     TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
-    TResult Function(String error)? getRestaurantDetailsError,
+    TResult Function()? getRestaurantDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -91,10 +87,10 @@ mixin _$RestaurantsState {
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
     TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
-    TResult Function(String error)? getAllRestaurantError,
+    TResult Function()? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
     TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
-    TResult Function(String error)? getRestaurantDetailsError,
+    TResult Function()? getRestaurantDetailsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -105,13 +101,13 @@ mixin _$RestaurantsState {
         getAllRestaurantLoading,
     required TResult Function(GetAllRestaurantSuccess value)
         getAllRestaurantSuccess,
-    required TResult Function(GetAllRestaurantErrorDetails value)
+    required TResult Function(GetAllRestaurantError value)
         getAllRestaurantError,
     required TResult Function(GetRestaurantDetailsLoading value)
         getRestaurantDetailsLoading,
     required TResult Function(GetRestaurantDetailsSuccess value)
         getRestaurantDetailsSuccess,
-    required TResult Function(GetRestaurantDetailsErrorDetails value)
+    required TResult Function(GetRestaurantDetailsError value)
         getRestaurantDetailsError,
   }) =>
       throw _privateConstructorUsedError;
@@ -120,12 +116,12 @@ mixin _$RestaurantsState {
     TResult Function(RestaurantsInitial value)? initial,
     TResult Function(GetAllRestaurantLoading value)? getAllRestaurantLoading,
     TResult Function(GetAllRestaurantSuccess value)? getAllRestaurantSuccess,
-    TResult Function(GetAllRestaurantErrorDetails value)? getAllRestaurantError,
+    TResult Function(GetAllRestaurantError value)? getAllRestaurantError,
     TResult Function(GetRestaurantDetailsLoading value)?
         getRestaurantDetailsLoading,
     TResult Function(GetRestaurantDetailsSuccess value)?
         getRestaurantDetailsSuccess,
-    TResult Function(GetRestaurantDetailsErrorDetails value)?
+    TResult Function(GetRestaurantDetailsError value)?
         getRestaurantDetailsError,
   }) =>
       throw _privateConstructorUsedError;
@@ -134,12 +130,12 @@ mixin _$RestaurantsState {
     TResult Function(RestaurantsInitial value)? initial,
     TResult Function(GetAllRestaurantLoading value)? getAllRestaurantLoading,
     TResult Function(GetAllRestaurantSuccess value)? getAllRestaurantSuccess,
-    TResult Function(GetAllRestaurantErrorDetails value)? getAllRestaurantError,
+    TResult Function(GetAllRestaurantError value)? getAllRestaurantError,
     TResult Function(GetRestaurantDetailsLoading value)?
         getRestaurantDetailsLoading,
     TResult Function(GetRestaurantDetailsSuccess value)?
         getRestaurantDetailsSuccess,
-    TResult Function(GetRestaurantDetailsErrorDetails value)?
+    TResult Function(GetRestaurantDetailsError value)?
         getRestaurantDetailsError,
     required TResult orElse(),
   }) =>
@@ -208,11 +204,11 @@ class _$RestaurantsInitial implements RestaurantsInitial {
     required TResult Function() getAllRestaurantLoading,
     required TResult Function(List<Restaurant> restaurantsList)
         getAllRestaurantSuccess,
-    required TResult Function(String error) getAllRestaurantError,
+    required TResult Function() getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
     required TResult Function(Restaurant restaurant)
         getRestaurantDetailsSuccess,
-    required TResult Function(String error) getRestaurantDetailsError,
+    required TResult Function() getRestaurantDetailsError,
   }) {
     return initial();
   }
@@ -223,10 +219,10 @@ class _$RestaurantsInitial implements RestaurantsInitial {
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
     TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
-    TResult Function(String error)? getAllRestaurantError,
+    TResult Function()? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
     TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
-    TResult Function(String error)? getRestaurantDetailsError,
+    TResult Function()? getRestaurantDetailsError,
   }) {
     return initial?.call();
   }
@@ -237,10 +233,10 @@ class _$RestaurantsInitial implements RestaurantsInitial {
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
     TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
-    TResult Function(String error)? getAllRestaurantError,
+    TResult Function()? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
     TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
-    TResult Function(String error)? getRestaurantDetailsError,
+    TResult Function()? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -257,13 +253,13 @@ class _$RestaurantsInitial implements RestaurantsInitial {
         getAllRestaurantLoading,
     required TResult Function(GetAllRestaurantSuccess value)
         getAllRestaurantSuccess,
-    required TResult Function(GetAllRestaurantErrorDetails value)
+    required TResult Function(GetAllRestaurantError value)
         getAllRestaurantError,
     required TResult Function(GetRestaurantDetailsLoading value)
         getRestaurantDetailsLoading,
     required TResult Function(GetRestaurantDetailsSuccess value)
         getRestaurantDetailsSuccess,
-    required TResult Function(GetRestaurantDetailsErrorDetails value)
+    required TResult Function(GetRestaurantDetailsError value)
         getRestaurantDetailsError,
   }) {
     return initial(this);
@@ -275,12 +271,12 @@ class _$RestaurantsInitial implements RestaurantsInitial {
     TResult Function(RestaurantsInitial value)? initial,
     TResult Function(GetAllRestaurantLoading value)? getAllRestaurantLoading,
     TResult Function(GetAllRestaurantSuccess value)? getAllRestaurantSuccess,
-    TResult Function(GetAllRestaurantErrorDetails value)? getAllRestaurantError,
+    TResult Function(GetAllRestaurantError value)? getAllRestaurantError,
     TResult Function(GetRestaurantDetailsLoading value)?
         getRestaurantDetailsLoading,
     TResult Function(GetRestaurantDetailsSuccess value)?
         getRestaurantDetailsSuccess,
-    TResult Function(GetRestaurantDetailsErrorDetails value)?
+    TResult Function(GetRestaurantDetailsError value)?
         getRestaurantDetailsError,
   }) {
     return initial?.call(this);
@@ -292,12 +288,12 @@ class _$RestaurantsInitial implements RestaurantsInitial {
     TResult Function(RestaurantsInitial value)? initial,
     TResult Function(GetAllRestaurantLoading value)? getAllRestaurantLoading,
     TResult Function(GetAllRestaurantSuccess value)? getAllRestaurantSuccess,
-    TResult Function(GetAllRestaurantErrorDetails value)? getAllRestaurantError,
+    TResult Function(GetAllRestaurantError value)? getAllRestaurantError,
     TResult Function(GetRestaurantDetailsLoading value)?
         getRestaurantDetailsLoading,
     TResult Function(GetRestaurantDetailsSuccess value)?
         getRestaurantDetailsSuccess,
-    TResult Function(GetRestaurantDetailsErrorDetails value)?
+    TResult Function(GetRestaurantDetailsError value)?
         getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -357,11 +353,11 @@ class _$GetAllRestaurantLoading implements GetAllRestaurantLoading {
     required TResult Function() getAllRestaurantLoading,
     required TResult Function(List<Restaurant> restaurantsList)
         getAllRestaurantSuccess,
-    required TResult Function(String error) getAllRestaurantError,
+    required TResult Function() getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
     required TResult Function(Restaurant restaurant)
         getRestaurantDetailsSuccess,
-    required TResult Function(String error) getRestaurantDetailsError,
+    required TResult Function() getRestaurantDetailsError,
   }) {
     return getAllRestaurantLoading();
   }
@@ -372,10 +368,10 @@ class _$GetAllRestaurantLoading implements GetAllRestaurantLoading {
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
     TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
-    TResult Function(String error)? getAllRestaurantError,
+    TResult Function()? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
     TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
-    TResult Function(String error)? getRestaurantDetailsError,
+    TResult Function()? getRestaurantDetailsError,
   }) {
     return getAllRestaurantLoading?.call();
   }
@@ -386,10 +382,10 @@ class _$GetAllRestaurantLoading implements GetAllRestaurantLoading {
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
     TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
-    TResult Function(String error)? getAllRestaurantError,
+    TResult Function()? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
     TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
-    TResult Function(String error)? getRestaurantDetailsError,
+    TResult Function()? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
     if (getAllRestaurantLoading != null) {
@@ -406,13 +402,13 @@ class _$GetAllRestaurantLoading implements GetAllRestaurantLoading {
         getAllRestaurantLoading,
     required TResult Function(GetAllRestaurantSuccess value)
         getAllRestaurantSuccess,
-    required TResult Function(GetAllRestaurantErrorDetails value)
+    required TResult Function(GetAllRestaurantError value)
         getAllRestaurantError,
     required TResult Function(GetRestaurantDetailsLoading value)
         getRestaurantDetailsLoading,
     required TResult Function(GetRestaurantDetailsSuccess value)
         getRestaurantDetailsSuccess,
-    required TResult Function(GetRestaurantDetailsErrorDetails value)
+    required TResult Function(GetRestaurantDetailsError value)
         getRestaurantDetailsError,
   }) {
     return getAllRestaurantLoading(this);
@@ -424,12 +420,12 @@ class _$GetAllRestaurantLoading implements GetAllRestaurantLoading {
     TResult Function(RestaurantsInitial value)? initial,
     TResult Function(GetAllRestaurantLoading value)? getAllRestaurantLoading,
     TResult Function(GetAllRestaurantSuccess value)? getAllRestaurantSuccess,
-    TResult Function(GetAllRestaurantErrorDetails value)? getAllRestaurantError,
+    TResult Function(GetAllRestaurantError value)? getAllRestaurantError,
     TResult Function(GetRestaurantDetailsLoading value)?
         getRestaurantDetailsLoading,
     TResult Function(GetRestaurantDetailsSuccess value)?
         getRestaurantDetailsSuccess,
-    TResult Function(GetRestaurantDetailsErrorDetails value)?
+    TResult Function(GetRestaurantDetailsError value)?
         getRestaurantDetailsError,
   }) {
     return getAllRestaurantLoading?.call(this);
@@ -441,12 +437,12 @@ class _$GetAllRestaurantLoading implements GetAllRestaurantLoading {
     TResult Function(RestaurantsInitial value)? initial,
     TResult Function(GetAllRestaurantLoading value)? getAllRestaurantLoading,
     TResult Function(GetAllRestaurantSuccess value)? getAllRestaurantSuccess,
-    TResult Function(GetAllRestaurantErrorDetails value)? getAllRestaurantError,
+    TResult Function(GetAllRestaurantError value)? getAllRestaurantError,
     TResult Function(GetRestaurantDetailsLoading value)?
         getRestaurantDetailsLoading,
     TResult Function(GetRestaurantDetailsSuccess value)?
         getRestaurantDetailsSuccess,
-    TResult Function(GetRestaurantDetailsErrorDetails value)?
+    TResult Function(GetRestaurantDetailsError value)?
         getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -532,11 +528,11 @@ class _$GetAllRestaurantSuccess implements GetAllRestaurantSuccess {
     required TResult Function() getAllRestaurantLoading,
     required TResult Function(List<Restaurant> restaurantsList)
         getAllRestaurantSuccess,
-    required TResult Function(String error) getAllRestaurantError,
+    required TResult Function() getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
     required TResult Function(Restaurant restaurant)
         getRestaurantDetailsSuccess,
-    required TResult Function(String error) getRestaurantDetailsError,
+    required TResult Function() getRestaurantDetailsError,
   }) {
     return getAllRestaurantSuccess(restaurantsList);
   }
@@ -547,10 +543,10 @@ class _$GetAllRestaurantSuccess implements GetAllRestaurantSuccess {
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
     TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
-    TResult Function(String error)? getAllRestaurantError,
+    TResult Function()? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
     TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
-    TResult Function(String error)? getRestaurantDetailsError,
+    TResult Function()? getRestaurantDetailsError,
   }) {
     return getAllRestaurantSuccess?.call(restaurantsList);
   }
@@ -561,10 +557,10 @@ class _$GetAllRestaurantSuccess implements GetAllRestaurantSuccess {
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
     TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
-    TResult Function(String error)? getAllRestaurantError,
+    TResult Function()? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
     TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
-    TResult Function(String error)? getRestaurantDetailsError,
+    TResult Function()? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
     if (getAllRestaurantSuccess != null) {
@@ -581,13 +577,13 @@ class _$GetAllRestaurantSuccess implements GetAllRestaurantSuccess {
         getAllRestaurantLoading,
     required TResult Function(GetAllRestaurantSuccess value)
         getAllRestaurantSuccess,
-    required TResult Function(GetAllRestaurantErrorDetails value)
+    required TResult Function(GetAllRestaurantError value)
         getAllRestaurantError,
     required TResult Function(GetRestaurantDetailsLoading value)
         getRestaurantDetailsLoading,
     required TResult Function(GetRestaurantDetailsSuccess value)
         getRestaurantDetailsSuccess,
-    required TResult Function(GetRestaurantDetailsErrorDetails value)
+    required TResult Function(GetRestaurantDetailsError value)
         getRestaurantDetailsError,
   }) {
     return getAllRestaurantSuccess(this);
@@ -599,12 +595,12 @@ class _$GetAllRestaurantSuccess implements GetAllRestaurantSuccess {
     TResult Function(RestaurantsInitial value)? initial,
     TResult Function(GetAllRestaurantLoading value)? getAllRestaurantLoading,
     TResult Function(GetAllRestaurantSuccess value)? getAllRestaurantSuccess,
-    TResult Function(GetAllRestaurantErrorDetails value)? getAllRestaurantError,
+    TResult Function(GetAllRestaurantError value)? getAllRestaurantError,
     TResult Function(GetRestaurantDetailsLoading value)?
         getRestaurantDetailsLoading,
     TResult Function(GetRestaurantDetailsSuccess value)?
         getRestaurantDetailsSuccess,
-    TResult Function(GetRestaurantDetailsErrorDetails value)?
+    TResult Function(GetRestaurantDetailsError value)?
         getRestaurantDetailsError,
   }) {
     return getAllRestaurantSuccess?.call(this);
@@ -616,12 +612,12 @@ class _$GetAllRestaurantSuccess implements GetAllRestaurantSuccess {
     TResult Function(RestaurantsInitial value)? initial,
     TResult Function(GetAllRestaurantLoading value)? getAllRestaurantLoading,
     TResult Function(GetAllRestaurantSuccess value)? getAllRestaurantSuccess,
-    TResult Function(GetAllRestaurantErrorDetails value)? getAllRestaurantError,
+    TResult Function(GetAllRestaurantError value)? getAllRestaurantError,
     TResult Function(GetRestaurantDetailsLoading value)?
         getRestaurantDetailsLoading,
     TResult Function(GetRestaurantDetailsSuccess value)?
         getRestaurantDetailsSuccess,
-    TResult Function(GetRestaurantDetailsErrorDetails value)?
+    TResult Function(GetRestaurantDetailsError value)?
         getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -643,70 +639,42 @@ abstract class GetAllRestaurantSuccess implements RestaurantsState {
 }
 
 /// @nodoc
-abstract class $GetAllRestaurantErrorDetailsCopyWith<$Res> {
-  factory $GetAllRestaurantErrorDetailsCopyWith(
-          GetAllRestaurantErrorDetails value,
-          $Res Function(GetAllRestaurantErrorDetails) then) =
-      _$GetAllRestaurantErrorDetailsCopyWithImpl<$Res>;
-  $Res call({String error});
+abstract class $GetAllRestaurantErrorCopyWith<$Res> {
+  factory $GetAllRestaurantErrorCopyWith(GetAllRestaurantError value,
+          $Res Function(GetAllRestaurantError) then) =
+      _$GetAllRestaurantErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetAllRestaurantErrorDetailsCopyWithImpl<$Res>
+class _$GetAllRestaurantErrorCopyWithImpl<$Res>
     extends _$RestaurantsStateCopyWithImpl<$Res>
-    implements $GetAllRestaurantErrorDetailsCopyWith<$Res> {
-  _$GetAllRestaurantErrorDetailsCopyWithImpl(
-      GetAllRestaurantErrorDetails _value,
-      $Res Function(GetAllRestaurantErrorDetails) _then)
-      : super(_value, (v) => _then(v as GetAllRestaurantErrorDetails));
+    implements $GetAllRestaurantErrorCopyWith<$Res> {
+  _$GetAllRestaurantErrorCopyWithImpl(
+      GetAllRestaurantError _value, $Res Function(GetAllRestaurantError) _then)
+      : super(_value, (v) => _then(v as GetAllRestaurantError));
 
   @override
-  GetAllRestaurantErrorDetails get _value =>
-      super._value as GetAllRestaurantErrorDetails;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(GetAllRestaurantErrorDetails(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  GetAllRestaurantError get _value => super._value as GetAllRestaurantError;
 }
 
 /// @nodoc
 
-class _$GetAllRestaurantErrorDetails implements GetAllRestaurantErrorDetails {
-  const _$GetAllRestaurantErrorDetails(this.error);
-
-  @override
-  final String error;
+class _$GetAllRestaurantError implements GetAllRestaurantError {
+  const _$GetAllRestaurantError();
 
   @override
   String toString() {
-    return 'RestaurantsState.getAllRestaurantError(error: $error)';
+    return 'RestaurantsState.getAllRestaurantError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is GetAllRestaurantErrorDetails &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is GetAllRestaurantError);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $GetAllRestaurantErrorDetailsCopyWith<GetAllRestaurantErrorDetails>
-      get copyWith => _$GetAllRestaurantErrorDetailsCopyWithImpl<
-          GetAllRestaurantErrorDetails>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -715,13 +683,13 @@ class _$GetAllRestaurantErrorDetails implements GetAllRestaurantErrorDetails {
     required TResult Function() getAllRestaurantLoading,
     required TResult Function(List<Restaurant> restaurantsList)
         getAllRestaurantSuccess,
-    required TResult Function(String error) getAllRestaurantError,
+    required TResult Function() getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
     required TResult Function(Restaurant restaurant)
         getRestaurantDetailsSuccess,
-    required TResult Function(String error) getRestaurantDetailsError,
+    required TResult Function() getRestaurantDetailsError,
   }) {
-    return getAllRestaurantError(error);
+    return getAllRestaurantError();
   }
 
   @override
@@ -730,12 +698,12 @@ class _$GetAllRestaurantErrorDetails implements GetAllRestaurantErrorDetails {
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
     TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
-    TResult Function(String error)? getAllRestaurantError,
+    TResult Function()? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
     TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
-    TResult Function(String error)? getRestaurantDetailsError,
+    TResult Function()? getRestaurantDetailsError,
   }) {
-    return getAllRestaurantError?.call(error);
+    return getAllRestaurantError?.call();
   }
 
   @override
@@ -744,14 +712,14 @@ class _$GetAllRestaurantErrorDetails implements GetAllRestaurantErrorDetails {
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
     TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
-    TResult Function(String error)? getAllRestaurantError,
+    TResult Function()? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
     TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
-    TResult Function(String error)? getRestaurantDetailsError,
+    TResult Function()? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
     if (getAllRestaurantError != null) {
-      return getAllRestaurantError(error);
+      return getAllRestaurantError();
     }
     return orElse();
   }
@@ -764,13 +732,13 @@ class _$GetAllRestaurantErrorDetails implements GetAllRestaurantErrorDetails {
         getAllRestaurantLoading,
     required TResult Function(GetAllRestaurantSuccess value)
         getAllRestaurantSuccess,
-    required TResult Function(GetAllRestaurantErrorDetails value)
+    required TResult Function(GetAllRestaurantError value)
         getAllRestaurantError,
     required TResult Function(GetRestaurantDetailsLoading value)
         getRestaurantDetailsLoading,
     required TResult Function(GetRestaurantDetailsSuccess value)
         getRestaurantDetailsSuccess,
-    required TResult Function(GetRestaurantDetailsErrorDetails value)
+    required TResult Function(GetRestaurantDetailsError value)
         getRestaurantDetailsError,
   }) {
     return getAllRestaurantError(this);
@@ -782,12 +750,12 @@ class _$GetAllRestaurantErrorDetails implements GetAllRestaurantErrorDetails {
     TResult Function(RestaurantsInitial value)? initial,
     TResult Function(GetAllRestaurantLoading value)? getAllRestaurantLoading,
     TResult Function(GetAllRestaurantSuccess value)? getAllRestaurantSuccess,
-    TResult Function(GetAllRestaurantErrorDetails value)? getAllRestaurantError,
+    TResult Function(GetAllRestaurantError value)? getAllRestaurantError,
     TResult Function(GetRestaurantDetailsLoading value)?
         getRestaurantDetailsLoading,
     TResult Function(GetRestaurantDetailsSuccess value)?
         getRestaurantDetailsSuccess,
-    TResult Function(GetRestaurantDetailsErrorDetails value)?
+    TResult Function(GetRestaurantDetailsError value)?
         getRestaurantDetailsError,
   }) {
     return getAllRestaurantError?.call(this);
@@ -799,12 +767,12 @@ class _$GetAllRestaurantErrorDetails implements GetAllRestaurantErrorDetails {
     TResult Function(RestaurantsInitial value)? initial,
     TResult Function(GetAllRestaurantLoading value)? getAllRestaurantLoading,
     TResult Function(GetAllRestaurantSuccess value)? getAllRestaurantSuccess,
-    TResult Function(GetAllRestaurantErrorDetails value)? getAllRestaurantError,
+    TResult Function(GetAllRestaurantError value)? getAllRestaurantError,
     TResult Function(GetRestaurantDetailsLoading value)?
         getRestaurantDetailsLoading,
     TResult Function(GetRestaurantDetailsSuccess value)?
         getRestaurantDetailsSuccess,
-    TResult Function(GetRestaurantDetailsErrorDetails value)?
+    TResult Function(GetRestaurantDetailsError value)?
         getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -815,14 +783,8 @@ class _$GetAllRestaurantErrorDetails implements GetAllRestaurantErrorDetails {
   }
 }
 
-abstract class GetAllRestaurantErrorDetails implements RestaurantsState {
-  const factory GetAllRestaurantErrorDetails(String error) =
-      _$GetAllRestaurantErrorDetails;
-
-  String get error;
-  @JsonKey(ignore: true)
-  $GetAllRestaurantErrorDetailsCopyWith<GetAllRestaurantErrorDetails>
-      get copyWith => throw _privateConstructorUsedError;
+abstract class GetAllRestaurantError implements RestaurantsState {
+  const factory GetAllRestaurantError() = _$GetAllRestaurantError;
 }
 
 /// @nodoc
@@ -873,11 +835,11 @@ class _$GetRestaurantDetailsLoading implements GetRestaurantDetailsLoading {
     required TResult Function() getAllRestaurantLoading,
     required TResult Function(List<Restaurant> restaurantsList)
         getAllRestaurantSuccess,
-    required TResult Function(String error) getAllRestaurantError,
+    required TResult Function() getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
     required TResult Function(Restaurant restaurant)
         getRestaurantDetailsSuccess,
-    required TResult Function(String error) getRestaurantDetailsError,
+    required TResult Function() getRestaurantDetailsError,
   }) {
     return getRestaurantDetailsLoading();
   }
@@ -888,10 +850,10 @@ class _$GetRestaurantDetailsLoading implements GetRestaurantDetailsLoading {
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
     TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
-    TResult Function(String error)? getAllRestaurantError,
+    TResult Function()? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
     TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
-    TResult Function(String error)? getRestaurantDetailsError,
+    TResult Function()? getRestaurantDetailsError,
   }) {
     return getRestaurantDetailsLoading?.call();
   }
@@ -902,10 +864,10 @@ class _$GetRestaurantDetailsLoading implements GetRestaurantDetailsLoading {
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
     TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
-    TResult Function(String error)? getAllRestaurantError,
+    TResult Function()? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
     TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
-    TResult Function(String error)? getRestaurantDetailsError,
+    TResult Function()? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
     if (getRestaurantDetailsLoading != null) {
@@ -922,13 +884,13 @@ class _$GetRestaurantDetailsLoading implements GetRestaurantDetailsLoading {
         getAllRestaurantLoading,
     required TResult Function(GetAllRestaurantSuccess value)
         getAllRestaurantSuccess,
-    required TResult Function(GetAllRestaurantErrorDetails value)
+    required TResult Function(GetAllRestaurantError value)
         getAllRestaurantError,
     required TResult Function(GetRestaurantDetailsLoading value)
         getRestaurantDetailsLoading,
     required TResult Function(GetRestaurantDetailsSuccess value)
         getRestaurantDetailsSuccess,
-    required TResult Function(GetRestaurantDetailsErrorDetails value)
+    required TResult Function(GetRestaurantDetailsError value)
         getRestaurantDetailsError,
   }) {
     return getRestaurantDetailsLoading(this);
@@ -940,12 +902,12 @@ class _$GetRestaurantDetailsLoading implements GetRestaurantDetailsLoading {
     TResult Function(RestaurantsInitial value)? initial,
     TResult Function(GetAllRestaurantLoading value)? getAllRestaurantLoading,
     TResult Function(GetAllRestaurantSuccess value)? getAllRestaurantSuccess,
-    TResult Function(GetAllRestaurantErrorDetails value)? getAllRestaurantError,
+    TResult Function(GetAllRestaurantError value)? getAllRestaurantError,
     TResult Function(GetRestaurantDetailsLoading value)?
         getRestaurantDetailsLoading,
     TResult Function(GetRestaurantDetailsSuccess value)?
         getRestaurantDetailsSuccess,
-    TResult Function(GetRestaurantDetailsErrorDetails value)?
+    TResult Function(GetRestaurantDetailsError value)?
         getRestaurantDetailsError,
   }) {
     return getRestaurantDetailsLoading?.call(this);
@@ -957,12 +919,12 @@ class _$GetRestaurantDetailsLoading implements GetRestaurantDetailsLoading {
     TResult Function(RestaurantsInitial value)? initial,
     TResult Function(GetAllRestaurantLoading value)? getAllRestaurantLoading,
     TResult Function(GetAllRestaurantSuccess value)? getAllRestaurantSuccess,
-    TResult Function(GetAllRestaurantErrorDetails value)? getAllRestaurantError,
+    TResult Function(GetAllRestaurantError value)? getAllRestaurantError,
     TResult Function(GetRestaurantDetailsLoading value)?
         getRestaurantDetailsLoading,
     TResult Function(GetRestaurantDetailsSuccess value)?
         getRestaurantDetailsSuccess,
-    TResult Function(GetRestaurantDetailsErrorDetails value)?
+    TResult Function(GetRestaurantDetailsError value)?
         getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -1050,11 +1012,11 @@ class _$GetRestaurantDetailsSuccess implements GetRestaurantDetailsSuccess {
     required TResult Function() getAllRestaurantLoading,
     required TResult Function(List<Restaurant> restaurantsList)
         getAllRestaurantSuccess,
-    required TResult Function(String error) getAllRestaurantError,
+    required TResult Function() getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
     required TResult Function(Restaurant restaurant)
         getRestaurantDetailsSuccess,
-    required TResult Function(String error) getRestaurantDetailsError,
+    required TResult Function() getRestaurantDetailsError,
   }) {
     return getRestaurantDetailsSuccess(restaurant);
   }
@@ -1065,10 +1027,10 @@ class _$GetRestaurantDetailsSuccess implements GetRestaurantDetailsSuccess {
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
     TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
-    TResult Function(String error)? getAllRestaurantError,
+    TResult Function()? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
     TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
-    TResult Function(String error)? getRestaurantDetailsError,
+    TResult Function()? getRestaurantDetailsError,
   }) {
     return getRestaurantDetailsSuccess?.call(restaurant);
   }
@@ -1079,10 +1041,10 @@ class _$GetRestaurantDetailsSuccess implements GetRestaurantDetailsSuccess {
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
     TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
-    TResult Function(String error)? getAllRestaurantError,
+    TResult Function()? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
     TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
-    TResult Function(String error)? getRestaurantDetailsError,
+    TResult Function()? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
     if (getRestaurantDetailsSuccess != null) {
@@ -1099,13 +1061,13 @@ class _$GetRestaurantDetailsSuccess implements GetRestaurantDetailsSuccess {
         getAllRestaurantLoading,
     required TResult Function(GetAllRestaurantSuccess value)
         getAllRestaurantSuccess,
-    required TResult Function(GetAllRestaurantErrorDetails value)
+    required TResult Function(GetAllRestaurantError value)
         getAllRestaurantError,
     required TResult Function(GetRestaurantDetailsLoading value)
         getRestaurantDetailsLoading,
     required TResult Function(GetRestaurantDetailsSuccess value)
         getRestaurantDetailsSuccess,
-    required TResult Function(GetRestaurantDetailsErrorDetails value)
+    required TResult Function(GetRestaurantDetailsError value)
         getRestaurantDetailsError,
   }) {
     return getRestaurantDetailsSuccess(this);
@@ -1117,12 +1079,12 @@ class _$GetRestaurantDetailsSuccess implements GetRestaurantDetailsSuccess {
     TResult Function(RestaurantsInitial value)? initial,
     TResult Function(GetAllRestaurantLoading value)? getAllRestaurantLoading,
     TResult Function(GetAllRestaurantSuccess value)? getAllRestaurantSuccess,
-    TResult Function(GetAllRestaurantErrorDetails value)? getAllRestaurantError,
+    TResult Function(GetAllRestaurantError value)? getAllRestaurantError,
     TResult Function(GetRestaurantDetailsLoading value)?
         getRestaurantDetailsLoading,
     TResult Function(GetRestaurantDetailsSuccess value)?
         getRestaurantDetailsSuccess,
-    TResult Function(GetRestaurantDetailsErrorDetails value)?
+    TResult Function(GetRestaurantDetailsError value)?
         getRestaurantDetailsError,
   }) {
     return getRestaurantDetailsSuccess?.call(this);
@@ -1134,12 +1096,12 @@ class _$GetRestaurantDetailsSuccess implements GetRestaurantDetailsSuccess {
     TResult Function(RestaurantsInitial value)? initial,
     TResult Function(GetAllRestaurantLoading value)? getAllRestaurantLoading,
     TResult Function(GetAllRestaurantSuccess value)? getAllRestaurantSuccess,
-    TResult Function(GetAllRestaurantErrorDetails value)? getAllRestaurantError,
+    TResult Function(GetAllRestaurantError value)? getAllRestaurantError,
     TResult Function(GetRestaurantDetailsLoading value)?
         getRestaurantDetailsLoading,
     TResult Function(GetRestaurantDetailsSuccess value)?
         getRestaurantDetailsSuccess,
-    TResult Function(GetRestaurantDetailsErrorDetails value)?
+    TResult Function(GetRestaurantDetailsError value)?
         getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -1161,71 +1123,44 @@ abstract class GetRestaurantDetailsSuccess implements RestaurantsState {
 }
 
 /// @nodoc
-abstract class $GetRestaurantDetailsErrorDetailsCopyWith<$Res> {
-  factory $GetRestaurantDetailsErrorDetailsCopyWith(
-          GetRestaurantDetailsErrorDetails value,
-          $Res Function(GetRestaurantDetailsErrorDetails) then) =
-      _$GetRestaurantDetailsErrorDetailsCopyWithImpl<$Res>;
-  $Res call({String error});
+abstract class $GetRestaurantDetailsErrorCopyWith<$Res> {
+  factory $GetRestaurantDetailsErrorCopyWith(GetRestaurantDetailsError value,
+          $Res Function(GetRestaurantDetailsError) then) =
+      _$GetRestaurantDetailsErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetRestaurantDetailsErrorDetailsCopyWithImpl<$Res>
+class _$GetRestaurantDetailsErrorCopyWithImpl<$Res>
     extends _$RestaurantsStateCopyWithImpl<$Res>
-    implements $GetRestaurantDetailsErrorDetailsCopyWith<$Res> {
-  _$GetRestaurantDetailsErrorDetailsCopyWithImpl(
-      GetRestaurantDetailsErrorDetails _value,
-      $Res Function(GetRestaurantDetailsErrorDetails) _then)
-      : super(_value, (v) => _then(v as GetRestaurantDetailsErrorDetails));
+    implements $GetRestaurantDetailsErrorCopyWith<$Res> {
+  _$GetRestaurantDetailsErrorCopyWithImpl(GetRestaurantDetailsError _value,
+      $Res Function(GetRestaurantDetailsError) _then)
+      : super(_value, (v) => _then(v as GetRestaurantDetailsError));
 
   @override
-  GetRestaurantDetailsErrorDetails get _value =>
-      super._value as GetRestaurantDetailsErrorDetails;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(GetRestaurantDetailsErrorDetails(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  GetRestaurantDetailsError get _value =>
+      super._value as GetRestaurantDetailsError;
 }
 
 /// @nodoc
 
-class _$GetRestaurantDetailsErrorDetails
-    implements GetRestaurantDetailsErrorDetails {
-  const _$GetRestaurantDetailsErrorDetails(this.error);
-
-  @override
-  final String error;
+class _$GetRestaurantDetailsError implements GetRestaurantDetailsError {
+  const _$GetRestaurantDetailsError();
 
   @override
   String toString() {
-    return 'RestaurantsState.getRestaurantDetailsError(error: $error)';
+    return 'RestaurantsState.getRestaurantDetailsError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is GetRestaurantDetailsErrorDetails &&
-            const DeepCollectionEquality().equals(other.error, error));
+            other is GetRestaurantDetailsError);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $GetRestaurantDetailsErrorDetailsCopyWith<GetRestaurantDetailsErrorDetails>
-      get copyWith => _$GetRestaurantDetailsErrorDetailsCopyWithImpl<
-          GetRestaurantDetailsErrorDetails>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -1234,13 +1169,13 @@ class _$GetRestaurantDetailsErrorDetails
     required TResult Function() getAllRestaurantLoading,
     required TResult Function(List<Restaurant> restaurantsList)
         getAllRestaurantSuccess,
-    required TResult Function(String error) getAllRestaurantError,
+    required TResult Function() getAllRestaurantError,
     required TResult Function() getRestaurantDetailsLoading,
     required TResult Function(Restaurant restaurant)
         getRestaurantDetailsSuccess,
-    required TResult Function(String error) getRestaurantDetailsError,
+    required TResult Function() getRestaurantDetailsError,
   }) {
-    return getRestaurantDetailsError(error);
+    return getRestaurantDetailsError();
   }
 
   @override
@@ -1249,12 +1184,12 @@ class _$GetRestaurantDetailsErrorDetails
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
     TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
-    TResult Function(String error)? getAllRestaurantError,
+    TResult Function()? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
     TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
-    TResult Function(String error)? getRestaurantDetailsError,
+    TResult Function()? getRestaurantDetailsError,
   }) {
-    return getRestaurantDetailsError?.call(error);
+    return getRestaurantDetailsError?.call();
   }
 
   @override
@@ -1263,14 +1198,14 @@ class _$GetRestaurantDetailsErrorDetails
     TResult Function()? initial,
     TResult Function()? getAllRestaurantLoading,
     TResult Function(List<Restaurant> restaurantsList)? getAllRestaurantSuccess,
-    TResult Function(String error)? getAllRestaurantError,
+    TResult Function()? getAllRestaurantError,
     TResult Function()? getRestaurantDetailsLoading,
     TResult Function(Restaurant restaurant)? getRestaurantDetailsSuccess,
-    TResult Function(String error)? getRestaurantDetailsError,
+    TResult Function()? getRestaurantDetailsError,
     required TResult orElse(),
   }) {
     if (getRestaurantDetailsError != null) {
-      return getRestaurantDetailsError(error);
+      return getRestaurantDetailsError();
     }
     return orElse();
   }
@@ -1283,13 +1218,13 @@ class _$GetRestaurantDetailsErrorDetails
         getAllRestaurantLoading,
     required TResult Function(GetAllRestaurantSuccess value)
         getAllRestaurantSuccess,
-    required TResult Function(GetAllRestaurantErrorDetails value)
+    required TResult Function(GetAllRestaurantError value)
         getAllRestaurantError,
     required TResult Function(GetRestaurantDetailsLoading value)
         getRestaurantDetailsLoading,
     required TResult Function(GetRestaurantDetailsSuccess value)
         getRestaurantDetailsSuccess,
-    required TResult Function(GetRestaurantDetailsErrorDetails value)
+    required TResult Function(GetRestaurantDetailsError value)
         getRestaurantDetailsError,
   }) {
     return getRestaurantDetailsError(this);
@@ -1301,12 +1236,12 @@ class _$GetRestaurantDetailsErrorDetails
     TResult Function(RestaurantsInitial value)? initial,
     TResult Function(GetAllRestaurantLoading value)? getAllRestaurantLoading,
     TResult Function(GetAllRestaurantSuccess value)? getAllRestaurantSuccess,
-    TResult Function(GetAllRestaurantErrorDetails value)? getAllRestaurantError,
+    TResult Function(GetAllRestaurantError value)? getAllRestaurantError,
     TResult Function(GetRestaurantDetailsLoading value)?
         getRestaurantDetailsLoading,
     TResult Function(GetRestaurantDetailsSuccess value)?
         getRestaurantDetailsSuccess,
-    TResult Function(GetRestaurantDetailsErrorDetails value)?
+    TResult Function(GetRestaurantDetailsError value)?
         getRestaurantDetailsError,
   }) {
     return getRestaurantDetailsError?.call(this);
@@ -1318,12 +1253,12 @@ class _$GetRestaurantDetailsErrorDetails
     TResult Function(RestaurantsInitial value)? initial,
     TResult Function(GetAllRestaurantLoading value)? getAllRestaurantLoading,
     TResult Function(GetAllRestaurantSuccess value)? getAllRestaurantSuccess,
-    TResult Function(GetAllRestaurantErrorDetails value)? getAllRestaurantError,
+    TResult Function(GetAllRestaurantError value)? getAllRestaurantError,
     TResult Function(GetRestaurantDetailsLoading value)?
         getRestaurantDetailsLoading,
     TResult Function(GetRestaurantDetailsSuccess value)?
         getRestaurantDetailsSuccess,
-    TResult Function(GetRestaurantDetailsErrorDetails value)?
+    TResult Function(GetRestaurantDetailsError value)?
         getRestaurantDetailsError,
     required TResult orElse(),
   }) {
@@ -1334,12 +1269,6 @@ class _$GetRestaurantDetailsErrorDetails
   }
 }
 
-abstract class GetRestaurantDetailsErrorDetails implements RestaurantsState {
-  const factory GetRestaurantDetailsErrorDetails(String error) =
-      _$GetRestaurantDetailsErrorDetails;
-
-  String get error;
-  @JsonKey(ignore: true)
-  $GetRestaurantDetailsErrorDetailsCopyWith<GetRestaurantDetailsErrorDetails>
-      get copyWith => throw _privateConstructorUsedError;
+abstract class GetRestaurantDetailsError implements RestaurantsState {
+  const factory GetRestaurantDetailsError() = _$GetRestaurantDetailsError;
 }

@@ -16,7 +16,7 @@ class _OrdersApiService implements OrdersApiService {
   String? baseUrl;
 
   @override
-  Future<ResponseModel<List<OrderModel>>> getOrdersList() async {
+  Future<ResponseModel<List<OrderModel>>> getOrders() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};

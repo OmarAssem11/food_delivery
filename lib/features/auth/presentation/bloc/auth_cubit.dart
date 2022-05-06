@@ -35,7 +35,7 @@ class AuthCubit extends Cubit<AuthState> {
     );
     emit(
       result.fold(
-        (failure) => AuthErrorDetails(failure.error),
+        (failure) => const AuthError(),
         (_) => const AuthSuccess(),
       ),
     );
@@ -56,7 +56,7 @@ class AuthCubit extends Cubit<AuthState> {
     );
     emit(
       result.fold(
-        (failure) => AuthErrorDetails(failure.error),
+        (failure) => const AuthError(),
         (_) => const AuthSuccess(),
       ),
     );
@@ -67,7 +67,7 @@ class AuthCubit extends Cubit<AuthState> {
     final result = await _logoutUseCase(const NoParams());
     emit(
       result.fold(
-        (failure) => AuthErrorDetails(failure.error),
+        (failure) => const AuthError(),
         (_) => const AuthSuccess(),
       ),
     );
@@ -78,7 +78,7 @@ class AuthCubit extends Cubit<AuthState> {
     final result = await _isLoggedInUseCase(const NoParams());
     emit(
       result.fold(
-        (failure) => AuthErrorDetails(failure.error),
+        (failure) => const AuthError(),
         (isLoggedIn) {
           if (isLoggedIn) {
             return const AuthLoggedIn();
@@ -98,7 +98,7 @@ class AuthCubit extends Cubit<AuthState> {
         await _forgotPasswordUseCase(ForgotPasswordParams(email: email));
     emit(
       result.fold(
-        (failure) => ForgotPasswordError(failure.error),
+        (failure) => const ForgotPasswordError(),
         (forgotPassword) => const ForgotPasswordSuccess(),
       ),
     );

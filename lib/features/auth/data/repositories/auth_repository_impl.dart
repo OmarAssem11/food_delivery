@@ -1,5 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:food_delivery/core/domain/error/failure.dart';
+import 'package:food_delivery/core/data/app_exception/app_exception.dart';
+import 'package:food_delivery/core/domain/failure/failure.dart';
+import 'package:food_delivery/core/domain/failure/return_failure.dart';
 import 'package:food_delivery/features/auth/data/mappers/login_mapper.dart';
 import 'package:food_delivery/features/auth/data/mappers/register_mapper.dart';
 import 'package:food_delivery/features/auth/domain/datasources/local_datasource/auth_local_datasource.dart';
@@ -29,8 +31,8 @@ class AuthRepositoryImpl implements AuthRepository {
       );
       await _authLocalDataSource.saveToken(tokenResponse.data.token);
       return right(unit);
-    } catch (error) {
-      return left(const Failure('Error while register'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 
@@ -44,8 +46,8 @@ class AuthRepositoryImpl implements AuthRepository {
       );
       await _authLocalDataSource.saveToken(tokenResponse.data.token);
       return right(unit);
-    } catch (error) {
-      return left(const Failure('Error while login'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 
@@ -55,8 +57,8 @@ class AuthRepositoryImpl implements AuthRepository {
       await _authLocalDataSource.deleteToken();
       await _authRemoteDataSource.logout();
       return right(unit);
-    } catch (error) {
-      return left(const Failure('Error while logout'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 
@@ -69,8 +71,8 @@ class AuthRepositoryImpl implements AuthRepository {
         email: email,
       );
       return right(unit);
-    } catch (error) {
-      return left(const Failure('Error while resetting password'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 
@@ -83,8 +85,8 @@ class AuthRepositoryImpl implements AuthRepository {
       } else {
         return right(true);
       }
-    } catch (error) {
-      return left(const Failure('Error while checking on login status'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 }

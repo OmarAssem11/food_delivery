@@ -1,5 +1,7 @@
 import 'package:dartz/dartz.dart' hide Order;
-import 'package:food_delivery/core/domain/error/failure.dart';
+import 'package:food_delivery/core/data/app_exception/app_exception.dart';
+import 'package:food_delivery/core/domain/failure/failure.dart';
+import 'package:food_delivery/core/domain/failure/return_failure.dart';
 import 'package:food_delivery/features/orders/data/mappers/order_details_mapper.dart';
 import 'package:food_delivery/features/orders/data/mappers/order_mapper.dart';
 import 'package:food_delivery/features/orders/domain/datasources/remote_datasource/orders_remote_datasource.dart';
@@ -28,8 +30,8 @@ class OrdersRepositoryImpl implements OrdersRepository {
         }
       }
       return right(orders);
-    } catch (error) {
-      return left(const Failure('Error while getting orders'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 
@@ -44,8 +46,8 @@ class OrdersRepositoryImpl implements OrdersRepository {
           .map((orderDetailsModel) => orderDetailsModel.fromModel)
           .toList();
       return right(orderDetails);
-    } catch (error) {
-      return left(const Failure('Error while getting order details'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 }

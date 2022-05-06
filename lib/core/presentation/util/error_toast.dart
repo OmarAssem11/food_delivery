@@ -1,10 +1,8 @@
 import 'package:fluttertoast/fluttertoast.dart';
 
-void showErrorToast({
-  required String errorMessage,
-}) {
+void showErrorToast() {
   Fluttertoast.showToast(
-    msg: errorMessage,
+    msg: 'ERROR',
     toastLength: Toast.LENGTH_LONG,
     gravity: ToastGravity.BOTTOM,
     timeInSecForIosWeb: 5,

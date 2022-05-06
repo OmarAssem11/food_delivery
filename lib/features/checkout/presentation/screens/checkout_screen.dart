@@ -128,7 +128,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 listener: (context, state) {
                   state.mapOrNull(
                     loading: (_) => isLoading = true,
-                    error: (state) => showErrorToast(errorMessage: state.error),
+                    error: (state) => showErrorToast(),
                     success: (success) => Navigator.of(context).pushNamed(
                       OrderDetailsScreen.routeName,
                       arguments: success.orderId,

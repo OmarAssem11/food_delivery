@@ -21,7 +21,7 @@ class CheckoutCubit extends Cubit<CheckoutState> {
     );
     emit(
       result.fold(
-        (failure) => CheckoutErrorDetails(failure.error),
+        (failure) => const CheckoutError(),
         (orderId) => CheckoutSuccess(orderId),
       ),
     );

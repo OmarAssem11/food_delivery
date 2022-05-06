@@ -32,10 +32,8 @@ class _$ProductsStateTearOff {
     );
   }
 
-  GetProductDetailsErrorDetails getProductDetailsError(String error) {
-    return GetProductDetailsErrorDetails(
-      error,
-    );
+  GetProductDetailsError getProductDetailsError() {
+    return const GetProductDetailsError();
   }
 }
 
@@ -49,7 +47,7 @@ mixin _$ProductsState {
     required TResult Function() productsInitial,
     required TResult Function() getProductDetailsLoading,
     required TResult Function(Product product) getProductDetailsSuccess,
-    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() getProductDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,7 +55,7 @@ mixin _$ProductsState {
     TResult Function()? productsInitial,
     TResult Function()? getProductDetailsLoading,
     TResult Function(Product product)? getProductDetailsSuccess,
-    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? getProductDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,7 +63,7 @@ mixin _$ProductsState {
     TResult Function()? productsInitial,
     TResult Function()? getProductDetailsLoading,
     TResult Function(Product product)? getProductDetailsSuccess,
-    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? getProductDetailsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -76,7 +74,7 @@ mixin _$ProductsState {
         getProductDetailsLoading,
     required TResult Function(GetProductDetailsSuccess value)
         getProductDetailsSuccess,
-    required TResult Function(GetProductDetailsErrorDetails value)
+    required TResult Function(GetProductDetailsError value)
         getProductDetailsError,
   }) =>
       throw _privateConstructorUsedError;
@@ -85,8 +83,7 @@ mixin _$ProductsState {
     TResult Function(ProductsInitial value)? productsInitial,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
-    TResult Function(GetProductDetailsErrorDetails value)?
-        getProductDetailsError,
+    TResult Function(GetProductDetailsError value)? getProductDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -94,8 +91,7 @@ mixin _$ProductsState {
     TResult Function(ProductsInitial value)? productsInitial,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
-    TResult Function(GetProductDetailsErrorDetails value)?
-        getProductDetailsError,
+    TResult Function(GetProductDetailsError value)? getProductDetailsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -162,7 +158,7 @@ class _$ProductsInitial implements ProductsInitial {
     required TResult Function() productsInitial,
     required TResult Function() getProductDetailsLoading,
     required TResult Function(Product product) getProductDetailsSuccess,
-    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() getProductDetailsError,
   }) {
     return productsInitial();
   }
@@ -173,7 +169,7 @@ class _$ProductsInitial implements ProductsInitial {
     TResult Function()? productsInitial,
     TResult Function()? getProductDetailsLoading,
     TResult Function(Product product)? getProductDetailsSuccess,
-    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? getProductDetailsError,
   }) {
     return productsInitial?.call();
   }
@@ -184,7 +180,7 @@ class _$ProductsInitial implements ProductsInitial {
     TResult Function()? productsInitial,
     TResult Function()? getProductDetailsLoading,
     TResult Function(Product product)? getProductDetailsSuccess,
-    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? getProductDetailsError,
     required TResult orElse(),
   }) {
     if (productsInitial != null) {
@@ -201,7 +197,7 @@ class _$ProductsInitial implements ProductsInitial {
         getProductDetailsLoading,
     required TResult Function(GetProductDetailsSuccess value)
         getProductDetailsSuccess,
-    required TResult Function(GetProductDetailsErrorDetails value)
+    required TResult Function(GetProductDetailsError value)
         getProductDetailsError,
   }) {
     return productsInitial(this);
@@ -213,8 +209,7 @@ class _$ProductsInitial implements ProductsInitial {
     TResult Function(ProductsInitial value)? productsInitial,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
-    TResult Function(GetProductDetailsErrorDetails value)?
-        getProductDetailsError,
+    TResult Function(GetProductDetailsError value)? getProductDetailsError,
   }) {
     return productsInitial?.call(this);
   }
@@ -225,8 +220,7 @@ class _$ProductsInitial implements ProductsInitial {
     TResult Function(ProductsInitial value)? productsInitial,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
-    TResult Function(GetProductDetailsErrorDetails value)?
-        getProductDetailsError,
+    TResult Function(GetProductDetailsError value)? getProductDetailsError,
     required TResult orElse(),
   }) {
     if (productsInitial != null) {
@@ -285,7 +279,7 @@ class _$GetProductDetailsLoading implements GetProductDetailsLoading {
     required TResult Function() productsInitial,
     required TResult Function() getProductDetailsLoading,
     required TResult Function(Product product) getProductDetailsSuccess,
-    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() getProductDetailsError,
   }) {
     return getProductDetailsLoading();
   }
@@ -296,7 +290,7 @@ class _$GetProductDetailsLoading implements GetProductDetailsLoading {
     TResult Function()? productsInitial,
     TResult Function()? getProductDetailsLoading,
     TResult Function(Product product)? getProductDetailsSuccess,
-    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? getProductDetailsError,
   }) {
     return getProductDetailsLoading?.call();
   }
@@ -307,7 +301,7 @@ class _$GetProductDetailsLoading implements GetProductDetailsLoading {
     TResult Function()? productsInitial,
     TResult Function()? getProductDetailsLoading,
     TResult Function(Product product)? getProductDetailsSuccess,
-    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? getProductDetailsError,
     required TResult orElse(),
   }) {
     if (getProductDetailsLoading != null) {
@@ -324,7 +318,7 @@ class _$GetProductDetailsLoading implements GetProductDetailsLoading {
         getProductDetailsLoading,
     required TResult Function(GetProductDetailsSuccess value)
         getProductDetailsSuccess,
-    required TResult Function(GetProductDetailsErrorDetails value)
+    required TResult Function(GetProductDetailsError value)
         getProductDetailsError,
   }) {
     return getProductDetailsLoading(this);
@@ -336,8 +330,7 @@ class _$GetProductDetailsLoading implements GetProductDetailsLoading {
     TResult Function(ProductsInitial value)? productsInitial,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
-    TResult Function(GetProductDetailsErrorDetails value)?
-        getProductDetailsError,
+    TResult Function(GetProductDetailsError value)? getProductDetailsError,
   }) {
     return getProductDetailsLoading?.call(this);
   }
@@ -348,8 +341,7 @@ class _$GetProductDetailsLoading implements GetProductDetailsLoading {
     TResult Function(ProductsInitial value)? productsInitial,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
-    TResult Function(GetProductDetailsErrorDetails value)?
-        getProductDetailsError,
+    TResult Function(GetProductDetailsError value)? getProductDetailsError,
     required TResult orElse(),
   }) {
     if (getProductDetailsLoading != null) {
@@ -433,7 +425,7 @@ class _$GetProductDetailsSuccess implements GetProductDetailsSuccess {
     required TResult Function() productsInitial,
     required TResult Function() getProductDetailsLoading,
     required TResult Function(Product product) getProductDetailsSuccess,
-    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() getProductDetailsError,
   }) {
     return getProductDetailsSuccess(product);
   }
@@ -444,7 +436,7 @@ class _$GetProductDetailsSuccess implements GetProductDetailsSuccess {
     TResult Function()? productsInitial,
     TResult Function()? getProductDetailsLoading,
     TResult Function(Product product)? getProductDetailsSuccess,
-    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? getProductDetailsError,
   }) {
     return getProductDetailsSuccess?.call(product);
   }
@@ -455,7 +447,7 @@ class _$GetProductDetailsSuccess implements GetProductDetailsSuccess {
     TResult Function()? productsInitial,
     TResult Function()? getProductDetailsLoading,
     TResult Function(Product product)? getProductDetailsSuccess,
-    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? getProductDetailsError,
     required TResult orElse(),
   }) {
     if (getProductDetailsSuccess != null) {
@@ -472,7 +464,7 @@ class _$GetProductDetailsSuccess implements GetProductDetailsSuccess {
         getProductDetailsLoading,
     required TResult Function(GetProductDetailsSuccess value)
         getProductDetailsSuccess,
-    required TResult Function(GetProductDetailsErrorDetails value)
+    required TResult Function(GetProductDetailsError value)
         getProductDetailsError,
   }) {
     return getProductDetailsSuccess(this);
@@ -484,8 +476,7 @@ class _$GetProductDetailsSuccess implements GetProductDetailsSuccess {
     TResult Function(ProductsInitial value)? productsInitial,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
-    TResult Function(GetProductDetailsErrorDetails value)?
-        getProductDetailsError,
+    TResult Function(GetProductDetailsError value)? getProductDetailsError,
   }) {
     return getProductDetailsSuccess?.call(this);
   }
@@ -496,8 +487,7 @@ class _$GetProductDetailsSuccess implements GetProductDetailsSuccess {
     TResult Function(ProductsInitial value)? productsInitial,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
-    TResult Function(GetProductDetailsErrorDetails value)?
-        getProductDetailsError,
+    TResult Function(GetProductDetailsError value)? getProductDetailsError,
     required TResult orElse(),
   }) {
     if (getProductDetailsSuccess != null) {
@@ -518,70 +508,42 @@ abstract class GetProductDetailsSuccess implements ProductsState {
 }
 
 /// @nodoc
-abstract class $GetProductDetailsErrorDetailsCopyWith<$Res> {
-  factory $GetProductDetailsErrorDetailsCopyWith(
-          GetProductDetailsErrorDetails value,
-          $Res Function(GetProductDetailsErrorDetails) then) =
-      _$GetProductDetailsErrorDetailsCopyWithImpl<$Res>;
-  $Res call({String error});
+abstract class $GetProductDetailsErrorCopyWith<$Res> {
+  factory $GetProductDetailsErrorCopyWith(GetProductDetailsError value,
+          $Res Function(GetProductDetailsError) then) =
+      _$GetProductDetailsErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetProductDetailsErrorDetailsCopyWithImpl<$Res>
+class _$GetProductDetailsErrorCopyWithImpl<$Res>
     extends _$ProductsStateCopyWithImpl<$Res>
-    implements $GetProductDetailsErrorDetailsCopyWith<$Res> {
-  _$GetProductDetailsErrorDetailsCopyWithImpl(
-      GetProductDetailsErrorDetails _value,
-      $Res Function(GetProductDetailsErrorDetails) _then)
-      : super(_value, (v) => _then(v as GetProductDetailsErrorDetails));
+    implements $GetProductDetailsErrorCopyWith<$Res> {
+  _$GetProductDetailsErrorCopyWithImpl(GetProductDetailsError _value,
+      $Res Function(GetProductDetailsError) _then)
+      : super(_value, (v) => _then(v as GetProductDetailsError));
 
   @override
-  GetProductDetailsErrorDetails get _value =>
-      super._value as GetProductDetailsErrorDetails;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(GetProductDetailsErrorDetails(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  GetProductDetailsError get _value => super._value as GetProductDetailsError;
 }
 
 /// @nodoc
 
-class _$GetProductDetailsErrorDetails implements GetProductDetailsErrorDetails {
-  const _$GetProductDetailsErrorDetails(this.error);
-
-  @override
-  final String error;
+class _$GetProductDetailsError implements GetProductDetailsError {
+  const _$GetProductDetailsError();
 
   @override
   String toString() {
-    return 'ProductsState.getProductDetailsError(error: $error)';
+    return 'ProductsState.getProductDetailsError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is GetProductDetailsErrorDetails &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is GetProductDetailsError);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $GetProductDetailsErrorDetailsCopyWith<GetProductDetailsErrorDetails>
-      get copyWith => _$GetProductDetailsErrorDetailsCopyWithImpl<
-          GetProductDetailsErrorDetails>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -589,9 +551,9 @@ class _$GetProductDetailsErrorDetails implements GetProductDetailsErrorDetails {
     required TResult Function() productsInitial,
     required TResult Function() getProductDetailsLoading,
     required TResult Function(Product product) getProductDetailsSuccess,
-    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() getProductDetailsError,
   }) {
-    return getProductDetailsError(error);
+    return getProductDetailsError();
   }
 
   @override
@@ -600,9 +562,9 @@ class _$GetProductDetailsErrorDetails implements GetProductDetailsErrorDetails {
     TResult Function()? productsInitial,
     TResult Function()? getProductDetailsLoading,
     TResult Function(Product product)? getProductDetailsSuccess,
-    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? getProductDetailsError,
   }) {
-    return getProductDetailsError?.call(error);
+    return getProductDetailsError?.call();
   }
 
   @override
@@ -611,11 +573,11 @@ class _$GetProductDetailsErrorDetails implements GetProductDetailsErrorDetails {
     TResult Function()? productsInitial,
     TResult Function()? getProductDetailsLoading,
     TResult Function(Product product)? getProductDetailsSuccess,
-    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? getProductDetailsError,
     required TResult orElse(),
   }) {
     if (getProductDetailsError != null) {
-      return getProductDetailsError(error);
+      return getProductDetailsError();
     }
     return orElse();
   }
@@ -628,7 +590,7 @@ class _$GetProductDetailsErrorDetails implements GetProductDetailsErrorDetails {
         getProductDetailsLoading,
     required TResult Function(GetProductDetailsSuccess value)
         getProductDetailsSuccess,
-    required TResult Function(GetProductDetailsErrorDetails value)
+    required TResult Function(GetProductDetailsError value)
         getProductDetailsError,
   }) {
     return getProductDetailsError(this);
@@ -640,8 +602,7 @@ class _$GetProductDetailsErrorDetails implements GetProductDetailsErrorDetails {
     TResult Function(ProductsInitial value)? productsInitial,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
-    TResult Function(GetProductDetailsErrorDetails value)?
-        getProductDetailsError,
+    TResult Function(GetProductDetailsError value)? getProductDetailsError,
   }) {
     return getProductDetailsError?.call(this);
   }
@@ -652,8 +613,7 @@ class _$GetProductDetailsErrorDetails implements GetProductDetailsErrorDetails {
     TResult Function(ProductsInitial value)? productsInitial,
     TResult Function(GetProductDetailsLoading value)? getProductDetailsLoading,
     TResult Function(GetProductDetailsSuccess value)? getProductDetailsSuccess,
-    TResult Function(GetProductDetailsErrorDetails value)?
-        getProductDetailsError,
+    TResult Function(GetProductDetailsError value)? getProductDetailsError,
     required TResult orElse(),
   }) {
     if (getProductDetailsError != null) {
@@ -663,12 +623,6 @@ class _$GetProductDetailsErrorDetails implements GetProductDetailsErrorDetails {
   }
 }
 
-abstract class GetProductDetailsErrorDetails implements ProductsState {
-  const factory GetProductDetailsErrorDetails(String error) =
-      _$GetProductDetailsErrorDetails;
-
-  String get error;
-  @JsonKey(ignore: true)
-  $GetProductDetailsErrorDetailsCopyWith<GetProductDetailsErrorDetails>
-      get copyWith => throw _privateConstructorUsedError;
+abstract class GetProductDetailsError implements ProductsState {
+  const factory GetProductDetailsError() = _$GetProductDetailsError;
 }

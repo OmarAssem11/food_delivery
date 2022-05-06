@@ -32,7 +32,7 @@ class CartCubit extends Cubit<CartState> {
     final result = await _addToCartUseCase(AddToCartParams(cartOrder));
     emit(
       result.fold(
-        (failure) => AddToCartErrorDetails(failure.error),
+        (failure) => const AddToCartError(),
         (_) => const AddToCartSuccess(),
       ),
     );
@@ -54,7 +54,7 @@ class CartCubit extends Cubit<CartState> {
     final result = await _editCartUseCase(EditCartParams(cartOrder));
     emit(
       result.fold(
-        (failure) => EditCartErrorDetails(failure.error),
+        (failure) => const EditCartError(),
         (_) => const EditCartSuccess(),
       ),
     );
@@ -70,7 +70,7 @@ class CartCubit extends Cubit<CartState> {
     final result = await _deleteCartUseCase(DeleteCartParams(cartOrder));
     emit(
       result.fold(
-        (failure) => DeleteCartErrorDetails(failure.error),
+        (failure) => const DeleteCartError(),
         (_) => const DeleteCartSuccess(),
       ),
     );
@@ -81,7 +81,7 @@ class CartCubit extends Cubit<CartState> {
     final result = await _getCartUseCase(const NoParams());
     emit(
       result.fold(
-        (failure) => GetCartErrorDetails(failure.error),
+        (failure) => const GetCartError(),
         (cartProducts) {
           cartProductsList = cartProducts;
           return const GetCartSuccess();

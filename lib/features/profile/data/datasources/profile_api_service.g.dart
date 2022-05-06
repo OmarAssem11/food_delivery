@@ -49,26 +49,24 @@ class _ProfileApiService implements ProfileApiService {
   }
 
   @override
-  Future<ImageModel> uploadImage({key = imageApiKey, required image}) async {
+  Future<dynamic> uploadImage({required image}) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'key': key};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = FormData();
-    _data.fields.add(MapEntry('key', key));
     _data.files.add(MapEntry(
         'image',
         MultipartFile.fromFileSync(image.path,
             filename: image.path.split(Platform.pathSeparator).last)));
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ImageModel>(Options(
-                method: 'POST',
-                headers: _headers,
-                extra: _extra,
-                contentType: 'multipart/form-data')
-            .compose(_dio.options, 'https://api.imgbb.com/1/upload',
-                queryParameters: queryParameters, data: _data)
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = ImageModel.fromJson(_result.data!);
+    final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
+            method: 'POST',
+            headers: _headers,
+            extra: _extra,
+            contentType: 'multipart/form-data')
+        .compose(_dio.options, 'upload_image',
+            queryParameters: queryParameters, data: _data)
+        .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = _result.data;
     return value;
   }
 

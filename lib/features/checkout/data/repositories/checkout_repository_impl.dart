@@ -1,5 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:food_delivery/core/domain/error/failure.dart';
+import 'package:food_delivery/core/data/app_exception/app_exception.dart';
+import 'package:food_delivery/core/domain/failure/failure.dart';
+import 'package:food_delivery/core/domain/failure/return_failure.dart';
 import 'package:food_delivery/features/checkout/data/mappers/checkout_mapper.dart';
 import 'package:food_delivery/features/checkout/domain/datasources/remote_datasource/checkout_remote_datasource.dart';
 import 'package:food_delivery/features/checkout/domain/entities/checkout_entity.dart';
@@ -23,11 +25,14 @@ class CheckoutRepositoryImpl implements CheckoutRepository {
       final checkoutResponseModels = await _checkoutRemoteDataSource.checkout(
         checkoutModel: checkoutEntity.toModel,
       );
-      checkoutResponseModels.data.map(
-          (checkoutResponseModel) => orderId = checkoutResponseModel.order.id,).toList();
+      checkoutResponseModels.data
+          .map(
+            (checkoutResponseModel) => orderId = checkoutResponseModel.order.id,
+          )
+          .toList();
       return right(orderId);
-    } catch (error) {
-      return left(const Failure('Error while checkout'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 }

@@ -36,10 +36,8 @@ class _$LocalizationStateTearOff {
     return const GetLangSuccess();
   }
 
-  LocalizationErrorDetails error(String error) {
-    return LocalizationErrorDetails(
-      error,
-    );
+  LocalizationError error() {
+    return const LocalizationError();
   }
 }
 
@@ -54,7 +52,7 @@ mixin _$LocalizationState {
     required TResult Function() loading,
     required TResult Function(String langCode) changeLangSuccess,
     required TResult Function() getLangSuccess,
-    required TResult Function(String error) error,
+    required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,7 +61,7 @@ mixin _$LocalizationState {
     TResult Function()? loading,
     TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
-    TResult Function(String error)? error,
+    TResult Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,7 +70,7 @@ mixin _$LocalizationState {
     TResult Function()? loading,
     TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -82,7 +80,7 @@ mixin _$LocalizationState {
     required TResult Function(LocalizationLoading value) loading,
     required TResult Function(ChangeLangSuccess value) changeLangSuccess,
     required TResult Function(GetLangSuccess value) getLangSuccess,
-    required TResult Function(LocalizationErrorDetails value) error,
+    required TResult Function(LocalizationError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -91,7 +89,7 @@ mixin _$LocalizationState {
     TResult Function(LocalizationLoading value)? loading,
     TResult Function(ChangeLangSuccess value)? changeLangSuccess,
     TResult Function(GetLangSuccess value)? getLangSuccess,
-    TResult Function(LocalizationErrorDetails value)? error,
+    TResult Function(LocalizationError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -100,7 +98,7 @@ mixin _$LocalizationState {
     TResult Function(LocalizationLoading value)? loading,
     TResult Function(ChangeLangSuccess value)? changeLangSuccess,
     TResult Function(GetLangSuccess value)? getLangSuccess,
-    TResult Function(LocalizationErrorDetails value)? error,
+    TResult Function(LocalizationError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -168,7 +166,7 @@ class _$LocalizationInitial implements LocalizationInitial {
     required TResult Function() loading,
     required TResult Function(String langCode) changeLangSuccess,
     required TResult Function() getLangSuccess,
-    required TResult Function(String error) error,
+    required TResult Function() error,
   }) {
     return initial();
   }
@@ -180,7 +178,7 @@ class _$LocalizationInitial implements LocalizationInitial {
     TResult Function()? loading,
     TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
-    TResult Function(String error)? error,
+    TResult Function()? error,
   }) {
     return initial?.call();
   }
@@ -192,7 +190,7 @@ class _$LocalizationInitial implements LocalizationInitial {
     TResult Function()? loading,
     TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -208,7 +206,7 @@ class _$LocalizationInitial implements LocalizationInitial {
     required TResult Function(LocalizationLoading value) loading,
     required TResult Function(ChangeLangSuccess value) changeLangSuccess,
     required TResult Function(GetLangSuccess value) getLangSuccess,
-    required TResult Function(LocalizationErrorDetails value) error,
+    required TResult Function(LocalizationError value) error,
   }) {
     return initial(this);
   }
@@ -220,7 +218,7 @@ class _$LocalizationInitial implements LocalizationInitial {
     TResult Function(LocalizationLoading value)? loading,
     TResult Function(ChangeLangSuccess value)? changeLangSuccess,
     TResult Function(GetLangSuccess value)? getLangSuccess,
-    TResult Function(LocalizationErrorDetails value)? error,
+    TResult Function(LocalizationError value)? error,
   }) {
     return initial?.call(this);
   }
@@ -232,7 +230,7 @@ class _$LocalizationInitial implements LocalizationInitial {
     TResult Function(LocalizationLoading value)? loading,
     TResult Function(ChangeLangSuccess value)? changeLangSuccess,
     TResult Function(GetLangSuccess value)? getLangSuccess,
-    TResult Function(LocalizationErrorDetails value)? error,
+    TResult Function(LocalizationError value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -291,7 +289,7 @@ class _$LocalizationLoading implements LocalizationLoading {
     required TResult Function() loading,
     required TResult Function(String langCode) changeLangSuccess,
     required TResult Function() getLangSuccess,
-    required TResult Function(String error) error,
+    required TResult Function() error,
   }) {
     return loading();
   }
@@ -303,7 +301,7 @@ class _$LocalizationLoading implements LocalizationLoading {
     TResult Function()? loading,
     TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
-    TResult Function(String error)? error,
+    TResult Function()? error,
   }) {
     return loading?.call();
   }
@@ -315,7 +313,7 @@ class _$LocalizationLoading implements LocalizationLoading {
     TResult Function()? loading,
     TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -331,7 +329,7 @@ class _$LocalizationLoading implements LocalizationLoading {
     required TResult Function(LocalizationLoading value) loading,
     required TResult Function(ChangeLangSuccess value) changeLangSuccess,
     required TResult Function(GetLangSuccess value) getLangSuccess,
-    required TResult Function(LocalizationErrorDetails value) error,
+    required TResult Function(LocalizationError value) error,
   }) {
     return loading(this);
   }
@@ -343,7 +341,7 @@ class _$LocalizationLoading implements LocalizationLoading {
     TResult Function(LocalizationLoading value)? loading,
     TResult Function(ChangeLangSuccess value)? changeLangSuccess,
     TResult Function(GetLangSuccess value)? getLangSuccess,
-    TResult Function(LocalizationErrorDetails value)? error,
+    TResult Function(LocalizationError value)? error,
   }) {
     return loading?.call(this);
   }
@@ -355,7 +353,7 @@ class _$LocalizationLoading implements LocalizationLoading {
     TResult Function(LocalizationLoading value)? loading,
     TResult Function(ChangeLangSuccess value)? changeLangSuccess,
     TResult Function(GetLangSuccess value)? getLangSuccess,
-    TResult Function(LocalizationErrorDetails value)? error,
+    TResult Function(LocalizationError value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -438,7 +436,7 @@ class _$ChangeLangSuccess implements ChangeLangSuccess {
     required TResult Function() loading,
     required TResult Function(String langCode) changeLangSuccess,
     required TResult Function() getLangSuccess,
-    required TResult Function(String error) error,
+    required TResult Function() error,
   }) {
     return changeLangSuccess(langCode);
   }
@@ -450,7 +448,7 @@ class _$ChangeLangSuccess implements ChangeLangSuccess {
     TResult Function()? loading,
     TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
-    TResult Function(String error)? error,
+    TResult Function()? error,
   }) {
     return changeLangSuccess?.call(langCode);
   }
@@ -462,7 +460,7 @@ class _$ChangeLangSuccess implements ChangeLangSuccess {
     TResult Function()? loading,
     TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (changeLangSuccess != null) {
@@ -478,7 +476,7 @@ class _$ChangeLangSuccess implements ChangeLangSuccess {
     required TResult Function(LocalizationLoading value) loading,
     required TResult Function(ChangeLangSuccess value) changeLangSuccess,
     required TResult Function(GetLangSuccess value) getLangSuccess,
-    required TResult Function(LocalizationErrorDetails value) error,
+    required TResult Function(LocalizationError value) error,
   }) {
     return changeLangSuccess(this);
   }
@@ -490,7 +488,7 @@ class _$ChangeLangSuccess implements ChangeLangSuccess {
     TResult Function(LocalizationLoading value)? loading,
     TResult Function(ChangeLangSuccess value)? changeLangSuccess,
     TResult Function(GetLangSuccess value)? getLangSuccess,
-    TResult Function(LocalizationErrorDetails value)? error,
+    TResult Function(LocalizationError value)? error,
   }) {
     return changeLangSuccess?.call(this);
   }
@@ -502,7 +500,7 @@ class _$ChangeLangSuccess implements ChangeLangSuccess {
     TResult Function(LocalizationLoading value)? loading,
     TResult Function(ChangeLangSuccess value)? changeLangSuccess,
     TResult Function(GetLangSuccess value)? getLangSuccess,
-    TResult Function(LocalizationErrorDetails value)? error,
+    TResult Function(LocalizationError value)? error,
     required TResult orElse(),
   }) {
     if (changeLangSuccess != null) {
@@ -566,7 +564,7 @@ class _$GetLangSuccess implements GetLangSuccess {
     required TResult Function() loading,
     required TResult Function(String langCode) changeLangSuccess,
     required TResult Function() getLangSuccess,
-    required TResult Function(String error) error,
+    required TResult Function() error,
   }) {
     return getLangSuccess();
   }
@@ -578,7 +576,7 @@ class _$GetLangSuccess implements GetLangSuccess {
     TResult Function()? loading,
     TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
-    TResult Function(String error)? error,
+    TResult Function()? error,
   }) {
     return getLangSuccess?.call();
   }
@@ -590,7 +588,7 @@ class _$GetLangSuccess implements GetLangSuccess {
     TResult Function()? loading,
     TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (getLangSuccess != null) {
@@ -606,7 +604,7 @@ class _$GetLangSuccess implements GetLangSuccess {
     required TResult Function(LocalizationLoading value) loading,
     required TResult Function(ChangeLangSuccess value) changeLangSuccess,
     required TResult Function(GetLangSuccess value) getLangSuccess,
-    required TResult Function(LocalizationErrorDetails value) error,
+    required TResult Function(LocalizationError value) error,
   }) {
     return getLangSuccess(this);
   }
@@ -618,7 +616,7 @@ class _$GetLangSuccess implements GetLangSuccess {
     TResult Function(LocalizationLoading value)? loading,
     TResult Function(ChangeLangSuccess value)? changeLangSuccess,
     TResult Function(GetLangSuccess value)? getLangSuccess,
-    TResult Function(LocalizationErrorDetails value)? error,
+    TResult Function(LocalizationError value)? error,
   }) {
     return getLangSuccess?.call(this);
   }
@@ -630,7 +628,7 @@ class _$GetLangSuccess implements GetLangSuccess {
     TResult Function(LocalizationLoading value)? loading,
     TResult Function(ChangeLangSuccess value)? changeLangSuccess,
     TResult Function(GetLangSuccess value)? getLangSuccess,
-    TResult Function(LocalizationErrorDetails value)? error,
+    TResult Function(LocalizationError value)? error,
     required TResult orElse(),
   }) {
     if (getLangSuccess != null) {
@@ -645,68 +643,42 @@ abstract class GetLangSuccess implements LocalizationState {
 }
 
 /// @nodoc
-abstract class $LocalizationErrorDetailsCopyWith<$Res> {
-  factory $LocalizationErrorDetailsCopyWith(LocalizationErrorDetails value,
-          $Res Function(LocalizationErrorDetails) then) =
-      _$LocalizationErrorDetailsCopyWithImpl<$Res>;
-  $Res call({String error});
+abstract class $LocalizationErrorCopyWith<$Res> {
+  factory $LocalizationErrorCopyWith(
+          LocalizationError value, $Res Function(LocalizationError) then) =
+      _$LocalizationErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LocalizationErrorDetailsCopyWithImpl<$Res>
+class _$LocalizationErrorCopyWithImpl<$Res>
     extends _$LocalizationStateCopyWithImpl<$Res>
-    implements $LocalizationErrorDetailsCopyWith<$Res> {
-  _$LocalizationErrorDetailsCopyWithImpl(LocalizationErrorDetails _value,
-      $Res Function(LocalizationErrorDetails) _then)
-      : super(_value, (v) => _then(v as LocalizationErrorDetails));
+    implements $LocalizationErrorCopyWith<$Res> {
+  _$LocalizationErrorCopyWithImpl(
+      LocalizationError _value, $Res Function(LocalizationError) _then)
+      : super(_value, (v) => _then(v as LocalizationError));
 
   @override
-  LocalizationErrorDetails get _value =>
-      super._value as LocalizationErrorDetails;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(LocalizationErrorDetails(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  LocalizationError get _value => super._value as LocalizationError;
 }
 
 /// @nodoc
 
-class _$LocalizationErrorDetails implements LocalizationErrorDetails {
-  const _$LocalizationErrorDetails(this.error);
-
-  @override
-  final String error;
+class _$LocalizationError implements LocalizationError {
+  const _$LocalizationError();
 
   @override
   String toString() {
-    return 'LocalizationState.error(error: $error)';
+    return 'LocalizationState.error()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is LocalizationErrorDetails &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is LocalizationError);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $LocalizationErrorDetailsCopyWith<LocalizationErrorDetails> get copyWith =>
-      _$LocalizationErrorDetailsCopyWithImpl<LocalizationErrorDetails>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -715,9 +687,9 @@ class _$LocalizationErrorDetails implements LocalizationErrorDetails {
     required TResult Function() loading,
     required TResult Function(String langCode) changeLangSuccess,
     required TResult Function() getLangSuccess,
-    required TResult Function(String error) error,
+    required TResult Function() error,
   }) {
-    return error(this.error);
+    return error();
   }
 
   @override
@@ -727,9 +699,9 @@ class _$LocalizationErrorDetails implements LocalizationErrorDetails {
     TResult Function()? loading,
     TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
-    TResult Function(String error)? error,
+    TResult Function()? error,
   }) {
-    return error?.call(this.error);
+    return error?.call();
   }
 
   @override
@@ -739,11 +711,11 @@ class _$LocalizationErrorDetails implements LocalizationErrorDetails {
     TResult Function()? loading,
     TResult Function(String langCode)? changeLangSuccess,
     TResult Function()? getLangSuccess,
-    TResult Function(String error)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(this.error);
+      return error();
     }
     return orElse();
   }
@@ -755,7 +727,7 @@ class _$LocalizationErrorDetails implements LocalizationErrorDetails {
     required TResult Function(LocalizationLoading value) loading,
     required TResult Function(ChangeLangSuccess value) changeLangSuccess,
     required TResult Function(GetLangSuccess value) getLangSuccess,
-    required TResult Function(LocalizationErrorDetails value) error,
+    required TResult Function(LocalizationError value) error,
   }) {
     return error(this);
   }
@@ -767,7 +739,7 @@ class _$LocalizationErrorDetails implements LocalizationErrorDetails {
     TResult Function(LocalizationLoading value)? loading,
     TResult Function(ChangeLangSuccess value)? changeLangSuccess,
     TResult Function(GetLangSuccess value)? getLangSuccess,
-    TResult Function(LocalizationErrorDetails value)? error,
+    TResult Function(LocalizationError value)? error,
   }) {
     return error?.call(this);
   }
@@ -779,7 +751,7 @@ class _$LocalizationErrorDetails implements LocalizationErrorDetails {
     TResult Function(LocalizationLoading value)? loading,
     TResult Function(ChangeLangSuccess value)? changeLangSuccess,
     TResult Function(GetLangSuccess value)? getLangSuccess,
-    TResult Function(LocalizationErrorDetails value)? error,
+    TResult Function(LocalizationError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -789,12 +761,6 @@ class _$LocalizationErrorDetails implements LocalizationErrorDetails {
   }
 }
 
-abstract class LocalizationErrorDetails implements LocalizationState {
-  const factory LocalizationErrorDetails(String error) =
-      _$LocalizationErrorDetails;
-
-  String get error;
-  @JsonKey(ignore: true)
-  $LocalizationErrorDetailsCopyWith<LocalizationErrorDetails> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class LocalizationError implements LocalizationState {
+  const factory LocalizationError() = _$LocalizationError;
 }

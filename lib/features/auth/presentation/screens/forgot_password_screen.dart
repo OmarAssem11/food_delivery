@@ -8,6 +8,7 @@ import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.d
 import 'package:food_delivery/core/presentation/widgets/custom_text_form_field.dart';
 import 'package:food_delivery/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:food_delivery/features/auth/presentation/bloc/auth_state.dart';
+import 'package:food_delivery/gen/assets.gen.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen();
@@ -55,9 +56,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Theme.of(context).colorScheme.primary,
-                    image: const DecorationImage(
+                    image: DecorationImage(
                       image: AssetImage(
-                        'assets/images/forgot_password.png',
+                        Assets.images.forgotPassword.path,
                       ),
                       fit: BoxFit.cover,
                     ),
@@ -90,8 +91,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     bool isLoading = false;
                     state.maybeWhen(
                       forgotPasswordLoading: () => isLoading = true,
-                      forgotPasswordError: (error) =>
-                          showErrorToast(errorMessage: error),
+                      forgotPasswordError: () => showErrorToast(),
                       forgotPasswordSuccess: () =>
                           WidgetsBinding.instance!.addPostFrameCallback(
                         (_) => showDoneSnackBar(

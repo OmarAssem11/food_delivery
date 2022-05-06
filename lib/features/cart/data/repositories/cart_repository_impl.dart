@@ -1,5 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:food_delivery/core/domain/error/failure.dart';
+import 'package:food_delivery/core/data/app_exception/app_exception.dart';
+import 'package:food_delivery/core/domain/failure/failure.dart';
+import 'package:food_delivery/core/domain/failure/return_failure.dart';
 import 'package:food_delivery/features/cart/data/mappers/cart_order_mapper.dart';
 import 'package:food_delivery/features/cart/data/mappers/cart_product_mapper.dart';
 import 'package:food_delivery/features/cart/domain/datasources/remote_datasource/cart_remote_datasource.dart';
@@ -23,8 +25,8 @@ class CartRepositoryImpl implements CartRepository {
         cartOrderModel: cartOrder.toModel,
       );
       return right(unit);
-    } catch (error) {
-      return left(const Failure('Error while adding to cart'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 
@@ -37,8 +39,8 @@ class CartRepositoryImpl implements CartRepository {
         cartOrderModel: cartOrder.toModel,
       );
       return right(unit);
-    } catch (error) {
-      return left(const Failure('Error while editing cart'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 
@@ -51,8 +53,8 @@ class CartRepositoryImpl implements CartRepository {
         cartOrderModel: cartOrder.toModel,
       );
       return right(unit);
-    } catch (error) {
-      return left(const Failure('error while deleting cart'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 
@@ -63,8 +65,8 @@ class CartRepositoryImpl implements CartRepository {
       final cartProductsList =
           cartResponse.data.map((cartModel) => cartModel.fromModel).toList();
       return right(cartProductsList);
-    } catch (error) {
-      return left(const Failure('Error while getting cart'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 }

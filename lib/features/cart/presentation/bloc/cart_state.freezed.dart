@@ -30,10 +30,8 @@ class _$CartStateTearOff {
     return const AddToCartSuccess();
   }
 
-  AddToCartErrorDetails addToCartError(String error) {
-    return AddToCartErrorDetails(
-      error,
-    );
+  AddToCartError addToCartError() {
+    return const AddToCartError();
   }
 
   EditCartLoading editCartLoading() {
@@ -44,10 +42,8 @@ class _$CartStateTearOff {
     return const EditCartSuccess();
   }
 
-  EditCartErrorDetails editCartError(String error) {
-    return EditCartErrorDetails(
-      error,
-    );
+  EditCartError editCartError() {
+    return const EditCartError();
   }
 
   DeleteCartLoading deleteCartLoading() {
@@ -58,10 +54,8 @@ class _$CartStateTearOff {
     return const DeleteCartSuccess();
   }
 
-  DeleteCartErrorDetails deleteCartError(String error) {
-    return DeleteCartErrorDetails(
-      error,
-    );
+  DeleteCartError deleteCartError() {
+    return const DeleteCartError();
   }
 
   GetCartLoading getCartLoading() {
@@ -72,10 +66,8 @@ class _$CartStateTearOff {
     return const GetCartSuccess();
   }
 
-  GetCartErrorDetails getCartError(String error) {
-    return GetCartErrorDetails(
-      error,
-    );
+  GetCartError getCartError() {
+    return const GetCartError();
   }
 }
 
@@ -89,16 +81,16 @@ mixin _$CartState {
     required TResult Function() initial,
     required TResult Function() addToCartLoading,
     required TResult Function() addToCartSuccess,
-    required TResult Function(String error) addToCartError,
+    required TResult Function() addToCartError,
     required TResult Function() editCartLoading,
     required TResult Function() editCartSuccess,
-    required TResult Function(String error) editCartError,
+    required TResult Function() editCartError,
     required TResult Function() deleteCartLoading,
     required TResult Function() deleteCartSuccess,
-    required TResult Function(String error) deleteCartError,
+    required TResult Function() deleteCartError,
     required TResult Function() getCartLoading,
     required TResult Function() getCartSuccess,
-    required TResult Function(String error) getCartError,
+    required TResult Function() getCartError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -106,16 +98,16 @@ mixin _$CartState {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -123,16 +115,16 @@ mixin _$CartState {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -141,16 +133,16 @@ mixin _$CartState {
     required TResult Function(CartInitial value) initial,
     required TResult Function(AddToCartLoading value) addToCartLoading,
     required TResult Function(AddToCartSuccess value) addToCartSuccess,
-    required TResult Function(AddToCartErrorDetails value) addToCartError,
+    required TResult Function(AddToCartError value) addToCartError,
     required TResult Function(EditCartLoading value) editCartLoading,
     required TResult Function(EditCartSuccess value) editCartSuccess,
-    required TResult Function(EditCartErrorDetails value) editCartError,
+    required TResult Function(EditCartError value) editCartError,
     required TResult Function(DeleteCartLoading value) deleteCartLoading,
     required TResult Function(DeleteCartSuccess value) deleteCartSuccess,
-    required TResult Function(DeleteCartErrorDetails value) deleteCartError,
+    required TResult Function(DeleteCartError value) deleteCartError,
     required TResult Function(GetCartLoading value) getCartLoading,
     required TResult Function(GetCartSuccess value) getCartSuccess,
-    required TResult Function(GetCartErrorDetails value) getCartError,
+    required TResult Function(GetCartError value) getCartError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -158,16 +150,16 @@ mixin _$CartState {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -175,16 +167,16 @@ mixin _$CartState {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -248,16 +240,16 @@ class _$CartInitial implements CartInitial {
     required TResult Function() initial,
     required TResult Function() addToCartLoading,
     required TResult Function() addToCartSuccess,
-    required TResult Function(String error) addToCartError,
+    required TResult Function() addToCartError,
     required TResult Function() editCartLoading,
     required TResult Function() editCartSuccess,
-    required TResult Function(String error) editCartError,
+    required TResult Function() editCartError,
     required TResult Function() deleteCartLoading,
     required TResult Function() deleteCartSuccess,
-    required TResult Function(String error) deleteCartError,
+    required TResult Function() deleteCartError,
     required TResult Function() getCartLoading,
     required TResult Function() getCartSuccess,
-    required TResult Function(String error) getCartError,
+    required TResult Function() getCartError,
   }) {
     return initial();
   }
@@ -268,16 +260,16 @@ class _$CartInitial implements CartInitial {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
   }) {
     return initial?.call();
   }
@@ -288,16 +280,16 @@ class _$CartInitial implements CartInitial {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -312,16 +304,16 @@ class _$CartInitial implements CartInitial {
     required TResult Function(CartInitial value) initial,
     required TResult Function(AddToCartLoading value) addToCartLoading,
     required TResult Function(AddToCartSuccess value) addToCartSuccess,
-    required TResult Function(AddToCartErrorDetails value) addToCartError,
+    required TResult Function(AddToCartError value) addToCartError,
     required TResult Function(EditCartLoading value) editCartLoading,
     required TResult Function(EditCartSuccess value) editCartSuccess,
-    required TResult Function(EditCartErrorDetails value) editCartError,
+    required TResult Function(EditCartError value) editCartError,
     required TResult Function(DeleteCartLoading value) deleteCartLoading,
     required TResult Function(DeleteCartSuccess value) deleteCartSuccess,
-    required TResult Function(DeleteCartErrorDetails value) deleteCartError,
+    required TResult Function(DeleteCartError value) deleteCartError,
     required TResult Function(GetCartLoading value) getCartLoading,
     required TResult Function(GetCartSuccess value) getCartSuccess,
-    required TResult Function(GetCartErrorDetails value) getCartError,
+    required TResult Function(GetCartError value) getCartError,
   }) {
     return initial(this);
   }
@@ -332,16 +324,16 @@ class _$CartInitial implements CartInitial {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
   }) {
     return initial?.call(this);
   }
@@ -352,16 +344,16 @@ class _$CartInitial implements CartInitial {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -418,16 +410,16 @@ class _$AddToCartLoading implements AddToCartLoading {
     required TResult Function() initial,
     required TResult Function() addToCartLoading,
     required TResult Function() addToCartSuccess,
-    required TResult Function(String error) addToCartError,
+    required TResult Function() addToCartError,
     required TResult Function() editCartLoading,
     required TResult Function() editCartSuccess,
-    required TResult Function(String error) editCartError,
+    required TResult Function() editCartError,
     required TResult Function() deleteCartLoading,
     required TResult Function() deleteCartSuccess,
-    required TResult Function(String error) deleteCartError,
+    required TResult Function() deleteCartError,
     required TResult Function() getCartLoading,
     required TResult Function() getCartSuccess,
-    required TResult Function(String error) getCartError,
+    required TResult Function() getCartError,
   }) {
     return addToCartLoading();
   }
@@ -438,16 +430,16 @@ class _$AddToCartLoading implements AddToCartLoading {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
   }) {
     return addToCartLoading?.call();
   }
@@ -458,16 +450,16 @@ class _$AddToCartLoading implements AddToCartLoading {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
     required TResult orElse(),
   }) {
     if (addToCartLoading != null) {
@@ -482,16 +474,16 @@ class _$AddToCartLoading implements AddToCartLoading {
     required TResult Function(CartInitial value) initial,
     required TResult Function(AddToCartLoading value) addToCartLoading,
     required TResult Function(AddToCartSuccess value) addToCartSuccess,
-    required TResult Function(AddToCartErrorDetails value) addToCartError,
+    required TResult Function(AddToCartError value) addToCartError,
     required TResult Function(EditCartLoading value) editCartLoading,
     required TResult Function(EditCartSuccess value) editCartSuccess,
-    required TResult Function(EditCartErrorDetails value) editCartError,
+    required TResult Function(EditCartError value) editCartError,
     required TResult Function(DeleteCartLoading value) deleteCartLoading,
     required TResult Function(DeleteCartSuccess value) deleteCartSuccess,
-    required TResult Function(DeleteCartErrorDetails value) deleteCartError,
+    required TResult Function(DeleteCartError value) deleteCartError,
     required TResult Function(GetCartLoading value) getCartLoading,
     required TResult Function(GetCartSuccess value) getCartSuccess,
-    required TResult Function(GetCartErrorDetails value) getCartError,
+    required TResult Function(GetCartError value) getCartError,
   }) {
     return addToCartLoading(this);
   }
@@ -502,16 +494,16 @@ class _$AddToCartLoading implements AddToCartLoading {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
   }) {
     return addToCartLoading?.call(this);
   }
@@ -522,16 +514,16 @@ class _$AddToCartLoading implements AddToCartLoading {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
     required TResult orElse(),
   }) {
     if (addToCartLoading != null) {
@@ -588,16 +580,16 @@ class _$AddToCartSuccess implements AddToCartSuccess {
     required TResult Function() initial,
     required TResult Function() addToCartLoading,
     required TResult Function() addToCartSuccess,
-    required TResult Function(String error) addToCartError,
+    required TResult Function() addToCartError,
     required TResult Function() editCartLoading,
     required TResult Function() editCartSuccess,
-    required TResult Function(String error) editCartError,
+    required TResult Function() editCartError,
     required TResult Function() deleteCartLoading,
     required TResult Function() deleteCartSuccess,
-    required TResult Function(String error) deleteCartError,
+    required TResult Function() deleteCartError,
     required TResult Function() getCartLoading,
     required TResult Function() getCartSuccess,
-    required TResult Function(String error) getCartError,
+    required TResult Function() getCartError,
   }) {
     return addToCartSuccess();
   }
@@ -608,16 +600,16 @@ class _$AddToCartSuccess implements AddToCartSuccess {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
   }) {
     return addToCartSuccess?.call();
   }
@@ -628,16 +620,16 @@ class _$AddToCartSuccess implements AddToCartSuccess {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
     required TResult orElse(),
   }) {
     if (addToCartSuccess != null) {
@@ -652,16 +644,16 @@ class _$AddToCartSuccess implements AddToCartSuccess {
     required TResult Function(CartInitial value) initial,
     required TResult Function(AddToCartLoading value) addToCartLoading,
     required TResult Function(AddToCartSuccess value) addToCartSuccess,
-    required TResult Function(AddToCartErrorDetails value) addToCartError,
+    required TResult Function(AddToCartError value) addToCartError,
     required TResult Function(EditCartLoading value) editCartLoading,
     required TResult Function(EditCartSuccess value) editCartSuccess,
-    required TResult Function(EditCartErrorDetails value) editCartError,
+    required TResult Function(EditCartError value) editCartError,
     required TResult Function(DeleteCartLoading value) deleteCartLoading,
     required TResult Function(DeleteCartSuccess value) deleteCartSuccess,
-    required TResult Function(DeleteCartErrorDetails value) deleteCartError,
+    required TResult Function(DeleteCartError value) deleteCartError,
     required TResult Function(GetCartLoading value) getCartLoading,
     required TResult Function(GetCartSuccess value) getCartSuccess,
-    required TResult Function(GetCartErrorDetails value) getCartError,
+    required TResult Function(GetCartError value) getCartError,
   }) {
     return addToCartSuccess(this);
   }
@@ -672,16 +664,16 @@ class _$AddToCartSuccess implements AddToCartSuccess {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
   }) {
     return addToCartSuccess?.call(this);
   }
@@ -692,16 +684,16 @@ class _$AddToCartSuccess implements AddToCartSuccess {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
     required TResult orElse(),
   }) {
     if (addToCartSuccess != null) {
@@ -716,67 +708,41 @@ abstract class AddToCartSuccess implements CartState {
 }
 
 /// @nodoc
-abstract class $AddToCartErrorDetailsCopyWith<$Res> {
-  factory $AddToCartErrorDetailsCopyWith(AddToCartErrorDetails value,
-          $Res Function(AddToCartErrorDetails) then) =
-      _$AddToCartErrorDetailsCopyWithImpl<$Res>;
-  $Res call({String error});
+abstract class $AddToCartErrorCopyWith<$Res> {
+  factory $AddToCartErrorCopyWith(
+          AddToCartError value, $Res Function(AddToCartError) then) =
+      _$AddToCartErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AddToCartErrorDetailsCopyWithImpl<$Res>
-    extends _$CartStateCopyWithImpl<$Res>
-    implements $AddToCartErrorDetailsCopyWith<$Res> {
-  _$AddToCartErrorDetailsCopyWithImpl(
-      AddToCartErrorDetails _value, $Res Function(AddToCartErrorDetails) _then)
-      : super(_value, (v) => _then(v as AddToCartErrorDetails));
+class _$AddToCartErrorCopyWithImpl<$Res> extends _$CartStateCopyWithImpl<$Res>
+    implements $AddToCartErrorCopyWith<$Res> {
+  _$AddToCartErrorCopyWithImpl(
+      AddToCartError _value, $Res Function(AddToCartError) _then)
+      : super(_value, (v) => _then(v as AddToCartError));
 
   @override
-  AddToCartErrorDetails get _value => super._value as AddToCartErrorDetails;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(AddToCartErrorDetails(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  AddToCartError get _value => super._value as AddToCartError;
 }
 
 /// @nodoc
 
-class _$AddToCartErrorDetails implements AddToCartErrorDetails {
-  const _$AddToCartErrorDetails(this.error);
-
-  @override
-  final String error;
+class _$AddToCartError implements AddToCartError {
+  const _$AddToCartError();
 
   @override
   String toString() {
-    return 'CartState.addToCartError(error: $error)';
+    return 'CartState.addToCartError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is AddToCartErrorDetails &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is AddToCartError);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $AddToCartErrorDetailsCopyWith<AddToCartErrorDetails> get copyWith =>
-      _$AddToCartErrorDetailsCopyWithImpl<AddToCartErrorDetails>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -784,18 +750,18 @@ class _$AddToCartErrorDetails implements AddToCartErrorDetails {
     required TResult Function() initial,
     required TResult Function() addToCartLoading,
     required TResult Function() addToCartSuccess,
-    required TResult Function(String error) addToCartError,
+    required TResult Function() addToCartError,
     required TResult Function() editCartLoading,
     required TResult Function() editCartSuccess,
-    required TResult Function(String error) editCartError,
+    required TResult Function() editCartError,
     required TResult Function() deleteCartLoading,
     required TResult Function() deleteCartSuccess,
-    required TResult Function(String error) deleteCartError,
+    required TResult Function() deleteCartError,
     required TResult Function() getCartLoading,
     required TResult Function() getCartSuccess,
-    required TResult Function(String error) getCartError,
+    required TResult Function() getCartError,
   }) {
-    return addToCartError(error);
+    return addToCartError();
   }
 
   @override
@@ -804,18 +770,18 @@ class _$AddToCartErrorDetails implements AddToCartErrorDetails {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
   }) {
-    return addToCartError?.call(error);
+    return addToCartError?.call();
   }
 
   @override
@@ -824,20 +790,20 @@ class _$AddToCartErrorDetails implements AddToCartErrorDetails {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
     required TResult orElse(),
   }) {
     if (addToCartError != null) {
-      return addToCartError(error);
+      return addToCartError();
     }
     return orElse();
   }
@@ -848,16 +814,16 @@ class _$AddToCartErrorDetails implements AddToCartErrorDetails {
     required TResult Function(CartInitial value) initial,
     required TResult Function(AddToCartLoading value) addToCartLoading,
     required TResult Function(AddToCartSuccess value) addToCartSuccess,
-    required TResult Function(AddToCartErrorDetails value) addToCartError,
+    required TResult Function(AddToCartError value) addToCartError,
     required TResult Function(EditCartLoading value) editCartLoading,
     required TResult Function(EditCartSuccess value) editCartSuccess,
-    required TResult Function(EditCartErrorDetails value) editCartError,
+    required TResult Function(EditCartError value) editCartError,
     required TResult Function(DeleteCartLoading value) deleteCartLoading,
     required TResult Function(DeleteCartSuccess value) deleteCartSuccess,
-    required TResult Function(DeleteCartErrorDetails value) deleteCartError,
+    required TResult Function(DeleteCartError value) deleteCartError,
     required TResult Function(GetCartLoading value) getCartLoading,
     required TResult Function(GetCartSuccess value) getCartSuccess,
-    required TResult Function(GetCartErrorDetails value) getCartError,
+    required TResult Function(GetCartError value) getCartError,
   }) {
     return addToCartError(this);
   }
@@ -868,16 +834,16 @@ class _$AddToCartErrorDetails implements AddToCartErrorDetails {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
   }) {
     return addToCartError?.call(this);
   }
@@ -888,16 +854,16 @@ class _$AddToCartErrorDetails implements AddToCartErrorDetails {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
     required TResult orElse(),
   }) {
     if (addToCartError != null) {
@@ -907,13 +873,8 @@ class _$AddToCartErrorDetails implements AddToCartErrorDetails {
   }
 }
 
-abstract class AddToCartErrorDetails implements CartState {
-  const factory AddToCartErrorDetails(String error) = _$AddToCartErrorDetails;
-
-  String get error;
-  @JsonKey(ignore: true)
-  $AddToCartErrorDetailsCopyWith<AddToCartErrorDetails> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class AddToCartError implements CartState {
+  const factory AddToCartError() = _$AddToCartError;
 }
 
 /// @nodoc
@@ -959,16 +920,16 @@ class _$EditCartLoading implements EditCartLoading {
     required TResult Function() initial,
     required TResult Function() addToCartLoading,
     required TResult Function() addToCartSuccess,
-    required TResult Function(String error) addToCartError,
+    required TResult Function() addToCartError,
     required TResult Function() editCartLoading,
     required TResult Function() editCartSuccess,
-    required TResult Function(String error) editCartError,
+    required TResult Function() editCartError,
     required TResult Function() deleteCartLoading,
     required TResult Function() deleteCartSuccess,
-    required TResult Function(String error) deleteCartError,
+    required TResult Function() deleteCartError,
     required TResult Function() getCartLoading,
     required TResult Function() getCartSuccess,
-    required TResult Function(String error) getCartError,
+    required TResult Function() getCartError,
   }) {
     return editCartLoading();
   }
@@ -979,16 +940,16 @@ class _$EditCartLoading implements EditCartLoading {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
   }) {
     return editCartLoading?.call();
   }
@@ -999,16 +960,16 @@ class _$EditCartLoading implements EditCartLoading {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
     required TResult orElse(),
   }) {
     if (editCartLoading != null) {
@@ -1023,16 +984,16 @@ class _$EditCartLoading implements EditCartLoading {
     required TResult Function(CartInitial value) initial,
     required TResult Function(AddToCartLoading value) addToCartLoading,
     required TResult Function(AddToCartSuccess value) addToCartSuccess,
-    required TResult Function(AddToCartErrorDetails value) addToCartError,
+    required TResult Function(AddToCartError value) addToCartError,
     required TResult Function(EditCartLoading value) editCartLoading,
     required TResult Function(EditCartSuccess value) editCartSuccess,
-    required TResult Function(EditCartErrorDetails value) editCartError,
+    required TResult Function(EditCartError value) editCartError,
     required TResult Function(DeleteCartLoading value) deleteCartLoading,
     required TResult Function(DeleteCartSuccess value) deleteCartSuccess,
-    required TResult Function(DeleteCartErrorDetails value) deleteCartError,
+    required TResult Function(DeleteCartError value) deleteCartError,
     required TResult Function(GetCartLoading value) getCartLoading,
     required TResult Function(GetCartSuccess value) getCartSuccess,
-    required TResult Function(GetCartErrorDetails value) getCartError,
+    required TResult Function(GetCartError value) getCartError,
   }) {
     return editCartLoading(this);
   }
@@ -1043,16 +1004,16 @@ class _$EditCartLoading implements EditCartLoading {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
   }) {
     return editCartLoading?.call(this);
   }
@@ -1063,16 +1024,16 @@ class _$EditCartLoading implements EditCartLoading {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
     required TResult orElse(),
   }) {
     if (editCartLoading != null) {
@@ -1129,16 +1090,16 @@ class _$EditCartSuccess implements EditCartSuccess {
     required TResult Function() initial,
     required TResult Function() addToCartLoading,
     required TResult Function() addToCartSuccess,
-    required TResult Function(String error) addToCartError,
+    required TResult Function() addToCartError,
     required TResult Function() editCartLoading,
     required TResult Function() editCartSuccess,
-    required TResult Function(String error) editCartError,
+    required TResult Function() editCartError,
     required TResult Function() deleteCartLoading,
     required TResult Function() deleteCartSuccess,
-    required TResult Function(String error) deleteCartError,
+    required TResult Function() deleteCartError,
     required TResult Function() getCartLoading,
     required TResult Function() getCartSuccess,
-    required TResult Function(String error) getCartError,
+    required TResult Function() getCartError,
   }) {
     return editCartSuccess();
   }
@@ -1149,16 +1110,16 @@ class _$EditCartSuccess implements EditCartSuccess {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
   }) {
     return editCartSuccess?.call();
   }
@@ -1169,16 +1130,16 @@ class _$EditCartSuccess implements EditCartSuccess {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
     required TResult orElse(),
   }) {
     if (editCartSuccess != null) {
@@ -1193,16 +1154,16 @@ class _$EditCartSuccess implements EditCartSuccess {
     required TResult Function(CartInitial value) initial,
     required TResult Function(AddToCartLoading value) addToCartLoading,
     required TResult Function(AddToCartSuccess value) addToCartSuccess,
-    required TResult Function(AddToCartErrorDetails value) addToCartError,
+    required TResult Function(AddToCartError value) addToCartError,
     required TResult Function(EditCartLoading value) editCartLoading,
     required TResult Function(EditCartSuccess value) editCartSuccess,
-    required TResult Function(EditCartErrorDetails value) editCartError,
+    required TResult Function(EditCartError value) editCartError,
     required TResult Function(DeleteCartLoading value) deleteCartLoading,
     required TResult Function(DeleteCartSuccess value) deleteCartSuccess,
-    required TResult Function(DeleteCartErrorDetails value) deleteCartError,
+    required TResult Function(DeleteCartError value) deleteCartError,
     required TResult Function(GetCartLoading value) getCartLoading,
     required TResult Function(GetCartSuccess value) getCartSuccess,
-    required TResult Function(GetCartErrorDetails value) getCartError,
+    required TResult Function(GetCartError value) getCartError,
   }) {
     return editCartSuccess(this);
   }
@@ -1213,16 +1174,16 @@ class _$EditCartSuccess implements EditCartSuccess {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
   }) {
     return editCartSuccess?.call(this);
   }
@@ -1233,16 +1194,16 @@ class _$EditCartSuccess implements EditCartSuccess {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
     required TResult orElse(),
   }) {
     if (editCartSuccess != null) {
@@ -1257,67 +1218,41 @@ abstract class EditCartSuccess implements CartState {
 }
 
 /// @nodoc
-abstract class $EditCartErrorDetailsCopyWith<$Res> {
-  factory $EditCartErrorDetailsCopyWith(EditCartErrorDetails value,
-          $Res Function(EditCartErrorDetails) then) =
-      _$EditCartErrorDetailsCopyWithImpl<$Res>;
-  $Res call({String error});
+abstract class $EditCartErrorCopyWith<$Res> {
+  factory $EditCartErrorCopyWith(
+          EditCartError value, $Res Function(EditCartError) then) =
+      _$EditCartErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$EditCartErrorDetailsCopyWithImpl<$Res>
-    extends _$CartStateCopyWithImpl<$Res>
-    implements $EditCartErrorDetailsCopyWith<$Res> {
-  _$EditCartErrorDetailsCopyWithImpl(
-      EditCartErrorDetails _value, $Res Function(EditCartErrorDetails) _then)
-      : super(_value, (v) => _then(v as EditCartErrorDetails));
+class _$EditCartErrorCopyWithImpl<$Res> extends _$CartStateCopyWithImpl<$Res>
+    implements $EditCartErrorCopyWith<$Res> {
+  _$EditCartErrorCopyWithImpl(
+      EditCartError _value, $Res Function(EditCartError) _then)
+      : super(_value, (v) => _then(v as EditCartError));
 
   @override
-  EditCartErrorDetails get _value => super._value as EditCartErrorDetails;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(EditCartErrorDetails(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  EditCartError get _value => super._value as EditCartError;
 }
 
 /// @nodoc
 
-class _$EditCartErrorDetails implements EditCartErrorDetails {
-  const _$EditCartErrorDetails(this.error);
-
-  @override
-  final String error;
+class _$EditCartError implements EditCartError {
+  const _$EditCartError();
 
   @override
   String toString() {
-    return 'CartState.editCartError(error: $error)';
+    return 'CartState.editCartError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is EditCartErrorDetails &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is EditCartError);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $EditCartErrorDetailsCopyWith<EditCartErrorDetails> get copyWith =>
-      _$EditCartErrorDetailsCopyWithImpl<EditCartErrorDetails>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -1325,18 +1260,18 @@ class _$EditCartErrorDetails implements EditCartErrorDetails {
     required TResult Function() initial,
     required TResult Function() addToCartLoading,
     required TResult Function() addToCartSuccess,
-    required TResult Function(String error) addToCartError,
+    required TResult Function() addToCartError,
     required TResult Function() editCartLoading,
     required TResult Function() editCartSuccess,
-    required TResult Function(String error) editCartError,
+    required TResult Function() editCartError,
     required TResult Function() deleteCartLoading,
     required TResult Function() deleteCartSuccess,
-    required TResult Function(String error) deleteCartError,
+    required TResult Function() deleteCartError,
     required TResult Function() getCartLoading,
     required TResult Function() getCartSuccess,
-    required TResult Function(String error) getCartError,
+    required TResult Function() getCartError,
   }) {
-    return editCartError(error);
+    return editCartError();
   }
 
   @override
@@ -1345,18 +1280,18 @@ class _$EditCartErrorDetails implements EditCartErrorDetails {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
   }) {
-    return editCartError?.call(error);
+    return editCartError?.call();
   }
 
   @override
@@ -1365,20 +1300,20 @@ class _$EditCartErrorDetails implements EditCartErrorDetails {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
     required TResult orElse(),
   }) {
     if (editCartError != null) {
-      return editCartError(error);
+      return editCartError();
     }
     return orElse();
   }
@@ -1389,16 +1324,16 @@ class _$EditCartErrorDetails implements EditCartErrorDetails {
     required TResult Function(CartInitial value) initial,
     required TResult Function(AddToCartLoading value) addToCartLoading,
     required TResult Function(AddToCartSuccess value) addToCartSuccess,
-    required TResult Function(AddToCartErrorDetails value) addToCartError,
+    required TResult Function(AddToCartError value) addToCartError,
     required TResult Function(EditCartLoading value) editCartLoading,
     required TResult Function(EditCartSuccess value) editCartSuccess,
-    required TResult Function(EditCartErrorDetails value) editCartError,
+    required TResult Function(EditCartError value) editCartError,
     required TResult Function(DeleteCartLoading value) deleteCartLoading,
     required TResult Function(DeleteCartSuccess value) deleteCartSuccess,
-    required TResult Function(DeleteCartErrorDetails value) deleteCartError,
+    required TResult Function(DeleteCartError value) deleteCartError,
     required TResult Function(GetCartLoading value) getCartLoading,
     required TResult Function(GetCartSuccess value) getCartSuccess,
-    required TResult Function(GetCartErrorDetails value) getCartError,
+    required TResult Function(GetCartError value) getCartError,
   }) {
     return editCartError(this);
   }
@@ -1409,16 +1344,16 @@ class _$EditCartErrorDetails implements EditCartErrorDetails {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
   }) {
     return editCartError?.call(this);
   }
@@ -1429,16 +1364,16 @@ class _$EditCartErrorDetails implements EditCartErrorDetails {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
     required TResult orElse(),
   }) {
     if (editCartError != null) {
@@ -1448,13 +1383,8 @@ class _$EditCartErrorDetails implements EditCartErrorDetails {
   }
 }
 
-abstract class EditCartErrorDetails implements CartState {
-  const factory EditCartErrorDetails(String error) = _$EditCartErrorDetails;
-
-  String get error;
-  @JsonKey(ignore: true)
-  $EditCartErrorDetailsCopyWith<EditCartErrorDetails> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class EditCartError implements CartState {
+  const factory EditCartError() = _$EditCartError;
 }
 
 /// @nodoc
@@ -1501,16 +1431,16 @@ class _$DeleteCartLoading implements DeleteCartLoading {
     required TResult Function() initial,
     required TResult Function() addToCartLoading,
     required TResult Function() addToCartSuccess,
-    required TResult Function(String error) addToCartError,
+    required TResult Function() addToCartError,
     required TResult Function() editCartLoading,
     required TResult Function() editCartSuccess,
-    required TResult Function(String error) editCartError,
+    required TResult Function() editCartError,
     required TResult Function() deleteCartLoading,
     required TResult Function() deleteCartSuccess,
-    required TResult Function(String error) deleteCartError,
+    required TResult Function() deleteCartError,
     required TResult Function() getCartLoading,
     required TResult Function() getCartSuccess,
-    required TResult Function(String error) getCartError,
+    required TResult Function() getCartError,
   }) {
     return deleteCartLoading();
   }
@@ -1521,16 +1451,16 @@ class _$DeleteCartLoading implements DeleteCartLoading {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
   }) {
     return deleteCartLoading?.call();
   }
@@ -1541,16 +1471,16 @@ class _$DeleteCartLoading implements DeleteCartLoading {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
     required TResult orElse(),
   }) {
     if (deleteCartLoading != null) {
@@ -1565,16 +1495,16 @@ class _$DeleteCartLoading implements DeleteCartLoading {
     required TResult Function(CartInitial value) initial,
     required TResult Function(AddToCartLoading value) addToCartLoading,
     required TResult Function(AddToCartSuccess value) addToCartSuccess,
-    required TResult Function(AddToCartErrorDetails value) addToCartError,
+    required TResult Function(AddToCartError value) addToCartError,
     required TResult Function(EditCartLoading value) editCartLoading,
     required TResult Function(EditCartSuccess value) editCartSuccess,
-    required TResult Function(EditCartErrorDetails value) editCartError,
+    required TResult Function(EditCartError value) editCartError,
     required TResult Function(DeleteCartLoading value) deleteCartLoading,
     required TResult Function(DeleteCartSuccess value) deleteCartSuccess,
-    required TResult Function(DeleteCartErrorDetails value) deleteCartError,
+    required TResult Function(DeleteCartError value) deleteCartError,
     required TResult Function(GetCartLoading value) getCartLoading,
     required TResult Function(GetCartSuccess value) getCartSuccess,
-    required TResult Function(GetCartErrorDetails value) getCartError,
+    required TResult Function(GetCartError value) getCartError,
   }) {
     return deleteCartLoading(this);
   }
@@ -1585,16 +1515,16 @@ class _$DeleteCartLoading implements DeleteCartLoading {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
   }) {
     return deleteCartLoading?.call(this);
   }
@@ -1605,16 +1535,16 @@ class _$DeleteCartLoading implements DeleteCartLoading {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
     required TResult orElse(),
   }) {
     if (deleteCartLoading != null) {
@@ -1672,16 +1602,16 @@ class _$DeleteCartSuccess implements DeleteCartSuccess {
     required TResult Function() initial,
     required TResult Function() addToCartLoading,
     required TResult Function() addToCartSuccess,
-    required TResult Function(String error) addToCartError,
+    required TResult Function() addToCartError,
     required TResult Function() editCartLoading,
     required TResult Function() editCartSuccess,
-    required TResult Function(String error) editCartError,
+    required TResult Function() editCartError,
     required TResult Function() deleteCartLoading,
     required TResult Function() deleteCartSuccess,
-    required TResult Function(String error) deleteCartError,
+    required TResult Function() deleteCartError,
     required TResult Function() getCartLoading,
     required TResult Function() getCartSuccess,
-    required TResult Function(String error) getCartError,
+    required TResult Function() getCartError,
   }) {
     return deleteCartSuccess();
   }
@@ -1692,16 +1622,16 @@ class _$DeleteCartSuccess implements DeleteCartSuccess {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
   }) {
     return deleteCartSuccess?.call();
   }
@@ -1712,16 +1642,16 @@ class _$DeleteCartSuccess implements DeleteCartSuccess {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
     required TResult orElse(),
   }) {
     if (deleteCartSuccess != null) {
@@ -1736,16 +1666,16 @@ class _$DeleteCartSuccess implements DeleteCartSuccess {
     required TResult Function(CartInitial value) initial,
     required TResult Function(AddToCartLoading value) addToCartLoading,
     required TResult Function(AddToCartSuccess value) addToCartSuccess,
-    required TResult Function(AddToCartErrorDetails value) addToCartError,
+    required TResult Function(AddToCartError value) addToCartError,
     required TResult Function(EditCartLoading value) editCartLoading,
     required TResult Function(EditCartSuccess value) editCartSuccess,
-    required TResult Function(EditCartErrorDetails value) editCartError,
+    required TResult Function(EditCartError value) editCartError,
     required TResult Function(DeleteCartLoading value) deleteCartLoading,
     required TResult Function(DeleteCartSuccess value) deleteCartSuccess,
-    required TResult Function(DeleteCartErrorDetails value) deleteCartError,
+    required TResult Function(DeleteCartError value) deleteCartError,
     required TResult Function(GetCartLoading value) getCartLoading,
     required TResult Function(GetCartSuccess value) getCartSuccess,
-    required TResult Function(GetCartErrorDetails value) getCartError,
+    required TResult Function(GetCartError value) getCartError,
   }) {
     return deleteCartSuccess(this);
   }
@@ -1756,16 +1686,16 @@ class _$DeleteCartSuccess implements DeleteCartSuccess {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
   }) {
     return deleteCartSuccess?.call(this);
   }
@@ -1776,16 +1706,16 @@ class _$DeleteCartSuccess implements DeleteCartSuccess {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
     required TResult orElse(),
   }) {
     if (deleteCartSuccess != null) {
@@ -1800,67 +1730,41 @@ abstract class DeleteCartSuccess implements CartState {
 }
 
 /// @nodoc
-abstract class $DeleteCartErrorDetailsCopyWith<$Res> {
-  factory $DeleteCartErrorDetailsCopyWith(DeleteCartErrorDetails value,
-          $Res Function(DeleteCartErrorDetails) then) =
-      _$DeleteCartErrorDetailsCopyWithImpl<$Res>;
-  $Res call({String error});
+abstract class $DeleteCartErrorCopyWith<$Res> {
+  factory $DeleteCartErrorCopyWith(
+          DeleteCartError value, $Res Function(DeleteCartError) then) =
+      _$DeleteCartErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DeleteCartErrorDetailsCopyWithImpl<$Res>
-    extends _$CartStateCopyWithImpl<$Res>
-    implements $DeleteCartErrorDetailsCopyWith<$Res> {
-  _$DeleteCartErrorDetailsCopyWithImpl(DeleteCartErrorDetails _value,
-      $Res Function(DeleteCartErrorDetails) _then)
-      : super(_value, (v) => _then(v as DeleteCartErrorDetails));
+class _$DeleteCartErrorCopyWithImpl<$Res> extends _$CartStateCopyWithImpl<$Res>
+    implements $DeleteCartErrorCopyWith<$Res> {
+  _$DeleteCartErrorCopyWithImpl(
+      DeleteCartError _value, $Res Function(DeleteCartError) _then)
+      : super(_value, (v) => _then(v as DeleteCartError));
 
   @override
-  DeleteCartErrorDetails get _value => super._value as DeleteCartErrorDetails;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(DeleteCartErrorDetails(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  DeleteCartError get _value => super._value as DeleteCartError;
 }
 
 /// @nodoc
 
-class _$DeleteCartErrorDetails implements DeleteCartErrorDetails {
-  const _$DeleteCartErrorDetails(this.error);
-
-  @override
-  final String error;
+class _$DeleteCartError implements DeleteCartError {
+  const _$DeleteCartError();
 
   @override
   String toString() {
-    return 'CartState.deleteCartError(error: $error)';
+    return 'CartState.deleteCartError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is DeleteCartErrorDetails &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is DeleteCartError);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $DeleteCartErrorDetailsCopyWith<DeleteCartErrorDetails> get copyWith =>
-      _$DeleteCartErrorDetailsCopyWithImpl<DeleteCartErrorDetails>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -1868,18 +1772,18 @@ class _$DeleteCartErrorDetails implements DeleteCartErrorDetails {
     required TResult Function() initial,
     required TResult Function() addToCartLoading,
     required TResult Function() addToCartSuccess,
-    required TResult Function(String error) addToCartError,
+    required TResult Function() addToCartError,
     required TResult Function() editCartLoading,
     required TResult Function() editCartSuccess,
-    required TResult Function(String error) editCartError,
+    required TResult Function() editCartError,
     required TResult Function() deleteCartLoading,
     required TResult Function() deleteCartSuccess,
-    required TResult Function(String error) deleteCartError,
+    required TResult Function() deleteCartError,
     required TResult Function() getCartLoading,
     required TResult Function() getCartSuccess,
-    required TResult Function(String error) getCartError,
+    required TResult Function() getCartError,
   }) {
-    return deleteCartError(error);
+    return deleteCartError();
   }
 
   @override
@@ -1888,18 +1792,18 @@ class _$DeleteCartErrorDetails implements DeleteCartErrorDetails {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
   }) {
-    return deleteCartError?.call(error);
+    return deleteCartError?.call();
   }
 
   @override
@@ -1908,20 +1812,20 @@ class _$DeleteCartErrorDetails implements DeleteCartErrorDetails {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
     required TResult orElse(),
   }) {
     if (deleteCartError != null) {
-      return deleteCartError(error);
+      return deleteCartError();
     }
     return orElse();
   }
@@ -1932,16 +1836,16 @@ class _$DeleteCartErrorDetails implements DeleteCartErrorDetails {
     required TResult Function(CartInitial value) initial,
     required TResult Function(AddToCartLoading value) addToCartLoading,
     required TResult Function(AddToCartSuccess value) addToCartSuccess,
-    required TResult Function(AddToCartErrorDetails value) addToCartError,
+    required TResult Function(AddToCartError value) addToCartError,
     required TResult Function(EditCartLoading value) editCartLoading,
     required TResult Function(EditCartSuccess value) editCartSuccess,
-    required TResult Function(EditCartErrorDetails value) editCartError,
+    required TResult Function(EditCartError value) editCartError,
     required TResult Function(DeleteCartLoading value) deleteCartLoading,
     required TResult Function(DeleteCartSuccess value) deleteCartSuccess,
-    required TResult Function(DeleteCartErrorDetails value) deleteCartError,
+    required TResult Function(DeleteCartError value) deleteCartError,
     required TResult Function(GetCartLoading value) getCartLoading,
     required TResult Function(GetCartSuccess value) getCartSuccess,
-    required TResult Function(GetCartErrorDetails value) getCartError,
+    required TResult Function(GetCartError value) getCartError,
   }) {
     return deleteCartError(this);
   }
@@ -1952,16 +1856,16 @@ class _$DeleteCartErrorDetails implements DeleteCartErrorDetails {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
   }) {
     return deleteCartError?.call(this);
   }
@@ -1972,16 +1876,16 @@ class _$DeleteCartErrorDetails implements DeleteCartErrorDetails {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
     required TResult orElse(),
   }) {
     if (deleteCartError != null) {
@@ -1991,13 +1895,8 @@ class _$DeleteCartErrorDetails implements DeleteCartErrorDetails {
   }
 }
 
-abstract class DeleteCartErrorDetails implements CartState {
-  const factory DeleteCartErrorDetails(String error) = _$DeleteCartErrorDetails;
-
-  String get error;
-  @JsonKey(ignore: true)
-  $DeleteCartErrorDetailsCopyWith<DeleteCartErrorDetails> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class DeleteCartError implements CartState {
+  const factory DeleteCartError() = _$DeleteCartError;
 }
 
 /// @nodoc
@@ -2043,16 +1942,16 @@ class _$GetCartLoading implements GetCartLoading {
     required TResult Function() initial,
     required TResult Function() addToCartLoading,
     required TResult Function() addToCartSuccess,
-    required TResult Function(String error) addToCartError,
+    required TResult Function() addToCartError,
     required TResult Function() editCartLoading,
     required TResult Function() editCartSuccess,
-    required TResult Function(String error) editCartError,
+    required TResult Function() editCartError,
     required TResult Function() deleteCartLoading,
     required TResult Function() deleteCartSuccess,
-    required TResult Function(String error) deleteCartError,
+    required TResult Function() deleteCartError,
     required TResult Function() getCartLoading,
     required TResult Function() getCartSuccess,
-    required TResult Function(String error) getCartError,
+    required TResult Function() getCartError,
   }) {
     return getCartLoading();
   }
@@ -2063,16 +1962,16 @@ class _$GetCartLoading implements GetCartLoading {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
   }) {
     return getCartLoading?.call();
   }
@@ -2083,16 +1982,16 @@ class _$GetCartLoading implements GetCartLoading {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
     required TResult orElse(),
   }) {
     if (getCartLoading != null) {
@@ -2107,16 +2006,16 @@ class _$GetCartLoading implements GetCartLoading {
     required TResult Function(CartInitial value) initial,
     required TResult Function(AddToCartLoading value) addToCartLoading,
     required TResult Function(AddToCartSuccess value) addToCartSuccess,
-    required TResult Function(AddToCartErrorDetails value) addToCartError,
+    required TResult Function(AddToCartError value) addToCartError,
     required TResult Function(EditCartLoading value) editCartLoading,
     required TResult Function(EditCartSuccess value) editCartSuccess,
-    required TResult Function(EditCartErrorDetails value) editCartError,
+    required TResult Function(EditCartError value) editCartError,
     required TResult Function(DeleteCartLoading value) deleteCartLoading,
     required TResult Function(DeleteCartSuccess value) deleteCartSuccess,
-    required TResult Function(DeleteCartErrorDetails value) deleteCartError,
+    required TResult Function(DeleteCartError value) deleteCartError,
     required TResult Function(GetCartLoading value) getCartLoading,
     required TResult Function(GetCartSuccess value) getCartSuccess,
-    required TResult Function(GetCartErrorDetails value) getCartError,
+    required TResult Function(GetCartError value) getCartError,
   }) {
     return getCartLoading(this);
   }
@@ -2127,16 +2026,16 @@ class _$GetCartLoading implements GetCartLoading {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
   }) {
     return getCartLoading?.call(this);
   }
@@ -2147,16 +2046,16 @@ class _$GetCartLoading implements GetCartLoading {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
     required TResult orElse(),
   }) {
     if (getCartLoading != null) {
@@ -2213,16 +2112,16 @@ class _$GetCartSuccess implements GetCartSuccess {
     required TResult Function() initial,
     required TResult Function() addToCartLoading,
     required TResult Function() addToCartSuccess,
-    required TResult Function(String error) addToCartError,
+    required TResult Function() addToCartError,
     required TResult Function() editCartLoading,
     required TResult Function() editCartSuccess,
-    required TResult Function(String error) editCartError,
+    required TResult Function() editCartError,
     required TResult Function() deleteCartLoading,
     required TResult Function() deleteCartSuccess,
-    required TResult Function(String error) deleteCartError,
+    required TResult Function() deleteCartError,
     required TResult Function() getCartLoading,
     required TResult Function() getCartSuccess,
-    required TResult Function(String error) getCartError,
+    required TResult Function() getCartError,
   }) {
     return getCartSuccess();
   }
@@ -2233,16 +2132,16 @@ class _$GetCartSuccess implements GetCartSuccess {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
   }) {
     return getCartSuccess?.call();
   }
@@ -2253,16 +2152,16 @@ class _$GetCartSuccess implements GetCartSuccess {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
     required TResult orElse(),
   }) {
     if (getCartSuccess != null) {
@@ -2277,16 +2176,16 @@ class _$GetCartSuccess implements GetCartSuccess {
     required TResult Function(CartInitial value) initial,
     required TResult Function(AddToCartLoading value) addToCartLoading,
     required TResult Function(AddToCartSuccess value) addToCartSuccess,
-    required TResult Function(AddToCartErrorDetails value) addToCartError,
+    required TResult Function(AddToCartError value) addToCartError,
     required TResult Function(EditCartLoading value) editCartLoading,
     required TResult Function(EditCartSuccess value) editCartSuccess,
-    required TResult Function(EditCartErrorDetails value) editCartError,
+    required TResult Function(EditCartError value) editCartError,
     required TResult Function(DeleteCartLoading value) deleteCartLoading,
     required TResult Function(DeleteCartSuccess value) deleteCartSuccess,
-    required TResult Function(DeleteCartErrorDetails value) deleteCartError,
+    required TResult Function(DeleteCartError value) deleteCartError,
     required TResult Function(GetCartLoading value) getCartLoading,
     required TResult Function(GetCartSuccess value) getCartSuccess,
-    required TResult Function(GetCartErrorDetails value) getCartError,
+    required TResult Function(GetCartError value) getCartError,
   }) {
     return getCartSuccess(this);
   }
@@ -2297,16 +2196,16 @@ class _$GetCartSuccess implements GetCartSuccess {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
   }) {
     return getCartSuccess?.call(this);
   }
@@ -2317,16 +2216,16 @@ class _$GetCartSuccess implements GetCartSuccess {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
     required TResult orElse(),
   }) {
     if (getCartSuccess != null) {
@@ -2341,66 +2240,41 @@ abstract class GetCartSuccess implements CartState {
 }
 
 /// @nodoc
-abstract class $GetCartErrorDetailsCopyWith<$Res> {
-  factory $GetCartErrorDetailsCopyWith(
-          GetCartErrorDetails value, $Res Function(GetCartErrorDetails) then) =
-      _$GetCartErrorDetailsCopyWithImpl<$Res>;
-  $Res call({String error});
+abstract class $GetCartErrorCopyWith<$Res> {
+  factory $GetCartErrorCopyWith(
+          GetCartError value, $Res Function(GetCartError) then) =
+      _$GetCartErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetCartErrorDetailsCopyWithImpl<$Res>
-    extends _$CartStateCopyWithImpl<$Res>
-    implements $GetCartErrorDetailsCopyWith<$Res> {
-  _$GetCartErrorDetailsCopyWithImpl(
-      GetCartErrorDetails _value, $Res Function(GetCartErrorDetails) _then)
-      : super(_value, (v) => _then(v as GetCartErrorDetails));
+class _$GetCartErrorCopyWithImpl<$Res> extends _$CartStateCopyWithImpl<$Res>
+    implements $GetCartErrorCopyWith<$Res> {
+  _$GetCartErrorCopyWithImpl(
+      GetCartError _value, $Res Function(GetCartError) _then)
+      : super(_value, (v) => _then(v as GetCartError));
 
   @override
-  GetCartErrorDetails get _value => super._value as GetCartErrorDetails;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(GetCartErrorDetails(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  GetCartError get _value => super._value as GetCartError;
 }
 
 /// @nodoc
 
-class _$GetCartErrorDetails implements GetCartErrorDetails {
-  const _$GetCartErrorDetails(this.error);
-
-  @override
-  final String error;
+class _$GetCartError implements GetCartError {
+  const _$GetCartError();
 
   @override
   String toString() {
-    return 'CartState.getCartError(error: $error)';
+    return 'CartState.getCartError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is GetCartErrorDetails &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is GetCartError);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $GetCartErrorDetailsCopyWith<GetCartErrorDetails> get copyWith =>
-      _$GetCartErrorDetailsCopyWithImpl<GetCartErrorDetails>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -2408,18 +2282,18 @@ class _$GetCartErrorDetails implements GetCartErrorDetails {
     required TResult Function() initial,
     required TResult Function() addToCartLoading,
     required TResult Function() addToCartSuccess,
-    required TResult Function(String error) addToCartError,
+    required TResult Function() addToCartError,
     required TResult Function() editCartLoading,
     required TResult Function() editCartSuccess,
-    required TResult Function(String error) editCartError,
+    required TResult Function() editCartError,
     required TResult Function() deleteCartLoading,
     required TResult Function() deleteCartSuccess,
-    required TResult Function(String error) deleteCartError,
+    required TResult Function() deleteCartError,
     required TResult Function() getCartLoading,
     required TResult Function() getCartSuccess,
-    required TResult Function(String error) getCartError,
+    required TResult Function() getCartError,
   }) {
-    return getCartError(error);
+    return getCartError();
   }
 
   @override
@@ -2428,18 +2302,18 @@ class _$GetCartErrorDetails implements GetCartErrorDetails {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
   }) {
-    return getCartError?.call(error);
+    return getCartError?.call();
   }
 
   @override
@@ -2448,20 +2322,20 @@ class _$GetCartErrorDetails implements GetCartErrorDetails {
     TResult Function()? initial,
     TResult Function()? addToCartLoading,
     TResult Function()? addToCartSuccess,
-    TResult Function(String error)? addToCartError,
+    TResult Function()? addToCartError,
     TResult Function()? editCartLoading,
     TResult Function()? editCartSuccess,
-    TResult Function(String error)? editCartError,
+    TResult Function()? editCartError,
     TResult Function()? deleteCartLoading,
     TResult Function()? deleteCartSuccess,
-    TResult Function(String error)? deleteCartError,
+    TResult Function()? deleteCartError,
     TResult Function()? getCartLoading,
     TResult Function()? getCartSuccess,
-    TResult Function(String error)? getCartError,
+    TResult Function()? getCartError,
     required TResult orElse(),
   }) {
     if (getCartError != null) {
-      return getCartError(error);
+      return getCartError();
     }
     return orElse();
   }
@@ -2472,16 +2346,16 @@ class _$GetCartErrorDetails implements GetCartErrorDetails {
     required TResult Function(CartInitial value) initial,
     required TResult Function(AddToCartLoading value) addToCartLoading,
     required TResult Function(AddToCartSuccess value) addToCartSuccess,
-    required TResult Function(AddToCartErrorDetails value) addToCartError,
+    required TResult Function(AddToCartError value) addToCartError,
     required TResult Function(EditCartLoading value) editCartLoading,
     required TResult Function(EditCartSuccess value) editCartSuccess,
-    required TResult Function(EditCartErrorDetails value) editCartError,
+    required TResult Function(EditCartError value) editCartError,
     required TResult Function(DeleteCartLoading value) deleteCartLoading,
     required TResult Function(DeleteCartSuccess value) deleteCartSuccess,
-    required TResult Function(DeleteCartErrorDetails value) deleteCartError,
+    required TResult Function(DeleteCartError value) deleteCartError,
     required TResult Function(GetCartLoading value) getCartLoading,
     required TResult Function(GetCartSuccess value) getCartSuccess,
-    required TResult Function(GetCartErrorDetails value) getCartError,
+    required TResult Function(GetCartError value) getCartError,
   }) {
     return getCartError(this);
   }
@@ -2492,16 +2366,16 @@ class _$GetCartErrorDetails implements GetCartErrorDetails {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
   }) {
     return getCartError?.call(this);
   }
@@ -2512,16 +2386,16 @@ class _$GetCartErrorDetails implements GetCartErrorDetails {
     TResult Function(CartInitial value)? initial,
     TResult Function(AddToCartLoading value)? addToCartLoading,
     TResult Function(AddToCartSuccess value)? addToCartSuccess,
-    TResult Function(AddToCartErrorDetails value)? addToCartError,
+    TResult Function(AddToCartError value)? addToCartError,
     TResult Function(EditCartLoading value)? editCartLoading,
     TResult Function(EditCartSuccess value)? editCartSuccess,
-    TResult Function(EditCartErrorDetails value)? editCartError,
+    TResult Function(EditCartError value)? editCartError,
     TResult Function(DeleteCartLoading value)? deleteCartLoading,
     TResult Function(DeleteCartSuccess value)? deleteCartSuccess,
-    TResult Function(DeleteCartErrorDetails value)? deleteCartError,
+    TResult Function(DeleteCartError value)? deleteCartError,
     TResult Function(GetCartLoading value)? getCartLoading,
     TResult Function(GetCartSuccess value)? getCartSuccess,
-    TResult Function(GetCartErrorDetails value)? getCartError,
+    TResult Function(GetCartError value)? getCartError,
     required TResult orElse(),
   }) {
     if (getCartError != null) {
@@ -2531,11 +2405,6 @@ class _$GetCartErrorDetails implements GetCartErrorDetails {
   }
 }
 
-abstract class GetCartErrorDetails implements CartState {
-  const factory GetCartErrorDetails(String error) = _$GetCartErrorDetails;
-
-  String get error;
-  @JsonKey(ignore: true)
-  $GetCartErrorDetailsCopyWith<GetCartErrorDetails> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class GetCartError implements CartState {
+  const factory GetCartError() = _$GetCartError;
 }

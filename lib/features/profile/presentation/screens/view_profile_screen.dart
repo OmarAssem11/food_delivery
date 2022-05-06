@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:food_delivery/core/presentation/screens/error_screen.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
+import 'package:food_delivery/core/presentation/widgets/errors_widget.dart';
 import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
 import 'package:food_delivery/features/profile/presentation/bloc/profile_cubit.dart';
 import 'package:food_delivery/features/profile/presentation/bloc/profile_state.dart';
@@ -36,7 +36,7 @@ class _ViewProfileScreenState extends State<ViewProfileScreen> {
               return Container();
             },
             viewLoading: () => const LoadingIndicator(),
-            viewError: (_) => ErrorScreen(
+            viewError: () => ErrorsWidget(
               onRetry: BlocProvider.of<ProfileCubit>(context).viewProfile,
             ),
             viewSuccess: (profile) {

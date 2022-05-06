@@ -1,5 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:food_delivery/core/domain/error/failure.dart';
+import 'package:food_delivery/core/data/app_exception/app_exception.dart';
+import 'package:food_delivery/core/domain/failure/failure.dart';
+import 'package:food_delivery/core/domain/failure/return_failure.dart';
 import 'package:food_delivery/features/restaurants/data/mappers/restaurant_details_mapper.dart';
 import 'package:food_delivery/features/restaurants/data/mappers/restaurant_mapper.dart';
 import 'package:food_delivery/features/restaurants/domain/datasources/remote_datasource/restaurants_remote_datasource.dart';
@@ -22,8 +24,8 @@ class RestaurantsRepositoryImpl implements RestaurantsRepository {
           .map((restaurantModel) => restaurantModel.fromModel)
           .toList();
       return right(restaurantEntities);
-    } catch (error) {
-      return left(const Failure('Error while getting restaurants'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 
@@ -37,8 +39,8 @@ class RestaurantsRepositoryImpl implements RestaurantsRepository {
         restaurantId: restaurantId,
       );
       return right(restaurantDetailsResponse.data.fromModel);
-    } catch (error) {
-      return left(const Failure('Error while getting restaurant details'));
+    } on AppException catch (appException) {
+      return left(returnFailure(appException));
     }
   }
 }

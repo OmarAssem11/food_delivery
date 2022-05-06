@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:food_delivery/core/presentation/screens/error_screen.dart';
+import 'package:food_delivery/core/presentation/widgets/errors_widget.dart';
 import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
 import 'package:food_delivery/features/orders/presentation/bloc/orders_cubit.dart';
 import 'package:food_delivery/features/orders/presentation/bloc/orders_state.dart';
@@ -38,7 +38,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
         builder: (context, state) {
           return state.maybeWhen(
             getOrdersListLoading: () => const LoadingIndicator(),
-            getOrdersListError: (_) => ErrorScreen(
+            getOrdersListError: () => ErrorsWidget(
               onRetry: BlocProvider.of<OrdersCubit>(context).getOrders,
             ),
             getOrdersListSuccess: (orders) => ListView.separated(
@@ -47,7 +47,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                 child: Padding(
                   padding: const EdgeInsets.all(8),
                   child: OrderItem(
-                    order: orders.reversed.toList()[index],
+                    order: orders[index],
                   ),
                 ),
               ),

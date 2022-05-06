@@ -1,3 +1,4 @@
+import 'package:food_delivery/core/data/app_exception/return_remote_app_exception.dart';
 import 'package:food_delivery/core/data/models/response_model/response_model.dart';
 import 'package:food_delivery/features/restaurants/data/datasources/remote_datasource/restaurants_api_service.dart';
 import 'package:food_delivery/features/restaurants/data/models/restaurant_details_model/restaurant_details_model.dart';
@@ -12,14 +13,24 @@ class RestaurantsRemoteDataSourceImpl implements RestaurantsRemoteDataSource {
   const RestaurantsRemoteDataSourceImpl(this._restaurantsApiService);
 
   @override
-  Future<ResponseModel<List<RestaurantModel>>> getAllRestaurants() =>
-      _restaurantsApiService.getAllRestaurants();
+  Future<ResponseModel<List<RestaurantModel>>> getAllRestaurants() async {
+    try {
+      return await _restaurantsApiService.getAllRestaurants();
+    } catch (exception) {
+      throw returnRemoteAppException(exception);
+    }
+  }
 
   @override
   Future<ResponseModel<RestaurantDetailsModel>> getRestaurantDetails({
     required int restaurantId,
-  }) =>
-      _restaurantsApiService.getRestaurantDetails(
+  }) async {
+    try {
+      return await _restaurantsApiService.getRestaurantDetails(
         restaurantId: restaurantId,
       );
+    } catch (exception) {
+      throw returnRemoteAppException(exception);
+    }
+  }
 }

@@ -11,6 +11,5 @@ class ProductsState with _$ProductsState {
   const factory ProductsState.getProductDetailsSuccess(
     final Product product,
   ) = GetProductDetailsSuccess;
-  const factory ProductsState.getProductDetailsError(final String error) =
-      GetProductDetailsErrorDetails;
+  const factory ProductsState.getProductDetailsError() = GetProductDetailsError;
 }

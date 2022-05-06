@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:food_delivery/gen/assets.gen.dart';
 
-class ErrorScreen extends StatelessWidget {
-  const ErrorScreen({required this.onRetry});
+class ErrorsWidget extends StatelessWidget {
+  const ErrorsWidget({required this.onRetry});
 
   final VoidCallback onRetry;
 
@@ -15,7 +16,7 @@ class ErrorScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
-            'assets/images/error.jpg',
+            Assets.images.error.path,
             scale: 2.5,
           ),
           const SizedBox(height: 30),

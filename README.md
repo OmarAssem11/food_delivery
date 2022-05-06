@@ -34,6 +34,7 @@
 * geolocator
 * cached_network_image
 * json_serializable
+* flutter_gen
 * lottie
 * page_transition
 * fluttertoast

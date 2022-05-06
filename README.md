@@ -34,10 +34,12 @@
 * geolocator
 * cached_network_image
 * json_serializable
+* connectivity_plus
 * flutter_gen
 * lottie
 * page_transition
 * fluttertoast
 * google_fonts
 
-## API: github.com/Halaabdelaziz/mega-ecommerce-foodDelivery-app
+## API:
+github.com/Halaabdelaziz/mega-ecommerce-foodDelivery-app

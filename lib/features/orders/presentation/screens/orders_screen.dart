@@ -6,6 +6,7 @@ import 'package:food_delivery/core/presentation/widgets/errors_widget.dart';
 import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
 import 'package:food_delivery/features/orders/presentation/bloc/orders_cubit.dart';
 import 'package:food_delivery/features/orders/presentation/bloc/orders_state.dart';
+import 'package:food_delivery/features/orders/presentation/widgets/no_orders.dart';
 import 'package:food_delivery/features/orders/presentation/widgets/order_item.dart';
 
 class OrdersScreen extends StatefulWidget {
@@ -41,23 +42,25 @@ class _OrdersScreenState extends State<OrdersScreen> {
             getOrdersListError: () => ErrorsWidget(
               onRetry: BlocProvider.of<OrdersCubit>(context).getOrders,
             ),
-            getOrdersListSuccess: (orders) => ListView.separated(
-              itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.all(8),
-                child: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: OrderItem(
-                    order: orders[index],
+            getOrdersListSuccess: (orders) => orders.isEmpty
+                ? const NoOrders()
+                : ListView.separated(
+                    itemBuilder: (context, index) => Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: OrderItem(
+                          order: orders[index],
+                        ),
+                      ),
+                    ),
+                    itemCount: orders.length,
+                    separatorBuilder: (context, index) => Divider(
+                      thickness: 1,
+                      height: 1,
+                      color: Theme.of(context).colorScheme.surface,
+                    ),
                   ),
-                ),
-              ),
-              itemCount: orders.length,
-              separatorBuilder: (context, index) => Divider(
-                thickness: 1,
-                height: 1,
-                color: Theme.of(context).colorScheme.surface,
-              ),
-            ),
             orElse: () => Container(),
           );
         },

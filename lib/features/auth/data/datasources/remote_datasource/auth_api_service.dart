@@ -13,7 +13,7 @@ part 'auth_api_service.g.dart';
 @RestApi()
 abstract class AuthApiService {
   @factoryMethod
-  factory AuthApiService(Dio dio) = _AuthApiService;
+  factory AuthApiService(final Dio dio) = _AuthApiService;
 
   @POST(registerEndpoint)
   Future<ResponseModel<TokenModel>> register({

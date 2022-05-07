@@ -3,9 +3,9 @@ import 'package:food_delivery/features/restaurants/domain/entities/restaurant.da
 import 'package:food_delivery/features/restaurants/presentation/screens/restaurants_details_screen.dart';
 
 class RestaurantItem extends StatelessWidget {
-  const RestaurantItem({required this.restaurantEntity});
+  const RestaurantItem({required this.restaurant});
 
-  final Restaurant restaurantEntity;
+  final Restaurant restaurant;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class RestaurantItem extends StatelessWidget {
     return InkWell(
       onTap: () => Navigator.of(context).pushNamed(
         RestaurantDetailsScreen.routeName,
-        arguments: restaurantEntity.id,
+        arguments: restaurant.id,
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -26,7 +26,7 @@ class RestaurantItem extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.network(
-                restaurantEntity.imageUrl,
+                restaurant.imageUrl,
                 height: MediaQuery.of(context).size.height * .2,
                 width: double.infinity,
                 fit: BoxFit.fill,
@@ -34,12 +34,12 @@ class RestaurantItem extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             Text(
-              restaurantEntity.name,
+              restaurant.name,
               style: textTheme.headline4,
             ),
             const SizedBox(height: 4),
             Text(
-              restaurantEntity.description,
+              restaurant.description,
               style: textTheme.subtitle1,
               maxLines: 3,
               overflow: TextOverflow.ellipsis,

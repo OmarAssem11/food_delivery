@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 import 'package:food_delivery/core/presentation/util/error_toast.dart';
 import 'package:food_delivery/core/presentation/validation/validators.dart';
 import 'package:food_delivery/core/presentation/widgets/custom_elevated_button.dart';
@@ -128,7 +127,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 listener: (context, state) {
                   state.mapOrNull(
                     loading: (_) => isLoading = true,
-                    error: (state) => showErrorToast(),
+                    error: (state) => showErrorToast(context: context),
                     success: (success) => Navigator.of(context).pushNamed(
                       OrderDetailsScreen.routeName,
                       arguments: success.orderId,

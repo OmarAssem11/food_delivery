@@ -20,6 +20,12 @@ class ViewProfileScreen extends StatefulWidget {
 
 class _ViewProfileScreenState extends State<ViewProfileScreen> {
   @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<ProfileCubit>(context).viewProfile();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final appLocalizations = AppLocalizations.of(context)!;
     return Scaffold(
@@ -29,12 +35,6 @@ class _ViewProfileScreenState extends State<ViewProfileScreen> {
       body: BlocBuilder<ProfileCubit, ProfileState>(
         builder: (context, state) {
           return state.maybeWhen(
-            initial: () {
-              WidgetsBinding.instance!.addPostFrameCallback(
-                (_) => BlocProvider.of<ProfileCubit>(context).viewProfile(),
-              );
-              return Container();
-            },
             viewLoading: () => const LoadingIndicator(),
             viewError: () => ErrorsWidget(
               onRetry: BlocProvider.of<ProfileCubit>(context).viewProfile,

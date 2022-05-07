@@ -6,14 +6,15 @@ part 'product_data_model.g.dart';
 @JsonSerializable()
 class ProductDataModel {
   final String name;
-  final String image;
+  @JsonKey(name: 'image')
+  final String imageUrl;
   final double price;
   @JsonKey(name: 'restarunt')
   final List<RestaurantDataModel> restaurantDataModels;
 
   ProductDataModel({
     required this.name,
-    required this.image,
+    required this.imageUrl,
     required this.price,
     required this.restaurantDataModels,
   });

@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -56,10 +57,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           child: BlocBuilder<ProfileCubit, ProfileState>(
             builder: (context, state) {
               bool isLoading = false;
-              state.maybeWhen(
-                editLoading: () => isLoading = true,
-                editError: () => showErrorToast(),
-                editSuccess: () {
+              state.mapOrNull(
+                editLoading: (_) => isLoading = true,
+                editError: (_) => showErrorToast(context: context),
+                editSuccess: (_) {
                   WidgetsBinding.instance!.addPostFrameCallback(
                     (_) {
                       Navigator.of(context).popUntil((route) => route.isFirst);
@@ -68,7 +69,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     },
                   );
                 },
-                orElse: () {},
               );
               return Form(
                 key: _formKey,

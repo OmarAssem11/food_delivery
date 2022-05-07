@@ -8,10 +8,9 @@ import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_cubit.dart';
 import 'package:food_delivery/features/cart/presentation/bloc/cart_state.dart';
 import 'package:food_delivery/features/cart/presentation/widgets/cart_product_item.dart';
+import 'package:food_delivery/features/cart/presentation/widgets/empty_cart.dart';
 import 'package:food_delivery/features/cart/presentation/widgets/payment_summery.dart';
 import 'package:food_delivery/features/checkout/presentation/screens/address_location_screen.dart';
-import 'package:food_delivery/gen/assets.gen.dart';
-import 'package:lottie/lottie.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen();
@@ -49,7 +48,12 @@ class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<CartCubit, CartState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        state.mapOrNull(
+          editCartError: (_) => showErrorToast(context: context),
+          deleteCartError: (_) => showErrorToast(context: context),
+        );
+      },
       builder: (context, state) {
         final cartProductsList =
             BlocProvider.of<CartCubit>(context).cartProductsList;
@@ -64,12 +68,6 @@ class _CartScreenState extends State<CartScreen> {
               onRetry: BlocProvider.of<CartCubit>(context).getCart,
             ),
           ),
-          editCartError: () {
-            showErrorToast();
-            return Scaffold(
-              appBar: AppBar(),
-            );
-          },
           orElse: () {
             double subtotal = 0;
             cartProductsList
@@ -79,26 +77,7 @@ class _CartScreenState extends State<CartScreen> {
                 )
                 .toList();
             return cartProductsList.isEmpty
-                ? Scaffold(
-                    appBar: AppBar(
-                      title: Text(appLocalizations.basket),
-                    ),
-                    body: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Lottie.asset(
-                          Assets.lottie.cart,
-                          height: 300,
-                        ),
-                        Text(
-                          appLocalizations.yourBasketIsEmpty,
-                          style: textTheme.headline5,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
-                  )
+                ? const EmptyCart()
                 : Scaffold(
                     appBar: AppBar(
                       title: Column(

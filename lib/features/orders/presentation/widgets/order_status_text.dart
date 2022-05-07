@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/core/presentation/constants/constants.dart';
 
 class OrderStatusText extends StatelessWidget {
   const OrderStatusText({
@@ -15,12 +16,12 @@ class OrderStatusText extends StatelessWidget {
     if (!isInOrderDetails) {
       textStyle = Theme.of(context).textTheme.subtitle1!;
     }
-    return status == 'Pending'
+    return status == pendingStatus
         ? Text(
             'Preparing',
             style: textStyle.copyWith(color: Colors.orange),
           )
-        : status == 'Out for Delivery'
+        : status == outForDeliveryStatus
             ? Text(
                 'On the way',
                 style: textStyle.copyWith(color: Colors.blue),

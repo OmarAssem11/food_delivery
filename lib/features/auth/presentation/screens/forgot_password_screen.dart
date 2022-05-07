@@ -52,7 +52,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  height: 200,
+                  height: MediaQuery.of(context).size.height * .3,
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Theme.of(context).colorScheme.primary,
@@ -89,17 +89,14 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 BlocBuilder<AuthCubit, AuthState>(
                   builder: (context, state) {
                     bool isLoading = false;
-                    state.maybeWhen(
-                      forgotPasswordLoading: () => isLoading = true,
-                      forgotPasswordError: () => showErrorToast(),
-                      forgotPasswordSuccess: () =>
-                          WidgetsBinding.instance!.addPostFrameCallback(
-                        (_) => showDoneSnackBar(
-                          context: context,
-                          message: appLocalizations.checkYourEmail,
-                        ),
+                    state.mapOrNull(
+                      forgotPasswordLoading: (_) => isLoading = true,
+                      forgotPasswordError: (_) =>
+                          showErrorToast(context: context),
+                      forgotPasswordSuccess: (_) => showDoneSnackBar(
+                        context: context,
+                        message: appLocalizations.checkYourEmail,
                       ),
-                      orElse: () {},
                     );
                     return CustomElevatedButton(
                       label: appLocalizations.submit,

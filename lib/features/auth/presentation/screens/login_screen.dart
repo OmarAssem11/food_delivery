@@ -54,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
             CurvedWidget(
               child: Container(
                 width: double.infinity,
-                height: 250,
+                height: MediaQuery.of(context).size.height * .32,
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.primary,
                   image: DecorationImage(
@@ -106,16 +106,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       BlocBuilder<AuthCubit, AuthState>(
                         builder: (context, state) {
                           bool isLoading = false;
-                          state.maybeWhen(
-                            loading: () => isLoading = true,
-                            error: () => showErrorToast(),
-                            success: () =>
+                          state.mapOrNull(
+                            loading: (_) => isLoading = true,
+                            error: (_) => showErrorToast(context: context),
+                            success: (_) =>
                                 WidgetsBinding.instance!.addPostFrameCallback(
                               (_) => Navigator.of(context).pushReplacementNamed(
                                 HomeScreen.routeName,
                               ),
                             ),
-                            orElse: () {},
                           );
                           return CustomElevatedButton(
                             label: appLocalizations.login,

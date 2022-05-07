@@ -7,7 +7,7 @@ import 'package:food_delivery/features/checkout/domain/repositories/checkout_rep
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
-class CheckoutUseCase implements UseCase<dynamic, CheckoutData> {
+class CheckoutUseCase implements UseCase<int, CheckoutData> {
   final CheckoutRepository _checkoutRepository;
 
   const CheckoutUseCase(this._checkoutRepository);

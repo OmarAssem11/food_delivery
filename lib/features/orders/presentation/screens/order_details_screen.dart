@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:food_delivery/core/presentation/constants/constants.dart';
 import 'package:food_delivery/core/presentation/widgets/errors_widget.dart';
 import 'package:food_delivery/core/presentation/widgets/loading_indicator.dart';
 import 'package:food_delivery/features/cart/presentation/widgets/payment_summery.dart';
@@ -59,9 +60,9 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                   ),
                   const SizedBox(height: 16),
                   Lottie.asset(
-                    order[0].status == 'Pending'
+                    order[0].status == pendingStatus
                         ? Assets.lottie.pending
-                        : order[0].status == 'Out for Delivery'
+                        : order[0].status == outForDeliveryStatus
                             ? Assets.lottie.processing
                             : Assets.lottie.delivered,
                   ),

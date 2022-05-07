@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 @module
 abstract class AppModule {
-  Dio get getDio {
+  Dio get dio {
     final dio = Dio(
       BaseOptions(
         baseUrl: baseUrl,
@@ -19,6 +19,6 @@ abstract class AppModule {
   }
 
   @preResolve
-  Future<SharedPreferences> get getSharedPreferences =>
+  Future<SharedPreferences> get sharedPreferences =>
       SharedPreferences.getInstance();
 }

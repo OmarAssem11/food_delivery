@@ -56,5 +56,6 @@
     "locationPermissionsDenied": "تصاريح الوصول إلي موقع الهاتف مرفوضة",
     "locationPermissionsPermanentlyDenied": "تصاريح الوصول إلي موقع الهاتف مرفوضة نهائيا، لا نستطيع طلب التصاريح",
     "somethingWentWrong": "لقد حدث خطأ ما!",
-    "retry": "أعد المحاولة"
+    "retry": "أعد المحاولة",
+    "youHaveNoOrdersYet": "ليس لديك اي طلبات بعد!"
 }

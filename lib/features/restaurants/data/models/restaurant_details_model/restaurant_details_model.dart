@@ -1,5 +1,6 @@
 import 'package:food_delivery/features/products/data/models/product_model/product_model.dart';
 import 'package:json_annotation/json_annotation.dart';
+
 part 'restaurant_details_model.g.dart';
 
 @JsonSerializable()

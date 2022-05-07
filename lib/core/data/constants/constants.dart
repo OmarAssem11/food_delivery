@@ -1,5 +1,5 @@
 //BaseUrls
-const baseUrl = 'http://820f-156-211-172-84.ngrok.io/api/';
+const baseUrl = 'http://2226-41-234-216-27.ngrok.io/api/';
 //Endpoints
 const registerEndpoint = 'register';
 const loginEndpoint = 'login';

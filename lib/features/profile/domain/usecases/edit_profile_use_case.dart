@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:food_delivery/core/domain/failure/failure.dart';

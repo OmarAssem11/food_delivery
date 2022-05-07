@@ -12,7 +12,7 @@ part 'orders_api_service.g.dart';
 @RestApi()
 abstract class OrdersApiService {
   @factoryMethod
-  factory OrdersApiService(Dio dio) = _OrdersApiService;
+  factory OrdersApiService(final Dio dio) = _OrdersApiService;
 
   @GET(ordersEndPoint)
   Future<ResponseModel<List<OrderModel>>> getOrders();

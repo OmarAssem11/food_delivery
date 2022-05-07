@@ -124,7 +124,10 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
 
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      //showErrorToast(errorMessage: appLocalizations.pleaseEnableYourLocation);
+      showErrorToast(
+        context: context,
+        errorMessage: appLocalizations.pleaseEnableYourLocation,
+      );
     }
 
     permission = await Geolocator.checkPermission();
@@ -132,15 +135,17 @@ class _AddressLocationScreenState extends State<AddressLocationScreen> {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
         showErrorToast(
-            //errorMessage: appLocalizations.locationPermissionsDenied,
-            );
+          context: context,
+          errorMessage: appLocalizations.locationPermissionsDenied,
+        );
       }
     }
 
     if (permission == LocationPermission.deniedForever) {
       showErrorToast(
-          //errorMessage: appLocalizations.locationPermissionsPermanentlyDenied,
-          );
+        context: context,
+        errorMessage: appLocalizations.locationPermissionsPermanentlyDenied,
+      );
     }
   }
 

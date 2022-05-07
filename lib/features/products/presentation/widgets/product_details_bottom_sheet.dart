@@ -40,7 +40,7 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
         return state.maybeWhen(
           getProductDetailsLoading: () => const LoadingIndicator(),
           getProductDetailsError: () {
-            showErrorToast();
+            showErrorToast(context: context);
             return Container();
           },
           getProductDetailsSuccess: (product) => SingleChildScrollView(
@@ -113,7 +113,7 @@ class _ProductDetailsBottomSheetState extends State<ProductDetailsBottomSheet> {
                     listener: (context, state) {
                       state.mapOrNull(
                         addToCartLoading: (_) => isLoading = true,
-                        addToCartError: (state) => showErrorToast(),
+                        addToCartError: (_) => showErrorToast(context: context),
                       );
                     },
                     builder: (context, state) {

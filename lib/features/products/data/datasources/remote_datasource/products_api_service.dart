@@ -11,7 +11,7 @@ part 'products_api_service.g.dart';
 @RestApi()
 abstract class ProductsApiService {
   @factoryMethod
-  factory ProductsApiService(Dio dio) = _ProductsApiService;
+  factory ProductsApiService(final Dio dio) = _ProductsApiService;
 
   @GET(getProductDetailsEndpoint)
   Future<ResponseModel<ProductDetailsModel>> getProductDetails({

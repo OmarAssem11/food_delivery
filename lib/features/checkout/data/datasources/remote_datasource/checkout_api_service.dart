@@ -12,7 +12,7 @@ part 'checkout_api_service.g.dart';
 @RestApi()
 abstract class CheckoutApiService {
   @factoryMethod
-  factory CheckoutApiService(Dio dio) = _CheckoutApiService;
+  factory CheckoutApiService(final Dio dio) = _CheckoutApiService;
 
   @POST(checkoutEndpoint)
   Future<ResponseModel<List<CheckoutResponseModel>>> checkout({

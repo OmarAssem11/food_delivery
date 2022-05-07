@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:food_delivery/core/data/constants/constants.dart';
 import 'package:food_delivery/features/profile/data/models/profile_model.dart';
@@ -11,7 +12,7 @@ part 'profile_api_service.g.dart';
 @RestApi()
 abstract class ProfileApiService {
   @factoryMethod
-  factory ProfileApiService(Dio dio) = _ProfileApiService;
+  factory ProfileApiService(final Dio dio) = _ProfileApiService;
 
   @GET(viewProfileEndpoint)
   Future<ProfileModel> viewProfile();

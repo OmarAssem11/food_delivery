@@ -12,7 +12,7 @@ part 'restaurants_api_service.g.dart';
 @RestApi()
 abstract class RestaurantsApiService {
   @factoryMethod
-  factory RestaurantsApiService(Dio dio) = _RestaurantsApiService;
+  factory RestaurantsApiService(final Dio dio) = _RestaurantsApiService;
 
   @GET(getAllRestaurantsEndpoint)
   Future<ResponseModel<List<RestaurantModel>>> getAllRestaurants();

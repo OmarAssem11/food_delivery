@@ -56,7 +56,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             CurvedWidget(
               child: Container(
                 width: double.infinity,
-                height: 250,
+                height: MediaQuery.of(context).size.height * .32,
                 decoration: BoxDecoration(
                   color: Colors.deepOrange,
                   image: DecorationImage(
@@ -109,20 +109,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     BlocBuilder<AuthCubit, AuthState>(
                       builder: (context, state) {
                         bool isLoading = false;
-                        state.maybeWhen(
-                          loading: () => isLoading = true,
-                          error: () => showErrorToast(),
-                          success: () =>
+                        state.mapOrNull(
+                          loading: (_) => isLoading = true,
+                          error: (_) => showErrorToast(context: context),
+                          success: (_) =>
                               WidgetsBinding.instance!.addPostFrameCallback(
-                            (_) {
-                              Navigator.of(context)
-                                  .popUntil((route) => route.isFirst);
-                              Navigator.of(context).pushReplacementNamed(
-                                HomeScreen.routeName,
-                              );
-                            },
+                            (_) => Navigator.of(context).pushReplacementNamed(
+                              HomeScreen.routeName,
+                            ),
                           ),
-                          orElse: () {},
                         );
                         return CustomElevatedButton(
                           label: appLocalizations.register,

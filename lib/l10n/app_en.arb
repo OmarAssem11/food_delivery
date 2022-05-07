@@ -56,5 +56,6 @@
     "locationPermissionsDenied": "Location permissions are denied",
     "locationPermissionsPermanentlyDenied": "Location permissions are permanently denied, we cannot request permissions",
     "somethingWentWrong": "Something went wrong!",
-    "retry": "Retry"
+    "retry": "Retry",
+    "youHaveNoOrdersYet": "You have no orders yet!"
 }

@@ -55,7 +55,7 @@ class _RestaurantsListScreenState extends State<RestaurantsListScreen> {
             ),
             getAllRestaurantSuccess: (restaurants) => ListView.separated(
               itemBuilder: (context, index) => RestaurantItem(
-                restaurantEntity: restaurants[index],
+                restaurant: restaurants[index],
               ),
               itemCount: restaurants.length,
               separatorBuilder: (context, index) => const Divider(

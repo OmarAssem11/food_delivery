@@ -10,7 +10,7 @@ extension OrderDetailsMapper on OrderDetailsModel {
         count: count,
         dateTime: orderDataModel.dateTime!,
         productName: productDataModel.name,
-        productImage: productDataModel.image,
+        productImage: productDataModel.imageUrl,
         restaurantName: productDataModel.restaurantDataModels[0].name,
         restaurantImage: productDataModel.restaurantDataModels[0].imageUrl!,
         restaurantAddress: productDataModel.restaurantDataModels[0].address,

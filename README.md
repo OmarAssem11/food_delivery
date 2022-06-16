@@ -1,4 +1,4 @@
-# Food Delivery app using Clean Architecture(TDD)
+# Food Delivery app using Clean Architecture
 
 ## Features:
 
